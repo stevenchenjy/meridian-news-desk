@@ -1,0 +1,21 @@
+{
+  "collectionGeneratedAt": "2026-10-14T12:00:00.000000Z",
+  "summaries": [
+    {
+      "articleId": "ec020b095010372589dac4bd",
+      "summary": {
+        "en": "[DEMO] In this fictional scenario, essential supplies remain blocked for 800,000 residents. The 13-day-old event stays important because the disruption is unresolved.",
+        "zh": "[演示] 在这个虚构情景中，80万居民仍无法获得必要物资。虽然事件已持续13天，未解决的中断使它仍然重要。"
+      },
+      "basis": "publisher_excerpt"
+    },
+    {
+      "articleId": "85697e1d572fb9b12aa02c79",
+      "summary": {
+        "en": "[DEMO] A fictional forum has added an optional color theme. It is newer than the corridor event, but its consequences are limited.",
+        "zh": "[演示] 一个虚构论坛新增了可选配色主题。它比救援通道事件更新，但影响范围有限。"
+      },
+      "basis": "publisher_excerpt"
+    }
+  ]
+}

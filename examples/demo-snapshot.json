@@ -1,0 +1,92 @@
+{
+  "generatedAt": "2026-10-14T12:00:00.000000Z",
+  "lastRefreshAttempt": null,
+  "articles": [
+    {
+      "id": "85697e1d572fb9b12aa02c79",
+      "title": "[DEMO] Fictional software forum releases a new color theme",
+      "url": "https://forum.meridian.example/demo/color-theme",
+      "sourceId": "demo-forum",
+      "sourceName": "[DEMO] Fictional Software Forum",
+      "publishedAt": "2026-10-14T11:00:00Z",
+      "collectedAt": "2026-10-14T12:00:00.000000Z",
+      "category": "industry",
+      "region": "world",
+      "sourceType": "community",
+      "excerpt": "Fictional example: a software discussion forum has released an optional color theme. The announcement does not change security, access, pricing or moderation.",
+      "provenance": "source_excerpt",
+      "summary": null,
+      "analysis": null,
+      "sourceUnavailable": false,
+      "isStale": false
+    },
+    {
+      "id": "ec020b095010372589dac4bd",
+      "title": "[DEMO] A fictional coastal region still lacks a relief corridor",
+      "url": "https://relief.meridian.example/demo/closed-corridor",
+      "sourceId": "demo-relief",
+      "sourceName": "[DEMO] Fictional Relief Bulletin",
+      "publishedAt": "2026-10-01T12:00:00Z",
+      "collectedAt": "2026-10-14T12:00:00.000000Z",
+      "category": "crisis",
+      "region": "world",
+      "sourceType": "official",
+      "excerpt": "Fictional example: a closed transport corridor has prevented delivery of essential supplies to 800,000 residents for 13 days. The scenario has no confirmed reopening date.",
+      "provenance": "source_excerpt",
+      "summary": null,
+      "analysis": null,
+      "sourceUnavailable": false,
+      "isStale": false
+    }
+  ],
+  "sources": [
+    {
+      "id": "demo-relief",
+      "name": "[DEMO] Fictional Relief Bulletin",
+      "url": null,
+      "siteUrl": "https://relief.meridian.example/demo/closed-corridor",
+      "category": "crisis",
+      "region": "world",
+      "type": "official",
+      "enabled": false,
+      "status": "demo",
+      "lastSuccess": null,
+      "latestItemAt": "2026-10-01T12:00:00Z",
+      "itemCount": 1,
+      "description": "Fictional local fixture; no feed or website was fetched.",
+      "note": "[DEMO] This source is fictional and not connected."
+    },
+    {
+      "id": "demo-forum",
+      "name": "[DEMO] Fictional Software Forum",
+      "url": null,
+      "siteUrl": "https://forum.meridian.example/demo/color-theme",
+      "category": "industry",
+      "region": "world",
+      "type": "community",
+      "enabled": false,
+      "status": "demo",
+      "lastSuccess": null,
+      "latestItemAt": "2026-10-14T11:00:00Z",
+      "itemCount": 1,
+      "description": "Fictional local fixture; no feed or website was fetched.",
+      "note": "[DEMO] This source is fictional and not connected."
+    }
+  ],
+  "briefing": null,
+  "bookmarks": [],
+  "schedule": {
+    "time": "08:00",
+    "timezone": "America/New_York",
+    "status": "not_configured"
+  },
+  "collection": {
+    "kind": "synthetic_demo",
+    "parser": "hand-authored fictional fixtures",
+    "requestedSources": 0,
+    "succeeded": 0,
+    "failed": 0,
+    "finishedAt": "2026-10-14T12:00:00.000000Z",
+    "note": "[DEMO] All events, institutions, quantities and URLs are fictional. This load performs no feed collection or AI research. Timestamps are rebased when seeded; import times describe fixture loading, not factual verification."
+  }
+}

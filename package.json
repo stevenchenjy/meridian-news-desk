@@ -1,0 +1,25 @@
+{
+  "name": "meridian-news-desk",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "license": "GPL-3.0-only",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "start": "bash scripts/start.sh",
+    "setup": "bash scripts/setup.sh",
+    "demo": ".venv/bin/python scripts/seed_demo.py",
+    "collect": ".venv/bin/python scripts/collect.py",
+    "test": ".venv/bin/python -m unittest discover -s tests -v && node --test tests/frontend-attention.test.mjs"
+  },
+  "dependencies": {
+    "lucide-react": "^0.468.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "vite": "^6.0.5"
+  }
+}

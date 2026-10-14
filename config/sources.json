@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "sources": [
+    {"id":"bbc-world","name":"BBC · World","url":"https://feeds.bbci.co.uk/news/world/rss.xml","siteUrl":"https://www.bbc.com/news/world","category":"world","region":"world","type":"newsroom","enabled":true},
+    {"id":"bbc-us","name":"BBC · US & Canada","url":"https://feeds.bbci.co.uk/news/world/us_and_canada/rss.xml","siteUrl":"https://www.bbc.com/news/us-canada","category":"us","region":"us","type":"newsroom","enabled":true},
+    {"id":"guardian-world","name":"The Guardian · World","url":"https://www.theguardian.com/world/rss","siteUrl":"https://www.theguardian.com/world","category":"world","region":"world","type":"newsroom","enabled":true},
+    {"id":"guardian-business","name":"The Guardian · Business","url":"https://www.theguardian.com/business/rss","siteUrl":"https://www.theguardian.com/business","category":"economy","region":"world","type":"newsroom","enabled":true},
+    {"id":"guardian-us","name":"The Guardian · US","url":"https://www.theguardian.com/us-news/rss","siteUrl":"https://www.theguardian.com/us-news","category":"us","region":"us","type":"newsroom","enabled":true},
+    {"id":"npr-politics","name":"NPR · Politics","url":"https://feeds.npr.org/1014/rss.xml","siteUrl":"https://www.npr.org/sections/politics/","category":"us","region":"us","type":"newsroom","enabled":true},
+    {"id":"neutral-politics","name":"Reddit · NeutralPolitics","url":"https://www.reddit.com/r/NeutralPolitics/.rss","siteUrl":"https://www.reddit.com/r/NeutralPolitics/","category":"us","region":"us","type":"community","enabled":true,"note":"Political discussion leads, not verified reporting or representative public opinion. Community assertions require independent evidence."},
+    {"id":"nyt-us","name":"The New York Times · US","url":"https://rss.nytimes.com/services/xml/rss/nyt/US.xml","siteUrl":"https://www.nytimes.com/section/us","category":"us","region":"us","type":"newsroom","enabled":true},
+    {"id":"aljazeera","name":"Al Jazeera · World","url":"https://www.aljazeera.com/xml/rss/all.xml","siteUrl":"https://www.aljazeera.com/","category":"world","region":"world","type":"newsroom","enabled":true},
+    {"id":"un-news","name":"UN News","url":"https://news.un.org/feed/subscribe/en/news/all/rss.xml","siteUrl":"https://news.un.org/en/","category":"sdg","region":"world","type":"official","enabled":true},
+    {"id":"un-sdg","name":"UN · Sustainable Development","url":"https://www.un.org/sustainabledevelopment/feed/","siteUrl":"https://www.un.org/sustainabledevelopment/","category":"sdg","region":"world","type":"official","enabled":true},
+    {"id":"un-humanitarian","name":"UN · Humanitarian Aid","url":"https://news.un.org/feed/subscribe/en/news/topic/humanitarian-aid/feed/rss.xml","siteUrl":"https://news.un.org/en/news/topic/humanitarian-aid","category":"crisis","region":"world","type":"official","enabled":true},
+    {"id":"un-peace","name":"UN · Peace & Security","url":"https://news.un.org/feed/subscribe/en/news/topic/peace-and-security/feed/rss.xml","siteUrl":"https://news.un.org/en/news/topic/peace-and-security","category":"world","region":"world","type":"official","enabled":true},
+    {"id":"fed","name":"Federal Reserve","url":"https://www.federalreserve.gov/feeds/press_all.xml","siteUrl":"https://www.federalreserve.gov/newsevents.htm","category":"economy","region":"us","type":"official","enabled":true},
+    {"id":"cnbc","name":"CNBC · Top News","url":"https://www.cnbc.com/id/100003114/device/rss/rss.html","siteUrl":"https://www.cnbc.com/","category":"economy","region":"us","type":"newsroom","enabled":true},
+    {"id":"ecb","name":"European Central Bank","url":"https://www.ecb.europa.eu/rss/press.html","siteUrl":"https://www.ecb.europa.eu/press/","category":"economy","region":"world","type":"official","enabled":true},
+    {"id":"rand","name":"RAND · Research & Policy","url":"https://www.rand.org/news/press.xml","siteUrl":"https://www.rand.org/news.html","category":"world","region":"world","type":"research","enabled":true},
+    {"id":"mit-sloan","name":"MIT Sloan Management Review","url":"https://sloanreview.mit.edu/feed/","siteUrl":"https://sloanreview.mit.edu/","category":"industry","region":"world","type":"research","enabled":true},
+    {"id":"hacker-news","name":"Hacker News · Community","url":"https://hnrss.org/frontpage","siteUrl":"https://news.ycombinator.com/","category":"industry","region":"world","type":"community","enabled":true,"note":"Community links and discussion are unverified leads; linked reporting requires separate verification."},
+    {"id":"linkedin-insights","name":"LinkedIn · Optional insights","url":null,"siteUrl":"https://www.linkedin.com/","category":"industry","region":"world","type":"community","enabled":false,"note":"Not connected. To use an authorized RSSHub or exported feed, set its URL here and enable this source. Login content is not collected."},
+    {"id":"reliefweb","name":"ReliefWeb · Optional crisis reports","url":"https://reliefweb.int/updates/rss.xml","siteUrl":"https://reliefweb.int/","category":"crisis","region":"world","type":"official","enabled":false,"note":"The public feed currently returns an HTML access challenge from this machine. UN humanitarian coverage is enabled; this source is not collected."}
+  ]
+}

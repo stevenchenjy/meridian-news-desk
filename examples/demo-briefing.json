@@ -1,0 +1,151 @@
+{
+  "collectionGeneratedAt": "2026-10-14T12:00:00.000000Z",
+  "briefing": {
+    "title": {
+      "en": "[DEMO] Importance survives the daily news cycle",
+      "zh": "[演示] 重要性不随每日新闻周期消失"
+    },
+    "overview": {
+      "en": "Fictional local demonstration: an unresolved relief corridor from 13 days ago outranks a one-hour-old forum theme. The high-impact event stays on your attention agenda until you mark it read. Both examples and their bilingual analyses are hand-authored fixtures, not real news or AI research. No schedule is installed by this demo.",
+      "zh": "本地虚构演示：13天前尚未解决的救援通道问题，排在一小时前的论坛配色更新之前。重大事件会保留在关注议程中，直至你标记已读。两个事件及其双语分析均为手工编写的样例，不是真实新闻或人工智能研究。此演示不会创建计划任务。"
+    },
+    "items": [
+      {
+        "articleId": "ec020b095010372589dac4bd",
+        "summary": {
+          "en": "[DEMO] In this fictional scenario, essential supplies remain blocked for 800,000 residents. The 13-day-old event stays important because the disruption is unresolved.",
+          "zh": "[演示] 在这个虚构情景中，80万居民仍无法获得必要物资。虽然事件已持续13天，未解决的中断使它仍然重要。"
+        },
+        "whyItMatters": {
+          "en": "Demo interpretation: an unresolved disruption to essential supplies has broader consequences than a cosmetic product update. This illustrates importance-based ranking; it is not a real crisis forecast.",
+          "zh": "演示解读：必要物资持续中断的影响，比产品外观更新更广泛。此处演示按重要性排序，并非真实危机预测。"
+        },
+        "uncertainty": {
+          "en": "[DEMO] All names, numbers and URLs are synthetic. No real article was opened or verified. The reopening date is intentionally unspecified in the scenario.",
+          "zh": "[演示] 名称、数字和网址均为虚构。没有访问或核查真实文章。情景刻意未指定恢复通行的日期。"
+        },
+        "watch": {
+          "en": "[DEMO] A material update would be a fictional reopening or a change in supply access. Merely loading this same example tomorrow must not create a new material update.",
+          "zh": "[演示] 实质性更新可为虚构通道恢复通行或物资获取发生变化。明天再次加载相同样例，不应制造新的实质性进展。"
+        },
+        "evidence": [
+          {
+            "label": "[DEMO] Reserved .example fixture URL; not a real report",
+            "url": "https://relief.meridian.example/demo/closed-corridor"
+          }
+        ]
+      },
+      {
+        "articleId": "85697e1d572fb9b12aa02c79",
+        "summary": {
+          "en": "[DEMO] A fictional forum has added an optional color theme. It is newer than the corridor event, but its consequences are limited.",
+          "zh": "[演示] 一个虚构论坛新增了可选配色主题。它比救援通道事件更新，但影响范围有限。"
+        },
+        "whyItMatters": {
+          "en": "Demo interpretation: a minor usability preference should not displace a continuing high-impact event simply because it is newer. Its low score illustrates that distinction.",
+          "zh": "演示解读：仅因消息较新，轻微的界面偏好变化不应取代仍在持续的重大事件。低分用于演示这一差别。"
+        },
+        "uncertainty": {
+          "en": "[DEMO] This announcement and its organization are invented. Its linked URL is reserved for examples and does not substantiate a real product release.",
+          "zh": "[演示] 这则公告及其组织均为虚构。链接是保留的示例网址，不能作为真实产品发布的证据。"
+        },
+        "watch": {
+          "en": "[DEMO] No immediate follow-up is necessary in this scenario. A genuine change to user access or safety would require a new assessment, not just a new timestamp.",
+          "zh": "[演示] 此情景无需立即跟进。若用户访问或安全发生真正变化，应重新评估，而非仅更新日期。"
+        },
+        "evidence": [
+          {
+            "label": "[DEMO] Reserved .example fixture URL; not a real report",
+            "url": "https://forum.meridian.example/demo/color-theme"
+          }
+        ]
+      }
+    ]
+  },
+  "articles": [
+    {
+      "articleId": "ec020b095010372589dac4bd",
+      "summary": {
+        "en": "[DEMO] In this fictional scenario, essential supplies remain blocked for 800,000 residents. The 13-day-old event stays important because the disruption is unresolved.",
+        "zh": "[演示] 在这个虚构情景中，80万居民仍无法获得必要物资。虽然事件已持续13天，未解决的中断使它仍然重要。"
+      },
+      "analysis": {
+        "context": {
+          "en": "[DEMO] The fictional corridor closure began 13 days before this fixture was loaded. The example has no real publisher, institution or independently checked evidence.",
+          "zh": "[演示] 虚构通道在加载此样例的13天前关闭。样例没有真实出版方、机构或独立核查的证据。"
+        },
+        "implications": {
+          "en": "Demo interpretation: an unresolved disruption to essential supplies has broader consequences than a cosmetic product update. This illustrates importance-based ranking; it is not a real crisis forecast.",
+          "zh": "演示解读：必要物资持续中断的影响，比产品外观更新更广泛。此处演示按重要性排序，并非真实危机预测。"
+        },
+        "uncertainty": {
+          "en": "[DEMO] All names, numbers and URLs are synthetic. No real article was opened or verified. The reopening date is intentionally unspecified in the scenario.",
+          "zh": "[演示] 名称、数字和网址均为虚构。没有访问或核查真实文章。情景刻意未指定恢复通行的日期。"
+        },
+        "watch": {
+          "en": "[DEMO] A material update would be a fictional reopening or a change in supply access. Merely loading this same example tomorrow must not create a new material update.",
+          "zh": "[演示] 实质性更新可为虚构通道恢复通行或物资获取发生变化。明天再次加载相同样例，不应制造新的实质性进展。"
+        },
+        "evidence": [
+          {
+            "label": "[DEMO] Reserved .example fixture URL; not a real report",
+            "url": "https://relief.meridian.example/demo/closed-corridor"
+          }
+        ]
+      },
+      "attention": {
+        "importance": 84,
+        "reason": {
+          "en": "[DEMO] Unresolved access to essential supplies deserves continuing attention. This older event outranks the new cosmetic update and remains until explicitly marked read. Review the scenario after 30 days.",
+          "zh": "[演示] 必要物资获取问题尚未解决，值得持续关注。这则较早事件排在新的外观更新前，并保留到明确标记已读；30天后复核情景。"
+        },
+        "horizonDays": 30,
+        "keepUntilRead": true,
+        "eventKey": "demo-fictional-relief-corridor",
+        "updateKey": "demo-corridor-still-closed"
+      }
+    },
+    {
+      "articleId": "85697e1d572fb9b12aa02c79",
+      "summary": {
+        "en": "[DEMO] A fictional forum has added an optional color theme. It is newer than the corridor event, but its consequences are limited.",
+        "zh": "[演示] 一个虚构论坛新增了可选配色主题。它比救援通道事件更新，但影响范围有限。"
+      },
+      "analysis": {
+        "context": {
+          "en": "[DEMO] The fictional forum announcement is one hour old when this fixture is loaded. It changes appearance only, without changing security, access, pricing or moderation.",
+          "zh": "[演示] 加载样例时，这则虚构论坛公告发布了约一小时。它仅改变外观，不影响安全、访问、价格或内容管理。"
+        },
+        "implications": {
+          "en": "Demo interpretation: a minor usability preference should not displace a continuing high-impact event simply because it is newer. Its low score illustrates that distinction.",
+          "zh": "演示解读：仅因消息较新，轻微的界面偏好变化不应取代仍在持续的重大事件。低分用于演示这一差别。"
+        },
+        "uncertainty": {
+          "en": "[DEMO] This announcement and its organization are invented. Its linked URL is reserved for examples and does not substantiate a real product release.",
+          "zh": "[演示] 这则公告及其组织均为虚构。链接是保留的示例网址，不能作为真实产品发布的证据。"
+        },
+        "watch": {
+          "en": "[DEMO] No immediate follow-up is necessary in this scenario. A genuine change to user access or safety would require a new assessment, not just a new timestamp.",
+          "zh": "[演示] 此情景无需立即跟进。若用户访问或安全发生真正变化，应重新评估，而非仅更新日期。"
+        },
+        "evidence": [
+          {
+            "label": "[DEMO] Reserved .example fixture URL; not a real report",
+            "url": "https://forum.meridian.example/demo/color-theme"
+          }
+        ]
+      },
+      "attention": {
+        "importance": 18,
+        "reason": {
+          "en": "[DEMO] An optional theme has limited consequences. Review after one day; novelty alone does not justify keeping it above the older unresolved event.",
+          "zh": "[演示] 可选配色主题的影响有限，一天后复核；单凭新鲜度，不足以让它排在较早且未解决的事件前。"
+        },
+        "horizonDays": 1,
+        "keepUntilRead": false,
+        "eventKey": "demo-fictional-forum-theme",
+        "updateKey": "demo-optional-theme-released"
+      }
+    }
+  ]
+}

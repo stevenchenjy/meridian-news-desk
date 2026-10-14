@@ -1,0 +1,236 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.meridian.invalid/briefing-schema.json",
+  "title": "Meridian daily Codex briefing overlay",
+  "description": "Apply to the exact collection snapshot. Every selected briefing item needs a complete bilingual analysis overlay, an exactly matching summary, and an attention assessment so it appears in the ranked dashboard. Evidence must include the article URL. Publisher translation is imported separately; these cross-array constraints are checked by apply_briefing.py.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "collectionGeneratedAt",
+    "briefing",
+    "articles"
+  ],
+  "properties": {
+    "collectionGeneratedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Copy dashboard.generatedAt exactly, without reformatting."
+    },
+    "briefing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "overview",
+        "items"
+      ],
+      "properties": {
+        "title": {
+          "$ref": "#/$defs/bilingual"
+        },
+        "overview": {
+          "$ref": "#/$defs/bilingual"
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 12,
+          "description": "Select significant developments across the rolling 30-day window, carrying important unread events forward. Do not fill a daily quota with less important new reporting.",
+          "items": {
+            "$ref": "#/$defs/briefingItem"
+          }
+        }
+      }
+    },
+    "articles": {
+      "type": "array",
+      "maxItems": 100,
+      "description": "Complete article-detail overlays. Every selected briefing item requires an exactly matching bilingual summary and an attention assessment. Non-selected extra analyses may omit attention.",
+      "items": {
+        "$ref": "#/$defs/articleOverlay"
+      }
+    }
+  },
+  "$defs": {
+    "bilingual": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "en",
+        "zh"
+      ],
+      "properties": {
+        "en": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 12000,
+          "pattern": "\\S"
+        },
+        "zh": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 12000,
+          "pattern": "[㐀-䶿一-鿿]",
+          "description": "Chinese prose is required; copying English into zh does not satisfy bilingual coverage."
+        }
+      }
+    },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 20,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "label",
+          "url"
+        ],
+        "properties": {
+          "label": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 400,
+            "pattern": "\\S"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^https?://"
+          }
+        }
+      }
+    },
+    "briefingItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "articleId",
+        "summary",
+        "whyItMatters",
+        "uncertainty",
+        "watch",
+        "evidence"
+      ],
+      "properties": {
+        "articleId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "$ref": "#/$defs/bilingual"
+        },
+        "whyItMatters": {
+          "$ref": "#/$defs/bilingual"
+        },
+        "uncertainty": {
+          "$ref": "#/$defs/bilingual"
+        },
+        "watch": {
+          "$ref": "#/$defs/bilingual"
+        },
+        "evidence": {
+          "$ref": "#/$defs/evidence"
+        }
+      }
+    },
+    "articleOverlay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "articleId",
+        "summary",
+        "analysis"
+      ],
+      "properties": {
+        "articleId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "summary": {
+          "$ref": "#/$defs/bilingual"
+        },
+        "analysis": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "context",
+            "implications",
+            "uncertainty",
+            "watch",
+            "evidence"
+          ],
+          "properties": {
+            "context": {
+              "$ref": "#/$defs/bilingual"
+            },
+            "implications": {
+              "$ref": "#/$defs/bilingual"
+            },
+            "uncertainty": {
+              "$ref": "#/$defs/bilingual"
+            },
+            "watch": {
+              "$ref": "#/$defs/bilingual"
+            },
+            "evidence": {
+              "$ref": "#/$defs/evidence"
+            }
+          }
+        },
+        "attention": {
+          "$ref": "#/$defs/attention",
+          "description": "Required semantically for every selected briefing item; optional for non-selected extra analysis overlays."
+        },
+        "reverified": {
+          "type": "boolean",
+          "description": "Set true only after actually rechecking the factual evidence. Identical copied factual analysis keeps its original analyzedAt timestamp unless explicitly reverified; attention.reviewedAt is a separate priority assessment."
+        }
+      }
+    },
+    "attention": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "importance",
+        "reason",
+        "horizonDays",
+        "keepUntilRead",
+        "eventKey",
+        "updateKey"
+      ],
+      "properties": {
+        "importance": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "reason": {
+          "$ref": "#/$defs/bilingual"
+        },
+        "horizonDays": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 30
+        },
+        "keepUntilRead": {
+          "type": "boolean"
+        },
+        "eventKey": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 200,
+          "pattern": "^[a-z0-9][a-z0-9._:/-]+$",
+          "description": "Stable semantic identifier shared by reports about the same event, not an article URL or date."
+        },
+        "updateKey": {
+          "type": "string",
+          "minLength": 3,
+          "maxLength": 200,
+          "pattern": "^[a-z0-9][a-z0-9._:/-]+$",
+          "description": "Stable identifier for the latest material development. Keep unchanged for duplicate/minor reports; change only with sourced substantive new facts."
+        }
+      }
+    }
+  }
+}

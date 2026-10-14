@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "retentionDays": 30,
+  "keepUntilReadThreshold": 75,
+  "maxAgePenalty": 5,
+  "description": {
+    "en": "Editorial importance drives rank. Age subtracts at most 5 points within the review horizon. Important unread events stay until you mark them read; only an assessed material development reopens them.",
+    "zh": "按编辑评估的重要性排序；在复核周期内，时间最多扣5分。重要且未读的事件会保留到你标记已读；只有经过评估的实质性新进展才会重新出现。"
+  }
+}
