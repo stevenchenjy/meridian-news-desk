@@ -17,7 +17,7 @@ export default function BriefingRail({ data, context, language, onSources, onOpe
     <section className="rail-summary">
       <div className="rail-label"><i />{copy('BRIEFING NOTES', '简报笔记', language)}</div>
       <h2>{bilingual(context.heading, language)}</h2>
-      <p className="rail-scope-caption">{context.articles.length} {copy('reports in this view', '篇当前范围内的报道', language)}</p>
+      <p className="rail-scope-caption">{context.articles.length} {context.view === 'briefing' ? copy(context.articles.length === 1 ? 'priority event in view' : 'priority events in view', '个当前范围内的重点事件', language) : copy('reports in this view', '篇当前范围内的报道', language)}</p>
       <BriefingNotes context={context} data={data} language={language} onOpen={onOpen} />
       {context.reviewedAt ? <small className="rail-timestamp">
         {data.collection?.kind === 'synthetic_demo' ? copy('Demo generated', '演示生成于', language) : copy('Based on research from', '依据此时核查的报道', language)} {dateTime(context.reviewedAt)}

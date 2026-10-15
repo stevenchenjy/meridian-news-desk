@@ -30,6 +30,9 @@ from vendor.trendradar.rss_parser import RSSParser
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 CATEGORIES = {"us", "world", "economy", "crisis", "sdg", "industry"}
+READING_SECTIONS = {"politics", "economy", "development", "industry"}
+CATEGORY_READING_SECTION = {"us": "politics", "world": "politics", "economy": "economy",
+                            "crisis": "development", "sdg": "development", "industry": "industry"}
 SOURCE_TYPES = {"newsroom", "official", "research", "community"}
 MAX_FEED_BYTES = 4 * 1024 * 1024
 SOURCE_ITEM_LIMIT = 24
@@ -237,7 +240,7 @@ def attention_view(dashboard: dict, root: Path = ROOT) -> dict:
             if ident in articles:
                 articles[ident]["isRead"] = read
                 articles[ident]["eventId"] = event["eventId"]
-                articles[ident]["attention"] = {k: event[k] for k in ("eventId", "importance", "priority", "reason", "keepUntilRead", "horizonDays", "reviewedAt", "relevanceUntil", "needsReview", "isRead", "heldUntilRead", "updateKey")}
+                articles[ident]["attention"] = {k: event[k] for k in ("eventId", "importance", "priority", "reason", "keepUntilRead", "horizonDays", "reviewedAt", "relevanceUntil", "needsReview", "isRead", "heldUntilRead", "updateKey", "readingSection") if k in event}
         items.append(event)
     for article in articles.values():
         if article["id"] not in assessed_ids:
@@ -559,7 +562,9 @@ def evidence(value: Any, article: dict, label: str) -> list[dict]:
 def validate_attention(value: Any, label: str, root: Path) -> dict:
     if not isinstance(value, dict):
         raise ValueError(f"{label} must be an editorial assessment object")
-    allowed_keys(value, {"importance", "reason", "horizonDays", "keepUntilRead", "eventKey", "updateKey"}, label)
+    allowed_keys(value, {"importance", "reason", "horizonDays", "keepUntilRead", "eventKey", "updateKey", "readingSection"}, label)
+    if "readingSection" in value and (not isinstance(value["readingSection"], str) or value["readingSection"] not in READING_SECTIONS):
+        raise ValueError(f"{label}.readingSection must be politics, economy, development or industry")
     score, horizon = value.get("importance"), value.get("horizonDays")
     if not isinstance(score, int) or isinstance(score, bool) or not 0 <= score <= 100:
         raise ValueError(f"{label}.importance must be an integer from 0 to 100")
@@ -598,7 +603,10 @@ def update_attention_events(registry: dict, article: dict, assessment: dict, gen
     snapshot = copy.deepcopy(primary)
     for field in ("attention", "eventId", "isRead"):
         snapshot.pop(field, None)
-    registry[ident] = {**assessment, "eventId": ident, "articleId": primary["id"],
+    # A desk is an event's editorial home. Legacy imports can omit it without
+    # erasing a home assigned by a newer workflow, including material updates.
+    reading_section = assessment.get("readingSection", prior.get("readingSection"))
+    registry[ident] = {**assessment, **({"readingSection": reading_section} if reading_section else {}), "eventId": ident, "articleId": primary["id"],
                        "memberArticleIds": members, "firstReviewedAt": prior.get("firstReviewedAt", generated),
                        "reviewedAt": generated, "relevanceUntil": (reviewed + timedelta(days=assessment["horizonDays"])).isoformat().replace("+00:00", "Z"),
                        "contentFingerprint": fingerprint(primary), "materialUpdate": changed,
@@ -638,9 +646,13 @@ def concise_section_text(value: Any, label: str) -> dict:
 def validate_section_notes(value: Any, articles: dict, registry: dict) -> dict:
     if not isinstance(value, dict) or not value:
         raise ValueError("briefing.sectionNotes must be a nonempty object of known topic scopes")
-    allowed_keys(value, CATEGORIES | {"all"}, "briefing.sectionNotes")
+    allowed_keys(value, CATEGORIES | READING_SECTIONS | {"all"}, "briefing.sectionNotes")
     reviewed = {ident: article for ident, article in articles.items() if complete_note_reference(article)}
+    assigned_sections = {}
     for event in registry.get("events", {}).values():
+        if event.get("readingSection"):
+            for ident in set(event.get("memberArticleIds", [])) | {event.get("articleId")}:
+                assigned_sections[ident] = event["readingSection"]
         snapshot = event.get("articleSnapshot")
         if complete_note_reference(snapshot, retained=True):
             reviewed.setdefault(snapshot["id"], snapshot)
@@ -670,7 +682,17 @@ def validate_section_notes(value: Any, articles: dict, registry: dict) -> dict:
                     raise ValueError(f"{item_label} refers to an unknown or unreviewed articleId: {ident}")
                 article = reviewed[ident]
                 categories = {article.get("category")} | set(article.get("relatedCategories", []))
-                if scope != "all" and scope not in categories:
+                assigned = assigned_sections.get(ident)
+                # New desks have one event home. The shared economy/industry
+                # names retain old related-category imports when no explicit
+                # home exists; legacy topic scopes remain readable/importable.
+                if scope in READING_SECTIONS and assigned:
+                    matches_scope = scope == assigned
+                elif scope in {"politics", "development"}:
+                    matches_scope = scope == CATEGORY_READING_SECTION.get(article.get("category"))
+                else:
+                    matches_scope = scope == "all" or scope in categories
+                if not matches_scope:
                     raise ValueError(f"{item_label} articleId {ident} is outside the {scope} topic")
             cleaned = {"title": title, "summary": summary, "articleIds": list(identifiers)}
             if background is not None:
@@ -754,12 +776,18 @@ def apply_briefing(payload: dict, root: Path = ROOT) -> dict:
                 raise ValueError("Every selected briefing item requires an attention assessment so it appears in the ranked dashboard")
         registry = load_json(root / "data/attention.json", {"events": {}})
         event_versions = {}
+        event_sections = {}
         for _, assessment in assessed:
             key = assessment["eventKey"]
             version = tuple(assessment[field] for field in ("updateKey", "importance", "horizonDays", "keepUntilRead"))
             if key in event_versions and event_versions[key] != version:
                 raise ValueError("Assessments grouped into one event must agree on updateKey, importance, horizonDays and keepUntilRead; mixed historical versions cannot overwrite the current event")
             event_versions[key] = version
+            if "readingSection" in assessment:
+                section = assessment["readingSection"]
+                if key in event_sections and event_sections[key] != section:
+                    raise ValueError("Assessments grouped into one event must agree on readingSection; an event has one reading desk")
+                event_sections[key] = section
         for article, assessment in assessed:
             update_attention_events(registry["events"], article, assessment, generated)
         if "sectionNotes" in raw:

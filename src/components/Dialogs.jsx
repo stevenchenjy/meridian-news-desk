@@ -11,6 +11,7 @@ import {
 import { copy, bilingual, categoryName, dateTime } from "../lib/format";
 import { priorityBand } from "../lib/attention";
 import BriefingNotes, { ReadingText } from "./BriefingNotes";
+import { sectionName } from "../lib/sections";
 function Text({ value, language, className = "" }) {
   return <ReadingText value={value} language={language} className={className} />;
 }
@@ -90,6 +91,7 @@ function Modal({ title, onClose, children }) {
 export function ArticleDialog({
   article: a,
   background,
+  readingSection,
   demo = false,
   language,
   onClose,
@@ -108,7 +110,7 @@ export function ArticleDialog({
       onClose={onClose}
     >
       <div className="detail-meta">
-        {categoryName(a.category, language)}{" "}
+        {readingSection ? sectionName(readingSection, language) : categoryName(a.category, language)}{" "}
         <span>
           · {a.sourceName} · {dateTime(a.publishedAt)}
         </span>
@@ -314,7 +316,7 @@ export function ArticleDialog({
 }
 export function BriefingDialog({ data, context, language, onClose, onOpen }) {
   return <Modal title={copy("Reading brief", "阅读简报", language)} onClose={onClose}>
-    <div className="detail-meta">{context.articles.length} {copy("reports in this view", "篇当前范围内的报道", language)} · EN / 中文</div>
+    <div className="detail-meta">{context.articles.length} {context.view === 'briefing' ? copy(context.articles.length === 1 ? "priority event in view" : "priority events in view", "个当前范围内的重点事件", language) : copy("reports in this view", "篇当前范围内的报道", language)} · EN / 中文</div>
     <h2>{bilingual(context.heading, language)}</h2>
     <BriefingNotes context={context} data={data} language={language} onOpen={onOpen} />
     {context.reviewedAt ? <small className="rail-timestamp">{copy("Based on research from", "依据此时核查的报道", language)} {dateTime(context.reviewedAt)}</small> : null}

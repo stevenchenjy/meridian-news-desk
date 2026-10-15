@@ -8,9 +8,10 @@ import AttentionControls from "./components/AttentionControls";
 import PipelineCoverage from "./components/PipelineCoverage";
 import { attentionArticles, retainDisplayedVersion } from "./lib/attention";
 import { buildBriefingContext, backgroundForArticle } from "./lib/briefing";
+import { buildSectionAssignments, matchesSection, readingSections, sectionCounts, sectionForArticle, sectionName } from "./lib/sections";
 import WorldMap from "./components/WorldMap";
 import { ArticleDialog, BriefingDialog } from "./components/Dialogs";
-import { copy, bilingual, dateTime, categoryName, request } from "./lib/format";
+import { copy, bilingual, dateTime, request } from "./lib/format";
 export default function App() {
   const mutationVersion = useRef(0),
     bookmarkPending = useRef(new Set());
@@ -182,15 +183,26 @@ export default function App() {
     () => (data ? attentionArticles(data) : []),
     [data],
   );
+  const sectionAssignments = useMemo(() => data ? buildSectionAssignments(data) : new Map(), [data]);
+  const unreadBySection = useMemo(() => sectionCounts(rankedArticles, sectionAssignments), [rankedArticles, sectionAssignments]);
+  function changeCategory(id) {
+    setCategory(id);
+    setSearch("");
+    setLimit(15);
+  }
+  function openSection(id) {
+    changeCategory(id);
+    setView("briefing");
+    setReadMode("unread");
+  }
+  const activeSection = readingSections.find(section => section.id === category);
   const isDemo = data?.collection?.kind === "synthetic_demo";
   const articles = useMemo(() => {
     if (!data) return [];
     const q = search.trim().toLowerCase();
     let list = (view === "briefing" ? rankedArticles : data.articles).filter(
       (a) =>
-        (category === "all" ||
-          a.category === category ||
-          a.relatedCategories?.includes(category)) &&
+        matchesSection(a, category, sectionAssignments) &&
         (view !== "saved" || data.bookmarks.includes(a.id)) &&
         (view !== "briefing" ||
           readMode === "all" ||
@@ -220,10 +232,10 @@ export default function App() {
             : (b.attention?.priority ?? 0) - (a.attention?.priority ?? 0),
         );
     return list;
-  }, [data, rankedArticles, view, category, search, readMode, prioritySort]);
+  }, [data, rankedArticles, view, category, search, readMode, prioritySort, sectionAssignments]);
   const briefingContext = useMemo(
-    () => data ? buildBriefingContext(data, { view, category, articles, search }) : null,
-    [data, view, category, articles, search],
+    () => data ? buildBriefingContext(data, { view, category, articles, search, assignments: sectionAssignments }) : null,
+    [data, view, category, articles, search, sectionAssignments],
   );
   const currentSelected =
     selected && data?.articles.find((a) => a.id === selected.id);
@@ -246,10 +258,10 @@ export default function App() {
             "收藏值得关注的报道。",
             language,
           )
-        : view === "stream"
-          ? category !== "all"
-            ? categoryName(category, language)
-            : copy("The world, as it unfolds.", "世界，正在发生。", language)
+        : activeSection
+          ? sectionName(category, language)
+          : view === "stream"
+            ? copy("The world, as it unfolds.", "世界，正在发生。", language)
           : copy(
               "A wider view of the world.",
               "以更宽广的视角看世界。",
@@ -267,7 +279,9 @@ export default function App() {
         view={view}
         setView={setView}
         category={category}
-        setCategory={setCategory}
+        setCategory={changeCategory}
+        onOpenSection={openSection}
+        sectionCounts={unreadBySection}
         language={language}
         open={menu}
         onClose={() => setMenu(false)}
@@ -338,7 +352,9 @@ export default function App() {
             <section className="page-intro">
               <h1>{title}</h1>
               <p>
-                {view === "briefing"
+                {activeSection && view !== "sources" && view !== "saved"
+                  ? bilingual(activeSection.description, language)
+                  : view === "briefing"
                   ? copy(
                       "Important events, researched and kept in view.",
                       "重要事件，深入分析，持续关注。",
@@ -451,7 +467,7 @@ export default function App() {
                   <SourceLedger data={data} language={language} />
                 ) : (
                   <>
-                    {view === "briefing" ? (
+                    {view === "briefing" && category === "all" ? (
                       <section className="lead">
                         <div className="lead-copy">
                           <span className="lead-label">
@@ -494,7 +510,11 @@ export default function App() {
                         <WorldMap />
                       </section>
                     ) : null}
-                    <PipelineCoverage data={data} language={language} />
+                    {category === "all" ? <PipelineCoverage data={data} language={language} /> : null}
+                    {view === "briefing" && activeSection ? <div className="desk-intro">
+                      <p>{copy("One home per event · ranked by significance", "每个事件只归入一个栏目 · 按重要性排序", language)}</p>
+                      <button className="text-link" onClick={() => setShowBrief(true)} disabled={!data.briefing || !articles.length}>{copy("Read this desk’s notes", "阅读本栏简报", language)}<ArrowRight size={15}/></button>
+                    </div> : null}
                     {view === "briefing" ? (
                       <AttentionControls
                         mode={readMode}
@@ -502,7 +522,8 @@ export default function App() {
                         sort={prioritySort}
                         setSort={setPrioritySort}
                         language={language}
-                        attention={data.attention}
+                        attention={{ unreadCount: category === "all" ? data.attention?.unreadCount : unreadBySection[category] || 0 }}
+                        compact={category !== "all"}
                       />
                     ) : null}
                     <StoryList
@@ -518,7 +539,8 @@ export default function App() {
                       pendingReads={pendingReads}
                       language={language}
                       category={category}
-                      setCategory={setCategory}
+                      setCategory={changeCategory}
+                      assignments={sectionAssignments}
                       search={search}
                       setSearch={setSearch}
                       limit={limit}
@@ -567,6 +589,7 @@ export default function App() {
       {selectedArticle ? (
         <ArticleDialog
           article={selectedArticle}
+          readingSection={sectionForArticle(selectedArticle, sectionAssignments)}
           background={backgroundForArticle(data, selectedArticle.id, category)}
           demo={isDemo}
           language={language}

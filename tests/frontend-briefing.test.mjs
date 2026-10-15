@@ -87,10 +87,10 @@ function fixture() {
 
 test("topic briefings show their own background and latest development, with scoped watches and counts", () => {
   const { data } = fixture();
-  const world = buildBriefingContext(data, { category: "world", articles: data.articles });
+  const world = buildBriefingContext(data, { category: "politics", articles: data.articles });
   const economy = buildBriefingContext(data, { category: "economy", articles: data.articles });
-  assert.equal(world.heading.en, "World briefing");
-  assert.equal(economy.heading.en, "Economy briefing");
+  assert.equal(world.heading.en, "Politics & world");
+  assert.equal(economy.heading.en, "Economy & business");
   assert.equal(world.notes[0].background.en, "World institutional background.");
   assert.equal(economy.notes[0].summary.en, "Economy latest development.");
   assert.notDeepEqual(world.notes[0].summary, economy.notes[0].summary);
@@ -101,14 +101,23 @@ test("topic briefings show their own background and latest development, with sco
   assert.deepEqual(economy.sources.map((source) => source.id), ["economy-source"]);
 });
 
-test("related-category reporting contributes to that topic's derived context", () => {
+test("related-category tags do not leak world reports into People & planet without an event assignment", () => {
   const { data, related } = fixture();
-  const context = buildBriefingContext(data, { category: "sdg", articles: data.articles });
-  assert.deepEqual(context.articles.map((article) => article.id), [related.id]);
-  assert.deepEqual(context.notes[0].summary, related.summary);
-  assert.deepEqual(context.notes[0].background, related.analysis.context);
-  assert.deepEqual(context.watch.map((item) => item.articleId), [related.id]);
-  assert.equal(context.unreadCount, 1);
+  const context = buildBriefingContext(data, { category: "development", articles: data.articles });
+  assert.deepEqual(context.articles, []);
+  assert.deepEqual(context.notes, []);
+  assert.deepEqual(context.watch, []);
+  assert.equal(context.unreadCount, 0);
+
+  data.attention.items.find((event) => event.articleId === related.id).readingSection = "development";
+  const assigned = buildBriefingContext(data, { category: "development", articles: data.articles });
+  assert.deepEqual(assigned.articles.map((article) => article.id), [related.id]);
+  assert.deepEqual(assigned.notes[0].summary, related.summary);
+  assert.deepEqual(assigned.notes[0].background, related.analysis.context);
+  assert.deepEqual(assigned.watch.map((item) => item.articleId), [related.id]);
+  assert.equal(assigned.unreadCount, 1);
+  const politics = buildBriefingContext(data, { category: "politics", articles: data.articles });
+  assert.equal(politics.articles.some((article) => article.id === related.id), false);
 });
 
 test("a legacy briefing without topic notes derives context from the selected topic instead of copying the global overview", () => {
@@ -140,7 +149,7 @@ test("saved and searched selections do not repeat a briefing for reports outside
 test("an empty topic or search selection has no unrelated notes, watches, sources or attention counts", () => {
   const { data } = fixture();
   for (const options of [
-    { category: "us", articles: data.articles },
+    { category: "development", articles: data.articles },
     { view: "stream", articles: [], search: "no matching result" },
     { view: "saved", articles: [] },
   ]) {
@@ -223,7 +232,7 @@ test("retained reviewed snapshots keep historical background and their original 
     contentChanged: true,
     needsReview: true,
   }];
-  const context = buildBriefingContext(data, { category: "world", articles: attentionArticles(data) });
+  const context = buildBriefingContext(data, { category: "politics", articles: attentionArticles(data) });
   assert.equal(context.notes[0].kind, "analysis");
   assert.deepEqual(context.notes[0].background, world.analysis.context);
   assert.deepEqual(context.notes[0].summary, world.summary);
@@ -239,7 +248,7 @@ test("linked member reports resolve to the selected event's reviewed context", (
     ...authoredNote(world, "World"),
     articleIds: ["wire-copy"],
   }];
-  const context = buildBriefingContext(data, { category: "world", articles: [world] });
+  const context = buildBriefingContext(data, { category: "politics", articles: [world] });
   assert.deepEqual(context.notes[0].articleIds, ["wire-copy"]);
   assert.equal(context.notes[0].reviewedAt, world.analysis.analyzedAt);
   assert.equal(context.notes[0].background.en, "World institutional background.");
@@ -251,5 +260,92 @@ test("article background prefers the current topic's authored context", () => {
     ...authoredNote(world, "General"),
     background: pair("General event background.", "事件的一般背景。"),
   }];
-  assert.equal(backgroundForArticle(data, world.id, "world").en, "World institutional background.");
+  assert.equal(backgroundForArticle(data, world.id, "politics").en, "World institutional background.");
+});
+
+test("merged legacy US and world notes count one event once while retaining a different international event", () => {
+  const { data, world } = fixture();
+  const press = reviewedArticle("press-access", "us", "us-source");
+  const supporting = reviewedArticle("wire-press-access", "world", "wire-source");
+  const pressEvent = {
+    eventId: "press-access-event",
+    articleId: press.id,
+    memberArticleIds: [press.id, supporting.id],
+    articleSnapshot: press,
+    readingSection: "politics",
+    active: true,
+    isRead: false,
+  };
+  data.articles.push(press, supporting);
+  data.attention.items.push(pressEvent);
+  data.briefing.sectionNotes.us = [authoredNote(press, "US press dispute")];
+  data.briefing.sectionNotes.world = [
+    authoredNote(supporting, "Same press dispute in a world feed"),
+    authoredNote(world, "International treaty"),
+  ];
+  const context = buildBriefingContext(data, {
+    category: "politics",
+    articles: attentionArticles(data),
+  });
+  assert.equal(context.notes.length, 2);
+  assert.equal(context.notes.filter((note) => note.articleIds.some((id) =>
+    pressEvent.memberArticleIds.includes(id))).length, 1);
+  assert.ok(context.notes.some((note) => note.articleIds.includes(world.id)));
+  assert.ok(context.notes.some((note) => note.title.en === "US press dispute context"));
+});
+
+test("scoped notes reject a foreign-desk reference even when publisher categories overlap", () => {
+  const { data, world } = fixture();
+  const technologyPolicy = reviewedArticle("australia-feed-policy", "world", "world-source");
+  technologyPolicy.relatedCategories = ["us", "industry"];
+  data.articles.push(technologyPolicy);
+  data.attention.items.push({
+    eventId: "feed-policy-event",
+    articleId: technologyPolicy.id,
+    memberArticleIds: [technologyPolicy.id],
+    articleSnapshot: technologyPolicy,
+    readingSection: "industry",
+    active: true,
+    isRead: false,
+  });
+  data.briefing.sectionNotes = {
+    politics: [{
+      ...authoredNote(world, "Mixed-desk note must be rejected"),
+      articleIds: [world.id, technologyPolicy.id],
+    }],
+    industry: [authoredNote(technologyPolicy, "Technology policy")],
+  };
+  const politics = buildBriefingContext(data, { category: "politics", articles: data.articles });
+  assert.ok(politics.notes.every((note) => !note.articleIds.includes(technologyPolicy.id)));
+  assert.ok(politics.notes.every((note) => note.title.en !== "Mixed-desk note must be rejected context"));
+  assert.equal(politics.articles.some((item) => item.id === technologyPolicy.id), false);
+  const industry = buildBriefingContext(data, { category: "industry", articles: data.articles });
+  assert.deepEqual(industry.notes[0].articleIds, [technologyPolicy.id]);
+  assert.equal(industry.notes[0].summary.en, "Technology policy latest development.");
+});
+
+test("searched and saved desk notes never borrow another desk's visible report or authored note", () => {
+  const { data, world, economy } = fixture();
+  for (const options of [
+    { view: "saved" },
+    { view: "stream", search: "policy" },
+  ]) {
+    const context = buildBriefingContext(data, {
+      ...options,
+      category: "politics",
+      articles: [world, economy],
+    });
+    assert.deepEqual(context.articles.map((item) => item.id), [world.id]);
+    assert.deepEqual(context.notes.map((note) => note.articleIds), [[world.id]]);
+    assert.notEqual(context.notes[0].summary.en, "Economy latest development.");
+    assert.deepEqual(context.watch.map((item) => item.articleId), [world.id]);
+    assert.deepEqual(context.sources.map((source) => source.id), [world.sourceId]);
+    const foreignOnly = buildBriefingContext(data, {
+      ...options,
+      category: "politics",
+      articles: [economy],
+    });
+    assert.deepEqual(foreignOnly.notes, []);
+    assert.deepEqual(foreignOnly.watch, []);
+  }
 });

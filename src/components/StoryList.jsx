@@ -7,14 +7,13 @@ import {
   Clock3,
 } from "lucide-react";
 import {
-  categoryName,
   copy,
   bilingual,
   relativeTime,
-  categories,
   dateTime,
 } from "../lib/format";
 import { priorityBand } from "../lib/attention";
+import { readingSections, sectionName, sectionForArticle } from "../lib/sections";
 
 export default function StoryList({
   articles,
@@ -35,6 +34,7 @@ export default function StoryList({
   onRead,
   pendingReads = new Set(),
   readMode = "unread",
+  assignments,
 }) {
   return (
     <section
@@ -62,9 +62,9 @@ export default function StoryList({
         <div
           className="category-tabs"
           role="group"
-          aria-label="Filter stories by category"
+          aria-label="Filter stories by reading desk"
         >
-          {[{ id: "all", en: "All", zh: "全部" }, ...categories].map((c) => (
+          {[{ id: "all", shortEn: "All", shortZh: "全部" }, ...readingSections].map((c) => (
             <button
               key={c.id}
               className={category === c.id ? "active" : ""}
@@ -74,17 +74,7 @@ export default function StoryList({
               }}
               aria-pressed={category === c.id}
             >
-              {c.id === "world"
-                ? copy("World", "世界", language)
-                : c.id === "economy"
-                  ? copy("Economy", "经济", language)
-                  : c.id === "us"
-                    ? copy("US", "美国", language)
-                    : c.id === "crisis"
-                      ? copy("Crisis", "危机", language)
-                      : c.id === "industry"
-                        ? copy("Industry", "行业", language)
-                        : copy(c.en, c.zh, language)}
+              {copy(c.shortEn, c.shortZh, language)}
             </button>
           ))}
         </div>
@@ -143,7 +133,7 @@ export default function StoryList({
             return (
               <article
                 className={`story-row ${isRead ? "is-read" : ""}`}
-                key={attention?.eventId || a.id}
+                key={ranked ? attention?.eventId || a.id : a.id}
                 data-article-id={a.id}
                 data-event-id={attention?.eventId}
               >
@@ -152,7 +142,7 @@ export default function StoryList({
                 </span>
                 <div className="story-content">
                   <div className="story-meta">
-                    <span>{categoryName(a.category, language)}</span>
+                    <span>{sectionName(sectionForArticle(a, assignments), language)}</span>
                     <i />
                     <span>{a.sourceName}</span>
                     <span

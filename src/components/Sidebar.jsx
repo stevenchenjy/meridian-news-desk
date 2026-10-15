@@ -3,22 +3,19 @@ import {
   List,
   Bookmark,
   Database,
-  Landmark,
   Globe2,
   ChartNoAxesColumnIncreasing,
-  TriangleAlert,
   Sprout,
   BriefcaseBusiness,
   Clock3,
   UserRound,
   X,
 } from "lucide-react";
-import { categories, copy } from "../lib/format";
+import { copy } from "../lib/format";
+import { readingSections } from "../lib/sections";
 const interestIcons = [
-  Landmark,
   Globe2,
   ChartNoAxesColumnIncreasing,
-  TriangleAlert,
   Sprout,
   BriefcaseBusiness,
 ];
@@ -31,6 +28,8 @@ export default function Sidebar({
   open,
   onClose,
   schedule,
+  onOpenSection,
+  sectionCounts,
 }) {
   function navigate(id) {
     setView(id);
@@ -99,21 +98,23 @@ export default function Sidebar({
         ))}
       </nav>
       <div className="interests">
-        <h2>{copy("YOUR INTERESTS", "关注领域", language)}</h2>
-        {categories.map((c, i) => {
+        <h2>{copy("READING DESKS", "阅读栏目", language)}</h2>
+        <p className="desk-nav-hint">{copy("One event, one home. Counts show unread priorities.", "每个事件只归入一个栏目。数字为未读重点数。", language)}</p>
+        {readingSections.map((c, i) => {
           const Icon = interestIcons[i];
           return (
             <button
               key={c.id}
-              className={category === c.id ? "selected" : ""}
+              className={view === "briefing" && category === c.id ? "selected" : ""}
+              aria-current={view === "briefing" && category === c.id ? "page" : undefined}
               onClick={() => {
-                setView("stream");
-                setCategory(c.id);
+                onOpenSection(c.id);
                 onClose();
               }}
             >
               <Icon size={21} />
-              {copy(c.en, c.zh, language)}
+              <span className="desk-nav-label">{copy(c.en, c.zh, language)}</span>
+              <span className="desk-count">{sectionCounts?.[c.id] || 0}</span>
             </button>
           );
         })}

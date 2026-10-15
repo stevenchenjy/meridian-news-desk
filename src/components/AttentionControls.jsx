@@ -7,10 +7,11 @@ export default function AttentionControls({
   setSort,
   language,
   attention,
+  compact = false,
 }) {
   return (
     <div className="attention-controls">
-      <div className="attention-explanation">
+      {!compact ? <div className="attention-explanation">
         <p>
           {copy(
             "Important events stay in view until you mark them read. New headlines compete on significance, not age.",
@@ -23,7 +24,7 @@ export default function AttentionControls({
             重要事件会保留到你标记已读。新报道按重要性竞争关注位置，而非只看发布时间。
           </p>
         ) : null}
-      </div>
+      </div> : null}
       <div className="attention-filter-row">
         <div className="read-filter" role="group" aria-label="Reading status">
           {[

@@ -1,8 +1,8 @@
 # Daily Codex workflow
 
-This workflow can be run manually or scheduled at **08:00 America/New_York** after creating your own local Codex task. Cloning the repository does not create that task. Read [ANALYSIS-POLICY.md](ANALYSIS-POLICY.md) and [ATTENTION-POLICY.md](ATTENTION-POLICY.md), and use [briefing-schema.json](../config/briefing-schema.json). The schedule follows Eastern daylight saving time; a local run still depends on the computer, Codex, network and project being available.
+This workflow can be run manually or scheduled at **08:00 America/New_York** after creating your own local Codex task. Cloning the repository does not create that task. Read [ANALYSIS-POLICY.md](ANALYSIS-POLICY.md), [ATTENTION-POLICY.md](ATTENTION-POLICY.md) and [READING-SECTIONS.md](READING-SECTIONS.md), and use [briefing-schema.json](../config/briefing-schema.json). The schedule follows Eastern daylight saving time; a local run still depends on the computer, Codex, network and project being available.
 
-The observable outcome is a bilingual stream and a ranked reading agenda that retains important unread events. A daily run does not require a fixed number of new stories. The Daily briefing contains reviewed events and objective analysis; the News stream contains the full collection with separate labels for translated source text and reviewed analysis.
+The observable outcome is a bilingual stream and a ranked reading agenda that retains important unread events. A daily run does not require a fixed number of new stories. Daily briefing combines reviewed events across all four reading desks; each desk opens its own ranked researched agenda. An event has one home desk, not several overlapping topic lists. The News stream contains the full collection with separate labels for translated source text and reviewed analysis; reports not yet grouped by research can still describe the same event.
 
 ## 1. Collect and inspect the whole active state
 
@@ -46,15 +46,15 @@ Unchanged translations survive refresh by content fingerprint. Changed input inv
 
 ## 3. Build the attention agenda and research it
 
-Research in this order: pending reader analysis requests; meaningful updates to continuing important events; high-priority unreviewed candidates; and due re-reviews of important events across the rolling month. Then consider lower-priority developments that add useful context. Check all the user's topic lenses, without forcing category or novelty quotas.
+Research in this order: pending reader analysis requests; meaningful updates to continuing important events; high-priority unreviewed candidates; and due re-reviews of important events across the rolling month. Then consider lower-priority developments that add useful context. Check the full coverage remit, without forcing desk or novelty quotas. A desk may have no researched items if no suitable event has been reviewed.
 
-Group reports of the same event under a stable `eventKey`. Do not treat each source, syndicated copy or liveblog timestamp as an event. A liveblog can contain several distinct developments: specify which claim the assessment covers and use a more focused article where available.
+Group reports of the same event under a stable `eventKey`. Assign one `attention.readingSection` to that event: `politics`, `economy`, `development` or `industry`. Every member report must use the same assignment. Choose the assessment's central question, not every subject the report mentions. `relatedCategories` describes a report but does not add reading-desk membership. Use the [desk boundaries and examples](READING-SECTIONS.md) when a political, financial or humanitarian angle could overlap. Do not treat each source, syndicated copy or liveblog timestamp as an event. A liveblog can contain several distinct developments: specify which claim the assessment covers and use a more focused article where available.
 
 For each researched article, open the reporting and check the headline's central claim against primary evidence and independent coverage where available. Inspect publication and event dates. Record unavailable full text or original records explicitly. Write complete matching English/Chinese `summary`, `context`, `implications`, `uncertainty`, `watch` and real `evidence`. Every newly authored major reviewed event must explain the actors and background before its latest development. Preserve the scope of the evidence and label interpretation.
 
 Assess editorial `importance` from 0–100, bilingual `reason`, `horizonDays` from 1–30 and `keepUntilRead`. The review horizon starts from the priority assessment time, independently of the factual `analyzedAt`; revisiting an older event’s priority must not silently change when its facts were checked. Scores at or above 75 are held until the reader marks the event read. A score increase or new material-update key requires fresh checked evidence and a revised rationale; age, engagement or another copy alone is insufficient. A horizon means when to re-review; it does not imply resolution or delete an important unread event.
 
-Keep `updateKey` unchanged when the assessed facts are the same. Change it only for a reviewed material development supported by evidence. Do not generate a new key from today's date, a changed timestamp, spelling correction, liveblog counter or minor excerpt change. A changed material key reopens a read event; source content changing alone should only trigger re-review. When several article overlays share one event, give them the same current `updateKey`, importance, horizon and keep-until-read policy; the importer rejects conflicting versions rather than letting an older report overwrite the current event.
+Keep `updateKey` unchanged when the assessed facts are the same. Change it only for a reviewed material development supported by evidence. Do not generate a new key from today's date, a changed timestamp, spelling correction, liveblog counter or minor excerpt change. A changed material key reopens a read event; source content changing alone should only trigger re-review. When several article overlays share one event, give them the same current `updateKey`, reading section, importance, horizon and keep-until-read policy; the importer rejects conflicting versions rather than letting an older report overwrite the current event.
 
 The top reading agenda can continue to include yesterday's important events. Do not replace them with weak new stories to make the page look fresh. General English and Chinese overviews should explain ongoing priorities and real changes. Keep collection counts, feed age, failed connections and other pipeline status in **Sources & status** and the run report. Include an article-specific evidence limit in the news narrative when it changes the meaning of that story.
 
@@ -73,11 +73,11 @@ Prepare `data/briefing-input.json` using the schema. The brief can contain 1–1
     "title": {"en": "World briefing · YYYY-MM-DD", "zh": "世界简报 · YYYY-MM-DD"},
     "overview": {"en": "Ongoing priorities, substantive changes and evidence limits.", "zh": "持续重点、实质性进展及证据局限的综合概述。"},
     "sectionNotes": {
-      "world": [{
+      "politics": [{
         "title": {"en": "A short, specific topic heading", "zh": "简短具体的主题标题"},
         "background": {"en": "Explain the actors, their role and the issue using checked evidence.", "zh": "依据已核查证据，说明参与者、机构作用和事件背景。"},
         "summary": {"en": "State the latest development, its date and why it matters.", "zh": "说明最新进展、发生日期及其重要意义。"},
-        "articleIds": ["EXISTING_REVIEWED_ARTICLE_ID_IN_WORLD"]
+        "articleIds": ["EXISTING_REVIEWED_ARTICLE_ID_IN_POLITICS"]
       }]
     },
     "items": [{
@@ -100,6 +100,7 @@ Prepare `data/briefing-input.json` using the schema. The brief can contain 1–1
       "evidence": [{"label": "Actual checked source", "url": "https://ACTUAL_CHECKED_SOURCE_URL"}]
     },
     "attention": {
+      "readingSection": "politics",
       "importance": 78,
       "reason": {"en": "Evidence-based importance and horizon rationale.", "zh": "基于证据的重要性与复核周期理由。"},
       "horizonDays": 30,
@@ -111,13 +112,15 @@ Prepare `data/briefing-input.json` using the schema. The brief can contain 1–1
 }
 ```
 
-`briefing.sectionNotes` is optional so older inputs remain valid. Its allowed topic keys are `all`, `us`, `world`, `economy`, `crisis`, `sdg` and `industry`. Supply one to three notes for each supported topic and omit unsupported keys instead of sending empty arrays. Each note requires bilingual `title` and `summary`, plus one to twelve unique `articleIds`. Include bilingual `background` in newly authored notes; it is optional only for compatibility with older notes. The global `all` scope may draw on any reviewed topic. Every ID in another scope must match that article's `category` or `relatedCategories`.
+`briefing.sectionNotes` is optional so older inputs remain valid. New notes use `all`, `politics`, `economy`, `development` and `industry`. Supply one to three notes for each supported scope and omit unsupported keys instead of sending empty arrays. Each note requires bilingual `title` and `summary`, plus one to twelve unique `articleIds`. Include bilingual `background` in newly authored notes; it is optional only for compatibility with older notes. The global `all` scope may draw on any reviewed desk. Other scopes must reference events assigned to that one desk, so a note cannot reintroduce a repeated event through a related topic label.
+
+Older `us`, `world`, `crisis` and `sdg` scopes remain accepted for input compatibility. Existing assessments without an explicit reading section also remain supported, using the primary-category fallback described in [Reading sections](READING-SECTIONS.md). This fallback organizes old content; newly authored event assessments must include the editorial assignment. For the shared `economy` and `industry` note keys, older inputs without an explicit reading section retain the earlier category/related-category validation; an explicit assignment takes precedence. The interface still gives each event only one desk.
 
 Note references must have complete current reviewed analysis or a retained reviewed snapshot. Source excerpts alone cannot substantiate an edited analysis note. The title is limited to 120 characters per language. Each `background` and `summary` is separately limited to 75 English words and 650 English characters, 180 Chinese characters, and two paragraphs per language. Aim for 20–40 English words and 40–90 Chinese characters for each block, with enough explanation to orient a new reader. These are readability limits, not a reason to remove essential context or qualifications.
 
-For a missing topic note, the dashboard derives notes from the stories visible in that selection, using existing bilingual summaries and reviewed context where available. It does not reuse an unrelated global overview. Saved-story and search notes are likewise limited to their matching stories. A raw source summary remains source text, and unavailable background stays unavailable. Older notes without an explicit `background` can use their linked reviewed article's context.
+For a missing desk note, the dashboard derives notes from the stories visible in that selection, using existing bilingual summaries and reviewed context where available. It does not reuse an unrelated global overview. Saved-story and search notes are likewise limited to their matching stories. A raw source summary remains source text, and unavailable background stays unavailable. Older notes without an explicit `background` can use their linked reviewed article's context.
 
-The import validates keys, text bounds, bilingual completeness, known reviewed IDs, topic membership and snapshot identity. These checks do not establish that a background explanation is true, that a source supports it, or that a prediction is reliable. The author must check the evidence. Editing a topic note is not a new factual review and must not reset an article's `analyzedAt`.
+The import validates keys, text bounds, bilingual completeness, known reviewed IDs, applicable scope membership, consistent event assignments and snapshot identity. These checks do not establish that a background explanation is true, that a source supports it, or that a prediction is reliable. The author must check the evidence. Editing a desk note or changing a reading-section assignment is not a new factual review and must not reset an article's `analyzedAt`.
 
 Replace all placeholders. Evidence lists must include each original article's exact URL, plus primary and independent pages actually checked. Do not attach analysis to a changed article without reassessing its content. An identical copied factual analysis preserves its original `analyzedAt` and factual `collectionGeneratedAt` by default. Set `reverified: true` only after actually rechecking that evidence; a new priority `reviewedAt` is a separate attention assessment. An import timestamp must still match the current collection. Retain the distinction between when facts were checked, when priority was reviewed, when the source was published and when collection ran.
 
@@ -143,7 +146,7 @@ curl --fail --silent http://127.0.0.1:4310/api/dashboard
 
 Inspect current API state and saved collection/briefing archives. Confirm collection identity; complete bilingual coverage or a precise visible gap; complete selected analysis; assessed event scores and reasons; current evidence URLs; queue completion only for fully reviewed current articles; and continuing source-failure labels.
 
-Open `http://localhost:4310/` through browser tools and inspect both reading surfaces, the general English/Chinese priority notes, a previously raw story, an older retained attention snapshot, language controls, source status and read filtering. Switch topics and confirm the notes concern the matching stories. Check a saved-story view, a search, and an empty selection; none should display an unrelated global note. Read the background before the development in both languages and confirm that a newcomer can identify the actors and understand the issue. Check actual rendered English and Chinese context, implications, uncertainty, next indicators and evidence. Translation labels must not claim verification.
+Open `http://localhost:4310/` through browser tools and inspect both reading surfaces, the general English/Chinese priority notes, a previously raw story, an older retained attention snapshot, language controls, source status and read filtering. Switch all four reading desks and confirm their notes concern the matching events. With the same read filter, compare event IDs: no event should appear in two desks, and the desks together should cover the corresponding overall researched agenda. Check a report with related categories and a multi-report event. Confirm sidebar desk links open the researched agenda rather than the full publisher stream. Check a saved-story view, a search, and an empty selection; none should display an unrelated global note. Read the background before the development in both languages and confirm that a newcomer can identify the actors and understand the issue. Check actual rendered English and Chinese context, implications, uncertainty, next indicators and evidence. Translation labels must not claim verification.
 
 For a changed implementation or policy, verify a controlled older important unread event survives refresh and its horizon, marking read removes it from the unread agenda, marking unread restores it, a duplicate/minor edit preserves reading state, and a reviewed material update reopens it. Use tests or a temporary fixture to avoid altering the reader's real state; routine daily runs should not toggle read state merely for verification.
 

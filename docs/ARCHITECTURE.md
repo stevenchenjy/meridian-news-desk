@@ -27,6 +27,7 @@ flowchart LR
 | File or component | Role |
 | --- | --- |
 | `config/sources.json` | Public feed catalog, topic lenses and collection controls. |
+| `config/reading-sections.json` | Four reading-desk labels, scope descriptions and legacy source-category fallback mapping. |
 | `config/attention-policy.json` | Retention window, important-unread threshold and bounded age penalty. |
 | `config/schedule.json` | Portable scheduling preference; fresh clones are not scheduled. |
 | `config/schedule.local.json` | Ignored override recording an individual's confirmed schedule setup. |
@@ -37,6 +38,7 @@ flowchart LR
 | `server/newsroom.py` | Collection, atomic file updates, validation and merged dashboard state. |
 | `server/app.py` | Local HTTP routes, asynchronous feed refresh and static asset serving. |
 | `src/lib/attention.js` | UI selectors that preserve a reviewed event when its raw source changes or leaves. |
+| `src/lib/sections.js` | Exclusive event routing and canonical unread desk counts. |
 | `src/lib/briefing.js` | Selects notes, background, watches and source counts for the visible view, topic and reader filters. |
 
 Generated files and state are ignored by Git. Archives retain the collection and imports used for a past assessment. They are evidence of local generation, not proof of successful unattended execution or external publication.
@@ -53,9 +55,11 @@ An import must target the exact current collection timestamp. Every selected bri
 
 Copying identical factual analysis preserves its original `analyzedAt` unless the author explicitly sets `reverified: true` after rechecking evidence. A priority reassessment has its own `reviewedAt`. The application completes a research request only when current complete bilingual analysis is saved.
 
-## Reading context and section notes
+## Reading desks, context and section notes
 
-A briefing may include `sectionNotes` for `all`, `us`, `world`, `economy`, `crisis`, `sdg` and `industry`. Each scope holds one to three short bilingual notes with a title, a latest-development summary, optional background and reviewed article references. Background explains the actors, institution roles or key terms before the development. Imports validate both languages, length, complete reviewed references and topic membership, including related categories and retained reviewed snapshots. They do not establish factual truth.
+A briefing may include `sectionNotes` for `all`, `politics`, `economy`, `development` and `industry`. Older source-topic scopes remain supported for compatibility. Each scope holds one to three short bilingual notes with a title, a latest-development summary, optional background and reviewed article references. Background explains the actors, institution roles or key terms before the development. Imports validate both languages, length, complete reviewed references and topic membership, including related categories and retained reviewed snapshots. They do not establish factual truth.
+
+The four reading desks have exclusive event membership. An editorial `attention.readingSection` takes precedence over source-feed categories, and all member reports inherit it. Secondary `relatedCategories` do not add reading-desk membership. The sidebar opens the ranked researched agenda, while News stream retains the complete collection. See [READING-SECTIONS.md](READING-SECTIONS.md) for boundaries and fallback behavior.
 
 The sidebar rail and expanded reading brief share the same selector. Topic notes must reference the visible reporting or its matching assessed event. Saved stories and text searches derive notes from their actual selection. A missing scope uses only that selection's bilingual summaries and reviewed context; it never borrows the global overview. Source-only notes remain labeled as source summaries, without invented analysis. Empty selections stay empty.
 

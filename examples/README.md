@@ -54,3 +54,5 @@ validators run before the staged data is installed atomically.
 To move to live reporting, use the normal collection command documented in the
 project README. A first real collection replaces the synthetic demo state; it
 does not carry the fictional held event into your real reading agenda.
+
+The fictional aid event has one editorial `readingSection`: `development`. The cosmetic forum update belongs to `industry`. Their source-feed categories remain unchanged; the sidebar opens the researched agenda for each desk. Legacy source-topic keys remain supported for older imports.

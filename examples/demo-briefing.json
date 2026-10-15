@@ -98,25 +98,6 @@
           }
         }
       ],
-      "crisis": [
-        {
-          "title": {
-            "en": "Check whether supplies can move",
-            "zh": "关注物资能否运抵"
-          },
-          "summary": {
-            "en": "[DEMO] Fictional aid access remains blocked. A reopened corridor or a change in deliveries would matter more than another report repeating the same closure.",
-            "zh": "[演示] 虚构情景中的援助仍受阻。通道恢复或运输情况变化，比重复报道同一次关闭更值得关注。"
-          },
-          "articleIds": [
-            "ec020b095010372589dac4bd"
-          ],
-          "background": {
-            "en": "Closing a relief corridor can stop supplies from reaching people who depend on it. Here, a fictional route serves 800,000 residents. Its closure is the unresolved problem; the fixture does not explain its cause.",
-            "zh": "救援通道关闭，可能让依赖这条路线的居民收不到物资。虚构情景中的通道服务于80万居民，目前仍未开放；样例没有设定关闭原因。"
-          }
-        }
-      ],
       "industry": [
         {
           "title": {
@@ -133,6 +114,25 @@
           "background": {
             "en": "An optional color theme lets people choose a different appearance for the same forum. This fictional change affects page colors, without changing security controls, access, pricing or moderation.",
             "zh": "可选配色主题让用户为同一个论坛选择不同外观。这个虚构更新只影响页面颜色，不改变安全措施、访问权限、费用或内容管理。"
+          }
+        }
+      ],
+      "development": [
+        {
+          "title": {
+            "en": "Check whether supplies can move",
+            "zh": "关注物资能否运抵"
+          },
+          "summary": {
+            "en": "[DEMO] Fictional aid access remains blocked. A reopened corridor or a change in deliveries would matter more than another report repeating the same closure.",
+            "zh": "[演示] 虚构情景中的援助仍受阻。通道恢复或运输情况变化，比重复报道同一次关闭更值得关注。"
+          },
+          "articleIds": [
+            "ec020b095010372589dac4bd"
+          ],
+          "background": {
+            "en": "Closing a relief corridor can stop supplies from reaching people who depend on it. Here, a fictional route serves 800,000 residents. Its closure is the unresolved problem; the example does not specify why it closed.",
+            "zh": "救援通道关闭，可能让依赖这条路线的居民收不到物资。虚构情景中的通道服务于80万居民，目前仍未开放；样例没有设定关闭原因。"
           }
         }
       ]
@@ -178,7 +178,8 @@
         "horizonDays": 30,
         "keepUntilRead": true,
         "eventKey": "demo-fictional-relief-corridor",
-        "updateKey": "demo-corridor-still-closed"
+        "updateKey": "demo-corridor-still-closed",
+        "readingSection": "development"
       }
     },
     {
@@ -220,7 +221,8 @@
         "horizonDays": 1,
         "keepUntilRead": false,
         "eventKey": "demo-fictional-forum-theme",
-        "updateKey": "demo-optional-theme-released"
+        "updateKey": "demo-optional-theme-released",
+        "readingSection": "industry"
       }
     }
   ]

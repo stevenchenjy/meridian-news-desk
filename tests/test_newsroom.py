@@ -546,6 +546,113 @@ class NewsroomTests(unittest.TestCase):
         self.assertEqual(read_dashboard(self.root)["attention"]["items"], [])
         self.assertIsNone(read_dashboard(self.root)["briefing"])
 
+    def test_event_reading_section_reaches_every_member_and_read_response(self):
+        dashboard = self.snapshot()
+        payload = self.overlay(dashboard)
+        payload["articles"][0]["attention"]["readingSection"] = "industry"
+        other = next(a for a in dashboard["articles"] if a["id"] != payload["articles"][0]["articleId"])
+        second = copy.deepcopy(payload["articles"][0])
+        second["articleId"] = other["id"]
+        second["analysis"]["evidence"] = [{"label": "Other original report", "url": other["url"]}]
+        # Omission on a second report must neither create a source-category
+        # conflict nor erase the explicitly assigned event home.
+        second["attention"].pop("readingSection")
+        payload["articles"].append(second)
+        saved = apply_briefing(payload, self.root)
+        event = saved["attention"]["items"][0]
+        self.assertEqual(event["readingSection"], "industry")
+        self.assertEqual(len(event["memberArticleIds"]), 2)
+        self.assertEqual({a["attention"]["readingSection"] for a in saved["articles"]}, {"industry"})
+        stored = json.loads((self.root / "data/attention.json").read_text())["events"][event["eventId"]]
+        self.assertEqual(stored["readingSection"], "industry")
+        result = set_read(event["eventId"], True, self.root, event["updateKey"])
+        self.assertTrue(result["attention"]["items"][0]["isRead"])
+        self.assertEqual(result["attention"]["items"][0]["readingSection"], "industry")
+        self.assertEqual({a["attention"]["readingSection"] for a in read_dashboard(self.root)["articles"]}, {"industry"})
+
+    def test_omitted_reading_section_preserves_editorial_home_and_factual_date(self):
+        payload = self.overlay(self.snapshot())
+        payload["articles"][0]["attention"]["readingSection"] = "industry"
+        initial = apply_briefing(payload, self.root)
+        ident = payload["articles"][0]["articleId"]
+        original_date = next(a for a in initial["articles"] if a["id"] == ident)["analysis"]["analyzedAt"]
+        legacy = self.overlay(initial)
+        self.assertNotIn("readingSection", legacy["articles"][0]["attention"])
+        repeated = apply_briefing(legacy, self.root)
+        self.assertEqual(repeated["attention"]["items"][0]["readingSection"], "industry")
+        self.assertEqual(next(a for a in repeated["articles"] if a["id"] == ident)["analysis"]["analyzedAt"], original_date)
+        material = self.assessed_overlay(repeated, update="materially-changed-development")
+        material["articles"][0]["summary"] = pair("New documented facts change the reported development")
+        material["briefing"]["items"][0]["summary"] = copy.deepcopy(material["articles"][0]["summary"])
+        changed = apply_briefing(material, self.root)
+        self.assertTrue(changed["attention"]["items"][0]["materialUpdate"])
+        self.assertEqual(changed["attention"]["items"][0]["readingSection"], "industry")
+
+    def test_reading_section_rejects_invalid_values_without_writes(self):
+        dashboard = self.snapshot()
+        original = (self.root / "data/dashboard.json").read_bytes()
+        for value in ["world", "all", "", None, [], {}]:
+            with self.subTest(value=value):
+                payload = self.overlay(dashboard)
+                payload["articles"][0]["attention"]["readingSection"] = value
+                with self.assertRaisesRegex(ValueError, "readingSection must be"):
+                    apply_briefing(payload, self.root)
+                self.assertEqual((self.root / "data/dashboard.json").read_bytes(), original)
+                self.assertFalse((self.root / "data/attention.json").exists())
+
+    def test_conflicting_event_reading_sections_rejected_before_any_storage_changes(self):
+        initial = apply_briefing(self.overlay(self.snapshot()), self.root)
+        tracked = [self.root / "data" / name for name in ("dashboard.json", "attention.json", "analysis-requests.json")]
+        originals = {path: path.read_bytes() for path in tracked}
+        payload = self.overlay(initial)
+        payload["articles"][0]["attention"]["readingSection"] = "politics"
+        other = next(a for a in initial["articles"] if a["id"] != payload["articles"][0]["articleId"])
+        second = copy.deepcopy(payload["articles"][0])
+        second["articleId"] = other["id"]
+        second["analysis"]["evidence"] = [{"label": "Other original report", "url": other["url"]}]
+        second["attention"]["readingSection"] = "development"
+        payload["articles"].append(second)
+        with self.assertRaisesRegex(ValueError, "must agree on readingSection"):
+            apply_briefing(payload, self.root)
+        for path, original in originals.items():
+            self.assertEqual(path.read_bytes(), original)
+
+    def test_new_section_note_scopes_use_primary_category_fallback(self):
+        dashboard = self.snapshot()
+        world = next(a for a in dashboard["articles"] if a["category"] == "world")
+        crisis = next(a for a in dashboard["articles"] if a["category"] == "crisis")
+        payload = self.overlay(dashboard)
+        self.assertEqual(payload["articles"][0]["articleId"], world["id"])
+        second = copy.deepcopy(payload["articles"][0])
+        second["articleId"] = crisis["id"]
+        second["analysis"]["evidence"] = [{"label": "Aid report", "url": crisis["url"]}]
+        second["attention"]["eventKey"] = "distinct-humanitarian-event"
+        payload["articles"].append(second)
+        payload["briefing"]["sectionNotes"] = {"politics": [self.section_note(world["id"])], "development": [self.section_note(crisis["id"])]}
+        saved = apply_briefing(payload, self.root)
+        self.assertEqual(set(saved["briefing"]["sectionNotes"]), {"politics", "development"})
+        bad = self.overlay(saved)
+        bad["briefing"]["sectionNotes"] = {"politics": [self.section_note(crisis["id"])]}
+        with self.assertRaisesRegex(ValueError, "outside the politics topic"):
+            apply_briefing(bad, self.root)
+
+    def test_explicit_event_home_controls_new_desk_notes_but_keeps_legacy_scopes(self):
+        initial = self.snapshot()
+        ident = initial["articles"][0]["id"]
+        for section in ("politics", "economy", "development", "industry"):
+            with self.subTest(section=section):
+                payload = self.overlay(read_dashboard(self.root))
+                payload["articles"][0]["attention"]["readingSection"] = section
+                payload["briefing"]["sectionNotes"] = {section: [self.section_note(ident)], "world": [self.section_note(ident)]}
+                saved = apply_briefing(payload, self.root)
+                self.assertIn(section, saved["briefing"]["sectionNotes"])
+                self.assertIn("world", saved["briefing"]["sectionNotes"])
+                bad = self.overlay(saved)
+                wrong_section = "development" if section != "development" else "politics"
+                bad["briefing"]["sectionNotes"] = {wrong_section: [self.section_note(ident)]}
+                with self.assertRaisesRegex(ValueError, f"outside the {wrong_section} topic"):
+                    apply_briefing(bad, self.root)
+
     def test_reading_an_older_modal_cannot_mark_unseen_material_update_read(self):
         dashboard = apply_briefing(self.assessed_overlay(self.snapshot()), self.root)
         first = dashboard["attention"]["items"][0]

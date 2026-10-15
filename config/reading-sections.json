@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "sections": [
+    {"id":"politics","en":"Politics & world","zh":"政治与国际","shortEn":"Politics","shortZh":"政治","description":{"en":"Elections, diplomacy, institutions and security.","zh":"选举、外交、公共机构与安全事务。"},"sourceCategories":["us","world"]},
+    {"id":"economy","en":"Economy & business","zh":"经济与商业","shortEn":"Economy","shortZh":"财经","description":{"en":"Markets, monetary policy, trade and business.","zh":"市场、货币政策、贸易与商业。"},"sourceCategories":["economy"]},
+    {"id":"development","en":"People & planet","zh":"社会与可持续发展","shortEn":"Development","shortZh":"社会发展","description":{"en":"Humanitarian needs, climate, UN and SDGs.","zh":"人道援助、气候、联合国与可持续发展。"},"sourceCategories":["crisis","sdg"]},
+    {"id":"industry","en":"Industry & technology","zh":"行业与科技","shortEn":"Industry","shortZh":"行业科技","description":{"en":"Technology, infrastructure and professional insights.","zh":"科技、基础设施与专业领域洞察。"},"sourceCategories":["industry"]}
+  ]
+}

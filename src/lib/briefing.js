@@ -1,17 +1,5 @@
 import { hasAnalysis, articleForReview } from './attention.js';
-
-const headings = {
-  us: { en: 'US briefing', zh: '美国简报' },
-  world: { en: 'World briefing', zh: '国际简报' },
-  economy: { en: 'Economy briefing', zh: '财经简报' },
-  crisis: { en: 'Crisis briefing', zh: '危机简报' },
-  sdg: { en: 'UN & development', zh: '联合国与发展' },
-  industry: { en: 'Industry briefing', zh: '行业简报' },
-};
-
-export function matchesTopic(article, category) {
-  return category === 'all' || article.category === category || article.relatedCategories?.includes(category);
-}
+import { readingSections, buildSectionAssignments, matchesSection, sectionName } from './sections.js';
 
 function latestDate(dates) {
   return dates.filter(Boolean).sort().at(-1) || null;
@@ -25,22 +13,37 @@ function isReviewed(article) {
   return hasAnalysis(article) && (!article.analysis.isStale || article.isReviewedSnapshot);
 }
 
-// The same visible selection drives notes, watches and counts. A missing topic
-// note must never fall back to the global overview from a different section.
-export function buildBriefingContext(data, { view = 'briefing', category = 'all', articles = [], search = '' } = {}) {
-  const visible = articles.filter(article => matchesTopic(article, category));
+function noteScopes(category) {
+  return [...new Set([category, ...(readingSections.find(section => section.id === category)?.sourceCategories || [])])];
+}
+
+// Notes, watches and counts share the same exclusive event selection. Legacy
+// source-topic notes remain usable only if every reference belongs here.
+export function buildBriefingContext(data, { view = 'briefing', category = 'all', articles = [], search = '', assignments = buildSectionAssignments(data) } = {}) {
+  const visible = articles.filter(article => matchesSection(article, category, assignments));
   const allowedIds = new Set(visible.map(article => article.id));
   const events = (data.attention?.items || []).filter(event => event.memberArticleIds?.some(id => allowedIds.has(id)) || allowedIds.has(event.articleId));
   for (const event of events) for (const id of event.memberArticleIds || []) allowedIds.add(id);
   const sectionNotes = data.briefing?.sectionNotes || {};
-  const scope = category;
   const useAuthored = view !== 'saved' && !search.trim() && (view === 'briefing' || category !== 'all');
-  let notes = useAuthored ? (sectionNotes[scope] || []).filter(note => note.articleIds.every(id => allowedIds.has(id))).map(note => ({ ...note, kind: 'analysis' })) : [];
+  const eventIds = new Map(events.flatMap(event => (event.memberArticleIds || [event.articleId]).map(id => [id, event.eventId])));
+  const visibleOrder = new Map();
+  visible.forEach((article, index) => visibleOrder.set(eventIdentity(article), index));
+  let notes = [];
+  if (useAuthored) {
+    const candidates = noteScopes(category).flatMap(scope => sectionNotes[scope] || []).filter(note => note.articleIds.every(id => allowedIds.has(id) && (category === 'all' || assignments.get(id) === category)));
+    const rank = note => Math.min(...note.articleIds.map(id => visibleOrder.get(eventIds.get(id) || id) ?? visible.findIndex(article => article.id === id)));
+    const used = new Set();
+    notes = candidates.map((note, index) => ({ ...note, kind: 'analysis', order: index })).sort((a, b) => rank(a) - rank(b) || a.order - b.order).filter(note => {
+      const identities = note.articleIds.map(id => eventIds.get(id) || id);
+      if (identities.some(id => used.has(id))) return false;
+      identities.forEach(id => used.add(id));
+      return true;
+    });
+  }
   if (!notes.length) {
     const singleNotes = new Map(Object.values(sectionNotes).flat().filter(note => note.articleIds.length === 1).map(note => [note.articleIds[0], note]));
     const seen = new Set();
-    // A matching researched explanation is more useful than an unreviewed
-    // excerpt when both are available in the reader's filtered selection.
     notes = [...visible].sort((a, b) => Number(isReviewed(b)) - Number(isReviewed(a))).filter(article => {
       const identity = eventIdentity(article);
       if (seen.has(identity) || !article.summary?.en || !article.summary?.zh) return false;
@@ -77,7 +80,8 @@ export function buildBriefingContext(data, { view = 'briefing', category = 'all'
   const sourceIds = new Set(visible.map(article => article.sourceId));
   const heading = search.trim() ? { en: 'This selection', zh: '当前筛选' }
     : view === 'saved' ? { en: 'Your saved stories', zh: '收藏速览' }
-    : headings[category] || (view === 'stream' ? { en: 'Latest reporting', zh: '新近报道' } : { en: 'Your priorities', zh: '重点速览' });
+    : category !== 'all' ? { en: sectionName(category, 'en'), zh: sectionName(category, 'zh') }
+    : view === 'stream' ? { en: 'Latest reporting', zh: '新近报道' } : { en: 'Your priorities', zh: '重点速览' };
   return {
     heading, notes, watch, articles: visible, view, category,
     sources: (data.sources || []).filter(source => sourceIds.has(source.id)),
@@ -90,7 +94,7 @@ export function buildBriefingContext(data, { view = 'briefing', category = 'all'
 
 export function backgroundForArticle(data, id, category = 'all') {
   const notes = data.briefing?.sectionNotes || {};
-  const candidates = [...(notes[category] || []), ...Object.values(notes).flat()];
+  const candidates = [...noteScopes(category).flatMap(scope => notes[scope] || []), ...Object.values(notes).flat()];
   return candidates.find(note => note.background && note.articleIds.length === 1 && note.articleIds.includes(id))?.background
     || candidates.find(note => note.background && note.articleIds.includes(id))?.background
     || null;

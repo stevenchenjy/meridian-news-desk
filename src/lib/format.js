@@ -1,3 +1,5 @@
+// Publisher-feed topics are provenance metadata. Reading navigation uses the
+// exclusive event desks in sections.js instead of these overlapping lenses.
 export const categories = [
   { id: "us", en: "US & politics", zh: "美国与政治" },
   { id: "world", en: "World & diplomacy", zh: "世界与外交" },
