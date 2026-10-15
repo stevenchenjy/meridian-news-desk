@@ -11,7 +11,7 @@ flowchart LR
   SummaryImport --> Summaries[Translation store]
   Research[Codex or another research author] --> AnalysisImport[Briefing validator]
   Raw --> Research
-  AnalysisImport --> Analysis[Article analysis and overview]
+  AnalysisImport --> Analysis[Article analysis and scoped notes]
   AnalysisImport --> Events[Persistent event assessments]
   Raw --> API[Loopback dashboard API]
   Summaries --> API
@@ -37,6 +37,7 @@ flowchart LR
 | `server/newsroom.py` | Collection, atomic file updates, validation and merged dashboard state. |
 | `server/app.py` | Local HTTP routes, asynchronous feed refresh and static asset serving. |
 | `src/lib/attention.js` | UI selectors that preserve a reviewed event when its raw source changes or leaves. |
+| `src/lib/briefing.js` | Selects notes, background, watches and source counts for the visible view, topic and reader filters. |
 
 Generated files and state are ignored by Git. Archives retain the collection and imports used for a past assessment. They are evidence of local generation, not proof of successful unattended execution or external publication.
 
@@ -51,6 +52,14 @@ Translations and research are associated with a content fingerprint. A real titl
 An import must target the exact current collection timestamp. Every selected briefing item requires a complete matching bilingual article overlay and an attention assessment. Evidence must include the original report's URL. Extra overlays can fulfill research requests without appearing in the overview. Validation checks structure and provenance consistency; the author remains responsible for actually researching the claims and recording source-access limits.
 
 Copying identical factual analysis preserves its original `analyzedAt` unless the author explicitly sets `reverified: true` after rechecking evidence. A priority reassessment has its own `reviewedAt`. The application completes a research request only when current complete bilingual analysis is saved.
+
+## Reading context and section notes
+
+A briefing may include `sectionNotes` for `all`, `us`, `world`, `economy`, `crisis`, `sdg` and `industry`. Each scope holds one to three short bilingual notes with a title, a latest-development summary, optional background and reviewed article references. Background explains the actors, institution roles or key terms before the development. Imports validate both languages, length, complete reviewed references and topic membership, including related categories and retained reviewed snapshots. They do not establish factual truth.
+
+The sidebar rail and expanded reading brief share the same selector. Topic notes must reference the visible reporting or its matching assessed event. Saved stories and text searches derive notes from their actual selection. A missing scope uses only that selection's bilingual summaries and reviewed context; it never borrows the global overview. Source-only notes remain labeled as source summaries, without invented analysis. Empty selections stay empty.
+
+Notes retain the underlying articles' research timestamps. Editing their prose does not reverify the facts. Article details begin with explanatory background and keep the fuller reported context, interpretation, uncertainties and evidence available. Dashboard-retention metadata is expandable so the reader can reach the story first.
 
 ## Ranking and reading state
 

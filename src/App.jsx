@@ -6,7 +6,8 @@ import BriefingRail from "./components/BriefingRail";
 import SourceLedger from "./components/SourceLedger";
 import AttentionControls from "./components/AttentionControls";
 import PipelineCoverage from "./components/PipelineCoverage";
-import { attentionArticles } from "./lib/attention";
+import { attentionArticles, retainDisplayedVersion } from "./lib/attention";
+import { buildBriefingContext, backgroundForArticle } from "./lib/briefing";
 import WorldMap from "./components/WorldMap";
 import { ArticleDialog, BriefingDialog } from "./components/Dialogs";
 import { copy, bilingual, dateTime, categoryName, request } from "./lib/format";
@@ -220,6 +221,10 @@ export default function App() {
         );
     return list;
   }, [data, rankedArticles, view, category, search, readMode, prioritySort]);
+  const briefingContext = useMemo(
+    () => data ? buildBriefingContext(data, { view, category, articles, search }) : null,
+    [data, view, category, articles, search],
+  );
   const currentSelected =
     selected && data?.articles.find((a) => a.id === selected.id);
   const selectedEvent =
@@ -229,11 +234,7 @@ export default function App() {
     );
   const selectedArticle = selected
     ? selected.isReviewedSnapshot
-      ? {
-          ...selected,
-          attention: selectedEvent || selected.attention,
-          isRead: selectedEvent?.isRead ?? selected.isRead,
-        }
+      ? retainDisplayedVersion(selected, selectedEvent)
       : currentSelected || selected
     : null;
   const title =
@@ -538,6 +539,7 @@ export default function App() {
           {data && view !== "sources" ? (
             <BriefingRail
               data={data}
+              context={briefingContext}
               language={language}
               onSources={() => {
                 setView("sources");
@@ -565,6 +567,7 @@ export default function App() {
       {selectedArticle ? (
         <ArticleDialog
           article={selectedArticle}
+          background={backgroundForArticle(data, selectedArticle.id, category)}
           demo={isDemo}
           language={language}
           onClose={closeArticle}
@@ -587,6 +590,7 @@ export default function App() {
       {showBrief && data?.briefing ? (
         <BriefingDialog
           data={data}
+          context={briefingContext}
           language={language}
           onClose={closeBrief}
           onOpen={(a) => {

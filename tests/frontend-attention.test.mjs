@@ -4,6 +4,7 @@ import {
   attentionArticles,
   priorityBand,
   articleForReview,
+  retainDisplayedVersion,
 } from "../src/lib/attention.js";
 
 const pair = { en: "Reviewed facts", zh: "已复核事实" };
@@ -91,4 +92,15 @@ test("importance bands agree at the policy boundaries", () => {
   assert.equal(priorityBand(74).en, "Context");
   assert.equal(priorityBand(60).en, "Context");
   assert.equal(priorityBand(59).en, "Lower priority");
+});
+
+test("an open historical detail cannot acknowledge a newer unseen material version", () => {
+  const displayed = { ...reviewed, isReviewedSnapshot: true, attention: { eventId: 'event', updateKey: 'old-evidence' } };
+  const nextEvent = { eventId: 'event', updateKey: 'new-evidence', isRead: false, importance: 90 };
+  const selected = retainDisplayedVersion(displayed, nextEvent);
+  assert.equal(selected.attention.updateKey, 'old-evidence');
+  assert.equal(selected.attention.importance, 90);
+  assert.equal(selected.isRead, false);
+  assert.equal(selected.analysis, displayed.analysis);
+  assert.equal(retainDisplayedVersion(displayed, undefined), displayed);
 });

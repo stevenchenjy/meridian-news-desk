@@ -1747,3 +1747,33 @@ a {
     max-width: 100%;
   }
 }
+
+/* Short, scoped notes orient a new reader before introducing the development. */
+.rail-summary { min-width: 0; grid-column: 1 / -1; }
+.rail-summary .rail-scope-caption { font-size: 12px; color: #68786c; margin: 0 0 22px; }
+.briefing-note { padding: 22px 0; border-top: 1px solid var(--line); }
+.briefing-note > h3 { font-family: var(--serif); font-size: 22px; line-height: 1.25; font-weight: 600; margin: 0; color: #203b2d; }
+.briefing-note .note-title-zh { font-size: 16px; font-weight: 550; line-height: 1.5; color: #395e48; margin: 7px 0 0; }
+.briefing-note h4 { font-size: 11px; font-weight: 650; color: #325c44; margin: 0 0 12px; letter-spacing: .3px; }
+.note-background, .note-development { margin-top: 20px; }
+.reading-language { position: relative; margin: 0; }
+.reading-language + .reading-language { margin-top: 14px; }
+.reading-language-label { display: block; font-size: 9px; font-weight: 600; letter-spacing: .8px; color: #6b8172; margin-bottom: 4px; }
+.briefing-note .reading-language p, .detail-modal .reading-language p { margin: 0 0 10px; font-size: 15px; line-height: 1.7; color: #3c5143; overflow-wrap: anywhere; }
+.briefing-note .reading-language.is-chinese p, .detail-modal .reading-language.is-chinese p { font-size: 15px; line-height: 1.9; color: #3d5748; }
+.note-context-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-top: 16px; font-size: 10px; color: #6a7a6e; line-height: 1.5; }
+.note-context-row button { display: inline-flex; gap: 4px; align-items: center; padding: 4px 0; font-size: 11px; background: transparent; color: #286345; }
+.note-context-row .note-review-due { color: #866c38; }
+.notes-empty p { font-size: 15px; line-height: 1.75; color: #52695a; }
+.detail-attention > summary { font-size: 12px; font-weight: 600; color: #3e6449; cursor: pointer; }
+.detail-attention[open] > summary { margin-bottom: 15px; }
+.detail-section.context-primer { background: #f4f7f0; padding: 22px; border: 0; }
+.detail-modal > .section-notes { max-width: 680px; }
+.detail-modal .briefing-note { padding: 25px 0; }
+.briefing-rail .rail-timestamp { font-size: 10px; color: #6c7d70; }
+@media (max-width: 760px) {
+  .briefing-note > h3 { font-size: 24px; }
+  .briefing-note .reading-language p, .briefing-note .reading-language.is-chinese p { font-size: 16px; }
+  .note-context-row { font-size: 11px; }
+  .detail-section.context-primer { padding: 18px; }
+}

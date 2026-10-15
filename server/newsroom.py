@@ -606,6 +606,79 @@ def update_attention_events(registry: dict, article: dict, assessment: dict, gen
                        "articleSnapshot": snapshot}
 
 
+def complete_note_reference(article: Any, retained: bool = False) -> bool:
+    """Section notes cite reviewed artifacts, never an untranslated/raw lead."""
+    if not isinstance(article, dict) or not isinstance(article.get("analysis"), dict):
+        return False
+    analysis = article["analysis"]
+    if analysis.get("kind") != "codex" or not parse_time(analysis.get("analyzedAt")):
+        return False
+    if not retained and analysis.get("isStale"):
+        return False
+    if analysis.get("contentFingerprint") and analysis["contentFingerprint"] != fingerprint(article):
+        return False
+    try:
+        bilingual(article.get("summary"), "section note reference summary")
+        for field in ("context", "implications", "uncertainty", "watch"):
+            bilingual(analysis.get(field), "section note reference " + field)
+        evidence(analysis.get("evidence"), article, "section note reference")
+    except (ValueError, KeyError):
+        return False
+    return True
+
+
+def concise_section_text(value: Any, label: str) -> dict:
+    text = bilingual(value, label)
+    paragraphs = [len([part for part in re.split(r"\n\s*\n", part_text) if part.strip()]) for part_text in text.values()]
+    if len(text["en"]) > 650 or len(text["en"].split()) > 75 or len(text["zh"]) > 180 or any(count > 2 for count in paragraphs):
+        raise ValueError(f"{label} must stay concise: English at most 75 words/650 characters, Chinese at most 180 characters, and at most 2 paragraphs per language")
+    return text
+
+
+def validate_section_notes(value: Any, articles: dict, registry: dict) -> dict:
+    if not isinstance(value, dict) or not value:
+        raise ValueError("briefing.sectionNotes must be a nonempty object of known topic scopes")
+    allowed_keys(value, CATEGORIES | {"all"}, "briefing.sectionNotes")
+    reviewed = {ident: article for ident, article in articles.items() if complete_note_reference(article)}
+    for event in registry.get("events", {}).values():
+        snapshot = event.get("articleSnapshot")
+        if complete_note_reference(snapshot, retained=True):
+            reviewed.setdefault(snapshot["id"], snapshot)
+    validated = {}
+    for scope, notes in value.items():
+        label = f"briefing.sectionNotes.{scope}"
+        if not isinstance(notes, list) or not 1 <= len(notes) <= 3:
+            raise ValueError(f"{label} requires 1–3 linked bilingual notes")
+        validated[scope] = []
+        for index, note in enumerate(notes):
+            item_label = f"{label}[{index}]"
+            if not isinstance(note, dict):
+                raise ValueError(f"{item_label} must be a note object")
+            allowed_keys(note, {"title", "summary", "background", "articleIds"}, item_label)
+            title = bilingual(note.get("title"), item_label + ".title")
+            summary = concise_section_text(note.get("summary"), item_label + ".summary")
+            if any(len(text) > 120 for text in title.values()):
+                raise ValueError(f"{item_label}.title must be at most 120 characters in each language")
+            background = concise_section_text(note["background"], item_label + ".background") if "background" in note else None
+            identifiers = note.get("articleIds")
+            if not isinstance(identifiers, list) or not 1 <= len(identifiers) <= 12 or any(not isinstance(ident, str) or not ident for ident in identifiers):
+                raise ValueError(f"{item_label}.articleIds requires 1–12 reviewed article IDs")
+            if len(set(identifiers)) != len(identifiers):
+                raise ValueError(f"{item_label}.articleIds must be unique")
+            for ident in identifiers:
+                if ident not in reviewed:
+                    raise ValueError(f"{item_label} refers to an unknown or unreviewed articleId: {ident}")
+                article = reviewed[ident]
+                categories = {article.get("category")} | set(article.get("relatedCategories", []))
+                if scope != "all" and scope not in categories:
+                    raise ValueError(f"{item_label} articleId {ident} is outside the {scope} topic")
+            cleaned = {"title": title, "summary": summary, "articleIds": list(identifiers)}
+            if background is not None:
+                cleaned["background"] = background
+            validated[scope].append(cleaned)
+    return validated
+
+
 def apply_briefing(payload: dict, root: Path = ROOT) -> dict:
     if not isinstance(payload, dict):
         raise ValueError("Briefing input must be a JSON object")
@@ -619,7 +692,7 @@ def apply_briefing(payload: dict, root: Path = ROOT) -> dict:
         raw = payload.get("briefing")
         if not isinstance(raw, dict) or not isinstance(raw.get("items"), list) or not 1 <= len(raw["items"]) <= 12:
             raise ValueError("briefing requires 1–12 evidence-bearing items")
-        allowed_keys(raw, {"title", "overview", "items"}, "briefing")
+        allowed_keys(raw, {"title", "overview", "items", "sectionNotes"}, "briefing")
         validated = {"title": bilingual(raw.get("title"), "briefing.title"), "overview": bilingual(raw.get("overview"), "briefing.overview"),
                      "items": [], "generatedAt": generated, "collectionGeneratedAt": dashboard["generatedAt"], "isStale": False, "kind": "codex"}
         seen_items = set()
@@ -689,9 +762,16 @@ def apply_briefing(payload: dict, root: Path = ROOT) -> dict:
             event_versions[key] = version
         for article, assessment in assessed:
             update_attention_events(registry["events"], article, assessment, generated)
+        if "sectionNotes" in raw:
+            validated["sectionNotes"] = validate_section_notes(raw["sectionNotes"], articles, registry)
         queue = load_json(root / "data/analysis-requests.json", {})
         for ident in seen_articles:
             if ident in queue and queue[ident].get("status") == "pending":
+                if queue[ident].get("requiresReverification"):
+                    factual_review = parse_time(articles[ident]["analysis"].get("analyzedAt"))
+                    requested_at = parse_time(queue[ident].get("requestedAt"))
+                    if not factual_review or not requested_at or factual_review < requested_at:
+                        continue
                 queue[ident].update(status="completed", completedAt=generated)
         dashboard["briefing"] = validated
         dashboard.pop("stats", None)
@@ -789,9 +869,16 @@ def request_analysis(ident: str, root: Path = ROOT) -> dict:
         if not article:
             raise ValueError("Unknown article id")
         queue = load_json(root / "data/analysis-requests.json", {})
-        if article.get("analysis") and not article["analysis"].get("isStale"):
+        review_due = bool(article.get("attention", {}).get("needsReview"))
+        if queue.get(ident, {}).get("status") == "pending":
+            # An explicit pending review is not fulfilled by another click or
+            # by extending the priority horizon without rechecking the facts.
+            pass
+        elif article.get("analysis") and not article["analysis"].get("isStale") and not review_due:
             queue[ident] = {"articleId": ident, "requestedAt": utc_now(), "status": "completed", "completedAt": article["analysis"]["analyzedAt"]}
-        elif ident not in queue or queue[ident].get("status") != "pending":
+        else:
             queue[ident] = {"articleId": ident, "requestedAt": utc_now(), "status": "pending", "contentFingerprint": fingerprint(article)}
+            if review_due:
+                queue[ident]["requiresReverification"] = True
         atomic_json(root / "data/analysis-requests.json", queue)
     return read_dashboard(root)["analysisQueue"]

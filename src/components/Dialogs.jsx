@@ -9,16 +9,10 @@ import {
   Clock3,
 } from "lucide-react";
 import { copy, bilingual, categoryName, dateTime } from "../lib/format";
-import { priorityBand, articleForReview } from "../lib/attention";
+import { priorityBand } from "../lib/attention";
+import BriefingNotes, { ReadingText } from "./BriefingNotes";
 function Text({ value, language, className = "" }) {
-  return (
-    <>
-      <p className={className}>{bilingual(value, language)}</p>
-      {language === "both" && value?.zh ? (
-        <p className={`chinese-text ${className}`}>{value.zh}</p>
-      ) : null}
-    </>
-  );
+  return <ReadingText value={value} language={language} className={className} />;
 }
 function Modal({ title, onClose, children }) {
   const ref = useRef(null);
@@ -95,6 +89,7 @@ function Modal({ title, onClose, children }) {
 }
 export function ArticleDialog({
   article: a,
+  background,
   demo = false,
   language,
   onClose,
@@ -151,7 +146,7 @@ export function ArticleDialog({
             ? copy("Mark unread", "标为未读", language)
             : copy("Mark read", "标为已读", language)}
         </button>
-        {a.analysis && (a.isReviewedSnapshot || a.attention?.needsReview) ? (
+        {a.analysis && (a.isReviewedSnapshot || a.attention?.needsReview || requested) ? (
           <button
             className="secondary-button"
             onClick={onRequestAnalysis}
@@ -163,11 +158,13 @@ export function ArticleDialog({
           </button>
         ) : null}
       </div>
+      {a.analysis ? <section className="detail-section context-primer">
+        <h3>{copy("Start here · the background", "先看背景", language)}</h3>
+        <Text value={background || a.analysis.context} language={language} />
+      </section> : null}
       {a.attention ? (
-        <section className="detail-attention">
-          <h3>
-            {copy("Why this deserves attention", "为何值得关注", language)}
-          </h3>
+        <details className="detail-attention">
+          <summary>{copy("Why this stays on your dashboard", "为何在首页保留", language)}</summary>
           <div className="priority-meta">
             <strong>
               {copy(
@@ -206,14 +203,14 @@ export function ArticleDialog({
               )}
             </p>
           ) : null}
-        </section>
+        </details>
       ) : null}
       <section className="detail-section">
         <h3>
           {a.analysis
             ? demo
               ? copy("Example summary · fictional", "示例摘要 · 虚构", language)
-              : copy("Reported facts · summary", "报道事实 · 摘要", language)
+              : copy("The latest reported development", "最新报道进展", language)
             : copy(
                 a.summaryProvenance?.kind === "headline_translation"
                   ? "Publisher headline · translated"
@@ -238,7 +235,7 @@ export function ArticleDialog({
             </p>
           ) : null}
           {[
-            ["context", "Context · reported background", "背景 · 已报道信息"],
+            ...(background ? [["context", "More reported background", "更多报道背景"]] : []),
             [
               "implications",
               "Why it matters · interpretation",
@@ -315,63 +312,11 @@ export function ArticleDialog({
     </Modal>
   );
 }
-export function BriefingDialog({ data, language, onClose, onOpen }) {
-  const b = data.briefing;
-  return (
-    <Modal
-      title={copy("Daily briefing", "每日简报", language)}
-      onClose={onClose}
-    >
-      <div className="detail-meta">{dateTime(b.generatedAt)} · EN / 中文</div>
-      <h2>{bilingual(b.title, language)}</h2>
-      <Text value={b.overview} language={language} />
-      {b.isStale ? (
-        <p className="inline-note">
-          {copy(
-            "This briefing was prepared for an earlier collection. Compare the latest reporting and source status.",
-            "此简报基于较早的收集结果，请结合最新报道与来源状态阅读。",
-            language,
-          )}
-        </p>
-      ) : null}
-      {b.items.map((item, i) => {
-        const a = articleForReview(data, item.articleId);
-        return (
-          <section key={item.articleId} className="briefing-item">
-            <div className="detail-meta">
-              {String(i + 1).padStart(2, "0")} /{" "}
-              {categoryName(a?.category || "world", language)}
-            </div>
-            <button
-              className="briefing-item-title"
-              onClick={() => a && onOpen(a)}
-            >
-              {a?.title || bilingual(item.summary, language)}
-            </button>
-            <Text value={item.summary} language={language} />
-            <h3>
-              {copy(
-                "Why it matters · interpretation",
-                "为何重要 · 解读",
-                language,
-              )}
-            </h3>
-            <Text value={item.whyItMatters} language={language} />
-            <h3>{copy("Uncertainty", "不确定性", language)}</h3>
-            <Text value={item.uncertainty} language={language} />
-            <h3>{copy("What to watch", "后续观察", language)}</h3>
-            <Text value={item.watch} language={language} />
-            <div className="briefing-evidence">
-              {item.evidence?.map((e, i) => (
-                <a href={e.url} key={i} target="_blank" rel="noreferrer">
-                  {e.label}
-                  <ArrowUpRight size={12} />
-                </a>
-              ))}
-            </div>
-          </section>
-        );
-      })}
-    </Modal>
-  );
+export function BriefingDialog({ data, context, language, onClose, onOpen }) {
+  return <Modal title={copy("Reading brief", "阅读简报", language)} onClose={onClose}>
+    <div className="detail-meta">{context.articles.length} {copy("reports in this view", "篇当前范围内的报道", language)} · EN / 中文</div>
+    <h2>{bilingual(context.heading, language)}</h2>
+    <BriefingNotes context={context} data={data} language={language} onOpen={onOpen} />
+    {context.reviewedAt ? <small className="rail-timestamp">{copy("Based on research from", "依据此时核查的报道", language)} {dateTime(context.reviewedAt)}</small> : null}
+  </Modal>;
 }

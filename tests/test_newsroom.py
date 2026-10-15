@@ -56,6 +56,12 @@ class NewsroomTests(unittest.TestCase):
         payload["articles"][0]["attention"] = self.assessment(**kwargs)
         return payload
 
+    def section_note(self, ident):
+        return {"title": {"en": "What to watch", "zh": "后续关注"},
+                "summary": {"en": "Follow the reported development and the next documented response. The reviewed evidence leaves specific questions unresolved.",
+                            "zh": "关注事件进展和下一步正式回应；现有核查证据仍有具体问题尚未解决。"},
+                "articleIds": [ident]}
+
     def test_stable_dedup_ignores_tracking_and_fragments(self):
         self.assertEqual(stable_id("https://example.com/a?x=1&utm_source=rss#here"), stable_id("https://example.com/a?x=1"))
         def shared(source, collected):
@@ -297,6 +303,138 @@ class NewsroomTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "requires an attention assessment"):
             apply_briefing(payload, self.root)
 
+    def test_legacy_briefing_and_linked_section_notes_preserve_factual_review_dates(self):
+        initial = apply_briefing(self.overlay(self.snapshot()), self.root)
+        self.assertNotIn("sectionNotes", initial["briefing"])
+        ident = initial["briefing"]["items"][0]["articleId"]
+        checked_at = next(a for a in initial["articles"] if a["id"] == ident)["analysis"]["analyzedAt"]
+        payload = self.overlay(initial)
+        payload["briefing"]["sectionNotes"] = {"all": [self.section_note(ident)], "world": [self.section_note(ident)]}
+        saved = apply_briefing(payload, self.root)
+        self.assertEqual(saved["briefing"]["sectionNotes"], payload["briefing"]["sectionNotes"])
+        self.assertEqual(read_dashboard(self.root)["briefing"]["sectionNotes"], payload["briefing"]["sectionNotes"])
+        self.assertEqual(next(a for a in saved["articles"] if a["id"] == ident)["analysis"]["analyzedAt"], checked_at)
+        self.assertNotEqual(saved["briefing"]["generatedAt"], checked_at)
+        latest_archive = sorted((self.root / "data/briefings").glob("briefing-*.json"))[-1]
+        self.assertEqual(json.loads(latest_archive.read_text())["briefing"]["sectionNotes"], payload["briefing"]["sectionNotes"])
+
+    def test_section_notes_reject_wrong_topics_unknown_or_raw_ids_and_invalid_bilingual_objects(self):
+        dashboard = self.snapshot()
+        ident = dashboard["articles"][0]["id"]
+        raw_id = dashboard["articles"][1]["id"]
+        for section_notes, expected in [
+            ({"us": [self.section_note(ident)]}, "outside the us topic"),
+            ({"all": [self.section_note("unknown-id")]}, "unknown or unreviewed articleId"),
+            ({"crisis": [self.section_note(raw_id)]}, "unknown or unreviewed articleId"),
+            ({"world": [{**self.section_note(ident), "summary": {"en": "Chinese is missing"}}]}, "en and zh"),
+            ({"world": ["A paragraph without a note object"]}, "must be a note object"),
+            ({"world": []}, "requires 1–3"),
+            ({"local": [self.section_note(ident)]}, "unsupported fields"),
+            ({}, "nonempty object"),
+            ([], "nonempty object"),
+            ({"world": [{**self.section_note(ident), "articleIds": []}]}, "1–12 reviewed article IDs"),
+        ]:
+            with self.subTest(section_notes=section_notes):
+                payload = self.overlay(dashboard)
+                payload["briefing"]["sectionNotes"] = section_notes
+                with self.assertRaisesRegex(ValueError, expected):
+                    apply_briefing(payload, self.root)
+                self.assertIsNone(read_dashboard(self.root)["briefing"])
+
+    def test_section_notes_can_cite_existing_current_review_and_related_topic(self):
+        dashboard = self.snapshot()
+        world = dashboard["articles"][0]
+        world["relatedCategories"] = ["world", "economy"]
+        atomic_json(self.root / "data/dashboard.json", dashboard)
+        reviewed = apply_briefing(self.overlay(dashboard), self.root)
+        crisis = next(a for a in reviewed["articles"] if a["id"] != world["id"])
+        reviewed["articles"] = [crisis] + [a for a in reviewed["articles"] if a["id"] != crisis["id"]]
+        payload = self.assessed_overlay(reviewed, event="distinct-crisis-event")
+        payload["briefing"]["sectionNotes"] = {"economy": [self.section_note(world["id"])], "crisis": [self.section_note(crisis["id"])]}
+        saved = apply_briefing(payload, self.root)
+        self.assertEqual(saved["briefing"]["sectionNotes"]["economy"][0]["articleIds"], [world["id"]])
+
+    def test_section_note_background_roundtrip_preserves_legacy_and_factual_review_date(self):
+        initial = apply_briefing(self.overlay(self.snapshot()), self.root)
+        ident = initial["briefing"]["items"][0]["articleId"]
+        factual_date = next(a for a in initial["articles"] if a["id"] == ident)["analysis"]["analyzedAt"]
+        legacy_note = self.section_note(ident)
+        payload = self.overlay(initial)
+        payload["briefing"]["sectionNotes"] = {"all": [legacy_note]}
+        legacy = apply_briefing(payload, self.root)
+        self.assertNotIn("background", legacy["briefing"]["sectionNotes"]["all"][0])
+        payload = self.overlay(legacy)
+        note = self.section_note(ident)
+        note["background"] = {"en": "The reviewed source explains the institutions and earlier decisions that frame this event.",
+                              "zh": "已核查的来源解释了相关机构与先前决定，为理解此次事件提供背景。"}
+        payload["briefing"]["sectionNotes"] = {"world": [note]}
+        saved = apply_briefing(payload, self.root)
+        self.assertEqual(saved["briefing"]["sectionNotes"]["world"][0], note)
+        self.assertEqual(next(a for a in saved["articles"] if a["id"] == ident)["analysis"]["analyzedAt"], factual_date)
+        self.assertEqual(read_dashboard(self.root)["briefing"]["sectionNotes"]["world"][0]["background"], note["background"])
+        latest_archive = sorted((self.root / "data/briefings").glob("briefing-*.json"))[-1]
+        self.assertEqual(json.loads(latest_archive.read_text())["briefing"]["sectionNotes"]["world"][0]["background"], note["background"])
+
+    def test_section_note_background_requires_complete_concise_bilingual_text_when_supplied(self):
+        dashboard = self.snapshot()
+        ident = dashboard["articles"][0]["id"]
+        for background, expected in (
+            (None, "en and zh"),
+            ("A background paragraph", "en and zh"),
+            ({"en": "English only"}, "en and zh"),
+            ({"en": "Context", "zh": "English copied into Chinese"}, "Chinese text"),
+            ({"en": "word " * 76, "zh": "背景"}, "concise"),
+            ({"en": "x" * 651, "zh": "背景"}, "concise"),
+            ({"en": "Context", "zh": "中" * 181}, "concise"),
+            ({"en": "First.\n\nSecond.\n\nThird.", "zh": "背景"}, "concise"),
+            ({"en": "Context", "zh": "第一段。\n\n第二段。\n\n第三段。"}, "concise"),
+        ):
+            with self.subTest(background=background):
+                payload = self.overlay(dashboard)
+                note = self.section_note(ident)
+                note["background"] = background
+                payload["briefing"]["sectionNotes"] = {"world": [note]}
+                with self.assertRaisesRegex(ValueError, expected):
+                    apply_briefing(payload, self.root)
+                self.assertIsNone(read_dashboard(self.root)["briefing"])
+
+    def test_section_notes_can_cite_retained_reviewed_snapshot_without_relabeling_it_current(self):
+        reviewed = apply_briefing(self.overlay(self.snapshot()), self.root)
+        old_id = reviewed["briefing"]["items"][0]["articleId"]
+        old_date = next(a for a in reviewed["articles"] if a["id"] == old_id)["analysis"]["analyzedAt"]
+        reviewed["articles"] = [a for a in reviewed["articles"] if a["id"] != old_id]
+        atomic_json(self.root / "data/dashboard.json", reviewed)
+        payload = self.assessed_overlay(read_dashboard(self.root), event="distinct-crisis-event")
+        payload["briefing"]["sectionNotes"] = {"world": [self.section_note(old_id)]}
+        saved = apply_briefing(payload, self.root)
+        self.assertNotIn(old_id, {a["id"] for a in saved["articles"]})
+        snapshot = next(e["articleSnapshot"] for e in saved["attention"]["items"] if e["articleId"] == old_id)
+        self.assertTrue(snapshot["isReviewedSnapshot"])
+        self.assertTrue(snapshot["analysis"]["isStale"])
+        self.assertEqual(snapshot["analysis"]["analyzedAt"], old_date)
+        self.assertEqual(saved["briefing"]["sectionNotes"]["world"][0]["articleIds"], [old_id])
+
+    def test_section_notes_limit_length_words_and_paragraphs_without_restricting_legacy_overview(self):
+        dashboard = self.snapshot()
+        ident = dashboard["articles"][0]["id"]
+        for mutation in (
+            lambda note: note["title"].update(en="x" * 121),
+            lambda note: note["summary"].update(en="word " * 76),
+            lambda note: note["summary"].update(en="x" * 651),
+            lambda note: note["summary"].update(zh="中" * 181),
+            lambda note: note["summary"].update(en="One paragraph.\n\nAnother paragraph.\n\nA third paragraph."),
+            lambda note: note["summary"].update(zh="一段。\n\n第二段。\n\n第三段。"),
+        ):
+            note = self.section_note(ident)
+            mutation(note)
+            payload = self.overlay(dashboard)
+            payload["briefing"]["sectionNotes"] = {"world": [note]}
+            with self.assertRaisesRegex(ValueError, "at most|concise"):
+                apply_briefing(payload, self.root)
+        legacy = self.overlay(dashboard)
+        legacy["briefing"]["overview"] = pair("An existing long overview remains supported. " * 30)
+        self.assertTrue(apply_briefing(legacy, self.root)["briefing"])
+
     def test_bilingual_translations_persist_without_promoting_them_to_analysis(self):
         dashboard = self.snapshot()
         ident = dashboard["articles"][0]["id"]
@@ -526,6 +664,44 @@ class NewsroomTests(unittest.TestCase):
         dashboard = apply_briefing(self.overlay(read_dashboard(self.root)), self.root)
         self.assertEqual(dashboard["analysisQueue"]["pendingCount"], 0)
         self.assertEqual(dashboard["analysisQueue"]["items"][0]["status"], "completed")
+
+    def test_due_review_queues_existing_analysis_and_requires_a_fresh_factual_review(self):
+        dashboard = apply_briefing(self.overlay(self.snapshot()), self.root)
+        event = dashboard["attention"]["items"][0]
+        ident = event["articleId"]
+        original_review = next(a for a in dashboard["articles"] if a["id"] == ident)["analysis"]["analyzedAt"]
+        registry = json.loads((self.root / "data/attention.json").read_text())
+        registry["events"][event["eventId"]]["relevanceUntil"] = "2000-01-01T00:00:00Z"
+        atomic_json(self.root / "data/attention.json", registry)
+        self.assertTrue(read_dashboard(self.root)["attention"]["items"][0]["needsReview"])
+        queue = request_analysis(ident, self.root)
+        self.assertEqual(queue["pendingCount"], 1)
+        self.assertTrue(queue["items"][0]["requiresReverification"])
+        requested_at = queue["items"][0]["requestedAt"]
+        # Priority reassessment alone can extend the horizon, but does not
+        # satisfy the reader's request to review the factual evidence.
+        copied = apply_briefing(self.overlay(read_dashboard(self.root)), self.root)
+        self.assertFalse(copied["attention"]["items"][0]["needsReview"])
+        self.assertEqual(copied["analysisQueue"]["pendingCount"], 1)
+        self.assertEqual(next(a for a in copied["articles"] if a["id"] == ident)["analysis"]["analyzedAt"], original_review)
+        repeated = request_analysis(ident, self.root)
+        self.assertEqual(repeated["pendingCount"], 1)
+        self.assertEqual(repeated["items"][0]["requestedAt"], requested_at)
+        reverified = self.overlay(read_dashboard(self.root))
+        reverified["articles"][0]["reverified"] = True
+        checked = apply_briefing(reverified, self.root)
+        self.assertEqual(checked["analysisQueue"]["pendingCount"], 0)
+        self.assertEqual(checked["analysisQueue"]["items"][0]["status"], "completed")
+        self.assertNotEqual(next(a for a in checked["articles"] if a["id"] == ident)["analysis"]["analyzedAt"], original_review)
+
+    def test_existing_current_analysis_without_review_due_keeps_completed_request_behavior(self):
+        dashboard = apply_briefing(self.overlay(self.snapshot()), self.root)
+        ident = dashboard["briefing"]["items"][0]["articleId"]
+        self.assertFalse(dashboard["attention"]["items"][0]["needsReview"])
+        queue = request_analysis(ident, self.root)
+        self.assertEqual(queue["pendingCount"], 0)
+        self.assertEqual(queue["items"][0]["status"], "completed")
+        self.assertNotIn("requiresReverification", queue["items"][0])
 
     def test_community_counter_changes_do_not_invalidate_analysis_fingerprint(self):
         article = self.article(self.sources[0], utc_now())

@@ -11,7 +11,7 @@
     "setup": "bash scripts/setup.sh",
     "demo": ".venv/bin/python scripts/seed_demo.py",
     "collect": ".venv/bin/python scripts/collect.py",
-    "test": ".venv/bin/python -m unittest discover -s tests -v && node --test tests/frontend-attention.test.mjs"
+    "test": ".venv/bin/python -m unittest discover -s tests -v && node --test tests/frontend-*.test.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",

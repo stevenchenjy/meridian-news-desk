@@ -53,3 +53,14 @@ export function priorityBand(score) {
   if (score >= 60) return { en: "Context", zh: "背景" };
   return { en: "Lower priority", zh: "较低优先级" };
 }
+
+// Live reading state may change while a historical detail is open. Its read
+// acknowledgment must still refer to the factual version the reader saw.
+export function retainDisplayedVersion(article, event) {
+  if (!event) return article;
+  return {
+    ...article,
+    attention: { ...event, updateKey: article.attention?.updateKey || event.updateKey },
+    isRead: event.isRead,
+  };
+}

@@ -39,6 +39,9 @@
           "items": {
             "$ref": "#/$defs/briefingItem"
           }
+        },
+        "sectionNotes": {
+          "$ref": "#/$defs/sectionNotes"
         }
       }
     },
@@ -229,6 +232,150 @@
           "maxLength": 200,
           "pattern": "^[a-z0-9][a-z0-9._:/-]+$",
           "description": "Stable identifier for the latest material development. Keep unchanged for duplicate/minor reports; change only with sourced substantive new facts."
+        }
+      }
+    },
+    "sectionNoteTitle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "en",
+        "zh"
+      ],
+      "properties": {
+        "en": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120,
+          "pattern": "\\S"
+        },
+        "zh": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 120,
+          "pattern": "[㐀-䶿一-鿿]",
+          "description": "Chinese prose is required; copying English into zh does not satisfy bilingual coverage."
+        }
+      }
+    },
+    "sectionNoteSummary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "en",
+        "zh"
+      ],
+      "properties": {
+        "en": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 650,
+          "pattern": "\\S"
+        },
+        "zh": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 180,
+          "pattern": "[㐀-䶿一-鿿]",
+          "description": "Chinese prose is required; copying English into zh does not satisfy bilingual coverage."
+        }
+      },
+      "description": "Concise paired prose: English at most 75 whitespace-delimited words and 650 characters; Chinese at most 180 characters; at most two paragraphs in either language. Aim for 20–40 English words and 40–90 Chinese characters. Word/paragraph limits are also checked by the importer."
+    },
+    "sectionNote": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "title",
+        "summary",
+        "articleIds"
+      ],
+      "properties": {
+        "title": {
+          "$ref": "#/$defs/sectionNoteTitle"
+        },
+        "summary": {
+          "$ref": "#/$defs/sectionNoteSummary",
+          "description": "Latest development, separate from the explanatory background."
+        },
+        "articleIds": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 12,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": "Cite article IDs with complete current bilingual analysis or a retained reviewed snapshot. Every linked article must belong to the topic category or relatedCategories, except in the unrestricted all scope."
+        },
+        "background": {
+          "$ref": "#/$defs/sectionNoteSummary",
+          "description": "Previously reviewed background needed to understand the latest development in summary. Supply for newly authored notes; optional for legacy compatibility. Use sourced article.analysis.context, never raw-source speculation. Same bilingual readability limits as summary."
+        }
+      }
+    },
+    "sectionNotes": {
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "description": "Optional topic-specific edited notes. For newly authored notes, provide background before the latest-development summary; legacy notes without background remain accepted. Omit unsupported topics rather than falling back to the global overview. Editing a note does not reverify the facts or reset article analyzedAt. Known-ID/review and topic membership constraints are checked by apply_briefing.py.",
+      "properties": {
+        "all": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {
+            "$ref": "#/$defs/sectionNote"
+          }
+        },
+        "us": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {
+            "$ref": "#/$defs/sectionNote"
+          }
+        },
+        "world": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {
+            "$ref": "#/$defs/sectionNote"
+          }
+        },
+        "economy": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {
+            "$ref": "#/$defs/sectionNote"
+          }
+        },
+        "crisis": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {
+            "$ref": "#/$defs/sectionNote"
+          }
+        },
+        "sdg": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {
+            "$ref": "#/$defs/sectionNote"
+          }
+        },
+        "industry": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 3,
+          "items": {
+            "$ref": "#/$defs/sectionNote"
+          }
         }
       }
     }

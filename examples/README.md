@@ -37,6 +37,14 @@ The inputs are ordinary application contracts:
 - [demo-summaries.json](demo-summaries.json) supplies matching English and Simplified Chinese source summaries, with `publisher_excerpt` provenance.
 - [demo-briefing.json](demo-briefing.json) supplies full bilingual sample analysis and attention assessments, including stable event and material-update keys.
 
+The briefing also includes short bilingual `sectionNotes`: two notes for the
+global view, one for Crisis and one for Industry. Each note names its supporting
+article IDs and separates background from the latest development. The background
+defines the relief corridor or forum theme before explaining what changed. It
+does not invent a cause for the fictional corridor closure. The other topic keys
+are deliberately omitted, so their empty-state
+behavior can be checked without recycling the global note into an unrelated tab.
+
 `seed_demo.py` rebases the example dates to the load time, stages the files, and
 calls the real summary and briefing importers. Their timestamp fields describe
 fixture loading in this demo, **not a factual verification or an AI run**. No

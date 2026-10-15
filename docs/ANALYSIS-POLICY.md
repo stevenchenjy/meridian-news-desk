@@ -13,7 +13,7 @@ Meridian helps a reader in the United States understand important developments i
 
 Translate every newly collected or substantively changed entry before declaring bilingual stream coverage complete. Do not reserve Chinese for the selected briefing. If an excerpt is absent, summarize only the available headline and label that narrower scope. Preserve allegations, forecasts and modeled estimates; never add facts to make a translation read more naturally. Keep publisher translation provenance distinct from reviewed summary and analysis. An unreviewed article may expose translated source text in `summary` with `summaryProvenance` and `translatedSummary`; it must not gain `analysis` merely because both languages are present.
 
-An unreviewed story can be queued from the dashboard for analysis. A queue request means the next Codex run should research it; it is not an immediate completed analysis. Fulfill the request only when the current article has all required English/Chinese summary and analysis fields plus its original source URL and reviewed evidence. If research fails or the article changed, leave the request pending and explain the precise limit.
+An unreviewed story can be queued from the dashboard for analysis. A queue request means the next Codex run should research it; it is not an immediate completed analysis. Fulfill the request only when the current article has all required English/Chinese summary and analysis fields plus its original source URL and reviewed evidence. A requested due review requires a factual review at or after the request; copying unchanged analysis or resetting its priority horizon does not fulfill it. If research fails or the article changed, leave the request pending and explain the precise limit.
 
 ## Evidence and dating
 
@@ -29,7 +29,9 @@ An unreviewed story can be queued from the dashboard for analysis. A queue reque
 | Field | Content |
 | --- | --- |
 | `summary` | Verified or clearly attributed facts: who did what, where, when and at what stated scale. |
-| `context` | Established background and connections with previous developments. |
+| `context` | Established background: who the actors are, what the institution or mechanism does, why the issue matters, and its connection to earlier developments. |
+| `sectionNotes.<topic>[].background` | A short bilingual orientation before the latest development, grounded in the linked reviewed reporting. Explain unfamiliar actors and terms. |
+| `sectionNotes.<topic>[].summary` | The latest development for that topic, with its date, practical significance and material qualifications. |
 | `whyItMatters` / `implications` | Labeled interpretation, plausible mechanisms and affected groups. Use conditional wording for uncertain outcomes. |
 | `uncertainty` | Specific missing evidence, disputed claims, methodological limits and unresolved alternatives. |
 | `watch` | Observable next indicators or documented scheduled decisions; no invented deadlines. |
@@ -37,11 +39,21 @@ An unreviewed story can be queued from the dashboard for analysis. A queue reque
 
 Objectivity means matching claims to evidence and considering credible alternatives; it does not require giving equally strong treatment to unequally supported positions. Separate government statements, independent observations and assessment. Attribute allegations and forecasts. Identify whether figures are measurements, estimates or models. Do not infer causation from a price move or correlation, or convert financial reporting into personal buy/sell advice.
 
+Every newly authored major reviewed event must include enough background for a reader who is new to the subject. Introduce the actors and their roles before giving the latest action or number. For example, explain what a relief route supplies, what the FOMC decides, or what an unfamiliar organization does. Expand acronyms on first use. Explain a cause only when the evidence supports it; when the cause is unknown, say so rather than filling the gap with a plausible story.
+
+Use short, connected sentences and concrete explanations. Write the Chinese as natural prose with the same claims, rather than translating English syntax or stacking abstract nouns. Separate background from the latest development so a returning reader can scan the update while a new reader can understand its setting. Keep original dates visible, distinguish projections from current counts, and explain terms that would otherwise carry the meaning alone.
+
+The optional `briefing.sectionNotes` map supports `all`, `us`, `world`, `economy`, `crisis`, `sdg` and `industry`. Supply one to three notes per supported topic, each with bilingual `title`, `background` and `summary`, and supporting reviewed `articleIds`. Omit unsupported topic keys. References for a topic must belong to that category or its related categories; `all` can draw on any reviewed topic. The API accepts older inputs without notes or background for compatibility. That does not excuse missing background in newly written notes. Use [DAILY-WORKFLOW.md](DAILY-WORKFLOW.md) for text bounds and the input shape.
+
+Notes follow the visible topic, saved-story selection or search results. A missing note can use the matching stories' existing summaries and reviewed context; it must not substitute an unrelated global narrative. Raw source excerpts cannot supply invented background or become independent analysis. Editing a note changes presentation, not the date its supporting facts were checked. API validation confirms shape, bilingual fields and valid references, not the truth or adequacy of the explanation; the author remains responsible for the evidence.
+
+Put operational details—collection counts, translation gaps, stale feeds, scheduler status and unconnected services—in **Sources & status** and the run report. Keep an evidence limit within a story when it changes the interpretation of its claims, such as an unavailable court record or an unverified estimate. Operational status is not the event's background.
+
 ## Significance and continuing coverage
 
 Apply [ATTENTION-POLICY.md](ATTENTION-POLICY.md). The briefing is a ranked reading agenda, not a quota of fresh headlines. Assess meaningful new developments, unanswered reader requests, unreviewed high-priority candidates, and previously major ongoing events across a rolling month. Do not require ten new stories daily. Older unresolved events can be more important than today's low-impact story, and unread important events stay visible until the reader marks them read.
 
-Review US/global finance and economy; US politics and public policy; international affairs and crises; UN, SDGs and development; international relations; and industries, work and technology. These are coverage goals, not quotas. Include perspectives and regions beyond North America and Europe when evidence supports them. Explain material source failures or coverage omissions in both overview languages.
+Review US/global finance and economy; US politics and public policy; international affairs and crises; UN, SDGs and development; international relations; and industries, work and technology. These are coverage goals, not quotas. Include perspectives and regions beyond North America and Europe when evidence supports them. Explain material source failures or coverage omissions in the bilingual status view and run report; keep a claim-specific evidence gap with the relevant story.
 
 Political forums and professional posts can reveal arguments or practitioner experience; they are perspectives, not representative public opinion or verified facts. Do not treat engagement counts as a measure of world significance. LinkedIn is unconnected here: public industry sources must retain their actual provenance.
 

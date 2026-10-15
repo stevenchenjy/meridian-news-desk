@@ -60,7 +60,83 @@
           }
         ]
       }
-    ]
+    ],
+    "sectionNotes": {
+      "all": [
+        {
+          "title": {
+            "en": "Keep the unresolved event in view",
+            "zh": "继续关注尚未解决的事件"
+          },
+          "summary": {
+            "en": "[DEMO] An older event can still have the greater consequence. The fictional relief corridor stays on your agenda until you mark it read.",
+            "zh": "[演示] 较早事件的影响仍可能更大。虚构救援通道问题会保留在关注议程中，直至你标记已读。"
+          },
+          "articleIds": [
+            "ec020b095010372589dac4bd"
+          ],
+          "background": {
+            "en": "A relief corridor is a route for delivering food and other essentials to people cut off from regular supplies. This fictional corridor serves a coastal region; the example does not specify what caused its closure.",
+            "zh": "救援通道是向物资短缺地区运送食物等必需品的路线。在这个虚构情景中，它服务于一个沿海地区；样例没有设定通道关闭的原因。"
+          }
+        },
+        {
+          "title": {
+            "en": "Judge a new story by its impact",
+            "zh": "新消息也要看影响"
+          },
+          "summary": {
+            "en": "[DEMO] The forum’s new color theme has a small effect. It ranks below the older corridor event because a recent timestamp alone does not make a story important.",
+            "zh": "[演示] 论坛的新配色主题影响有限，所以排在较早的通道事件之后。发布时间较新，并不代表更重要。"
+          },
+          "articleIds": [
+            "85697e1d572fb9b12aa02c79"
+          ],
+          "background": {
+            "en": "A software forum is an online place for discussion. A color theme changes the colors people see; this fictional update does not change security, access, pricing or moderation.",
+            "zh": "软件论坛是用户讨论软件的线上社区。配色主题改变页面显示的颜色；这个虚构更新不影响安全、访问、费用或内容管理。"
+          }
+        }
+      ],
+      "crisis": [
+        {
+          "title": {
+            "en": "Check whether supplies can move",
+            "zh": "关注物资能否运抵"
+          },
+          "summary": {
+            "en": "[DEMO] Fictional aid access remains blocked. A reopened corridor or a change in deliveries would matter more than another report repeating the same closure.",
+            "zh": "[演示] 虚构情景中的援助仍受阻。通道恢复或运输情况变化，比重复报道同一次关闭更值得关注。"
+          },
+          "articleIds": [
+            "ec020b095010372589dac4bd"
+          ],
+          "background": {
+            "en": "Closing a relief corridor can stop supplies from reaching people who depend on it. Here, a fictional route serves 800,000 residents. Its closure is the unresolved problem; the fixture does not explain its cause.",
+            "zh": "救援通道关闭，可能让依赖这条路线的居民收不到物资。虚构情景中的通道服务于80万居民，目前仍未开放；样例没有设定关闭原因。"
+          }
+        }
+      ],
+      "industry": [
+        {
+          "title": {
+            "en": "A cosmetic update can wait",
+            "zh": "外观更新可以稍后阅读"
+          },
+          "summary": {
+            "en": "[DEMO] The fictional forum update changes appearance only. It does not affect security, access or cost, so a one-day review is enough for this example.",
+            "zh": "[演示] 虚构论坛的更新仅改变外观，不影响安全、访问或费用。在这个样例中，一天后复核即可。"
+          },
+          "articleIds": [
+            "85697e1d572fb9b12aa02c79"
+          ],
+          "background": {
+            "en": "An optional color theme lets people choose a different appearance for the same forum. This fictional change affects page colors, without changing security controls, access, pricing or moderation.",
+            "zh": "可选配色主题让用户为同一个论坛选择不同外观。这个虚构更新只影响页面颜色，不改变安全措施、访问权限、费用或内容管理。"
+          }
+        }
+      ]
+    }
   },
   "articles": [
     {
