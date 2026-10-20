@@ -170,6 +170,7 @@ test("raw publisher translations remain source notes without invented background
   assert.deepEqual(context.notes[0].summary, raw.summary);
   assert.equal(context.notes[0].background, null);
   assert.equal(context.notes[0].reviewedAt, null);
+  assert.deepEqual(context.notes[0].insights, []);
   assert.equal(context.hasSourceNotes, true);
   assert.deepEqual(context.watch, []);
   assert.equal(backgroundForArticle(data, raw.id, "industry"), null);
@@ -238,7 +239,60 @@ test("retained reviewed snapshots keep historical background and their original 
   assert.deepEqual(context.notes[0].summary, world.summary);
   assert.equal(context.notes[0].reviewedAt, world.analysis.analyzedAt);
   assert.equal(context.notes[0].needsReview, true);
+  assert.deepEqual(context.notes[0].insights[0].text, world.analysis.implications);
+  assert.equal(context.notes[0].insights[0].reviewedAt, world.analysis.analyzedAt);
+  assert.equal(context.notes[0].insights[0].needsReview, true);
   assert.equal(context.reviewedAt, world.analysis.analyzedAt);
+});
+
+test("reviewed notes surface the linked analysis without borrowing another desk's interpretation", () => {
+  const { data, world, economy } = fixture();
+  for (const options of [
+    { category: "politics", articles: data.articles },
+    { view: "saved", category: "politics", articles: [world, economy] },
+    { view: "stream", category: "politics", articles: [world, economy], search: "policy" },
+  ]) {
+    const context = buildBriefingContext(data, options);
+    const insights = context.notes.flatMap(note => note.insights);
+    assert.deepEqual(insights.map(insight => insight.articleId), [world.id]);
+    assert.deepEqual(insights[0].text, world.analysis.implications);
+    assert.equal(insights[0].reviewedAt, world.analysis.analyzedAt);
+    assert.notDeepEqual(insights[0].text, economy.analysis.implications);
+  }
+});
+
+test("a combined note keeps each distinct event's interpretation and source title separate", () => {
+  const { data, world, economy } = fixture();
+  economy.analysis.analyzedAt = "2026-10-14T14:00:00Z";
+  data.attention.items[0].needsReview = true;
+  const context = buildBriefingContext(data, { articles: [world, economy] });
+  assert.equal(context.notes.length, 1);
+  const insights = context.notes[0].insights;
+  assert.deepEqual(insights.map(insight => insight.articleId), [world.id, economy.id]);
+  assert.deepEqual(insights.map(insight => insight.title.en), [world.title, economy.title]);
+  assert.deepEqual(insights.map(insight => insight.text), [world.analysis.implications, economy.analysis.implications]);
+  assert.deepEqual(insights.map(insight => insight.reviewedAt), [world.analysis.analyzedAt, economy.analysis.analyzedAt]);
+  assert.deepEqual(insights.map(insight => insight.needsReview), [true, false]);
+  assert.equal(context.reviewedAt, economy.analysis.analyzedAt);
+  assert.equal(context.notes[0].needsReview, true);
+});
+
+test("multiple references to one reviewed event show one interpretation, retaining the other event", () => {
+  const { data, world, economy } = fixture();
+  data.attention.items[0].memberArticleIds.push("wire-copy");
+  data.briefing.sectionNotes.all[0].articleIds = [world.id, "wire-copy", economy.id];
+  const context = buildBriefingContext(data, { articles: [world, economy] });
+  assert.deepEqual(context.notes[0].insights.map(insight => insight.articleId), [world.id, economy.id]);
+});
+
+test("an unavailable reviewed snapshot cannot turn changed source text into an editorial interpretation", () => {
+  const { data, world } = fixture();
+  world.analysis = { ...world.analysis, isStale: true };
+  data.attention.items = [];
+  delete data.briefing.sectionNotes;
+  const context = buildBriefingContext(data, { category: "politics", articles: [world] });
+  assert.equal(context.notes[0].kind, "source");
+  assert.deepEqual(context.notes[0].insights, []);
 });
 
 test("linked member reports resolve to the selected event's reviewed context", () => {

@@ -3,6 +3,7 @@ import { Home, RefreshCw, Menu, ArrowRight, AlertCircle } from "lucide-react";
 import Sidebar from "./components/Sidebar";
 import StoryList from "./components/StoryList";
 import BriefingRail from "./components/BriefingRail";
+import BriefingNotes, { ReadingText } from "./components/BriefingNotes";
 import SourceLedger from "./components/SourceLedger";
 import AttentionControls from "./components/AttentionControls";
 import PipelineCoverage from "./components/PipelineCoverage";
@@ -12,6 +13,9 @@ import { buildSectionAssignments, matchesSection, readingSections, sectionCounts
 import WorldMap from "./components/WorldMap";
 import { ArticleDialog, BriefingDialog } from "./components/Dialogs";
 import { copy, bilingual, dateTime, request } from "./lib/format";
+import BackgroundLibrary, { BackgroundLinks } from "./components/BackgroundLibrary";
+import { loadBundledBackgroundGuides } from "./lib/background-guides";
+import { matchingBackgroundGuides, relatedBackgroundGuides } from "./lib/background";
 export default function App() {
   const mutationVersion = useRef(0),
     bookmarkPending = useRef(new Set());
@@ -33,11 +37,17 @@ export default function App() {
     [selected, setSelected] = useState(null),
     [showBrief, setShowBrief] = useState(false),
     [menu, setMenu] = useState(false);
+  const [bundledBackgroundGuides, setBundledBackgroundGuides] = useState([]);
+  const backgroundGuides = data?.background?.guides || bundledBackgroundGuides;
+  const [backgroundId, setBackgroundId] = useState(null);
+  const readingLocation = useRef({ view: "briefing", category: "all", scrollY: 0 });
   const [language, setLanguage] = useState(() => {
     try {
-      return localStorage.getItem("meridian-language") || "both";
+      const saved = localStorage.getItem("meridian-reading-language-v2");
+      if (["en", "both", "zh"].includes(saved)) return saved;
+      return localStorage.getItem("meridian-language") === "zh" ? "zh" : "en";
     } catch {
-      return "both";
+      return "en";
     }
   });
   const load = useCallback(async () => {
@@ -66,7 +76,21 @@ export default function App() {
     return () => clearInterval(timer);
   }, [load]);
   useEffect(() => {
-    localStorage.setItem("meridian-language", language);
+    if (view !== "background" || data?.background?.guides || bundledBackgroundGuides.length) return;
+    let cancelled = false;
+    loadBundledBackgroundGuides().then(guides => {
+      if (!cancelled) setBundledBackgroundGuides(guides);
+    }).catch(() => {
+      if (!cancelled) setError("Background unavailable. Reload to retry.");
+    });
+    return () => { cancelled = true; };
+  }, [view, data?.background?.guides, bundledBackgroundGuides.length]);
+  useEffect(() => {
+    try {
+      localStorage.setItem("meridian-reading-language-v2", language);
+    } catch {
+      // Reading remains available when browser storage is disabled.
+    }
     document.documentElement.lang = language === "zh" ? "zh-Hans" : "en";
   }, [language]);
   const closeArticle = useCallback(() => setSelected(null), []),
@@ -96,16 +120,16 @@ export default function App() {
         }
         if (!completed)
           throw Error(
-            "Collection is still running. The dashboard will update when it completes.",
+            "Collection is still running. Check back shortly.",
           );
         await load();
       } else throw Error("Unexpected collection response");
       setNotice(
         outcome?.failed
-          ? `${outcome.succeeded}/${outcome.requestedSources} ${copy("feeds collected. Failed feeds retain cached reporting; check Sources & status.", "个新闻源成功收集。失败来源保留缓存报道，请查看来源与状态。", language)}`
+          ? `${outcome.succeeded}/${outcome.requestedSources} ${copy("feeds updated · see Sources", "个新闻源已更新 · 查看来源", language)}`
           : copy(
-              "Feeds refreshed. Daily analysis has its own timestamp.",
-              "新闻源已刷新。每日分析有独立的生成时间。",
+              "Feeds updated.",
+              "新闻源已更新。",
               language,
             ),
       );
@@ -195,6 +219,21 @@ export default function App() {
     setView("briefing");
     setReadMode("unread");
   }
+  function openBackground(id) {
+    if (view !== "background") readingLocation.current = { view, category, scrollY: window.scrollY };
+    if (id) setBackgroundId(id);
+    setSelected(null);
+    setShowBrief(false);
+    setView("background");
+    setCategory("all");
+    setMenu(false);
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }
+  function returnToReading() {
+    setView(readingLocation.current.view);
+    setCategory(readingLocation.current.category);
+    requestAnimationFrame(() => window.scrollTo({ top: readingLocation.current.scrollY, behavior: "instant" }));
+  }
   const activeSection = readingSections.find(section => section.id === category);
   const isDemo = data?.collection?.kind === "synthetic_demo";
   const articles = useMemo(() => {
@@ -215,6 +254,10 @@ export default function App() {
             a.sourceName,
             a.summary?.en,
             a.summary?.zh,
+            a.analysis?.headline?.en,
+            a.analysis?.headline?.zh,
+            a.analysis?.readerBrief?.en,
+            a.analysis?.readerBrief?.zh,
             a.attention?.reason?.en,
             a.attention?.reason?.zh,
           ]
@@ -233,10 +276,24 @@ export default function App() {
         );
     return list;
   }, [data, rankedArticles, view, category, search, readMode, prioritySort, sectionAssignments]);
+  const relatedGuides = useMemo(() => relatedBackgroundGuides(articles, backgroundGuides), [articles, backgroundGuides]);
   const briefingContext = useMemo(
     () => data ? buildBriefingContext(data, { view, category, articles, search, assignments: sectionAssignments }) : null,
     [data, view, category, articles, search, sectionAssignments],
   );
+  const showDailyEdition = Boolean(
+    data && view === "briefing" && readMode !== "read" &&
+    !search.trim() && briefingContext?.notes.length,
+  );
+  const editionMinutes = useMemo(() => {
+    if (!briefingContext) return 1;
+    const text = briefingContext.notes.map(note =>
+      bilingual(note.narrative || note.summary, language),
+    ).join(" ");
+    return Math.max(1, Math.ceil(language === "zh"
+      ? text.length / 380
+      : text.split(/\s+/).filter(Boolean).length / 220));
+  }, [briefingContext, language]);
   const currentSelected =
     selected && data?.articles.find((a) => a.id === selected.id);
   const selectedEvent =
@@ -250,21 +307,23 @@ export default function App() {
       : currentSelected || selected
     : null;
   const title =
-    view === "sources"
-      ? copy("Know your sources.", "了解你的新闻来源。", language)
+    view === "background"
+      ? copy("Background library", "背景知识库", language)
+      : view === "sources"
+      ? copy("Sources", "来源", language)
       : view === "saved"
         ? copy(
-            "Keep the stories that matter.",
-            "收藏值得关注的报道。",
+            "Saved stories",
+            "收藏报道",
             language,
           )
         : activeSection
           ? sectionName(category, language)
           : view === "stream"
-            ? copy("The world, as it unfolds.", "世界，正在发生。", language)
+            ? copy("News stream", "新闻动态", language)
           : copy(
-              "A wider view of the world.",
-              "以更宽广的视角看世界。",
+              "Daily briefing",
+              "每日简报",
               language,
             );
   const viewName = {
@@ -272,6 +331,7 @@ export default function App() {
     stream: copy("News stream", "新闻动态", language),
     saved: copy("Saved stories", "收藏报道", language),
     sources: copy("Sources & status", "来源与状态", language),
+    background: copy("Background library", "背景知识库", language),
   }[view];
   return (
     <div className="app-shell">
@@ -281,6 +341,7 @@ export default function App() {
         category={category}
         setCategory={changeCategory}
         onOpenSection={openSection}
+        onOpenBackground={() => openBackground()}
         sectionCounts={unreadBySection}
         language={language}
         open={menu}
@@ -346,74 +407,38 @@ export default function App() {
           </div>
         </header>
         <div
-          className={`workspace-grid ${view === "sources" ? "ledger-grid" : ""}`}
+          className={`workspace-grid ${view === "sources" || view === "background" ? "ledger-grid" : ""}`}
         >
           <div className="primary-content">
             <section className="page-intro">
               <h1>{title}</h1>
-              <p>
-                {activeSection && view !== "sources" && view !== "saved"
-                  ? bilingual(activeSection.description, language)
-                  : view === "briefing"
-                  ? copy(
-                      "Important events, researched and kept in view.",
-                      "重要事件，深入分析，持续关注。",
-                      language,
-                    )
-                  : view === "sources"
-                    ? copy(
-                        "Coverage, collection health, and the limits of the evidence.",
-                        "来源覆盖、收集状态与证据的局限。",
-                        language,
-                      )
-                    : copy(
-                        "All collected reporting, newest first. Translations and analysis are labeled.",
-                        "完整报道流，按时间排列。翻译与独立分析分别标注。",
-                        language,
-                      )}
-              </p>
+              {view === "briefing" && category === "all" ? <p className="reader-promise">
+                {copy("US and world news, with the background and consequences explained.", "读懂美国与世界新闻，理解背景及其影响。", language)}
+              </p> : null}
             </section>
-            <div className="freshness">
-              <span>
-                {new Date().toLocaleDateString(
-                  language === "zh" ? "zh-CN" : "en-US",
-                  {
-                    timeZone: "America/New_York",
-                    weekday: "short",
-                    year: "numeric",
-                    month: "short",
-                    day: "numeric",
-                  },
-                )}
-              </span>
-              <i />
+            {view !== "background" ? <div className="freshness">
               <span>
                 {data
-                  ? `${isDemo ? copy("Demo loaded", "演示载入于", language) : copy("Feeds collected", "新闻收集于", language)} ${dateTime(data.generatedAt)}`
+                  ? `${isDemo ? copy("Demo", "演示", language) : copy("Collected", "收集于", language)} ${dateTime(data.generatedAt)}`
                   : copy(
-                      "Connecting to your local news desk…",
-                      "正在连接本地新闻工作台…",
+                      "Connecting…",
+                      "连接中…",
                       language,
                     )}
               </span>
-            </div>
+            </div> : null}
             {isDemo ? (
               <div className="demo-banner" role="status">
                 <strong>
-                  {copy("Demonstration workspace", "演示工作台", language)}
+                  {copy("Fictional demo", "虚构演示", language)}
                 </strong>
                 <p>
                   {copy(
-                    "Fictional reports and sample analysis. Refresh feeds to replace the demo with live reporting.",
-                    "这里显示虚构报道与示例分析。刷新新闻源可将演示替换为真实报道。",
+                    "Refresh feeds for live reporting.",
+                    "刷新新闻源以获取真实报道。",
                     language,
                   )}
                 </p>
-                {language === "both" ? (
-                  <p className="chinese-text">
-                    这里显示虚构报道与示例分析。刷新新闻源可将演示替换为真实报道。
-                  </p>
-                ) : null}
               </div>
             ) : null}
             {error ? (
@@ -421,8 +446,8 @@ export default function App() {
                 <AlertCircle size={18} />
                 <span>
                   {copy(
-                    "Unable to complete request: ",
-                    "请求未能完成：",
+                    "Request failed: ",
+                    "请求失败：",
                     language,
                   )}
                   {error}
@@ -443,35 +468,38 @@ export default function App() {
                 </button>
               </div>
             ) : null}
-            {!data ? (
+            {view === "background" ? (
+              <BackgroundLibrary
+                guides={backgroundGuides}
+                selectedId={backgroundId}
+                onSelect={setBackgroundId}
+                data={data}
+                language={language}
+                onReturn={returnToReading}
+                onOpenArticle={setSelected}
+              />
+            ) : !data ? (
               <div className="loading-state">
                 <RefreshCw className="spinning" />
                 <p>
                   {copy(
-                    "Opening your news desk…",
-                    "正在打开新闻工作台…",
+                    "Loading…",
+                    "载入中…",
                     language,
                   )}
                 </p>
-                <small>
-                  {copy(
-                    "If this continues, start the local server with npm start.",
-                    "如持续等待，请使用 npm start 启动本地服务。",
-                    language,
-                  )}
-                </small>
               </div>
             ) : (
               <>
                 {view === "sources" ? (
-                  <SourceLedger data={data} language={language} />
+                  <><PipelineCoverage data={data} language={language} /><SourceLedger data={data} language={language} /></>
                 ) : (
                   <>
-                    {view === "briefing" && category === "all" ? (
+                    {showDailyEdition && category === "all" ? (
                       <section className="lead">
                         <div className="lead-copy">
                           <span className="lead-label">
-                            {copy("THE BRIEFING", "综合简报", language)}
+                            {copy("THE DAILY READ", "今日精读", language)}
                           </span>
                           <h2>
                             {data.briefing
@@ -482,13 +510,12 @@ export default function App() {
                                   language,
                                 )}
                           </h2>
-                          <p>
-                            {copy(
-                              "Reporting, context, and the questions still open.",
-                              "报道、背景与仍待解答的问题。",
-                              language,
-                            )}
-                          </p>
+                          {briefingContext.overview ? <ReadingText
+                            value={Object.fromEntries(Object.entries(briefingContext.overview).map(([lang, text]) => [lang, text.split(/\n\s*\n/)[0]]))}
+                            language={language}
+                            className="edition-opener"
+                          /> : null}
+                          <p className="edition-caption">{copy(`About ${editionMinutes} min for the lead stories`, `重点约需 ${editionMinutes} 分钟`, language)}{data.briefing?.isStale ? ` · ${copy("Edition awaiting review", "本期有待更新", language)}` : ""}</p>
                           <button
                             className="primary-button"
                             onClick={() => {
@@ -498,7 +525,7 @@ export default function App() {
                             disabled={!data.briefing}
                           >
                             {data.briefing
-                              ? copy("Read the briefing", "阅读简报", language)
+                              ? copy("Read the full edition", "阅读完整简报", language)
                               : copy(
                                   "Explore the reporting",
                                   "浏览报道",
@@ -510,9 +537,15 @@ export default function App() {
                         <WorldMap />
                       </section>
                     ) : null}
-                    {category === "all" ? <PipelineCoverage data={data} language={language} /> : null}
+                    {showDailyEdition ? <section className="daily-edition" aria-label={copy("The daily read", "今日精读", language)}>
+                      <div className="edition-section-heading">
+                        <h2>{category === "all" ? copy("Start here", "从这里读起", language) : copy("The desk read", "本栏精读", language)}</h2>
+                        <span>{copy("Reported facts. A clear reading of what they mean.", "基于报道事实，解释变化的意义。", language)}</span>
+                      </div>
+                      <BriefingNotes context={briefingContext} data={data} language={language} onOpen={setSelected} />
+                    </section> : null}
+                    <BackgroundLinks guides={relatedGuides} language={language} onOpen={openBackground} />
                     {view === "briefing" && activeSection ? <div className="desk-intro">
-                      <p>{copy("One home per event · ranked by significance", "每个事件只归入一个栏目 · 按重要性排序", language)}</p>
                       <button className="text-link" onClick={() => setShowBrief(true)} disabled={!data.briefing || !articles.length}>{copy("Read this desk’s notes", "阅读本栏简报", language)}<ArrowRight size={15}/></button>
                     </div> : null}
                     {view === "briefing" ? (
@@ -523,9 +556,11 @@ export default function App() {
                         setSort={setPrioritySort}
                         language={language}
                         attention={{ unreadCount: category === "all" ? data.attention?.unreadCount : unreadBySection[category] || 0 }}
-                        compact={category !== "all"}
                       />
                     ) : null}
+                    {view === "briefing" ? <p className="agenda-intro">
+                      {copy("Your full reading agenda. Earlier important events stay here until you mark them read; each report keeps its factual review date.", "完整阅读议程。较早的重要事件会保留至标为已读，每篇仍显示原事实核查日期。", language)}
+                    </p> : null}
                     <StoryList
                       articles={articles}
                       bookmarks={data.bookmarks || []}
@@ -549,7 +584,7 @@ export default function App() {
                         view === "saved"
                           ? copy("Your reading list", "你的阅读清单", language)
                           : view === "briefing"
-                            ? copy("Priority events", "重点事件", language)
+                            ? copy("Keep following", "持续关注", language)
                             : undefined
                       }
                     />
@@ -558,7 +593,7 @@ export default function App() {
               </>
             )}
           </div>
-          {data && view !== "sources" ? (
+          {data && view !== "sources" && view !== "background" ? (
             <BriefingRail
               data={data}
               context={briefingContext}
@@ -568,20 +603,15 @@ export default function App() {
                 setCategory("all");
               }}
               onOpen={(a) => a && setSelected(a)}
+              showNotes={!showDailyEdition}
             />
           ) : null}
         </div>
         <footer className="main-footer">
           MERIDIAN <span>·</span>{" "}
           {copy(
-            "Built on TrendRadar · Local workspace",
-            "基于 TrendRadar · 本地工作台",
-            language,
-          )}
-          <span>·</span>
-          {copy(
-            "Source excerpts are not independent verification.",
-            "来源摘要不代表独立核验。",
+            "Local · TrendRadar",
+            "本地 · TrendRadar",
             language,
           )}
         </footer>
@@ -591,6 +621,8 @@ export default function App() {
           article={selectedArticle}
           readingSection={sectionForArticle(selectedArticle, sectionAssignments)}
           background={backgroundForArticle(data, selectedArticle.id, category)}
+          backgroundGuides={matchingBackgroundGuides(selectedArticle, backgroundGuides)}
+          onOpenBackground={openBackground}
           demo={isDemo}
           language={language}
           onClose={closeArticle}

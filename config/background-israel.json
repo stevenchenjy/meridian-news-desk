@@ -1,0 +1,503 @@
+{
+  "id": "israel-palestine",
+  "title": {
+    "en": "Israel, Palestinians & Gaza",
+    "zh": "以色列、巴勒斯坦人与加沙"
+  },
+  "subtitle": {
+    "en": "Who is who, what is disputed, and why the US matters",
+    "zh": "谁是谁、争议是什么，以及美国为何介入"
+  },
+  "category": "politics",
+  "keywords": [
+    "israel",
+    "israeli",
+    "palestine",
+    "palestinian",
+    "gaza",
+    "west bank",
+    "jerusalem",
+    "hamas",
+    "netanyahu",
+    "idf",
+    "two-state solution",
+    "以色列",
+    "巴勒斯坦",
+    "加沙",
+    "约旦河西岸",
+    "耶路撒冷",
+    "哈马斯"
+  ],
+  "reviewedAt": "2026-10-15",
+  "coverageThrough": "2026-10-14",
+  "overview": {
+    "en": "Background and selected verified developments through 14 October 2026. Israel is a state; Palestinians are a people. Gaza and the West Bank are separate Palestinian territories: Gaza borders Israel, Egypt and the Mediterranean; the West Bank lies between Israel and Jordan. The October 2025 ceasefire is a historical milestone: OCHA’s October 2026 reporting describes continuing civilian harm and insufficient aid. A deal’s announcement does not establish durable peace or its final governing arrangements.",
+    "zh": "背景及经核实的部分进展涵盖至2026年10月14日。以色列是一个国家；巴勒斯坦人是一个民族。加沙与约旦河西岸是分离的巴勒斯坦领土：加沙毗邻以色列、埃及和地中海；西岸位于以色列与约旦之间。2025年10月停火是一项历史节点；人道厅2026年10月的报道仍描述平民受害与援助不足。宣布协议不等于实现持久和平，也不直接确立最终治理安排。"
+  },
+  "takeaways": [
+    {
+      "en": "Separate civilians, governments and armed groups. Palestinians are not interchangeable with Hamas; Israelis are not interchangeable with their government.",
+      "zh": "先区分平民、政府与武装组织。巴勒斯坦人不等于哈马斯；以色列人也不等于以色列政府。"
+    },
+    {
+      "en": "The dispute involves land, national self-determination, security, displacement and political control, alongside religion and holy sites.",
+      "zh": "争议涉及土地、民族自决、安全、流离失所与政治控制，也涉及宗教和圣地。"
+    },
+    {
+      "en": "US military support and mediation create influence, while US and Israeli policy can still diverge.",
+      "zh": "美国通过军事支持与斡旋发挥影响，但美以政策仍可能出现分歧。"
+    }
+  ],
+  "actors": [
+    {
+      "name": {
+        "en": "Israel: state, government and IDF",
+        "zh": "以色列：国家、政府与国防军"
+      },
+      "role": {
+        "en": "The state declared independence in 1948. IDF means Israel Defense Forces, its military.",
+        "zh": "以色列于1948年宣布独立。IDF指以色列国防军，即其军队。"
+      },
+      "position": {
+        "en": "Israeli governments emphasize security. In May 2024, Netanyahu named recovering hostages and eliminating Hamas as war objectives. Treat this as a dated government position, not every Israeli’s view.",
+        "zh": "以色列政府强调安全。2024年5月，内塔尼亚胡将带回人质与消灭哈马斯列为战争目标。这是特定时间的政府立场，不代表每位以色列人的观点。"
+      },
+      "sourceIds": [
+        "us-history",
+        "israel-aims",
+        "crs-palestinians"
+      ]
+    },
+    {
+      "name": {
+        "en": "Palestinian people",
+        "zh": "巴勒斯坦人"
+      },
+      "role": {
+        "en": "People with roots in present-day Israel, Gaza and the West Bank; communities also live in Israel and abroad.",
+        "zh": "其族群根源位于今天的以色列、加沙和约旦河西岸；也有群体生活在以色列境内及海外。"
+      },
+      "position": {
+        "en": "Self-determination, displacement and refugee claims are central national issues. No faction speaks for every Palestinian, and civilian rights do not depend on political allegiance.",
+        "zh": "民族自决、流离失所与难民诉求是核心民族议题。没有任何派别代表每一位巴勒斯坦人；平民权利不取决于政治立场。"
+      },
+      "sourceIds": [
+        "crs-palestinians",
+        "un-nakba",
+        "icj-2024"
+      ]
+    },
+    {
+      "name": {
+        "en": "PLO, PA and Fatah",
+        "zh": "巴解组织、巴勒斯坦权力机构与法塔赫"
+      },
+      "role": {
+        "en": "PLO represents Palestinians internationally. PA is the Oslo-era interim administration with limited West Bank self-rule. Fatah is the dominant faction in both; these are different entities.",
+        "zh": "巴解组织在国际上代表巴勒斯坦人；巴勒斯坦权力机构（PA）是奥斯陆进程产生的临时行政机构，在西岸实行有限自治；法塔赫是两者中的主导派别。三者并非同一概念。"
+      },
+      "position": {
+        "en": "The PLO recognized Israel in 1993. In his September 2023 UN address, Abbas sought a Palestinian state along the pre-June 1967 lines with East Jerusalem as capital.",
+        "zh": "巴解组织于1993年承认以色列。阿巴斯在2023年9月的联合国演讲中，要求以1967年6月战争前的界线为基础建立巴勒斯坦国，以东耶路撒冷为首都。"
+      },
+      "sourceIds": [
+        "crs-palestinians",
+        "un-history",
+        "abbas-2023"
+      ]
+    },
+    {
+      "name": {
+        "en": "Hamas",
+        "zh": "哈马斯"
+      },
+      "role": {
+        "en": "A Palestinian Sunni Islamist movement with an armed wing; designated a terrorist organization by the US. It seized Gaza from PA forces in 2007.",
+        "zh": "一个拥有武装分支的巴勒斯坦逊尼派伊斯兰主义运动；被美国列为恐怖组织。它于2007年从巴勒斯坦权力机构部队手中夺取加沙控制权。"
+      },
+      "position": {
+        "en": "CRS’s July 2024 account says Hamas had not accepted the PLO’s recognition of Israel. Its rivalry with Fatah is a separate political divide from the Israeli-Palestinian conflict.",
+        "zh": "美国国会研究处2024年7月的报告指出，哈马斯尚未接受巴解组织对以色列的承认。哈马斯与法塔赫之间的权力斗争，是有别于巴以冲突的另一条政治分歧。"
+      },
+      "sourceIds": [
+        "crs-palestinians"
+      ]
+    },
+    {
+      "name": {
+        "en": "United States",
+        "zh": "美国"
+      },
+      "role": {
+        "en": "A major Israeli security partner and a mediator in Israeli-Palestinian diplomacy.",
+        "zh": "以色列的重要安全伙伴，也是巴以外交中的斡旋方。"
+      },
+      "position": {
+        "en": "Trump’s September 2025 plan proposed a ceasefire, hostage/prisoner exchanges, staged Israeli withdrawal, Hamas disarmament and transitional Palestinian administration under international oversight. A reformed PA could later take over. Proposed arrangements require implementation; they are not proof of lasting peace.",
+        "zh": "特朗普2025年9月的方案提出停火、人质／囚犯交换、以军分阶段撤出、哈马斯解除武装，以及在国际监督下由巴勒斯坦人过渡管理加沙。改革后的巴勒斯坦权力机构可在之后接管。这些安排仍须落实；提出方案并不证明持久和平已经实现。"
+      },
+      "sourceIds": [
+        "crs-palestinians",
+        "trump-gaza-plan",
+        "ap-ceasefire-2025"
+      ]
+    }
+  ],
+  "roots": {
+    "en": "Modern tensions developed under British rule as Jewish national aspirations and Palestinian Arab demands for self-rule competed over the same land. European persecution drove Jewish immigration. The unresolved questions include borders, refugees, Jerusalem, settlements and security. Religion matters, but describing this only as an ancient religious feud misses the struggle over sovereignty and people’s homes.",
+    "zh": "现代矛盾在英国统治时期逐渐形成：犹太民族建国诉求与巴勒斯坦阿拉伯人的自治诉求指向同一片土地。欧洲的迫害推动了犹太移民。边界、难民、耶路撒冷、定居点与安全问题构成争议的核心。宗教确实重要，但若仅将其理解为古老的宗教仇怨，就会忽略主权与家园之争。"
+  },
+  "timeline": [
+    {
+      "date": "1947-11-29",
+      "title": {
+        "en": "UN partition proposal",
+        "zh": "联合国分治方案"
+      },
+      "detail": {
+        "en": "Resolution 181 proposed Jewish and Arab states and an internationally administered Jerusalem. The proposal did not itself create two functioning states.",
+        "zh": "第181号决议提出建立犹太国与阿拉伯国，并让耶路撒冷接受国际管理。方案本身并未直接建立两个实际运作的国家。"
+      },
+      "sourceIds": [
+        "us-history",
+        "un-history"
+      ]
+    },
+    {
+      "date": "1948",
+      "title": {
+        "en": "Israel’s independence, war and Nakba",
+        "zh": "以色列独立、战争与“灾难”"
+      },
+      "detail": {
+        "en": "Israel declared independence; neighboring Arab armies entered the war. Palestinians experienced mass flight, expulsion and dispossession, remembered as the Nakba, or catastrophe.",
+        "zh": "以色列宣布独立；邻国阿拉伯军队参战。巴勒斯坦人大规模逃离、遭驱逐并失去家园，将这段经历称为Nakba，即“灾难”。"
+      },
+      "sourceIds": [
+        "us-history",
+        "un-nakba"
+      ]
+    },
+    {
+      "date": "1967",
+      "title": {
+        "en": "Occupation reshapes the conflict",
+        "zh": "占领改变冲突格局"
+      },
+      "detail": {
+        "en": "In the June war Israel captured Gaza, the West Bank and East Jerusalem, among other territories. The resulting occupation underpins many later disputes.",
+        "zh": "在6月战争中，以色列夺取加沙、约旦河西岸、东耶路撒冷等领土。由此产生的占领成为此后许多争议的基础。"
+      },
+      "sourceIds": [
+        "un-history",
+        "icj-2024"
+      ]
+    },
+    {
+      "date": "1993",
+      "title": {
+        "en": "Oslo and mutual recognition",
+        "zh": "奥斯陆进程与相互承认"
+      },
+      "detail": {
+        "en": "Israel recognized the PLO as the Palestinians’ representative; the PLO recognized Israel. Agreements established limited Palestinian self-rule, leaving final-status questions unresolved.",
+        "zh": "以色列承认巴解组织为巴勒斯坦人的代表；巴解组织承认以色列。协议建立有限的巴勒斯坦自治，将最终地位问题留待解决。"
+      },
+      "sourceIds": [
+        "un-history",
+        "crs-palestinians"
+      ]
+    },
+    {
+      "date": "2005",
+      "title": {
+        "en": "Israeli withdrawal from Gaza",
+        "zh": "以色列撤出加沙"
+      },
+      "detail": {
+        "en": "Israel removed its settlements and permanent military presence. This did not settle Gaza’s legal status or end external control over access.",
+        "zh": "以色列撤除定居点和常驻军队。这没有解决加沙的法律地位，也未终结外部对其进出的控制。"
+      },
+      "sourceIds": [
+        "un-history",
+        "icj-2024"
+      ]
+    },
+    {
+      "date": "2007",
+      "title": {
+        "en": "Palestinian political split",
+        "zh": "巴勒斯坦政治分裂"
+      },
+      "detail": {
+        "en": "Hamas seized Gaza after conflict with Fatah/PA forces. The PA remained based in the West Bank; Israel and Egypt imposed tight movement and goods restrictions around Gaza.",
+        "zh": "哈马斯与法塔赫／权力机构部队冲突后控制加沙。权力机构以西岸为基地；以色列和埃及对加沙周边人员与货物流动实施严格限制。"
+      },
+      "sourceIds": [
+        "crs-palestinians"
+      ]
+    },
+    {
+      "date": "2023-10-07",
+      "title": {
+        "en": "Hamas-led attack and Gaza war",
+        "zh": "哈马斯主导的袭击与加沙战争"
+      },
+      "detail": {
+        "en": "Hamas-led attackers killed people in Israel and took hostages. Israel launched a major Gaza offensive; subsequent fighting caused extensive Palestinian deaths, displacement and deprivation.",
+        "zh": "哈马斯主导的袭击者在以色列杀人并劫持人质。以色列随后对加沙发动大规模攻势；此后的战事造成大量巴勒斯坦人死亡、流离失所和基本生活物资匮乏。"
+      },
+      "sourceIds": [
+        "crs-palestinians"
+      ]
+    },
+    {
+      "date": "2024-07-19",
+      "title": {
+        "en": "ICJ advisory opinion on occupation",
+        "zh": "国际法院就占领发表咨询意见"
+      },
+      "detail": {
+        "en": "The ICJ found Israel’s continued presence in the occupied Palestinian territory unlawful. It also explained that Gaza-related occupation duties persisted according to Israel’s effective control despite the 2005 withdrawal.",
+        "zh": "国际法院认定以色列持续存在于被占领巴勒斯坦领土的状态不合法。法院还指出，尽管以色列于2005年撤出，其对加沙仍须承担与实际控制程度相对应的占领法义务。"
+      },
+      "sourceIds": [
+        "icj-2024"
+      ]
+    },
+    {
+      "date": "2025-09-29",
+      "title": {
+        "en": "Trump proposes a 20-point Gaza plan",
+        "zh": "特朗普提出加沙20点方案"
+      },
+      "detail": {
+        "en": "The White House proposed ceasefire and reconstruction terms, including transitional governance and demilitarization. The text was a policy proposal, not evidence that every condition had been accepted or carried out.",
+        "zh": "白宫提出停火与重建条款，包括过渡治理及非军事化。该文本是一项政策提案，不代表所有条件已获各方接受或已经执行。"
+      },
+      "sourceIds": [
+        "trump-gaza-plan"
+      ]
+    },
+    {
+      "date": "2025-10-13",
+      "title": {
+        "en": "First-phase releases, unresolved final terms",
+        "zh": "首阶段释放落实，最终安排仍待解决"
+      },
+      "detail": {
+        "en": "AP reported that Hamas released the remaining living hostages and Israel freed Palestinian prisoners under the US-brokered ceasefire. Disarmament, Gaza’s future governance and Palestinian statehood remained unresolved at that date.",
+        "zh": "美联社报道，在美国斡旋的停火安排下，哈马斯释放了剩余在世人质，以色列释放了巴勒斯坦囚犯。截至该日，解除武装、加沙未来治理与巴勒斯坦建国问题仍未解决。"
+      },
+      "sourceIds": [
+        "ap-ceasefire-2025"
+      ]
+    },
+    {
+      "date": "2026-10-13",
+      "title": {
+        "en": "US court protects specified ICC-support activities",
+        "zh": "美国法院保护特定国际刑事法院支持活动"
+      },
+      "detail": {
+        "en": "A New York federal judge preliminarily protected DAWN, TAAG and two members’ specified speech-related ICC work from sanctions enforcement by defendants other than Trump. The order left wider sanctions powers intact and did not decide whether alleged war crimes occurred.",
+        "zh": "纽约一名联邦法官以初步禁令保护DAWN、TAAG及两名成员的特定言论类国际刑事法院支持活动，限制特朗普以外的被告对这些活动执行制裁。命令保留更广泛制裁权限，也未裁定涉嫌战争罪是否成立。"
+      },
+      "sourceIds": [
+        "icc-speech-order-2026"
+      ]
+    },
+    {
+      "date": "2026-10-14",
+      "title": {
+        "en": "OCHA reports winter aid shortages and continued attacks",
+        "zh": "人道厅报告冬季援助短缺与持续袭击"
+      },
+      "detail": {
+        "en": "UN News, citing OCHA, reported attacks affecting Gaza’s civilians while agencies prepared for winter. Fuel, shelter materials, clothing and medical supplies entering Gaza remained insufficient; OCHA cited underfunding and Israeli restrictions. This is an attributed humanitarian assessment, not proof that all ceasefire terms had been implemented.",
+        "zh": "联合国新闻援引人道厅称，各机构正准备应对冬季，但影响加沙平民的袭击仍在持续。进入加沙的燃料、避难材料、衣物与医疗物资不足；人道厅指出资金不足及以色列限制。这是有来源的人道评估，不代表停火所有条款已经落实。"
+      },
+      "sourceIds": [
+        "gaza-winter-2026"
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": {
+        "en": "Two-state solution",
+        "zh": "两国方案"
+      },
+      "meaning": {
+        "en": "Israel and a Palestinian state alongside each other; borders, security and Jerusalem require agreement.",
+        "zh": "以色列与巴勒斯坦国并存；边界、安全及耶路撒冷等安排仍须达成协议。"
+      }
+    },
+    {
+      "term": {
+        "en": "State of Palestine",
+        "zh": "巴勒斯坦国"
+      },
+      "meaning": {
+        "en": "UN non-member observer state status since 2012; diplomatic status does not equal full territorial control.",
+        "zh": "自2012年起拥有联合国非会员观察员国地位；外交地位不等于对领土拥有完全控制。"
+      }
+    },
+    {
+      "term": {
+        "en": "Settlements",
+        "zh": "定居点"
+      },
+      "meaning": {
+        "en": "Israeli civilian communities in occupied territory; the ICJ considers West Bank and East Jerusalem settlements illegal.",
+        "zh": "位于被占领土的以色列平民社区；国际法院认定西岸与东耶路撒冷的定居点违反国际法。"
+      }
+    },
+    {
+      "term": {
+        "en": "Blockade / closure",
+        "zh": "封锁／封闭措施"
+      },
+      "meaning": {
+        "en": "Restrictions on people and goods entering or leaving Gaza; check which crossing, authority and date.",
+        "zh": "对进出加沙的人员与货物流动的限制；阅读时应核对具体口岸、管理方和日期。"
+      }
+    },
+    {
+      "term": {
+        "en": "Ceasefire",
+        "zh": "停火"
+      },
+      "meaning": {
+        "en": "An agreement to pause or stop fighting; it does not automatically resolve borders, governance or sovereignty.",
+        "zh": "暂停或停止战斗的协议；它不会自动解决边界、治理或主权问题。"
+      }
+    },
+    {
+      "term": {
+        "en": "ICC / ICJ",
+        "zh": "国际刑事法院／国际法院"
+      },
+      "meaning": {
+        "en": "The ICC investigates and tries individuals for international crimes. The ICJ handles disputes between states and advisory opinions. An investigation, an arrest warrant and a conviction are different stages.",
+        "zh": "国际刑事法院调查并审判涉嫌国际罪行的个人；国际法院处理国家间争端及咨询意见。调查、逮捕令与定罪是不同阶段。"
+      }
+    }
+  ],
+  "readingLens": [
+    {
+      "en": "Locate the headline: Gaza, the West Bank, East Jerusalem or Israel? Different authorities and disputes apply.",
+      "zh": "先找地点：加沙、西岸、东耶路撒冷，还是以色列境内？不同地点涉及不同管理方与争议。"
+    },
+    {
+      "en": "Identify who is speaking: government, military, faction, aid agency or civilians. A claim is not a verified outcome.",
+      "zh": "辨明发言者：政府、军方、派别、援助机构还是平民？一项主张不等于已核实的结果。"
+    },
+    {
+      "en": "For a deal, check its stage: announcement, signatures, implementation, hostage/prisoner exchanges, aid access, then lasting governance.",
+      "zh": "阅读协议新闻时核对阶段：宣布、签署、执行、人质／囚犯交换、人道准入，以及长期治理安排。"
+    },
+    {
+      "en": "For casualties or legal labels, check date, attributed source and procedural status. An allegation, interim order and final judgment differ.",
+      "zh": "阅读伤亡数据或法律定性时核对日期、信息来源和程序阶段。指控、临时命令与最终判决含义不同。"
+    },
+    {
+      "en": "For legal news, identify the court and issue: alleged crimes, state obligations, sanctions or freedom to share evidence. A US injunction about speech is not a judgment on conduct in Gaza.",
+      "zh": "阅读法律新闻时，辨明法院及议题：涉嫌罪行、国家义务、制裁，还是分享证据的自由。美国关于言论的禁令，并非对加沙行为是否构成罪行的裁决。"
+    }
+  ],
+  "sources": [
+    {
+      "id": "un-history",
+      "title": "History of the Question of Palestine",
+      "publisher": "United Nations, UNISPAL",
+      "url": "https://www.un.org/unispal/history/",
+      "kind": "historical-record"
+    },
+    {
+      "id": "un-nakba",
+      "title": "About the Nakba",
+      "publisher": "United Nations, UNISPAL",
+      "url": "https://www.un.org/unispal/about-the-nakba/",
+      "kind": "historical-record"
+    },
+    {
+      "id": "us-history",
+      "title": "Creation of Israel, 1948",
+      "publisher": "US Department of State, Office of the Historian",
+      "url": "https://history.state.gov/milestones/1945-1952/creation-israel",
+      "kind": "historical-record"
+    },
+    {
+      "id": "crs-palestinians",
+      "title": "The Palestinians: Overview, Aid, and U.S. Policy Issues (18 July 2024)",
+      "publisher": "Congressional Research Service, archived by EveryCRSReport",
+      "url": "https://www.everycrsreport.com/files/2024-07-18_IF10644_4c74f4a1e9492f51c4bb337830501168d1f36eb9.pdf",
+      "kind": "historical-record",
+      "publishedAt": "2024-07-18"
+    },
+    {
+      "id": "israel-aims",
+      "title": "Statement by PM Netanyahu, 7 May 2024",
+      "publisher": "Israel Ministry of Foreign Affairs",
+      "url": "https://www.gov.il/en/pages/pm-statement-7-may-2024",
+      "kind": "institutional-position",
+      "publishedAt": "2024-05-07"
+    },
+    {
+      "id": "abbas-2023",
+      "title": "UN General Assembly, 21 September 2023: address by Mahmoud Abbas",
+      "publisher": "United Nations General Assembly, official meeting record",
+      "url": "https://digitallibrary.un.org/nanna/record/4035094/files/A_78_PV.8-EN.pdf?registerDownload=1&version=1&withMetadata=0&withWatermark=0",
+      "kind": "institutional-position",
+      "publishedAt": "2023-09-21"
+    },
+    {
+      "id": "icj-2024",
+      "title": "Summary of the Advisory Opinion of 19 July 2024",
+      "publisher": "International Court of Justice",
+      "url": "https://www.icj-cij.org/node/204176",
+      "kind": "historical-record",
+      "publishedAt": "2024-07-19"
+    },
+    {
+      "id": "trump-gaza-plan",
+      "title": "White House press release: Comprehensive Plan to End the Gaza Conflict (29 September 2025)",
+      "publisher": "White House, archived by The American Presidency Project, UCSB",
+      "url": "https://www.presidency.ucsb.edu/documents/white-house-press-release-president-donald-j-trumps-comprehensive-plan-end-the-gaza",
+      "kind": "institutional-position",
+      "publishedAt": "2025-09-29"
+    },
+    {
+      "id": "ap-ceasefire-2025",
+      "title": "After hostages and prisoners are freed, complex issues remain for Israel-Hamas ceasefire",
+      "publisher": "Associated Press, republished by KSAT",
+      "url": "https://www.ksat.com/news/world/2025/10/13/israel-prepares-to-welcome-the-last-living-hostages-from-gaza-as-a-ceasefire-holds/",
+      "kind": "independent-reporting",
+      "publishedAt": "2025-10-13"
+    },
+    {
+      "id": "icc-speech-order-2026",
+      "title": "DAWN et al. v. Trump, SDNY 26-CV-5957, opinion and order (document 40)",
+      "publisher": "US District Court, Southern District of New York, via CourtListener",
+      "url": "https://storage.courtlistener.com/recap/gov.uscourts.nysd.668333/gov.uscourts.nysd.668333.40.0.pdf",
+      "kind": "historical-record",
+      "publishedAt": "2026-10-13"
+    },
+    {
+      "id": "gaza-winter-2026",
+      "title": "World News in Brief: Gaza braces for winter amid attacks",
+      "publisher": "UN News, citing OCHA",
+      "url": "https://news.un.org/en/story/2026/10/1168596",
+      "kind": "institutional-position",
+      "publishedAt": "2026-10-14"
+    },
+    {
+      "id": "icc-role",
+      "title": "About the Court: individual criminal responsibility",
+      "publisher": "International Criminal Court",
+      "url": "https://www.icc-cpi.int/about/the-court",
+      "kind": "institutional-position"
+    }
+  ]
+}

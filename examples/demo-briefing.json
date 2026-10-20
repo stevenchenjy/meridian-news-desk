@@ -2,8 +2,8 @@
   "collectionGeneratedAt": "2026-10-14T12:00:00.000000Z",
   "briefing": {
     "title": {
-      "en": "[DEMO] Importance survives the daily news cycle",
-      "zh": "[演示] 重要性不随每日新闻周期消失"
+      "en": "[DEMO] A closed supply route still needs attention",
+      "zh": "[演示] 尚未开放的物资通道仍值得关注"
     },
     "overview": {
       "en": "Fictional local demonstration: an unresolved relief corridor from 13 days ago outranks a one-hour-old forum theme. The high-impact event stays on your attention agenda until you mark it read. Both examples and their bilingual analyses are hand-authored fixtures, not real news or AI research. No schedule is installed by this demo.",
@@ -167,7 +167,13 @@
             "label": "[DEMO] Reserved .example fixture URL; not a real report",
             "url": "https://relief.meridian.example/demo/closed-corridor"
           }
-        ]
+        ],
+        "headline": {
+          "en": "[DEMO] Blocked aid still outweighs a newer forum update"
+        },
+        "readerBrief": {
+          "en": "[DEMO] A fictional relief corridor remains closed 13 days after the disruption began. In this scenario, 800,000 residents cannot receive essential supplies through the route. A relief corridor is a path used to deliver necessities to people cut off from ordinary supplies. The example does not establish why it closed or when access will return.\n\nThe continuing supply problem gives the older story greater consequence than a new cosmetic software change. Our assessment within the scenario: keep the disruption in view until access changes, rather than replacing it with the next headline. A reopening or a documented change in deliveries would justify a new material assessment."
+        }
       },
       "attention": {
         "importance": 84,
@@ -210,7 +216,13 @@
             "label": "[DEMO] Reserved .example fixture URL; not a real report",
             "url": "https://forum.meridian.example/demo/color-theme"
           }
-        ]
+        ],
+        "headline": {
+          "en": "[DEMO] A forum’s new colors can wait behind unresolved needs"
+        },
+        "readerBrief": {
+          "en": "[DEMO] A fictional software forum announced an optional color theme one hour before this edition. Users can change how the page looks. The scenario leaves security, access, pricing and moderation unchanged. This is an invented product announcement, and its example link does not document a real release.\n\nThe update offers a small preference without changing the terms on which people use the service. Its recent timestamp therefore gives little reason to displace the older supply disruption. Our assessment: read it when convenient. A later change affecting access, cost or safety would need a separate evaluation; another announcement of the same colors would not."
+        }
       },
       "attention": {
         "importance": 18,

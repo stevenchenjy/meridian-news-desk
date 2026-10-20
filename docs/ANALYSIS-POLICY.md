@@ -1,6 +1,8 @@
-# Bilingual analysis and evidence policy
+# Editorial analysis and evidence policy
 
-Meridian helps a reader in the United States understand important developments in the US and the wider world. English and Simplified Chinese must carry the same claims, qualifications, numbers, dates and attribution. A complete Chinese general overview accompanies the English overview, synthesizing ongoing important events as well as new material developments.
+Meridian helps a reader understand important developments in the US and the wider world. English is the primary visible reading language. Existing Chinese summaries, analyses, overviews and guides remain available on demand. When English and Simplified Chinese versions are supplied, they must carry the same claims, qualifications, numbers, dates and attribution. The existing paired factual fields retain their validation; new editorial headlines and short reader briefs require English and may include Chinese. Briefly explain useful unfamiliar acronyms in both languages within English prose rather than duplicating an entire story by default.
+
+Apply [EDITORIAL-RULEBOOK.md](EDITORIAL-RULEBOOK.md) to every new or revised report, overview, desk note and background guide. It makes Humanizer editing, plain-language explanation, sourced perspectives and a defensible takeaway part of the standing research workflow. Readability does not require removing substance, and objectivity does not require withholding a supported judgment.
 
 ## Separate collection, translation and analysis
 
@@ -10,6 +12,7 @@ Meridian helps a reader in the United States understand important developments i
 | Translated source excerpt | A faithful English/Chinese rendering of the collected excerpt, clearly labeled as source material. | Independent verification or objective analysis. |
 | Reviewed summary | Facts or attributed claims checked within the stated evidence and access limits. | That every claim in the original article was verified. |
 | Reviewed analysis | Bilingual context, implications, uncertainty, next indicators and evidence prepared by Codex. | Certainty, final legal findings, or guaranteed financial outcomes. |
+| Editorial headline and reader brief | A readable English-first synthesis of a reviewed event, preserving its evidence, factual date and material qualifications. | A new source verification, a new material development, or a translation that has not been supplied. |
 
 Translate every newly collected or substantively changed entry before declaring bilingual stream coverage complete. Do not reserve Chinese for the selected briefing. If an excerpt is absent, summarize only the available headline and label that narrower scope. Preserve allegations, forecasts and modeled estimates; never add facts to make a translation read more naturally. Keep publisher translation provenance distinct from reviewed summary and analysis. An unreviewed article may expose translated source text in `summary` with `summaryProvenance` and `translatedSummary`; it must not gain `analysis` merely because both languages are present.
 
@@ -28,18 +31,20 @@ An unreviewed story can be queued from the dashboard for analysis. A queue reque
 
 | Field | Content |
 | --- | --- |
+| `analysis.headline` | A specific editorial title naming a change, consequence or substantive question. Preserve the publisher headline separately. English required; Chinese optional. |
+| `analysis.readerBrief` | A short standalone narrative leading with the dated development and explaining the actors, mechanism and bounded judgment. Preserve claim-specific limits; retain extended evidence and disagreements in the full analysis. English required; Chinese optional. |
 | `summary` | Verified or clearly attributed facts: who did what, where, when and at what stated scale. |
 | `context` | Established background: who the actors are, what the institution or mechanism does, why the issue matters, and its connection to earlier developments. |
 | `sectionNotes.<desk>[].background` | A short bilingual orientation before the latest development, grounded in the linked reviewed reporting. Explain unfamiliar actors and terms. |
 | `sectionNotes.<desk>[].summary` | The latest development for that desk, with its date, practical significance and material qualifications. |
-| `whyItMatters` / `implications` | Labeled interpretation, plausible mechanisms and affected groups. Use conditional wording for uncertain outcomes. |
+| `whyItMatters` / `implications` | A concrete takeaway, explanatory mechanism and evidence-based editorial assessment, with useful named perspectives attributed to checked sources. Use conditional wording for uncertain outcomes. |
 | `uncertainty` | Specific missing evidence, disputed claims, methodological limits and unresolved alternatives. |
-| `watch` | Observable next indicators or documented scheduled decisions; no invented deadlines. |
+| `watch` | Observable evidence that would strengthen or weaken the assessment, or documented scheduled decisions, with an explanation of what the result would mean; no invented deadlines. |
 | `evidence` | Checked pages supporting the preceding claims, including the original collected URL. |
 
-Objectivity means matching claims to evidence and considering credible alternatives; it does not require giving equally strong treatment to unequally supported positions. Separate government statements, independent observations and assessment. Attribute allegations and forecasts. Identify whether figures are measurements, estimates or models. Do not infer causation from a price move or correlation, or convert financial reporting into personal buy/sell advice.
+Objectivity means matching claims to evidence and considering credible alternatives; it does not require giving equally strong treatment to unequally supported positions. Make a clear editorial assessment when the evidence supports one, and show the reasoning and what would change it. Research commentators, practitioners, affected groups and decision-makers when their views explain a meaningful dispute or consequence. Name and source the view, assess its basis, and avoid forced balance or invented consensus. Separate government statements, independent observations and assessment. Attribute allegations and forecasts. Identify whether figures are measurements, estimates or models. Do not infer causation from a price move or correlation, or convert financial reporting into personal buy/sell advice.
 
-Every newly authored major reviewed event must include enough background for a reader who is new to the subject. Introduce the actors and their roles before giving the latest action or number. For example, explain what a relief route supplies, what the FOMC decides, or what an unfamiliar organization does. Expand acronyms on first use. Explain a cause only when the evidence supports it; when the cause is unknown, say so rather than filling the gap with a plausible story.
+Every newly authored reviewed event must include enough background for a reader who is new to the subject. Lead with the consequential development or takeaway, give brief orientation to unfamiliar actors and their roles, then develop the detail. For example, explain what a relief route supplies, what the FOMC decides, or what an unfamiliar organization does. Expand acronyms on first use. Explain a cause only when the evidence supports it; when the cause is unknown, say so rather than filling the gap with a plausible story.
 
 Use short, connected sentences and concrete explanations. Write the Chinese as natural prose with the same claims, rather than translating English syntax or stacking abstract nouns. Separate background from the latest development so a returning reader can scan the update while a new reader can understand its setting. Keep original dates visible, distinguish projections from current counts, and explain terms that would otherwise carry the meaning alone.
 
@@ -47,7 +52,7 @@ New `briefing.sectionNotes` use `all`, `politics`, `economy`, `development` and 
 
 Notes follow the visible reading desk, saved-story selection or search results. A missing note can use the matching stories' existing summaries and reviewed context; it must not substitute an unrelated global narrative. Raw source excerpts cannot supply invented background or become independent analysis. Editing a note or moving an event to a more suitable desk changes presentation, not the date its supporting facts were checked. API validation confirms shape, bilingual fields and valid references, not the truth or adequacy of the explanation; the author remains responsible for the evidence.
 
-Put operational details—collection counts, translation gaps, stale feeds, scheduler status and unconnected services—in **Sources & status** and the run report. Keep an evidence limit within a story when it changes the interpretation of its claims, such as an unavailable court record or an unverified estimate. Operational status is not the event's background.
+Put operational details, including collection counts, translation gaps, stale feeds, scheduler status and unconnected services, in **Sources & status** and the run report. Keep an evidence limit within a story when it changes the interpretation of its claims, such as an unavailable court record or an unverified estimate. Operational status is not the event's background.
 
 ## Significance and continuing coverage
 
@@ -64,3 +69,5 @@ Preserve the exact `collectionGeneratedAt` snapshot used. The application must r
 A retained attention event may show its last reviewed bilingual assessment while current reporting awaits re-review. Display `needsReview` and the old analysis timestamp, and keep its evidence readable. This prevents an ongoing event from disappearing while making the age of the assessment visible.
 
 Inspect saved JSON, current API and rendered dashboard before claiming successful local delivery. Files, generated frontend bundles, the running server and scheduled execution are distinct states. A passing test or saved archive is not proof that an unattended daily run or external publication occurred.
+
+Editorial-only changes use `scripts/apply_editorial.py` with the exact current collection identity. They must not advance `analyzedAt`, reset a review horizon, change semantic event/update keys, reopen a read event or fulfill a pending factual-review request. The importer updates compatible current and retained reviewed copies and preserves original summaries and evidence. Routine research imports that omit the optional editorial fields retain the reading layer only when it still describes the same factual version; a changed factual analysis needs a newly checked headline and reader brief.

@@ -8,12 +8,12 @@ import {
 } from "lucide-react";
 import {
   copy,
-  bilingual,
   relativeTime,
   dateTime,
 } from "../lib/format";
 import { priorityBand } from "../lib/attention";
 import { readingSections, sectionName, sectionForArticle } from "../lib/sections";
+import { articleOpening, editorialHeadline, editorialHeadlines, reviewedEditorial } from "../lib/editorial";
 
 export default function StoryList({
   articles,
@@ -102,25 +102,12 @@ export default function StoryList({
           <h3>
             {ranked && readMode === "unread"
               ? copy(
-                  "No unread priorities here.",
-                  "此处暂无未读重点。",
+                  "No unread events.",
+                  "暂无未读事件。",
                   language,
                 )
-              : copy("No stories here yet.", "暂时没有报道。", language)}
+              : copy("No stories found.", "暂无匹配报道。", language)}
           </h3>
-          <p>
-            {ranked
-              ? copy(
-                  "Read events remain in All assessed. New reporting is available in News stream.",
-                  "已读事件仍保留在“全部已评估”中。新报道可在新闻动态中查看。",
-                  language,
-                )
-              : copy(
-                  "Try another topic or search, or refresh your feeds.",
-                  "请尝试其他主题或搜索词，或刷新新闻源。",
-                  language,
-                )}
-          </p>
         </div>
       ) : (
         <div>
@@ -130,6 +117,9 @@ export default function StoryList({
               band = priorityBand(attention?.importance ?? 0);
             const isRead = Boolean(a.isRead || attention?.isRead);
             const readId = attention?.eventId || a.id;
+            const headlines = ranked ? editorialHeadlines(a) : null;
+            const opening = ranked ? articleOpening(a) : a.summary;
+            const openingText = language === 'zh' ? opening?.zh || a.summary?.zh : typeof opening === 'string' ? opening : opening?.en;
             return (
               <article
                 className={`story-row ${isRead ? "is-read" : ""}`}
@@ -180,11 +170,12 @@ export default function StoryList({
                     </div>
                   ) : null}
                   <button className="story-title" onClick={() => onOpen(a)}>
-                    {a.title}
+                    {ranked ? editorialHeadline(a, language) : a.title}
                   </button>
+                  {ranked && language === 'both' && headlines?.zh && headlines.zh !== headlines.en ? <p className="story-title-zh" lang="zh-Hans">{headlines.zh}</p> : null}
                   <p className="story-excerpt">
-                    {a.summary
-                      ? bilingual(a.summary, language)
+                    {openingText
+                      ? openingText
                       : language === "zh"
                         ? "中文摘要待生成，可查看原文。"
                         : a.excerpt ||
@@ -194,30 +185,19 @@ export default function StoryList({
                             language,
                           )}
                   </p>
-                  {language === "both" ? (
+                  {language === "both" && (!ranked || opening?.zh) ? (
                     <p
-                      className={`chinese-text ${!a.summary?.zh ? "translation-pending" : ""}`}
+                      className={`chinese-text ${!opening?.zh ? "translation-pending" : ""}`}
                     >
-                      {a.summary?.zh ||
-                        "中文摘要待生成 · 已进入收集后的双语处理待办。"}
+                      {opening?.zh ||
+                        "中文摘要待生成。"}
                     </p>
-                  ) : null}
-                  {ranked && attention?.reason ? (
-                    <div className="ranking-reason">
-                      <span>
-                        {copy("Why it stays: ", "关注理由：", language)}
-                      </span>
-                      {bilingual(attention.reason, language)}
-                      {language === "both" ? (
-                        <p className="chinese-text">{attention.reason.zh}</p>
-                      ) : null}
-                    </div>
                   ) : null}
                   {a.isReviewedSnapshot ? (
                     <p className="snapshot-note">
                       {copy(
-                        "Last reviewed version. Source content has changed; a new review is needed.",
-                        "显示上次已核验版本。来源内容已变化，需要重新复核。",
+                        "Source changed · review due.",
+                        "来源已变化 · 待复核。",
                         language,
                       )}
                     </p>
@@ -227,44 +207,44 @@ export default function StoryList({
                       {a.sourceUnavailable || a.isStale ? (
                         <span className="cache-note">
                           {copy(
-                            "Cached · check source status",
-                            "缓存内容 · 请查看来源状态",
+                            "Cached",
+                            "缓存",
                             language,
                           )}{" "}
                           ·{" "}
                         </span>
                       ) : null}
                       <span
-                        className={`provenance ${a.analysis ? "reviewed" : ""}`}
+                        className={`provenance ${reviewedEditorial(a) ? "reviewed" : ""}`}
                       >
                         {demo
                           ? copy(
-                              "Sample bilingual analysis · fictional",
-                              "双语示例分析 · 虚构",
+                              "Demo · fictional",
+                              "虚构演示",
                               language,
                             )
-                          : a.analysis
+                          : reviewedEditorial(a)
                             ? copy(
-                                "Sourced bilingual analysis",
-                                "有来源的双语分析",
+                                "Reviewed analysis",
+                                "已核查分析",
                                 language,
                               )
                             : a.summaryProvenance?.kind ===
                                 "headline_translation"
                               ? copy(
-                                  "Publisher headline translated · not analyzed",
-                                  "发布者标题翻译 · 尚未分析",
+                                  "Headline · unreviewed",
+                                  "标题翻译 · 未分析",
                                   language,
                                 )
                               : a.summary?.zh
                                 ? copy(
-                                    "Publisher excerpt translated · not analyzed",
-                                    "发布者摘要翻译 · 尚未分析",
+                                    "Source summary · unreviewed",
+                                    "来源摘要 · 未分析",
                                     language,
                                   )
                                 : copy(
-                                    "Source excerpt · translation pending",
-                                    "来源摘要 · 翻译待处理",
+                                    "Translation pending",
+                                    "待翻译",
                                     language,
                                   )}
                       </span>

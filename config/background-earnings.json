@@ -1,0 +1,247 @@
+{
+  "id": "earnings-markets",
+  "title": {
+    "en": "Company earnings, markets & IPOs",
+    "zh": "公司财报、市场与首次上市"
+  },
+  "subtitle": {
+    "en": "Read what a company earned, what it expects, and what investors already priced in.",
+    "zh": "分清公司赚了什么、预计什么，以及市场已经预期了什么。"
+  },
+  "category": "economy",
+  "keywords": [
+    "earnings",
+    "TSMC",
+    "Morgan Stanley",
+    "IPO",
+    "profit",
+    "revenue",
+    "财报",
+    "营收",
+    "利润",
+    "台积电",
+    "摩根士丹利",
+    "上市",
+    "业绩指引",
+    "earnings guidance",
+    "revenue guidance"
+  ],
+  "reviewedAt": "2026-10-15",
+  "coverageThrough": "2025-01-16",
+  "overview": {
+    "en": "Earnings news combines a company’s past accounts, management’s forecasts, and investors’ expectations. These are different kinds of evidence. A chip manufacturer and an investment bank also earn money through different mechanisms. This guide uses examples from January 2025 and earlier, not the latest quarter. Always check the reporting period before treating an example as current.",
+    "zh": "财报新闻把公司过去的账目、管理层预测和投资者预期放在一起，但三者是不同类型的证据。芯片制造商与投资银行的赚钱机制也不同。本篇使用2025年1月及更早的例子，不代表最新季度；使用例子前必须核对报告期。"
+  },
+  "takeaways": [
+    {
+      "en": "Revenue is sales before expenses; profit is what remains after relevant expenses. Cash flow answers another question.",
+      "zh": "营收是扣除费用前的销售收入，利润是扣除相关费用后的结果，现金流回答的是另一问题。"
+    },
+    {
+      "en": "A strong quarter can accompany a falling share price if expectations or future guidance were stronger.",
+      "zh": "即使当季表现良好，若原有预期或未来指引更高，股价仍可能下跌。"
+    },
+    {
+      "en": "An IPO rumor, a filing, priced shares, and completed trading are separate stages.",
+      "zh": "IPO传闻、提交文件、确定发行价与正式交易，是不同阶段。"
+    }
+  ],
+  "actors": [
+    {
+      "name": {
+        "en": "Company management",
+        "zh": "公司管理层"
+      },
+      "role": {
+        "en": "Produces accounts and outlook",
+        "zh": "提供账目与前景判断"
+      },
+      "position": {
+        "en": "It explains business performance but also has an interest in investor confidence. Distinguish recorded results from assumptions about future demand, margins, and investment.",
+        "zh": "管理层解释业务表现，也希望维持投资者信心。要分清已记录结果，与未来需求、利润率和投资方面的假设。"
+      },
+      "sourceIds": [
+        "earnings-sec"
+      ]
+    },
+    {
+      "name": {
+        "en": "TSMC",
+        "zh": "台积电"
+      },
+      "role": {
+        "en": "Manufactures customers’ chip designs",
+        "zh": "制造客户设计的芯片"
+      },
+      "position": {
+        "en": "Its quarterly materials discuss revenue, manufacturing technology, capacity spending, and demand. AI-related sales can matter without proving every chip product or customer is growing equally.",
+        "zh": "季度材料讨论营收、制造技术、产能支出与需求。AI相关销售可能重要，却不证明每种芯片或每位客户都同样增长。"
+      },
+      "sourceIds": [
+        "earnings-tsmc"
+      ]
+    },
+    {
+      "name": {
+        "en": "Morgan Stanley",
+        "zh": "摩根士丹利"
+      },
+      "role": {
+        "en": "Financial-services firm",
+        "zh": "金融服务公司"
+      },
+      "position": {
+        "en": "Its earnings materials cover a different business from manufacturing. Advising on deals, underwriting securities, trading, and managing wealth can respond differently to market conditions.",
+        "zh": "其财报反映的业务与制造业不同。并购顾问、证券承销、交易和财富管理对市场状况的反应可能各异。"
+      },
+      "sourceIds": [
+        "earnings-ms"
+      ]
+    },
+    {
+      "name": {
+        "en": "SEC and investors",
+        "zh": "美国证交会与投资者"
+      },
+      "role": {
+        "en": "Disclosure oversight and capital allocation",
+        "zh": "信息披露监督与资金配置"
+      },
+      "position": {
+        "en": "Investors evaluate risks and prices. SEC review concerns disclosure; effectiveness of an IPO registration is not an endorsement of the investment.",
+        "zh": "投资者评估风险与价格。证交会审核关注信息披露；IPO注册文件生效不等于认可其投资价值。"
+      },
+      "sourceIds": [
+        "earnings-ipo"
+      ]
+    }
+  ],
+  "roots": {
+    "en": "Public markets let businesses raise capital and shareholders trade ownership. Repeated disclosure makes comparison possible, but accounting estimates, currencies, and one-off items complicate it. Investment banks can help sell new shares; that commercial role is different from a regulator certifying disclosures or an investor deciding a price is attractive.",
+    "zh": "公开市场让企业融资、股东交易所有权。持续披露使比较成为可能，但会计估计、货币口径与一次性项目会增加难度。投资银行可协助发行新股；这一商业角色，与监管披露或投资者判断价格是否合适并不相同。"
+  },
+  "timeline": [
+    {
+      "date": "2007",
+      "title": {
+        "en": "SEC publishes a beginner statement guide",
+        "zh": "证交会发布财务报表入门指南"
+      },
+      "detail": {
+        "en": "The guide separates balance sheets, income statements, cash flows, and shareholder equity rather than treating one profit number as the whole business.",
+        "zh": "指南区分资产负债表、利润表、现金流量表与股东权益，而非用一个利润数字概括整家公司。"
+      },
+      "sourceIds": [
+        "earnings-sec"
+      ]
+    },
+    {
+      "date": "2022-10-14",
+      "title": {
+        "en": "IPO investor guidance is updated",
+        "zh": "更新IPO投资者指引"
+      },
+      "detail": {
+        "en": "The SEC’s investor bulletin explains prospectuses, offering risks, and why registration effectiveness is not approval of merits.",
+        "zh": "证交会投资者公告说明招股书、发行风险，以及注册生效为何不等于投资价值获认可。"
+      },
+      "sourceIds": [
+        "earnings-ipo"
+      ]
+    },
+    {
+      "date": "2025-01-16",
+      "title": {
+        "en": "TSMC and Morgan Stanley report 2024 results",
+        "zh": "台积电与摩根士丹利公布2024年业绩"
+      },
+      "detail": {
+        "en": "Both publish fourth-quarter materials on the same day. Their different revenue engines illustrate why matching dates does not make performance directly comparable.",
+        "zh": "两家公司在同一天发布第四季度资料。它们收入来源不同，说明日期相同并不意味着业绩可直接比较。"
+      },
+      "sourceIds": [
+        "earnings-tsmc",
+        "earnings-ms"
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": {
+        "en": "EPS",
+        "zh": "每股收益（EPS）"
+      },
+      "meaning": {
+        "en": "Profit allocated per share; diluted EPS accounts for potential additional shares.",
+        "zh": "分摊至每股的利润；摊薄每股收益考虑潜在新增股份。"
+      }
+    },
+    {
+      "term": {
+        "en": "Margin",
+        "zh": "利润率"
+      },
+      "meaning": {
+        "en": "Profit divided by revenue, with gross, operating, and net margins measuring different expense layers.",
+        "zh": "利润除以营收；毛利率、营业利润率与净利率扣除的费用层次不同。"
+      }
+    },
+    {
+      "term": {
+        "en": "Guidance / consensus",
+        "zh": "业绩指引／市场共识"
+      },
+      "meaning": {
+        "en": "Management’s forecast versus a collection of analysts’ forecasts; neither is an achieved result.",
+        "zh": "管理层预测与分析师预测汇总；二者都不是已经实现的结果。"
+      }
+    }
+  ],
+  "readingLens": [
+    {
+      "en": "Which quarter, currency, accounting measure, and comparison period does the number use?",
+      "zh": "数字采用哪个季度、货币、会计口径和比较期？"
+    },
+    {
+      "en": "Is growth from more business, higher prices, an acquisition, or a one-off accounting item?",
+      "zh": "增长来自业务量、价格、收购，还是一次性会计项目？"
+    },
+    {
+      "en": "For an IPO claim, is there a company statement or public filing, and which stage is actually complete?",
+      "zh": "IPO消息有公司声明或公开文件吗，实际完成了哪一步？"
+    }
+  ],
+  "sources": [
+    {
+      "id": "earnings-sec",
+      "title": "Beginners’ Guide to Financial Statements",
+      "publisher": "US Securities and Exchange Commission",
+      "url": "https://www.sec.gov/files/investor/pubs/begfinstmtguide.htm",
+      "kind": "historical-record"
+    },
+    {
+      "id": "earnings-ipo",
+      "title": "Updated Investor Bulletin: Investing in an IPO",
+      "publisher": "SEC Office of Investor Education and Advocacy",
+      "url": "https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-17",
+      "kind": "institutional-position",
+      "publishedAt": "2022-10-14"
+    },
+    {
+      "id": "earnings-tsmc",
+      "title": "TSMC 2024 Q4 Quarterly Results",
+      "publisher": "TSMC Investor Relations",
+      "url": "https://investor.tsmc.com/english/quarterly-results/2024/q4",
+      "kind": "institutional-position",
+      "publishedAt": "2025-01-16"
+    },
+    {
+      "id": "earnings-ms",
+      "title": "Morgan Stanley Reports Fourth Quarter and Full Year 2024",
+      "publisher": "Morgan Stanley",
+      "url": "https://www.morganstanley.com/press-releases/morgan-stanley-reports-fourth-quarter-and-full-year-2024",
+      "kind": "institutional-position",
+      "publishedAt": "2025-01-16"
+    }
+  ]
+}

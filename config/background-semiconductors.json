@@ -1,0 +1,248 @@
+{
+  "id": "semiconductors",
+  "title": {
+    "en": "Semiconductors & the chip supply chain",
+    "zh": "半导体与芯片供应链"
+  },
+  "subtitle": {
+    "en": "Designers, factories, equipment, packaging, and the politics connecting them.",
+    "zh": "设计、晶圆厂、设备、封装，以及连接它们的政治。"
+  },
+  "category": "industry",
+  "keywords": [
+    "semiconductor",
+    "chip",
+    "chips",
+    "TSMC",
+    "ASML",
+    "Nvidia",
+    "foundry",
+    "EUV",
+    "CHIPS Act",
+    "半导体",
+    "芯片",
+    "台积电",
+    "光刻机",
+    "英伟达",
+    "晶圆",
+    "先进封装"
+  ],
+  "reviewedAt": "2026-10-15",
+  "coverageThrough": "2022-08-09",
+  "overview": {
+    "en": "A chip begins as a design, is fabricated on a wafer, then packaged and tested before entering a product. Different firms and countries specialize in these stages. A shortage at one stage cannot always be fixed by expanding another. This guide covers the industry’s structure and milestones through August 2022; today’s factory output, export rules, and company results need dated updates.",
+    "zh": "芯片先有设计，再在晶圆上制造，之后封装测试并进入产品。不同公司与国家专长于不同环节。一个环节短缺，未必能通过扩张另一环节解决。本篇介绍产业结构与截至2022年8月的节点；当前工厂产量、出口规则和公司业绩应查看有日期的更新。"
+  },
+  "takeaways": [
+    {
+      "en": "Designing a chip and owning the factory that manufactures it are different businesses.",
+      "zh": "设计芯片与拥有制造芯片的工厂，是不同业务。"
+    },
+    {
+      "en": "Advanced logic, memory, mature-node chips, and packaging face different constraints.",
+      "zh": "先进逻辑、存储、成熟制程芯片与封装，面临不同瓶颈。"
+    },
+    {
+      "en": "A factory announcement is not installed equipment, qualified production, or commercially useful output.",
+      "zh": "宣布建厂不等于设备安装、生产认证或形成有效商业产出。"
+    }
+  ],
+  "actors": [
+    {
+      "name": {
+        "en": "Chip designers and customers",
+        "zh": "芯片设计者与客户"
+      },
+      "role": {
+        "en": "Specify products and place orders",
+        "zh": "确定产品并下单"
+      },
+      "position": {
+        "en": "Fabless designers focus on chip architecture and products while buying manufacturing services. Device makers and data-center buyers drive demand, but projected demand is not a completed purchase.",
+        "zh": "无晶圆厂设计公司专注架构与产品，并购买制造服务。设备制造商和数据中心买家推动需求，但预测需求不等于已经完成的采购。"
+      },
+      "sourceIds": [
+        "chips-chain",
+        "chips-tsmc"
+      ]
+    },
+    {
+      "name": {
+        "en": "Foundries, including TSMC",
+        "zh": "晶圆代工厂，包括台积电"
+      },
+      "role": {
+        "en": "Turn designs into manufactured wafers",
+        "zh": "把设计变成晶圆上的芯片"
+      },
+      "position": {
+        "en": "Foundries invest in processes and factories to win customers and recover large fixed costs. TSMC’s dedicated model concentrates on manufacturing customers’ designs rather than selling competing chip designs.",
+        "zh": "代工厂投资制程与工厂，争取客户并收回庞大固定成本。台积电的专业代工模式专注制造客户设计，而非销售与客户竞争的芯片设计。"
+      },
+      "sourceIds": [
+        "chips-tsmc"
+      ]
+    },
+    {
+      "name": {
+        "en": "Equipment, materials, and packaging suppliers",
+        "zh": "设备、材料与封装供应商"
+      },
+      "role": {
+        "en": "Provide essential production inputs",
+        "zh": "提供生产必需投入"
+      },
+      "position": {
+        "en": "ASML makes lithography systems used to pattern wafers. Other suppliers provide tools, chemicals, substrates, and packaging. Advanced manufacturing depends on coordinated specialist inputs.",
+        "zh": "ASML制造用于晶圆图形转移的光刻系统。其他供应商提供工具、化学品、基板与封装。先进制造依赖专业投入的协同。"
+      },
+      "sourceIds": [
+        "chips-asml",
+        "chips-chain"
+      ]
+    },
+    {
+      "name": {
+        "en": "Governments",
+        "zh": "政府"
+      },
+      "role": {
+        "en": "Subsidies, trade rules, and security policy",
+        "zh": "补贴、贸易规则与安全政策"
+      },
+      "position": {
+        "en": "They seek jobs, technological capability, and resilient supply. The US CHIPS law supported domestic manufacturing and research; its passage did not instantly create self-sufficiency.",
+        "zh": "政府寻求就业、技术能力与供应韧性。美国CHIPS法支持本土制造和研究，但法律通过不会立即实现自给自足。"
+      },
+      "sourceIds": [
+        "chips-law"
+      ]
+    }
+  ],
+  "roots": {
+    "en": "Specialization spread the enormous costs of research and factories across a global customer base. It also concentrated some capabilities geographically. The resulting policy tension is between efficient international specialization and protection from disruptions or coercion. Diversification requires tools, skilled workers, customers, and time; simply counting announced factories misses these dependencies.",
+    "zh": "专业分工把研发与工厂的巨大成本分摊给全球客户，也使部分能力集中于少数地区。因此，政策要在国际分工效率与抵御中断或胁迫之间权衡。供应多元化需要设备、技术工人、客户与时间；只数宣布了多少工厂，会忽略这些依赖。"
+  },
+  "timeline": [
+    {
+      "date": "1987",
+      "title": {
+        "en": "TSMC establishes a dedicated foundry model",
+        "zh": "台积电建立专业代工模式"
+      },
+      "detail": {
+        "en": "A manufacturing business focused on customers’ designs helps separate chip design from owning a fabrication plant.",
+        "zh": "专注客户设计的制造业务，使设计与拥有晶圆厂得以分离。"
+      },
+      "sourceIds": [
+        "chips-tsmc"
+      ]
+    },
+    {
+      "date": "2013",
+      "title": {
+        "en": "ASML ships an EUV production system",
+        "zh": "ASML交付EUV生产系统"
+      },
+      "detail": {
+        "en": "The NXE:3300 marks a step toward commercial use of extreme-ultraviolet lithography; manufacturing adoption still requires further development.",
+        "zh": "NXE:3300是极紫外光刻商业化的一步；制造采用仍需进一步发展。"
+      },
+      "sourceIds": [
+        "chips-asml"
+      ]
+    },
+    {
+      "date": "2022-08-09",
+      "title": {
+        "en": "The US CHIPS and Science Act becomes law",
+        "zh": "美国CHIPS与科学法案签署成法"
+      },
+      "detail": {
+        "en": "The law creates incentives for manufacturing and research, illustrating the shift toward active industrial policy.",
+        "zh": "法律为制造和研究提供激励，体现政府更积极参与产业政策。"
+      },
+      "sourceIds": [
+        "chips-law"
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": {
+        "en": "Fab / foundry",
+        "zh": "晶圆厂／代工厂"
+      },
+      "meaning": {
+        "en": "A fabrication facility versus a business offering manufacturing to chip designers.",
+        "zh": "前者是制造设施，后者指为芯片设计者提供制造服务的业务。"
+      }
+    },
+    {
+      "term": {
+        "en": "Process node",
+        "zh": "制程节点"
+      },
+      "meaning": {
+        "en": "A label for a manufacturing generation; the number alone is not a full physical size or performance comparison.",
+        "zh": "制造世代的标签；单一数字不能完整比较物理尺寸或性能。"
+      }
+    },
+    {
+      "term": {
+        "en": "Yield / packaging",
+        "zh": "良率／封装"
+      },
+      "meaning": {
+        "en": "Yield is the share of usable output. Packaging connects and protects dies and can be a capacity bottleneck itself.",
+        "zh": "良率是可用产出的比例。封装连接并保护裸片，自身也可能成为产能瓶颈。"
+      }
+    }
+  ],
+  "readingLens": [
+    {
+      "en": "Which supply-chain stage and chip type does this announcement concern?",
+      "zh": "公告涉及供应链哪个环节、哪种芯片？"
+    },
+    {
+      "en": "Is the capacity planned, funded, built, qualified, or already shipping?",
+      "zh": "产能处于规划、获资、建成、认证，还是已经出货？"
+    },
+    {
+      "en": "For a restriction, which product, destination, entity, and effective date are actually covered?",
+      "zh": "限制实际涵盖哪些产品、目的地、实体及生效日期？"
+    }
+  ],
+  "sources": [
+    {
+      "id": "chips-tsmc",
+      "title": "A Brief Introduction to TSMC",
+      "publisher": "TSMC 1998 annual report",
+      "url": "https://investor.tsmc.com/static/annualReports/1998/html/intro.htm",
+      "kind": "historical-record"
+    },
+    {
+      "id": "chips-asml",
+      "title": "EUV lithography systems",
+      "publisher": "ASML",
+      "url": "https://www.asml.com/en/products/euv-lithography-systems",
+      "kind": "institutional-position"
+    },
+    {
+      "id": "chips-chain",
+      "title": "Strengthening the Global Semiconductor Supply Chain",
+      "publisher": "Semiconductor Industry Association and Boston Consulting Group",
+      "url": "https://www.semiconductors.org/resources/strengthening-the-global-semiconductor-supply-chain-in-an-uncertain-era-sia-summary/",
+      "kind": "institutional-position",
+      "publishedAt": "2021-04-01"
+    },
+    {
+      "id": "chips-law",
+      "title": "Statement on Signing of CHIPS and Science Act",
+      "publisher": "US Department of Commerce",
+      "url": "https://www.commerce.gov/news/press-releases/2022/08/statement-us-secretary-commerce-gina-raimondo-signing-chips-and-science",
+      "kind": "institutional-position",
+      "publishedAt": "2022-08-09"
+    }
+  ]
+}

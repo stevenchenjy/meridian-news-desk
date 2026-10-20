@@ -270,9 +270,11 @@ def default_dashboard(root: Path = ROOT) -> dict:
 
 
 def read_dashboard(root: Path = ROOT) -> dict:
+    from server.background import read_background
     data = load_json(root / "data/dashboard.json", default_dashboard(root))
     data["bookmarks"] = load_json(root / "data/bookmarks.json", data.get("bookmarks", []))
     data["schedule"] = load_schedule(root)
+    data["background"] = read_background(root, data.get("generatedAt"))
     now = datetime.now(timezone.utc)
     for source in data.get("sources", []):
         last = parse_time(source.get("lastSuccess"))
@@ -537,6 +539,31 @@ def bilingual(value: Any, label: str) -> dict:
     return {lang: value[lang].strip() for lang in ("en", "zh")}
 
 
+EDITORIAL_FIELDS = ("headline", "readerBrief")
+FACTUAL_ANALYSIS_FIELDS = ("context", "implications", "uncertainty", "watch", "evidence")
+
+
+def editorial_text(value: Any, label: str, field: str) -> dict:
+    """English is the reading default; a Chinese rendering is optional."""
+    if not isinstance(value, dict) or not isinstance(value.get("en"), str) or not value["en"].strip():
+        raise ValueError(f"{label} requires nonempty en text")
+    allowed_keys(value, {"en", "zh"}, label)
+    if any(not isinstance(text, str) or not text.strip() for text in value.values()):
+        raise ValueError(f"{label} locales must contain nonempty text")
+    cleaned = {lang: text.strip() for lang, text in value.items()}
+    if "zh" in cleaned and not re.search(r"[\u3400-\u4dbf\u4e00-\u9fff]", cleaned["zh"]):
+        raise ValueError(f"{label}.zh must contain Chinese text when supplied")
+    if field == "headline":
+        if any(len(text) > 180 or "\n" in text or "\r" in text for text in cleaned.values()):
+            raise ValueError(f"{label} must be a single line of at most 180 characters per language")
+    elif field == "readerBrief":
+        if any(len(text) > 1600 or len(re.split(r"\n\s*\n", text)) > 4 for text in cleaned.values()) or len(cleaned["en"].split()) > 220:
+            raise ValueError(f"{label} must be at most 1600 characters, 220 English words and 4 paragraphs per language")
+    else:
+        raise ValueError(f"Unknown editorial field: {field}")
+    return cleaned
+
+
 def allowed_keys(value: dict, keys: set[str], label: str):
     unsupported = set(value) - keys
     if unsupported:
@@ -747,7 +774,7 @@ def apply_briefing(payload: dict, root: Path = ROOT) -> dict:
             analysis = item.get("analysis")
             if not isinstance(analysis, dict):
                 raise ValueError(f"articles[{index}].analysis is required")
-            allowed_keys(analysis, {"context", "implications", "uncertainty", "watch", "evidence"}, f"articles[{index}].analysis")
+            allowed_keys(analysis, {"context", "implications", "uncertainty", "watch", "evidence", *EDITORIAL_FIELDS}, f"articles[{index}].analysis")
             validated_analysis = {field: bilingual(analysis.get(field), f"articles[{index}].analysis.{field}")
                                   for field in ("context", "implications", "uncertainty", "watch")}
             validated_analysis.update(evidence=evidence(analysis.get("evidence"), articles[ident], f"articles[{index}].analysis"),
@@ -756,8 +783,15 @@ def apply_briefing(payload: dict, root: Path = ROOT) -> dict:
             if "reverified" in item and not isinstance(item["reverified"], bool):
                 raise ValueError(f"articles[{index}].reverified must be boolean")
             previous_analysis = articles[ident].get("analysis")
-            core_fields = ("context", "implications", "uncertainty", "watch", "evidence")
-            unchanged = previous_analysis and articles[ident].get("summary") == summary and all(previous_analysis.get(field) == validated_analysis[field] for field in core_fields)
+            unchanged = previous_analysis and articles[ident].get("summary") == summary and all(previous_analysis.get(field) == validated_analysis[field] for field in FACTUAL_ANALYSIS_FIELDS)
+            # Reading copy belongs to the reviewed factual version. A routine
+            # import or reverification can omit it; changed facts cannot carry
+            # the old narrative forward without an explicit editorial update.
+            for field in EDITORIAL_FIELDS:
+                if field in analysis:
+                    validated_analysis[field] = editorial_text(analysis[field], f"articles[{index}].analysis.{field}", field)
+                elif unchanged and field in previous_analysis:
+                    validated_analysis[field] = copy.deepcopy(previous_analysis[field])
             if unchanged and not item.get("reverified"):
                 for field in ("analyzedAt", "collectionGeneratedAt"):
                     validated_analysis[field] = previous_analysis[field]
@@ -809,6 +843,130 @@ def apply_briefing(payload: dict, root: Path = ROOT) -> dict:
         atomic_json(root / "data/analysis-requests.json", queue)
         atomic_json(root / "data/dashboard.json", dashboard)
         archive_snapshot(root, {**payload, "appliedAt": generated}, "briefing", 60)
+    return read_dashboard(root)
+
+
+def same_reviewed_version(left: dict, right: dict) -> bool:
+    return (fingerprint(left) == fingerprint(right) and left.get("summary") == right.get("summary")
+            and all(left["analysis"].get(field) == right["analysis"].get(field) for field in FACTUAL_ANALYSIS_FIELDS))
+
+
+def apply_editorial(payload: dict, root: Path = ROOT) -> dict:
+    """Edit reading copy on reviewed artifacts without recording a factual review.
+
+    An exact collection guard prevents an editor from silently targeting a newer
+    source version. Old retained snapshots remain eligible on their own terms;
+    their reading copy never leaks onto an unreviewed corrected source article.
+    All input and linked references are checked before either store is written.
+    """
+    if not isinstance(payload, dict):
+        raise ValueError("Editorial input must be a JSON object")
+    allowed_keys(payload, {"collectionGeneratedAt", "articles", "briefing"}, "input")
+    with storage_lock(root):
+        dashboard = load_json(root / "data/dashboard.json", default_dashboard(root))
+        if not dashboard.get("generatedAt") or payload.get("collectionGeneratedAt") != dashboard["generatedAt"]:
+            raise ValueError("collectionGeneratedAt must match the current dashboard snapshot")
+        registry = load_json(root / "data/attention.json", {"events": {}})
+        articles = {article["id"]: article for article in dashboard.get("articles", [])}
+        retained: dict[str, list[dict]] = {}
+        for event in registry.get("events", {}).values():
+            snapshot = event.get("articleSnapshot")
+            if (complete_note_reference(snapshot, retained=True)
+                    and snapshot["analysis"].get("contentFingerprint") == fingerprint(snapshot)
+                    and event.get("contentFingerprint") == fingerprint(snapshot)
+                    and event.get("articleId") == snapshot.get("id")):
+                retained.setdefault(snapshot["id"], []).append(snapshot)
+        enrichments = payload.get("articles")
+        if not isinstance(enrichments, list) or len(enrichments) > 100:
+            raise ValueError("articles must be an array with at most 100 editorial edits")
+        if not enrichments and "briefing" not in payload:
+            raise ValueError("Editorial input requires article edits or a briefing edit")
+        seen = set()
+        updated = {}
+        for index, item in enumerate(enrichments):
+            label = f"articles[{index}]"
+            if not isinstance(item, dict):
+                raise ValueError(f"{label} must be an editorial edit object")
+            allowed_keys(item, {"articleId", *EDITORIAL_FIELDS}, label)
+            ident = item.get("articleId")
+            if not isinstance(ident, str) or not ident:
+                raise ValueError(f"{label}.articleId requires a reviewed article ID")
+            if ident in seen:
+                raise ValueError("Editorial articleIds must be unique")
+            seen.add(ident)
+            current = articles.get(ident)
+            if (complete_note_reference(current)
+                    and current["analysis"].get("contentFingerprint") == fingerprint(current)):
+                target = current
+            else:
+                versions = retained.get(ident, [])
+                if not versions:
+                    raise ValueError(f"{label} refers to an unknown or unreviewed articleId: {ident}")
+                if any(not same_reviewed_version(versions[0], version) for version in versions[1:]):
+                    raise ValueError(f"{label} has incompatible retained reviewed versions")
+                target = versions[0]
+            edits = {field: editorial_text(item[field], f"{label}.{field}", field)
+                     for field in EDITORIAL_FIELDS if field in item}
+            if not edits:
+                raise ValueError(f"{label} requires headline or readerBrief")
+            target["analysis"].update(copy.deepcopy(edits))
+            for snapshot in retained.get(ident, []):
+                if same_reviewed_version(snapshot, target):
+                    snapshot["analysis"].update(copy.deepcopy(edits))
+            updated[ident] = target
+        briefing = dashboard.get("briefing")
+        if "briefing" in payload:
+            raw = payload["briefing"]
+            if not isinstance(raw, dict) or not raw:
+                raise ValueError("briefing must be a nonempty editorial edit object")
+            allowed_keys(raw, {"title", "overview", "sectionNotes"}, "briefing")
+            if not isinstance(briefing, dict) or briefing.get("kind") != "codex" or not parse_time(briefing.get("generatedAt")):
+                raise ValueError("A reviewed briefing is required before editing its reading copy")
+            if not isinstance(briefing.get("items"), list) or not 1 <= len(briefing["items"]) <= 12:
+                raise ValueError("A complete reviewed briefing requires 1–12 evidence-bearing items")
+            # An overview/title can only be edited if its factual references
+            # still resolve to the exact reviewed summaries and source URLs.
+            reviewed = {ident: article for ident, article in articles.items() if complete_note_reference(article)}
+            for ident, snapshots in retained.items():
+                reviewed.setdefault(ident, snapshots[0])
+            for index, item in enumerate(briefing.get("items", [])):
+                if not isinstance(item, dict) or not isinstance(item.get("articleId"), str):
+                    raise ValueError(f"briefing.items[{index}] requires a reviewed source reference")
+                for field in ("summary", "whyItMatters", "uncertainty", "watch"):
+                    bilingual(item.get(field), f"briefing.items[{index}].{field}")
+                candidates = [reviewed.get(item.get("articleId")), *retained.get(item.get("articleId"), [])]
+                reference = next((article for article in candidates if article and article.get("summary") == item.get("summary")), None)
+                if reference is None:
+                    raise ValueError(f"briefing.items[{index}] has no compatible reviewed source reference")
+                evidence(item.get("evidence"), reference, f"briefing.items[{index}]")
+            for field in ("title", "overview"):
+                if field in raw:
+                    briefing[field] = bilingual(raw[field], "briefing." + field)
+            if "sectionNotes" in raw:
+                briefing["sectionNotes"] = validate_section_notes(raw["sectionNotes"], articles, registry)
+        if briefing:
+            for item in briefing.get("items", []):
+                article = updated.get(item.get("articleId"))
+                if article and article.get("summary") == item.get("summary"):
+                    evidence(item.get("evidence"), article, "briefing item editorial reference")
+                    for field in EDITORIAL_FIELDS:
+                        if field in item and field in article["analysis"]:
+                            item[field] = copy.deepcopy(article["analysis"][field])
+        # Both stores share the same writer lock. Keep original bytes so a
+        # failed replacement can be rolled back instead of leaving split copy.
+        paths = (root / "data/attention.json", root / "data/dashboard.json")
+        originals = {path: path.read_bytes() if path.exists() else None for path in paths}
+        try:
+            atomic_json(paths[0], registry)
+            atomic_json(paths[1], dashboard)
+        except OSError:
+            for path, original in originals.items():
+                if original is None:
+                    path.unlink(missing_ok=True)
+                else:
+                    path.write_bytes(original)
+            raise
+        archive_snapshot(root, {**payload, "appliedAt": utc_now(), "kind": "editorial"}, "editorial", 60)
     return read_dashboard(root)
 
 

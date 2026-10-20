@@ -1,0 +1,235 @@
+{
+  "id": "us-health-retirement",
+  "title": {
+    "en": "US health coverage & retirement benefits",
+    "zh": "美国医保与退休保障"
+  },
+  "subtitle": {
+    "en": "ACA, Medicaid, Medicare and Social Security are different systems.",
+    "zh": "分清ACA、Medicaid、Medicare与Social Security。"
+  },
+  "category": "development",
+  "keywords": [
+    "ACA",
+    "Affordable Care Act",
+    "Obamacare",
+    "Medicaid",
+    "Medicare",
+    "Social Security",
+    "COLA",
+    "SSI",
+    "health coverage",
+    "医保",
+    "医疗保险",
+    "社保",
+    "社会保障",
+    "退休福利",
+    "生活成本调整"
+  ],
+  "reviewedAt": "2026-10-15",
+  "coverageThrough": "2026-10-14",
+  "overview": {
+    "en": "A cancellation of an insurance policy, a change in eligibility and a retirement-benefit increase describe different systems. The ACA created insurance reforms and Marketplaces; Medicaid is income-related coverage with state differences; Medicare is mainly federal coverage for older people and some people with disabilities. Social Security pays income benefits. This guide explains the mechanisms, not any individual’s eligibility.",
+    "zh": "取消保单、变更参保资格和提高退休福利，涉及不同制度。ACA带来医保改革与保险交易平台；Medicaid是与收入等资格相关、各州有差异的保障；Medicare主要为老年人及部分残障人士提供联邦医疗保险。Social Security则发放收入福利。本篇解释制度，不判断个人资格。"
+  },
+  "takeaways": [
+    {
+      "en": "Coverage counts are people or policies; check which one a report uses.",
+      "zh": "参保人数与保单数量不同，要先看报道数的是哪一种。"
+    },
+    {
+      "en": "A benefit increase is a gross payment change; premiums and living costs affect what households can spend.",
+      "zh": "福利涨幅是支付金额的变化，保费及生活成本也影响家庭可支配的钱。"
+    },
+    {
+      "en": "Eligibility rules differ between programs and states. A decision affecting one program does not automatically apply to all.",
+      "zh": "不同项目与州的资格规则不同；一个项目的决定不自动适用于全部。"
+    }
+  ],
+  "actors": [
+    {
+      "name": {
+        "en": "ACA Marketplaces",
+        "zh": "ACA医保交易平台"
+      },
+      "role": {
+        "en": "A route to buying health insurance",
+        "zh": "购买医疗保险的渠道"
+      },
+      "position": {
+        "en": "The 2010 reform sought broader affordable coverage, including premium tax credits. An exchange is not itself the insurer; the relevant policy and applicable year matter.",
+        "zh": "2010年改革希望扩大可负担的保障，包括保费税收抵免。交易平台本身不等于保险公司，须核对具体保单和适用年度。"
+      },
+      "sourceIds": [
+        "aca"
+      ]
+    },
+    {
+      "name": {
+        "en": "Medicaid and Medicare",
+        "zh": "Medicaid与Medicare"
+      },
+      "role": {
+        "en": "Two different public coverage programs",
+        "zh": "两个不同的公共医疗保障项目"
+      },
+      "position": {
+        "en": "Medicaid covers qualifying low-income and other groups, with state differences. Medicare mainly covers people aged 65 or older and certain younger people with disabilities. Neither name means all US health insurance.",
+        "zh": "Medicaid面向符合条件的低收入等群体，各州有所差异；Medicare主要面向65岁及以上人士及某些较年轻的残障人士。两者都不等于美国全部医保。"
+      },
+      "sourceIds": [
+        "medicaid",
+        "medicare"
+      ]
+    },
+    {
+      "name": {
+        "en": "Social Security Administration",
+        "zh": "美国社会保障局"
+      },
+      "role": {
+        "en": "Administers income-benefit payments",
+        "zh": "管理收入福利的发放"
+      },
+      "position": {
+        "en": "SSA publishes cost-of-living adjustments. The statutory COLA uses CPI-W inflation; the announced percentage is not a promise that every person’s net payment or purchasing power rises equally.",
+        "zh": "SSA公布生活成本调整。法定COLA采用CPI-W通胀指标；公布比例不保证每个人的净到账金额或购买力都同比例提高。"
+      },
+      "sourceIds": [
+        "cola",
+        "ssa-2027"
+      ]
+    }
+  ],
+  "roots": {
+    "en": "US social protection developed through separate laws and programs. That fragmentation explains why a story about an insurance marketplace cannot be read as a story about all medical coverage. Likewise, retirement income and health-insurance costs interact in a household budget without becoming the same policy.",
+    "zh": "美国社会保障由不同法律和项目逐步组成。因此，医保交易平台的新闻不能直接代表所有医疗保障；退休收入和医保费用虽然在家庭预算里互相影响，仍属于不同政策。"
+  },
+  "timeline": [
+    {
+      "date": "1975",
+      "title": {
+        "en": "Automatic COLAs begin",
+        "zh": "开始自动生活成本调整"
+      },
+      "detail": {
+        "en": "SSA’s history dates general automatic Social Security cost-of-living increases to 1975. Earlier increases required legislation.",
+        "zh": "SSA的历史记录显示，社保普遍自动生活成本调整始于1975年；此前的提高须经立法。"
+      },
+      "sourceIds": [
+        "cola"
+      ]
+    },
+    {
+      "date": "2010",
+      "title": {
+        "en": "ACA enacted",
+        "zh": "ACA成为法律"
+      },
+      "detail": {
+        "en": "The law introduced coverage reforms and affordability measures; later implementation and eligibility details must be dated separately.",
+        "zh": "该法带来保障改革与可负担性措施，之后的实施与资格细节须分别核对日期。"
+      },
+      "sourceIds": [
+        "aca"
+      ]
+    },
+    {
+      "date": "2026-10-14",
+      "title": {
+        "en": "2027 COLA announced",
+        "zh": "公布2027年COLA"
+      },
+      "detail": {
+        "en": "SSA announced a 3.6% adjustment for 2027. That future payment adjustment is separate from the announcement date and from insurance enrollment changes.",
+        "zh": "SSA宣布2027年调整幅度为3.6%。未来支付的调整、生效时间、公告日期和医保参保变化，是不同事项。"
+      },
+      "sourceIds": [
+        "ssa-2027"
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": {
+        "en": "Premium",
+        "zh": "保费"
+      },
+      "meaning": {
+        "en": "The price paid to maintain an insurance policy; it is not the same as every treatment’s out-of-pocket cost.",
+        "zh": "为维持保险保单而支付的费用，不等于每次治疗的全部自付费用。"
+      }
+    },
+    {
+      "term": {
+        "en": "Eligibility",
+        "zh": "资格条件"
+      },
+      "meaning": {
+        "en": "The conditions for participation in the particular program and year. A disputed administrative removal is not automatically proof of ineligibility.",
+        "zh": "某个项目、某个年度的参加条件。存在争议的行政移除，不自动证明当事人没有资格。"
+      }
+    },
+    {
+      "term": {
+        "en": "COLA / CPI-W",
+        "zh": "生活成本调整／CPI-W"
+      },
+      "meaning": {
+        "en": "COLA is the benefit adjustment; CPI-W is the worker-household price index used in its formula.",
+        "zh": "COLA是福利金额的调整；CPI-W是公式采用的劳动者家庭消费价格指数。"
+      }
+    }
+  ],
+  "readingLens": [
+    {
+      "en": "Which program, state, population and policy year does the change concern?",
+      "zh": "变化涉及哪个项目、州、群体和保障年度？"
+    },
+    {
+      "en": "Is the number a canceled policy count, affected-person count or a confirmed restoration?",
+      "zh": "数字是取消的保单数、受影响人数，还是已确认恢复的人数？"
+    },
+    {
+      "en": "Separate the effective date, nominal payment and household’s net costs.",
+      "zh": "区分生效日、名义支付金额与家庭净成本。"
+    }
+  ],
+  "sources": [
+    {
+      "id": "aca",
+      "title": "Affordable Care Act glossary",
+      "publisher": "HealthCare.gov",
+      "url": "https://www.healthcare.gov/glossary/affordable-care-act/",
+      "kind": "historical-record"
+    },
+    {
+      "id": "medicaid",
+      "title": "Medicaid glossary",
+      "publisher": "HealthCare.gov",
+      "url": "https://www.healthcare.gov/glossary/medicaid/",
+      "kind": "historical-record"
+    },
+    {
+      "id": "medicare",
+      "title": "Medicare glossary",
+      "publisher": "HealthCare.gov",
+      "url": "https://www.healthcare.gov/glossary/medicare/",
+      "kind": "historical-record"
+    },
+    {
+      "id": "cola",
+      "title": "Cost-of-living adjustment history",
+      "publisher": "Social Security Administration",
+      "url": "https://www.ssa.gov/oact/cola/colaseries.html",
+      "kind": "historical-record"
+    },
+    {
+      "id": "ssa-2027",
+      "title": "Social Security announces 3.6% benefit increase for 2027",
+      "publisher": "Social Security Administration",
+      "url": "https://www.ssa.gov/news/en/press/releases/2026-10-14.html",
+      "kind": "institutional-position"
+    }
+  ]
+}

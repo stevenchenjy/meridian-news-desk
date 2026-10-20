@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://local.meridian.invalid/briefing-schema.json",
   "title": "Meridian daily Codex briefing overlay",
-  "description": "Apply to the exact collection snapshot. Every selected briefing item needs a complete bilingual analysis overlay, an exactly matching summary, and an attention assessment so it appears in the ranked dashboard. Evidence must include the article URL. Publisher translation is imported separately; these cross-array constraints are checked by apply_briefing.py.",
+  "description": "Apply to the exact collection snapshot. Author every report under docs/EDITORIAL-RULEBOOK.md: plain language, Humanizer editing, sourced perspectives where relevant and an evidence-backed editorial takeaway. Every selected briefing item needs a complete bilingual analysis overlay, an exactly matching summary, and an attention assessment so it appears in the ranked dashboard. Evidence must include the article URL. Publisher translation is imported separately; these cross-array constraints are checked by apply_briefing.py. Validation checks structure and references, not editorial quality or factual truth. Optional analysis.headline and analysis.readerBrief provide English-first reading copy without replacing the factual bilingual analysis; routine imports preserve them when omitted only while summary and the factual analysis core are unchanged. Changed facts require newly authored reading copy. Editorial-only revisions use scripts/apply_editorial.py and $defs/editorialOverlay.",
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -29,7 +29,8 @@
           "$ref": "#/$defs/bilingual"
         },
         "overview": {
-          "$ref": "#/$defs/bilingual"
+          "$ref": "#/$defs/bilingual",
+          "description": "Lead with the most useful supported judgment and its practical significance; connect priorities rather than listing headlines. Follow the editorial rulebook and preserve the same claim strength in both languages."
         },
         "items": {
           "type": "array",
@@ -124,7 +125,8 @@
           "$ref": "#/$defs/bilingual"
         },
         "whyItMatters": {
-          "$ref": "#/$defs/bilingual"
+          "$ref": "#/$defs/bilingual",
+          "description": "Labeled editorial assessment: explain the mechanism, who gains or bears costs, and the concrete takeaway. Assess credible competing interpretations by evidence rather than giving each equal weight."
         },
         "uncertainty": {
           "$ref": "#/$defs/bilingual"
@@ -165,19 +167,29 @@
           ],
           "properties": {
             "context": {
-              "$ref": "#/$defs/bilingual"
+              "$ref": "#/$defs/bilingual",
+              "description": "Brief orientation for a newcomer: explain actors, roles and necessary terms before the detailed development. Avoid unexplained jargon and generic history."
             },
             "implications": {
-              "$ref": "#/$defs/bilingual"
+              "$ref": "#/$defs/bilingual",
+              "description": "Start with the clearest supported editorial judgment in a short paragraph suitable for the briefing preview. Explain how the development affects people or decisions. Add relevant named and sourced commentator or stakeholder perspectives, assess their strongest credible disagreement, and finish with a concrete takeaway. Distinguish Meridian inference from attributed views; no invented voices or mandatory false balance."
             },
             "uncertainty": {
-              "$ref": "#/$defs/bilingual"
+              "$ref": "#/$defs/bilingual",
+              "description": "State the specific missing evidence or credible alternative that could change the assessment. Keep source access limitations precise; do not replace analysis with generic hedging."
             },
             "watch": {
-              "$ref": "#/$defs/bilingual"
+              "$ref": "#/$defs/bilingual",
+              "description": "Name an observable decision, measure or event, and explain what it would strengthen or weaken in the assessment. Use documented dates only."
             },
             "evidence": {
               "$ref": "#/$defs/evidence"
+            },
+            "headline": {
+              "$ref": "#/$defs/englishFirstHeadline"
+            },
+            "readerBrief": {
+              "$ref": "#/$defs/englishFirstReaderBrief"
             }
           }
         },
@@ -401,6 +413,138 @@
           "maxItems": 3,
           "items": {
             "$ref": "#/$defs/sectionNote"
+          }
+        }
+      }
+    },
+    "englishFirstHeadline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "en"
+      ],
+      "description": "An independently written, concrete reading headline. English is required; Chinese is optional. This editorial copy does not change the publisher title or factual review date.",
+      "properties": {
+        "en": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 180,
+          "pattern": "^[^\\r\\n]*\\S[^\\r\\n]*$"
+        },
+        "zh": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 180,
+          "pattern": "[㐀-䶿一-鿿]",
+          "allOf": [
+            {
+              "pattern": "^[^\\r\\n]+$"
+            }
+          ]
+        }
+      }
+    },
+    "englishFirstReaderBrief": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "en"
+      ],
+      "description": "A readable orientation connecting the latest development, necessary background and supported consequence. English at most 220 whitespace-delimited words; at most four paragraphs and 1600 characters per supplied locale. Chinese is optional. Preserve attribution, evidence limits and factual scope; this field does not reverify facts.",
+      "properties": {
+        "en": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1600,
+          "pattern": "\\S"
+        },
+        "zh": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 1600,
+          "pattern": "[㐀-䶿一-鿿]"
+        }
+      }
+    },
+    "editorialArticleEdit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "articleId"
+      ],
+      "anyOf": [
+        {
+          "required": [
+            "headline"
+          ]
+        },
+        {
+          "required": [
+            "readerBrief"
+          ]
+        }
+      ],
+      "properties": {
+        "articleId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "headline": {
+          "$ref": "#/$defs/englishFirstHeadline"
+        },
+        "readerBrief": {
+          "$ref": "#/$defs/englishFirstReaderBrief"
+        }
+      }
+    },
+    "editorialOverlay": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "collectionGeneratedAt",
+        "articles"
+      ],
+      "description": "Editorial-only input for apply_editorial.py. Copy the current dashboard generatedAt exactly. Each article must already have complete current analysis or a compatible retained reviewed snapshot. No factual claims, source summaries, evidence, factual timestamps, attention keys or read state are replaced. Briefing generatedAt remains the original factual briefing date.",
+      "anyOf": [
+        {
+          "properties": {
+            "articles": {
+              "minItems": 1
+            }
+          }
+        },
+        {
+          "required": [
+            "briefing"
+          ]
+        }
+      ],
+      "properties": {
+        "collectionGeneratedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "articles": {
+          "type": "array",
+          "maxItems": 100,
+          "items": {
+            "$ref": "#/$defs/editorialArticleEdit"
+          }
+        },
+        "briefing": {
+          "type": "object",
+          "additionalProperties": false,
+          "minProperties": 1,
+          "properties": {
+            "title": {
+              "$ref": "#/$defs/bilingual"
+            },
+            "overview": {
+              "$ref": "#/$defs/bilingual"
+            },
+            "sectionNotes": {
+              "$ref": "#/$defs/sectionNotes"
+            }
           }
         }
       }

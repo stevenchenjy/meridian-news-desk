@@ -7,29 +7,14 @@ export default function AttentionControls({
   setSort,
   language,
   attention,
-  compact = false,
 }) {
   return (
     <div className="attention-controls">
-      {!compact ? <div className="attention-explanation">
-        <p>
-          {copy(
-            "Important events stay in view until you mark them read. New headlines compete on significance, not age.",
-            "重要事件会保留到你标记已读。新报道按重要性竞争关注位置，而非只看发布时间。",
-            language,
-          )}
-        </p>
-        {language === "both" ? (
-          <p className="chinese-text">
-            重要事件会保留到你标记已读。新报道按重要性竞争关注位置，而非只看发布时间。
-          </p>
-        ) : null}
-      </div> : null}
       <div className="attention-filter-row">
-        <div className="read-filter" role="group" aria-label="Reading status">
+        <div className="read-filter" role="group" aria-label="Reading status" title={copy("Important unread events stay in view.", "重要未读事件持续保留。", language)}>
           {[
-            ["unread", "Unread priorities", "未读重点"],
-            ["all", "All assessed", "全部已评估"],
+            ["unread", "Unread", "未读"],
+            ["all", "All", "全部"],
             ["read", "Read", "已读"],
           ].map(([id, en, zh]) => (
             <button
@@ -46,7 +31,6 @@ export default function AttentionControls({
           ))}
         </div>
         <label>
-          {copy("Order", "排序", language)}
           <select
             aria-label="Priority order"
             value={sort}

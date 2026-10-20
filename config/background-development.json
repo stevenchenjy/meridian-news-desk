@@ -1,0 +1,222 @@
+{
+  "id": "jobs-poverty-development",
+  "title": {
+    "en": "Jobs, poverty & sustainable development",
+    "zh": "就业、贫困与可持续发展"
+  },
+  "subtitle": {
+    "en": "Read employment projections and development targets without confusing them with measured outcomes.",
+    "zh": "分清就业预测、发展目标与已经测得的结果。"
+  },
+  "category": "development",
+  "keywords": [
+    "UNDP",
+    "ILO",
+    "youth employment",
+    "young people",
+    "labour market",
+    "labor market",
+    "unemployment",
+    "poverty",
+    "human development",
+    "sustainable development",
+    "SDGs",
+    "社会发展",
+    "青年",
+    "就业",
+    "失业",
+    "贫困",
+    "可持续发展",
+    "人类发展"
+  ],
+  "reviewedAt": "2026-10-15",
+  "coverageThrough": "2016-04-14",
+  "overview": {
+    "en": "Development news asks whether people can live healthy lives, learn, earn a livelihood and participate in society. Economic growth is one input. Employment statistics measure particular populations and periods; projections of future job gaps answer a different question. This guide provides the measurement framework, not a current global unemployment total.",
+    "zh": "发展新闻关心人们能否健康生活、学习、谋生并参与社会，经济增长只是其中一项条件。就业统计测量特定人群与时段，未来岗位缺口预测回答的是另一种问题。本篇解释测量框架，不提供当前全球失业总数。"
+  },
+  "takeaways": [
+    {
+      "en": "A future projected jobs gap is not today’s count of unemployed people.",
+      "zh": "未来预测的岗位缺口，不是今天的失业人数。"
+    },
+    {
+      "en": "People outside the labour force are not all counted as unemployed.",
+      "zh": "不在劳动力中的人，并非都计入失业人口。"
+    },
+    {
+      "en": "A development target, funded project and achieved outcome are separate claims.",
+      "zh": "发展目标、获得资金的项目与已经实现的成果，是不同判断。"
+    }
+  ],
+  "actors": [
+    {
+      "name": {
+        "en": "ILO and statistical agencies",
+        "zh": "国际劳工组织与统计机构"
+      },
+      "role": {
+        "en": "Define and measure labour-market indicators",
+        "zh": "定义并测量劳动力市场指标"
+      },
+      "position": {
+        "en": "ILO distinguishes employment, unemployment and being outside the labour force. Definitions and reference periods are essential when comparing reports.",
+        "zh": "ILO区分就业、失业和不在劳动力中三类状态，比较报道时必须核对定义与统计时段。"
+      },
+      "sourceIds": [
+        "ilo"
+      ]
+    },
+    {
+      "name": {
+        "en": "UNDP",
+        "zh": "联合国开发计划署"
+      },
+      "role": {
+        "en": "Studies and supports human development",
+        "zh": "研究并支持人类发展"
+      },
+      "position": {
+        "en": "Its Human Development Index combines health, education and income. The index intentionally broadens the lens beyond income, but does not capture every inequality or form of poverty.",
+        "zh": "人类发展指数结合健康、教育与收入，刻意超越单纯收入视角，但无法涵盖所有不平等或贫困形式。"
+      },
+      "sourceIds": [
+        "hdi"
+      ]
+    },
+    {
+      "name": {
+        "en": "Governments and development partners",
+        "zh": "各国政府与发展合作方"
+      },
+      "role": {
+        "en": "Translate shared goals into programs",
+        "zh": "将共同目标转化为项目"
+      },
+      "position": {
+        "en": "The SDGs connect poverty, work, education, health and the environment. A global goal does not establish that a country has funded or met it.",
+        "zh": "可持续发展目标把贫困、工作、教育、健康与环境联系起来。存在全球目标，不代表某国已经拨款或达标。"
+      },
+      "sourceIds": [
+        "sdgs"
+      ]
+    }
+  ],
+  "roots": {
+    "en": "The development agenda expanded from a narrower focus on income toward capabilities and interconnected social and environmental goals. Reports can therefore use different measures for different purposes. A falling unemployment rate can coexist with exclusion from work; read participation and job quality alongside the headline rate.",
+    "zh": "发展议程逐步从较窄的收入视角，扩展到人的能力及互相关联的社会、环境目标。因此，不同报告会为不同问题采用不同指标。失业率下降也可能与退出劳动力市场并存，应把参与情况与工作质量一同阅读。"
+  },
+  "timeline": [
+    {
+      "date": "2000",
+      "title": {
+        "en": "Millennium Development Goals",
+        "zh": "千年发展目标"
+      },
+      "detail": {
+        "en": "The Millennium Declaration led to eight goals targeting progress by 2015.",
+        "zh": "《千年宣言》推动形成八项目标，以2015年为进展期限。"
+      },
+      "sourceIds": [
+        "sdgs"
+      ]
+    },
+    {
+      "date": "2015",
+      "title": {
+        "en": "2030 Agenda and 17 SDGs",
+        "zh": "2030年议程与17项目标"
+      },
+      "detail": {
+        "en": "UN members adopted a broader framework connecting social, economic and environmental progress.",
+        "zh": "联合国会员国通过更广泛框架，把社会、经济与环境进展联系起来。"
+      },
+      "sourceIds": [
+        "sdgs"
+      ]
+    },
+    {
+      "date": "2016-04-14",
+      "title": {
+        "en": "ILO explains labour-force categories",
+        "zh": "ILO说明劳动力分类"
+      },
+      "detail": {
+        "en": "The published explanation distinguishes working-age people in employment, unemployment and outside the labour force.",
+        "zh": "该说明区分劳动年龄人口中的就业者、失业者与不在劳动力中者。"
+      },
+      "sourceIds": [
+        "ilo"
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": {
+        "en": "Labour force",
+        "zh": "劳动力"
+      },
+      "meaning": {
+        "en": "Employed plus unemployed people under the stated statistical definitions.",
+        "zh": "按指定统计定义计算的就业者与失业者之和。"
+      }
+    },
+    {
+      "term": {
+        "en": "Unemployment",
+        "zh": "失业"
+      },
+      "meaning": {
+        "en": "Generally requires being without paid or profit-making work, seeking work and available to start; check the survey definition.",
+        "zh": "通常须符合没有有报酬或营利工作、正在求职且可开始工作等条件，须看调查定义。"
+      }
+    },
+    {
+      "term": {
+        "en": "Human Development Index",
+        "zh": "人类发展指数"
+      },
+      "meaning": {
+        "en": "A summary of health, education and income dimensions; it does not replace separate poverty and inequality measures.",
+        "zh": "健康、教育与收入维度的综合指标，不能代替独立的贫困与不平等测量。"
+      }
+    }
+  ],
+  "readingLens": [
+    {
+      "en": "Is this a present measurement, forecast or policy ambition, and for which age group?",
+      "zh": "这是当前测量、预测还是政策目标，涉及哪个年龄群体？"
+    },
+    {
+      "en": "What is the denominator: all young people, working-age people or the labour force?",
+      "zh": "分母是所有青年、劳动年龄人口，还是劳动力？"
+    },
+    {
+      "en": "What changed for people: money pledged, jobs created, earnings, access or measured wellbeing?",
+      "zh": "人们实际获得了什么变化：承诺资金、岗位、收入、服务准入，还是已测得的福祉改善？"
+    }
+  ],
+  "sources": [
+    {
+      "id": "ilo",
+      "title": "Labour force: definitions and classification",
+      "publisher": "International Labour Organization",
+      "url": "https://www.ilo.org/resource/labour-force",
+      "kind": "historical-record"
+    },
+    {
+      "id": "hdi",
+      "title": "Human Development Index",
+      "publisher": "UNDP Human Development Reports",
+      "url": "https://hdr.undp.org/data-center/human-development-index",
+      "kind": "historical-record"
+    },
+    {
+      "id": "sdgs",
+      "title": "The 17 Sustainable Development Goals and their history",
+      "publisher": "UN DESA",
+      "url": "https://sdgs.un.org/goals",
+      "kind": "historical-record"
+    }
+  ]
+}

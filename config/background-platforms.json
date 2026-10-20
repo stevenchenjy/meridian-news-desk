@@ -1,0 +1,237 @@
+{
+  "id": "platform-governance",
+  "title": {
+    "en": "Platforms, algorithms & online safety rules",
+    "zh": "平台、算法与网络安全规则"
+  },
+  "subtitle": {
+    "en": "Why feed design is a policy issue, using Australia’s proposed digital duty of care.",
+    "zh": "为什么信息流设计成为政策问题：以澳大利亚拟议数字注意义务为例。"
+  },
+  "category": "industry",
+  "keywords": [
+    "algorithm",
+    "recommender",
+    "social media",
+    "digital duty of care",
+    "My Feed My Way",
+    "eSafety",
+    "Australia platforms",
+    "feed choice",
+    "算法",
+    "推荐系统",
+    "社交媒体",
+    "数字注意义务",
+    "澳大利亚网络安全",
+    "信息流选择"
+  ],
+  "reviewedAt": "2026-10-15",
+  "coverageThrough": "2026-10-15",
+  "overview": {
+    "en": "A platform does more than host posts: its ranking system selects what each person sees. Recommendations can help discovery but can also repeatedly amplify harmful material. Australia’s digital duty of care debate asks what responsibility services should bear for foreseeable risks. As of the government’s October 15, 2026 announcement, a bill had been introduced and feed-choice rule consultation opened; this does not establish enactment or commencement.",
+    "zh": "平台不只是存放帖子：排序系统决定每个人看到什么。推荐可以帮助发现内容，也可能反复放大有害材料。澳大利亚的数字注意义务讨论，关注服务应为可预见风险承担什么责任。按政府2026年10月15日公告，法案已提交议会，信息流选择规则启动咨询；这并不证明已获通过或生效。"
+  },
+  "takeaways": [
+    {
+      "en": "Removing one post and changing a system that repeatedly recommends harmful content are different interventions.",
+      "zh": "删除一条帖子，与改变反复推荐有害内容的系统，是不同干预。"
+    },
+    {
+      "en": "User choice, children’s safeguards, and a platform’s wider duty are related but separate policy tools.",
+      "zh": "用户选择、未成年人保护与平台整体义务有关，但属于不同政策工具。"
+    },
+    {
+      "en": "A proposal, a bill, an enacted law, detailed rules, and enforcement are distinct stages.",
+      "zh": "政策提案、法案、已通过法律、细则与执法，是不同阶段。"
+    }
+  ],
+  "actors": [
+    {
+      "name": {
+        "en": "Australian government and Parliament",
+        "zh": "澳大利亚政府与议会"
+      },
+      "role": {
+        "en": "Propose and decide legislation",
+        "zh": "提出并决定立法"
+      },
+      "position": {
+        "en": "The government argues services should identify and reduce harms proactively. Parliament determines legislation; announced penalties and requirements remain proposed until the relevant legal steps are complete.",
+        "zh": "政府主张服务应主动识别和减少伤害。议会决定立法；公布的罚则与要求，在相关法律程序完成前仍属拟议内容。"
+      },
+      "sourceIds": [
+        "platform-2024",
+        "platform-bill"
+      ]
+    },
+    {
+      "name": {
+        "en": "eSafety Commissioner",
+        "zh": "电子安全专员"
+      },
+      "role": {
+        "en": "Online safety regulator",
+        "zh": "网络安全监管机构"
+      },
+      "position": {
+        "en": "Its May 2026 position says recommender design can create cumulative harms and calls for user control and safety by design. A regulator’s position statement explains its approach; it is not itself a new statute.",
+        "zh": "其2026年5月立场认为推荐设计可能产生累积伤害，并倡议用户控制与安全设计。监管立场声明解释其方法，本身不是新制定的法律。"
+      },
+      "sourceIds": [
+        "platform-esafety"
+      ]
+    },
+    {
+      "name": {
+        "en": "Platforms, creators, and users",
+        "zh": "平台、创作者与用户"
+      },
+      "role": {
+        "en": "Design feeds and participate in them",
+        "zh": "设计并参与信息流"
+      },
+      "position": {
+        "en": "Platforms choose ranking goals; creators depend on distribution and users want relevance, control, and safety. These interests can conflict. Giving a following-feed option changes discovery without removing every safety or privacy question.",
+        "zh": "平台选择排序目标，创作者依赖内容分发，用户希望相关性、控制权与安全兼得。这些利益可能冲突。提供关注信息流选项会改变内容发现方式，却不会解决全部安全或隐私问题。"
+      },
+      "sourceIds": [
+        "platform-esafety",
+        "platform-choice"
+      ]
+    }
+  ],
+  "roots": {
+    "en": "Online safety policy developed around complaints and removal of particular material. A duty-of-care approach adds attention to how a service is designed and how risks accumulate. The dispute therefore includes both outcomes and process: which harms count, what reasonable precautions mean, who checks compliance, and whether safeguards preserve lawful expression and useful services.",
+    "zh": "网络安全政策起初围绕对具体内容的投诉与移除。注意义务方法进一步关注服务如何设计、风险如何累积。因此争论既涉及结果，也涉及过程：哪些算伤害，何为合理预防，谁监督合规，以及保护措施能否保留合法表达与有用服务。"
+  },
+  "timeline": [
+    {
+      "date": "2024-11-14",
+      "title": {
+        "en": "Government commits to a digital duty of care",
+        "zh": "政府承诺建立数字注意义务"
+      },
+      "detail": {
+        "en": "The announcement proposes proactive risk assessment and mitigation alongside existing complaint and removal schemes.",
+        "zh": "公告提出主动风险评估与减缓措施，与已有投诉及移除机制配合。"
+      },
+      "sourceIds": [
+        "platform-2024"
+      ]
+    },
+    {
+      "date": "2026",
+      "title": {
+        "en": "A framework paper sets out the approach",
+        "zh": "框架文件阐明政策方法"
+      },
+      "detail": {
+        "en": "In May, the department publishes a development paper for online services used by Australians. Consultation documents help explain intent but do not alone impose duties.",
+        "zh": "5月，政府部门发布针对澳大利亚用户在线服务的框架文件。咨询文件有助理解意图，但本身不产生法定义务。"
+      },
+      "sourceIds": [
+        "platform-framework"
+      ]
+    },
+    {
+      "date": "2026-10-15",
+      "title": {
+        "en": "Bill introduced; feed-choice consultation opens",
+        "zh": "提交法案并启动信息流选择咨询"
+      },
+      "detail": {
+        "en": "The government announces the bill and a proposed choice between recommended and followed content as a primary feed for users over 16. Check Parliament and final rules for subsequent legal status.",
+        "zh": "政府宣布提交法案，并拟让16岁以上用户选择推荐内容或关注内容作为主要信息流。后续法律状态应查议会记录与最终规则。"
+      },
+      "sourceIds": [
+        "platform-bill"
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": {
+        "en": "Recommender system",
+        "zh": "推荐系统"
+      },
+      "meaning": {
+        "en": "A system that selects and orders content using signals and objectives; its design affects exposure.",
+        "zh": "根据特征信号与目标选择、排列内容的系统；设计影响内容曝光。"
+      }
+    },
+    {
+      "term": {
+        "en": "Duty of care",
+        "zh": "注意义务"
+      },
+      "meaning": {
+        "en": "A legal responsibility to take specified or reasonable precautions against foreseeable harm; scope depends on the final law.",
+        "zh": "对可预见伤害采取特定或合理预防措施的法律责任；范围取决于最终法律。"
+      }
+    },
+    {
+      "term": {
+        "en": "Consultation / commencement",
+        "zh": "咨询／生效实施"
+      },
+      "meaning": {
+        "en": "Seeking feedback on a proposal versus the legal date obligations begin.",
+        "zh": "征求对提案的意见，与义务依法开始适用的日期。"
+      }
+    }
+  ],
+  "readingLens": [
+    {
+      "en": "What stage has actually occurred, and when would obligations begin?",
+      "zh": "实际走到哪个阶段，义务何时开始？"
+    },
+    {
+      "en": "Which services, ages, harms, exemptions, and appeal routes are covered?",
+      "zh": "涵盖哪些服务、年龄、伤害、豁免和申诉渠道？"
+    },
+    {
+      "en": "What evidence measures safer experiences, rather than just fewer visible posts or more removals?",
+      "zh": "什么证据衡量体验更安全，而不只是可见帖子更少或删除更多？"
+    }
+  ],
+  "sources": [
+    {
+      "id": "platform-2024",
+      "title": "New Duty of Care obligations on platforms",
+      "publisher": "Australian Minister for Communications",
+      "url": "https://minister.infrastructure.gov.au/rowland/media-release/new-duty-care-obligations-platforms-will-keep-australians-safer-online",
+      "kind": "institutional-position",
+      "publishedAt": "2024-11-14"
+    },
+    {
+      "id": "platform-esafety",
+      "title": "Recommender systems and algorithms: May 2026 position",
+      "publisher": "Australian eSafety Commissioner",
+      "url": "https://www.esafety.gov.au/industry/tech-trends-and-challenges/recommender-systems-and-algorithms",
+      "kind": "institutional-position"
+    },
+    {
+      "id": "platform-framework",
+      "title": "A Digital Duty of Care for Australia: developing a framework",
+      "publisher": "Australian Department of Infrastructure and Communications",
+      "url": "https://www.infrastructure.gov.au/department/media/publications/digital-duty-care-australia-developing-duty-care-framework-online-services-used-australians",
+      "kind": "institutional-position"
+    },
+    {
+      "id": "platform-choice",
+      "title": "Proposed Australian law would let users opt out of algorithms",
+      "publisher": "Associated Press",
+      "url": "https://apnews.com/article/1eee351b39f22b340ef289c792f7993b",
+      "kind": "independent-reporting",
+      "publishedAt": "2026-09-08"
+    },
+    {
+      "id": "platform-bill",
+      "title": "Digital Duty of Care next step in Australia’s reforms",
+      "publisher": "Australian Minister for Communications",
+      "url": "https://minister.infrastructure.gov.au/wells/media-release/digital-duty-care-next-step-australias-world-leading-reforms",
+      "kind": "institutional-position",
+      "publishedAt": "2026-10-15"
+    }
+  ]
+}

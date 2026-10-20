@@ -1,0 +1,244 @@
+{
+  "id": "courts-rights-evidence",
+  "title": {
+    "en": "Courts, rights & the stages of a case",
+    "zh": "法院、权利与案件进程"
+  },
+  "subtitle": {
+    "en": "Investigation, charge, injunction and judgment mean different things.",
+    "zh": "调查、起诉、禁令与判决，各自说明什么？"
+  },
+  "category": "politics",
+  "keywords": [
+    "injunction",
+    "lawsuit",
+    "due process",
+    "First Amendment",
+    "press access",
+    "ICC",
+    "ICJ",
+    "war crimes",
+    "criminal",
+    "police",
+    "suspect",
+    "Lansing",
+    "homicide",
+    "murder",
+    "民事",
+    "刑事",
+    "法院",
+    "禁令",
+    "起诉",
+    "嫌疑人",
+    "警方",
+    "国际刑事法院",
+    "国际法院",
+    "新闻自由"
+  ],
+  "reviewedAt": "2026-10-15",
+  "coverageThrough": "2002-07-01",
+  "overview": {
+    "en": "A police statement, criminal charge and court finding are different kinds of evidence. Civil litigation may seek money or an order changing government conduct; criminal prosecution seeks to establish an offense. International courts have different mandates again. Start with the institution, its jurisdiction and the stage reached before treating a headline as a final finding.",
+    "zh": "警方声明、刑事指控与法院认定，是不同层次的信息。民事诉讼可能要求赔偿或改变政府行为，刑事诉讼则要证明犯罪。国际法院还有不同的职权。先辨明机构、管辖权和程序阶段，再判断标题是否代表最终认定。"
+  },
+  "takeaways": [
+    {
+      "en": "An investigation or accusation does not establish guilt.",
+      "zh": "正在调查或受到指控，不等于已经有罪。"
+    },
+    {
+      "en": "A preliminary injunction can restrict conduct while a case continues; it is not always the final judgment.",
+      "zh": "初步禁令可在案件继续时限制行为，不一定是最终判决。"
+    },
+    {
+      "en": "The ICC tries individuals; the ICJ handles state disputes and authorized advisory questions.",
+      "zh": "国际刑事法院审理个人责任，国际法院处理国家间争端及获授权的咨询问题。"
+    }
+  ],
+  "actors": [
+    {
+      "name": {
+        "en": "Investigators, prosecutors and defendants",
+        "zh": "调查者、检察官与被告"
+      },
+      "role": {
+        "en": "Different roles in a criminal process",
+        "zh": "刑事程序中的不同角色"
+      },
+      "position": {
+        "en": "Investigators collect information; prosecutors bring a case; defendants can contest it. In US federal criminal trials the government bears the burden of proving guilt beyond reasonable doubt.",
+        "zh": "调查者收集信息，检察官提出案件，被告可以抗辩。美国联邦刑事审判中，政府承担排除合理怀疑证明有罪的责任。"
+      },
+      "sourceIds": [
+        "criminal"
+      ]
+    },
+    {
+      "name": {
+        "en": "Civil courts and parties",
+        "zh": "民事法院与当事人"
+      },
+      "role": {
+        "en": "Resolve disputes and requests for remedies",
+        "zh": "审理争端及救济请求"
+      },
+      "position": {
+        "en": "A judge may issue an injunction before the final merits decision. Check the order’s actual scope, who is bound and whether an appeal or stay changes its effect.",
+        "zh": "法官可能在最终实体裁决前颁布禁令，须核对命令限制什么、约束谁，以及上诉或暂缓执行是否改变效力。"
+      },
+      "sourceIds": [
+        "civil",
+        "glossary"
+      ]
+    },
+    {
+      "name": {
+        "en": "ICC and ICJ",
+        "zh": "国际刑事法院与国际法院"
+      },
+      "role": {
+        "en": "Separate international courts",
+        "zh": "不同的国际司法机构"
+      },
+      "position": {
+        "en": "The ICC concerns individual responsibility for specified international crimes. The ICJ settles submitted disputes between states and gives authorized advisory opinions; it is not a criminal trial court for people.",
+        "zh": "ICC处理特定国际罪行的个人责任。ICJ处理提交的国家间争端并出具获授权的咨询意见，不是审判个人刑事责任的法院。"
+      },
+      "sourceIds": [
+        "icc",
+        "icj"
+      ]
+    }
+  ],
+  "roots": {
+    "en": "Legal authority depends on the governing law and jurisdiction. An international allegation, a provisional measure and a final ruling should not be collapsed into one conclusion. The same discipline applies to local crime reporting: possible links between incidents remain a theory until supported. This framework does not resolve any current case.",
+    "zh": "法律权力取决于适用法律与管辖权。国际指控、临时措施和最终裁判不能合并为同一个结论。阅读地方犯罪新闻也应如此：事件之间可能有关联，仍须证据支持。本框架不判断当前任何具体案件。"
+  },
+  "timeline": [
+    {
+      "date": "1945",
+      "title": {
+        "en": "ICJ established in the UN Charter",
+        "zh": "《联合国宪章》设立国际法院"
+      },
+      "detail": {
+        "en": "The UN’s principal judicial organ was established for state disputes and advisory work.",
+        "zh": "联合国主要司法机关被设立，职能包括国家间争端与咨询工作。"
+      },
+      "sourceIds": [
+        "icj"
+      ]
+    },
+    {
+      "date": "1946",
+      "title": {
+        "en": "ICJ begins work",
+        "zh": "国际法院开始工作"
+      },
+      "detail": {
+        "en": "Its start of work is distinct from its establishment in the Charter.",
+        "zh": "开始工作与《宪章》设立它，是不同历史节点。"
+      },
+      "sourceIds": [
+        "icj"
+      ]
+    },
+    {
+      "date": "2002-07-01",
+      "title": {
+        "en": "ICC’s temporal starting point",
+        "zh": "国际刑事法院的时间起点"
+      },
+      "detail": {
+        "en": "The ICC’s official procedural overview describes jurisdiction over specified crimes committed on or after this date, subject to other legal conditions.",
+        "zh": "ICC官方程序说明，其对特定罪行的时间管辖从此日开始，仍须符合其他法律条件。"
+      },
+      "sourceIds": [
+        "icc"
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": {
+        "en": "Allegation",
+        "zh": "指控／主张"
+      },
+      "meaning": {
+        "en": "A claim to be tested against evidence, not an established conclusion merely because it appears in a filing.",
+        "zh": "需要证据检验的说法，并不因写进文件就成为已确立的结论。"
+      }
+    },
+    {
+      "term": {
+        "en": "Preliminary injunction",
+        "zh": "初步禁令"
+      },
+      "meaning": {
+        "en": "An order addressing conduct while the court considers the dispute; read its wording and duration.",
+        "zh": "法院继续审理争端时针对行为发出的命令，须阅读具体措辞和期限。"
+      }
+    },
+    {
+      "term": {
+        "en": "Jurisdiction",
+        "zh": "管辖权"
+      },
+      "meaning": {
+        "en": "The legal authority to decide a particular dispute or charge.",
+        "zh": "决定某类具体争端或指控的法律权限。"
+      }
+    }
+  ],
+  "readingLens": [
+    {
+      "en": "Who says this: police, a litigant, prosecutor, witness or a judge?",
+      "zh": "这是警方、当事人、检察官、证人还是法官所说？"
+    },
+    {
+      "en": "What stage has actually occurred, and what did the latest order decide?",
+      "zh": "程序实际走到哪一步，最新命令究竟决定了什么？"
+    },
+    {
+      "en": "Which facts remain disputed, and what record supports the central allegation?",
+      "zh": "哪些事实仍有争议，核心指控由什么记录支持？"
+    }
+  ],
+  "sources": [
+    {
+      "id": "criminal",
+      "title": "Criminal Cases",
+      "publisher": "US Courts",
+      "url": "https://www.uscourts.gov/about-federal-courts/types-cases/criminal-cases",
+      "kind": "historical-record"
+    },
+    {
+      "id": "civil",
+      "title": "Civil Cases",
+      "publisher": "US Courts",
+      "url": "https://www.uscourts.gov/about-federal-courts/types-cases/civil-cases",
+      "kind": "historical-record"
+    },
+    {
+      "id": "glossary",
+      "title": "Glossary of Legal Terms",
+      "publisher": "US Courts",
+      "url": "https://www.uscourts.gov/glossary",
+      "kind": "historical-record"
+    },
+    {
+      "id": "icc",
+      "title": "How the Court works — official indexed overview",
+      "publisher": "International Criminal Court",
+      "url": "https://www.icc-cpi.int/about/how-the-court-works",
+      "kind": "historical-record"
+    },
+    {
+      "id": "icj",
+      "title": "Frequently asked questions — official indexed overview",
+      "publisher": "International Court of Justice",
+      "url": "https://icj-cij.org/frequently-asked-questions/",
+      "kind": "historical-record"
+    }
+  ]
+}

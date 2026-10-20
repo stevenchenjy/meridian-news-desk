@@ -81,8 +81,10 @@ test("overview and watch links retain analyzed details when source text changes 
     attention: { items: [event] },
   };
   assert.deepEqual(articleForReview(data, "older").analysis, reviewed.analysis);
+  assert.equal(articleForReview(data, "older").isReviewedSnapshot, true);
   assert.equal(articleForReview(data, "duplicate").attention, event);
   assert.equal(articleForReview({ ...data, articles: [] }, "older").id, "older");
+  assert.equal(articleForReview({ ...data, articles: [reviewed] }, "older").isReviewedSnapshot, undefined);
 });
 
 test("importance bands agree at the policy boundaries", () => {

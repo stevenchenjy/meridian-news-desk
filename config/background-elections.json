@@ -1,0 +1,271 @@
+{
+  "id": "us-elections",
+  "title": {
+    "en": "US elections & voter registration",
+    "zh": "美国选举与选民登记"
+  },
+  "subtitle": {
+    "en": "Midterms, state rules and how to read eligibility news",
+    "zh": "中期选举、各州规则与资格新闻怎么读"
+  },
+  "category": "politics",
+  "keywords": [
+    "midterm",
+    "midterms",
+    "voter registration",
+    "voter eligibility",
+    "voter roll",
+    "voter rolls",
+    "voting rights",
+    "ballot eligibility",
+    "texas election",
+    "california election",
+    "中期选举",
+    "选民登记",
+    "投票资格",
+    "选民名册",
+    "选举权",
+    "德州选举",
+    "加州选举",
+    "US elections",
+    "Senate Democrats",
+    "Republican candidates",
+    "congressional elections",
+    "California ballots",
+    "Texas voter",
+    "美国选举",
+    "选票资格",
+    "加州选票"
+  ],
+  "reviewedAt": "2026-10-15",
+  "coverageThrough": "2026-10-05",
+  "overview": {
+    "en": "Guide reviewed on 15 October 2026, including Texas’s 5 October registration deadline. Midterms elect Congress halfway through a presidential term. All 435 House seats and roughly one-third of Senate seats are contested. State and local contests may also be on the ballot; the presidency is not.",
+    "zh": "本篇于2026年10月15日审阅，涵盖得克萨斯州10月5日登记截止日。中期选举在总统任期过半时改选国会，包括众议院全部435席及约三分之一参议院席位。选票上还可能有州和地方职位，但不改选总统。"
+  },
+  "takeaways": [
+    {
+      "en": "Eligibility, registration, casting a ballot and counting it are separate stages.",
+      "zh": "投票资格、选民登记、投票与计票是不同阶段。"
+    },
+    {
+      "en": "Federal laws set protections and requirements; states and counties administer important details.",
+      "zh": "联邦法律规定保护与要求；许多具体安排由州和县执行。"
+    },
+    {
+      "en": "A rule or deadline reported for Texas does not automatically apply in California.",
+      "zh": "得州的规则或期限不会自动适用于加州。"
+    }
+  ],
+  "actors": [
+    {
+      "name": {
+        "en": "Voters and election administrators",
+        "zh": "选民与选务人员"
+      },
+      "role": {
+        "en": "Eligible voters choose representatives; state and local offices maintain registrations and conduct elections.",
+        "zh": "符合资格的选民选择代表；州和地方机构管理登记并组织选举。"
+      },
+      "position": {
+        "en": "Official state and county notices establish practical procedures. A party’s claim about the rules should be checked against those notices and applicable decisions.",
+        "zh": "官方州、县通知说明实际程序。政党对规则的说法，应对照这些通知及适用决定核查。"
+      },
+      "sourceIds": [
+        "texas",
+        "california"
+      ]
+    },
+    {
+      "name": {
+        "en": "Congress and federal election institutions",
+        "zh": "国会与联邦选举机构"
+      },
+      "role": {
+        "en": "Congress legislates; the Election Assistance Commission supports election administration under federal law.",
+        "zh": "国会制定法律；选举援助委员会依据联邦法律支持选务管理。"
+      },
+      "position": {
+        "en": "Federal laws address discrimination, registration and administration standards. The EAC’s guidance does not make it the administrator of every local election.",
+        "zh": "联邦法律处理歧视、登记与选务标准。选举援助委员会提供指导，并不意味着由它管理每一场地方选举。"
+      },
+      "sourceIds": [
+        "federal-laws"
+      ]
+    },
+    {
+      "name": {
+        "en": "Texas and California election offices",
+        "zh": "得州与加州选务机构"
+      },
+      "role": {
+        "en": "They publish their respective state’s eligibility and registration information.",
+        "zh": "分别公布本州投票资格和登记资料。"
+      },
+      "position": {
+        "en": "Texas lists 5 October as its registration deadline for the 3 November 2026 election. California lists citizenship, residency, age and additional legal conditions, and has conditional-registration procedures. These state systems differ.",
+        "zh": "得州将2026年11月3日选举的登记截止日列为10月5日。加州规定公民身份、居住、年龄及其他法律条件，并设有附条件登记程序。两州制度不同。"
+      },
+      "sourceIds": [
+        "texas",
+        "california",
+        "ca-registration"
+      ]
+    }
+  ],
+  "roots": {
+    "en": "US elections combine a national constitutional framework with state administration. Federal reforms have addressed racial exclusion, access to registration and election machinery. Current disputes often concern which eligible voters can complete administrative steps and how rules are enforced. A registration error alone does not establish fraud or prove that a voter is ineligible.",
+    "zh": "美国选举结合全国宪法框架与州级管理。联邦改革曾处理种族排斥、登记便利及选务设备等问题。当前争议常涉及符合资格的选民能否完成行政程序，以及规则如何执行。登记错误本身既不能证明舞弊，也不能证明该选民没有资格。"
+  },
+  "timeline": [
+    {
+      "date": "1965",
+      "title": {
+        "en": "Voting Rights Act",
+        "zh": "《投票权法》"
+      },
+      "detail": {
+        "en": "Federal legislation strengthened protections against discriminatory voting practices; later amendments added further requirements.",
+        "zh": "联邦立法加强对歧视性投票做法的限制；后续修法增加其他要求。"
+      },
+      "sourceIds": [
+        "federal-laws"
+      ]
+    },
+    {
+      "date": "1993",
+      "title": {
+        "en": "National Voter Registration Act",
+        "zh": "《全国选民登记法》"
+      },
+      "detail": {
+        "en": "The law set federal registration requirements, including a national mail form and list-maintenance rules.",
+        "zh": "法律规定联邦选举登记要求，包括全国邮寄表格及名册维护规则。"
+      },
+      "sourceIds": [
+        "federal-laws"
+      ]
+    },
+    {
+      "date": "2002",
+      "title": {
+        "en": "Help America Vote Act",
+        "zh": "《帮助美国投票法》"
+      },
+      "detail": {
+        "en": "The law created the EAC and baseline standards for election administration.",
+        "zh": "法律设立选举援助委员会，并规定选务管理的基础标准。"
+      },
+      "sourceIds": [
+        "federal-laws"
+      ]
+    },
+    {
+      "date": "2026-10-05",
+      "title": {
+        "en": "Texas registration deadline",
+        "zh": "得州选民登记截止日"
+      },
+      "detail": {
+        "en": "Texas’s official FAQ identifies this as the registration deadline for the 3 November 2026 election. Check current county guidance for an individual registration issue.",
+        "zh": "得州官方常见问题页将此日列为2026年11月3日选举的登记截止日。个人登记问题须核对所在县的最新指引。"
+      },
+      "sourceIds": [
+        "texas"
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": {
+        "en": "Midterm",
+        "zh": "中期选举"
+      },
+      "meaning": {
+        "en": "A congressional election halfway between presidential elections; control of either chamber can change.",
+        "zh": "总统选举之间的国会选举；任一议院的多数党都可能改变。"
+      }
+    },
+    {
+      "term": {
+        "en": "Registration / eligibility",
+        "zh": "登记／资格"
+      },
+      "meaning": {
+        "en": "Registration is an administrative record; eligibility is meeting the legal qualifications to vote.",
+        "zh": "登记是行政记录；资格是符合投票所需的法律条件。"
+      }
+    },
+    {
+      "term": {
+        "en": "Voter-roll maintenance",
+        "zh": "选民名册维护"
+      },
+      "meaning": {
+        "en": "Updating registration lists under legal rules; the reason and procedure for a change matter.",
+        "zh": "依法更新登记名册；变更原因与程序很重要。"
+      }
+    },
+    {
+      "term": {
+        "en": "Conditional registration",
+        "zh": "附条件登记"
+      },
+      "meaning": {
+        "en": "California allows registration and voting through specified procedures after its ordinary registration deadline. Verify details with the county.",
+        "zh": "加州允许在一般登记截止后按特定程序登记并投票；细节须向所在县核实。"
+      }
+    }
+  ],
+  "readingLens": [
+    {
+      "en": "Which state, election and voter group does the rule cover?",
+      "zh": "该规则涉及哪个州、哪场选举、哪类选民？"
+    },
+    {
+      "en": "Is this a proposal, an effective law, a court order or an administrative mistake?",
+      "zh": "这是提案、生效法律、法院命令，还是行政错误？"
+    },
+    {
+      "en": "Does the report distinguish an application backlog from a final denial of a vote?",
+      "zh": "报道是否区分申请积压与最终被拒绝投票？"
+    }
+  ],
+  "sources": [
+    {
+      "id": "midterms",
+      "title": "Congressional elections and midterm elections",
+      "publisher": "USAGov",
+      "url": "https://www.usa.gov/midterm-elections",
+      "kind": "historical-record"
+    },
+    {
+      "id": "federal-laws",
+      "title": "Overview of federal election laws",
+      "publisher": "US Election Assistance Commission",
+      "url": "https://www.eac.gov/election-officials/clearinghouse-resources-election-law-policy/overview-federal-election-laws",
+      "kind": "historical-record"
+    },
+    {
+      "id": "texas",
+      "title": "Frequently asked questions: registration and 2026 election",
+      "publisher": "Texas Secretary of State, VoteTexas.gov",
+      "url": "https://www.votetexas.gov/faq/index.html",
+      "kind": "institutional-position"
+    },
+    {
+      "id": "california",
+      "title": "Who can vote in California",
+      "publisher": "California Secretary of State",
+      "url": "https://www.sos.ca.gov/elections/voting-resources/who-can-vote-california",
+      "kind": "institutional-position"
+    },
+    {
+      "id": "ca-registration",
+      "title": "Voter registration: conditional registration procedures",
+      "publisher": "California Secretary of State",
+      "url": "https://www.sos.ca.gov/elections/voter-registration/",
+      "kind": "institutional-position"
+    }
+  ]
+}

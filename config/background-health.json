@@ -1,0 +1,237 @@
+{
+  "id": "public-health-outbreaks",
+  "title": {
+    "en": "Public health, outbreaks & WHO",
+    "zh": "公共卫生、疫情与世界卫生组织"
+  },
+  "subtitle": {
+    "en": "Separate surveillance, emergency declarations and disease control.",
+    "zh": "分清疫情监测、紧急状态与疾病控制。"
+  },
+  "category": "development",
+  "keywords": [
+    "World Health Organization",
+    "Ebola",
+    "cholera",
+    "outbreak",
+    "outbreaks",
+    "pandemic",
+    "vaccine",
+    "vaccines",
+    "public health",
+    "世界卫生组织",
+    "埃博拉",
+    "霍乱",
+    "疫情",
+    "疫苗",
+    "公共卫生",
+    "World Health Organisation",
+    "世卫组织"
+  ],
+  "reviewedAt": "2026-10-15",
+  "coverageThrough": "2007-06-15",
+  "overview": {
+    "en": "Public-health reporting describes risks to populations and the capacity to prevent and respond to illness. An outbreak count depends on detection, testing and definitions. WHO coordinates international health work, while national and local authorities deliver much of the response. A warning or emergency declaration is not itself proof that transmission is rising everywhere.",
+    "zh": "公共卫生报道关注群体面临的疾病风险，以及预防和应对能力。疫情数字取决于发现病例、检测和定义。WHO协调国际卫生工作，而大量应对由国家与地方机构承担。警告或紧急状态声明，本身不证明所有地方的传播都在上升。"
+  },
+  "takeaways": [
+    {
+      "en": "Different diseases have different transmission routes and control measures.",
+      "zh": "不同疾病的传播途径与控制措施不同。"
+    },
+    {
+      "en": "Case counts, suspected cases, confirmed cases and deaths are different indicators.",
+      "zh": "病例数、疑似病例、确诊病例与死亡人数，是不同指标。"
+    },
+    {
+      "en": "WHO advice, international reporting obligations and a government’s domestic measures are distinct.",
+      "zh": "WHO建议、国际通报义务与政府国内措施，应分别理解。"
+    }
+  ],
+  "actors": [
+    {
+      "name": {
+        "en": "WHO",
+        "zh": "世界卫生组织"
+      },
+      "role": {
+        "en": "International health coordination",
+        "zh": "协调国际卫生工作"
+      },
+      "position": {
+        "en": "Its Constitution frames health broadly. The International Health Regulations set a framework for cross-border risks; WHO coordination does not replace national health systems.",
+        "zh": "其《组织法》采用广义健康观。《国际卫生条例》为跨境风险设定框架，WHO协调不能代替各国卫生体系。"
+      },
+      "sourceIds": [
+        "constitution",
+        "ihr"
+      ]
+    },
+    {
+      "name": {
+        "en": "National and local health authorities",
+        "zh": "国家与地方卫生机构"
+      },
+      "role": {
+        "en": "Surveillance and response",
+        "zh": "开展监测与应对"
+      },
+      "position": {
+        "en": "Detection, reporting and response capacity shape what is observed and how risks are managed. Limited access can leave important gaps in reported counts.",
+        "zh": "发现、通报与应对能力会影响观测结果和风险管理，准入受限可能让病例统计出现重要空白。"
+      },
+      "sourceIds": [
+        "ihr"
+      ]
+    },
+    {
+      "name": {
+        "en": "Communities and health workers",
+        "zh": "社区与卫生工作者"
+      },
+      "role": {
+        "en": "Carry out and depend on disease-control measures",
+        "zh": "实施并依赖疾病控制措施"
+      },
+      "position": {
+        "en": "WHO’s disease guidance makes disease-specific mechanisms important. For example, cholera prevention depends heavily on safe water and sanitation, while Ebola response addresses contact with infected bodily fluids.",
+        "zh": "WHO的疾病指南强调针对具体传播机制采取措施。例如，霍乱防治高度依赖安全饮水与卫生设施，埃博拉应对则关注接触感染者体液的风险。"
+      },
+      "sourceIds": [
+        "cholera",
+        "ebola"
+      ]
+    }
+  ],
+  "roots": {
+    "en": "International health coordination grew because infectious risks can cross borders while health services remain largely national. Conflict and displacement may disrupt water, clinics and surveillance. Explaining that mechanism is different from proving the cause of a particular outbreak. This guide is for reading reporting, not diagnosing an illness or choosing treatment.",
+    "zh": "国际卫生协调源于传染风险可以跨境，而医疗服务主要由各国提供。冲突和流离失所可能破坏饮水、诊所和监测。解释这一机制，不等于已经证明某次疫情的原因。本篇帮助阅读新闻，不用于诊断疾病或选择治疗。"
+  },
+  "timeline": [
+    {
+      "date": "1948-04-07",
+      "title": {
+        "en": "WHO Constitution enters into force",
+        "zh": "WHO《组织法》生效"
+      },
+      "detail": {
+        "en": "This date marks the institutional foundation of WHO.",
+        "zh": "这一日期标志着WHO的制度起点。"
+      },
+      "sourceIds": [
+        "constitution"
+      ]
+    },
+    {
+      "date": "2005",
+      "title": {
+        "en": "Revised International Health Regulations",
+        "zh": "修订《国际卫生条例》"
+      },
+      "detail": {
+        "en": "The revised framework addresses public-health risks and events that may cross borders.",
+        "zh": "修订框架处理可能跨境的公共卫生风险与事件。"
+      },
+      "sourceIds": [
+        "ihr"
+      ]
+    },
+    {
+      "date": "2007-06-15",
+      "title": {
+        "en": "IHR (2005) enters into force",
+        "zh": "2005年版条例生效"
+      },
+      "detail": {
+        "en": "Adoption and entry into force are separate; later amendments and country applicability need current records.",
+        "zh": "通过与生效是不同阶段，后续修正和对各国的适用情况须查当期记录。"
+      },
+      "sourceIds": [
+        "ihr-history"
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": {
+        "en": "Surveillance",
+        "zh": "公共卫生监测"
+      },
+      "meaning": {
+        "en": "Systematic observation and reporting used to identify and track health risks.",
+        "zh": "有系统地观察和通报，用于发现并追踪卫生风险。"
+      }
+    },
+    {
+      "term": {
+        "en": "Confirmed case",
+        "zh": "确诊病例"
+      },
+      "meaning": {
+        "en": "A case meeting a specified confirmation standard; the definition and testing coverage matter.",
+        "zh": "符合特定确认标准的病例，须核对定义和检测覆盖。"
+      }
+    },
+    {
+      "term": {
+        "en": "International Health Regulations",
+        "zh": "国际卫生条例"
+      },
+      "meaning": {
+        "en": "An international legal framework for preparing for and responding to cross-border public-health risks.",
+        "zh": "为跨境公共卫生风险的准备和应对提供国际法律框架。"
+      }
+    }
+  ],
+  "readingLens": [
+    {
+      "en": "What disease, place, observation period and case definition does the report describe?",
+      "zh": "报道涉及什么疾病、地点、观测时段和病例定义？"
+    },
+    {
+      "en": "Is a higher count evidence of more transmission, better detection, or both?",
+      "zh": "数字上升说明传播更多、发现能力更好，还是两者兼有？"
+    },
+    {
+      "en": "Which water, clinical, laboratory or access constraint is actually documented?",
+      "zh": "已被记录的限制究竟在饮水、临床、实验室还是准入方面？"
+    }
+  ],
+  "sources": [
+    {
+      "id": "constitution",
+      "title": "Constitution of the World Health Organization",
+      "publisher": "WHO",
+      "url": "https://www.who.int/about/governance/constitution",
+      "kind": "historical-record"
+    },
+    {
+      "id": "ihr",
+      "title": "International health regulations",
+      "publisher": "WHO",
+      "url": "https://www.who.int/health-topics/international-health-regulations",
+      "kind": "historical-record"
+    },
+    {
+      "id": "ihr-history",
+      "title": "International Health Regulations (2005)",
+      "publisher": "WHO",
+      "url": "https://www.who.int/publications/i/item/9789241580410",
+      "kind": "historical-record"
+    },
+    {
+      "id": "cholera",
+      "title": "Cholera fact sheet",
+      "publisher": "WHO",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/cholera",
+      "kind": "historical-record"
+    },
+    {
+      "id": "ebola",
+      "title": "Ebola disease fact sheet",
+      "publisher": "WHO",
+      "url": "https://www.who.int/news-room/fact-sheets/detail/ebola-disease",
+      "kind": "historical-record"
+    }
+  ]
+}

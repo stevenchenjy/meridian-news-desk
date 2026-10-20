@@ -43,7 +43,12 @@ export function articleForReview(data, articleId) {
       item.memberArticleIds?.includes(articleId),
   );
   return hasAnalysis(event?.articleSnapshot)
-    ? { ...event.articleSnapshot, attention: event, isRead: event.isRead }
+    ? {
+        ...event.articleSnapshot,
+        attention: event,
+        isRead: event.isRead,
+        isReviewedSnapshot: true,
+      }
     : current;
 }
 

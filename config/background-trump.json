@@ -1,0 +1,367 @@
+{
+  "id": "trump-administration",
+  "title": {
+    "en": "The Trump administration & how US power works",
+    "zh": "特朗普政府与美国权力如何运作"
+  },
+  "subtitle": {
+    "en": "Who can decide what, what the policy goals are, and how to read promises, orders, and outcomes.",
+    "zh": "谁有权决定什么？如何区分政策目标、命令与实际结果？"
+  },
+  "category": "politics",
+  "keywords": [
+    "Trump",
+    "Trump administration",
+    "Trump tariffs",
+    "Trump immigration",
+    "特朗普",
+    "川普",
+    "特朗普政府"
+  ],
+  "reviewedAt": "2026-10-15",
+  "coverageThrough": "2026-10-13",
+  "overview": {
+    "en": "“The Trump administration” usually means the president and the executive officials and agencies serving under him. It does not mean every US institution or every American. Trump’s first term ran from 2017 to 2021; his second began January 20, 2025. This guide includes selected verified developments through October 13, 2026, including court orders concerning press credentials and ICC-related advocacy. To understand a headline, identify the actor, legal authority and procedural stage. Temporary court relief is not a final ruling on every policy.",
+    "zh": "“特朗普政府”通常指总统，以及在其领导下工作的行政官员与机构，并不等于美国所有机构或全体美国人。特朗普首任任期为2017至2021年，第二任期始于2025年1月20日。本篇收录经核实的部分进展，涵盖至2026年10月13日，包括涉及记者通行资格及国际刑事法院相关倡议活动的法院命令。理解新闻时，先辨明行动方、法律依据和程序阶段。临时司法救济不等于对全部政策作出最终判决。"
+  },
+  "takeaways": [
+    {
+      "en": "A presidential promise, a signed order, a law, implementation, and a measured result are five different stages. Check which stage the news actually establishes.",
+      "zh": "总统承诺、签署命令、法律、落实执行和可衡量结果，是五个不同阶段。要看报道真正证实了哪一步。"
+    },
+    {
+      "en": "Trump is a Republican. The Republican Party, Congress, courts, states, and the wider US public are distinct actors with their own powers and disagreements.",
+      "zh": "特朗普属于共和党。共和党、国会、法院、各州和美国公众是不同主体，各有权力，也可能互相分歧。"
+    },
+    {
+      "en": "Judge a policy by both its stated goal and evidence about costs, benefits, legal limits, and who experiences the effects.",
+      "zh": "评估政策时，既看官方目标，也看成本、收益、法律限制，以及不同人群承受的影响。"
+    }
+  ],
+  "actors": [
+    {
+      "name": {
+        "en": "President & executive agencies",
+        "zh": "总统与行政机构"
+      },
+      "role": {
+        "en": "Direct federal administration and enforce laws",
+        "zh": "领导联邦行政工作并执行法律"
+      },
+      "position": {
+        "en": "Trump’s immigration order directed broader enforcement and removal efforts. His tariff order argued that trade deficits and unequal trading conditions warranted action. These are the administration’s rationales; publication of an order alone does not establish effective implementation or successful outcomes.",
+        "zh": "特朗普的移民行政令要求扩大执法与遣返工作；关税行政令则以贸易逆差和不平等贸易条件作为采取行动的理由。这些属于政府给出的理由；命令公布本身，不证明执行有效或结果成功。"
+      },
+      "sourceIds": [
+        "trump-immigration",
+        "trump-tariffs"
+      ]
+    },
+    {
+      "name": {
+        "en": "Congress: House & Senate",
+        "zh": "国会：众议院与参议院"
+      },
+      "role": {
+        "en": "Legislative branch",
+        "zh": "立法部门"
+      },
+      "position": {
+        "en": "Congress makes laws and controls federal taxing and spending. Its members can support, fund, constrain, or oppose presidential initiatives. Party affiliation can help predict voting, but “Republicans support” still needs named lawmakers and a specific vote or statement.",
+        "zh": "国会制定法律，并掌握联邦税收和支出权。议员可以支持、拨款、限制或反对总统计划。党派有助理解投票倾向，但“共和党支持”仍应落实到具体议员、投票或声明。"
+      },
+      "sourceIds": [
+        "trump-branches"
+      ]
+    },
+    {
+      "name": {
+        "en": "Federal courts",
+        "zh": "联邦法院"
+      },
+      "role": {
+        "en": "Judicial branch",
+        "zh": "司法部门"
+      },
+      "position": {
+        "en": "Courts decide legal disputes. In February 2026 the Supreme Court held that IEEPA did not authorize the challenged tariffs. On October 13, separate district-court rulings granted preliminary relief concerning White House press credentials and specified ICC-related speech. Each ruling has a defined scope and procedural stage.",
+        "zh": "法院审理法律争议。2026年2月，最高法院裁定IEEPA并未授权案中争议的关税。10月13日，两家地区法院分别就白宫记者通行资格及特定国际刑事法院相关言论活动给予初步救济。每项裁决都有特定范围和程序阶段。"
+      },
+      "sourceIds": [
+        "trump-branches",
+        "trump-court",
+        "trump-press-order-2026",
+        "trump-icc-order-2026"
+      ]
+    },
+    {
+      "name": {
+        "en": "Federal Reserve (“the Fed”)",
+        "zh": "联邦储备系统（美联储）"
+      },
+      "role": {
+        "en": "US central bank",
+        "zh": "美国中央银行"
+      },
+      "position": {
+        "en": "Congress sets its monetary-policy goals. Governors are presidential appointees confirmed by the Senate, but monetary-policy decisions do not require presidential approval. A Trump demand for lower interest rates and a Fed decision to lower them are separate events.",
+        "zh": "国会设定其货币政策目标。理事由总统提名、参议院确认，但货币政策决定无需总统批准。“特朗普要求降息”与“美联储决定降息”是两件事。"
+      },
+      "sourceIds": [
+        "trump-fed"
+      ]
+    }
+  ],
+  "roots": {
+    "en": "The administration’s direction can be read through three recurring priorities. On trade, its stated aim is to improve bargaining power, manufacturing, and economic security through tariffs. On immigration, it emphasizes enforcement and removal. In foreign policy, AP’s January 2025 reporting illustrated the use of tariff threats to obtain cooperation over deportation flights from Colombia. That episode suggests a bargaining method, not proof that every international dispute follows one strategy. Outcomes remain questions for evidence: a concession today may have longer-term economic or diplomatic costs.",
+    "zh": "理解其政策方向，可以关注三个反复出现的重点。贸易方面，政府称要通过关税提高谈判能力、发展制造业并维护经济安全；移民方面，强调执法与遣返；外交方面，美联社2025年1月的报道展示了政府以关税威胁，争取哥伦比亚接收遣返航班的做法。这起事件说明一种谈判手段，但不能证明每场国际争端都遵循同一策略。成效仍需证据判断：眼前的让步，可能伴随长期经济或外交成本。"
+  },
+  "timeline": [
+    {
+      "date": "2017-01-20",
+      "title": {
+        "en": "First term begins",
+        "zh": "第一任期开始"
+      },
+      "detail": {
+        "en": "Trump began his first presidency as the 45th president. This term ended in January 2021; it should not be confused with the administration that returned in 2025.",
+        "zh": "特朗普以第45任总统身份开始首个任期，并于2021年1月结束。阅读旧新闻时，应与2025年重返白宫后的政府区分。"
+      },
+      "sourceIds": [
+        "trump-inauguration"
+      ]
+    },
+    {
+      "date": "2025-01-20",
+      "title": {
+        "en": "Second term and new immigration directions",
+        "zh": "第二任期与移民政策调整"
+      },
+      "detail": {
+        "en": "Trump returned as the 47th president. His enforcement order called for expanded detention and removal efforts, subject to applicable law and available resources. The order states direction, not a count of completed deportations.",
+        "zh": "特朗普以第47任总统身份回任。移民执法行政令要求在适用法律和可用资源范围内扩大拘留与遣返。命令说明政策方向，并不是已完成遣返的人数记录。"
+      },
+      "sourceIds": [
+        "trump-inauguration",
+        "trump-immigration"
+      ]
+    },
+    {
+      "date": "2025-04-02",
+      "title": {
+        "en": "Broad reciprocal tariffs announced",
+        "zh": "宣布广泛的“对等关税”"
+      },
+      "detail": {
+        "en": "The order invoked IEEPA and other authorities to impose broad import duties, presenting trade deficits as a national emergency. Rates, exceptions, pauses, and legal challenges must be checked against the date of a report.",
+        "zh": "行政令援引IEEPA等法律，对进口商品征收广泛关税，并将贸易逆差描述为国家紧急状态。税率、例外、暂缓和法律挑战，均须结合报道日期核实。"
+      },
+      "sourceIds": [
+        "trump-tariffs"
+      ]
+    },
+    {
+      "date": "2025-06-04",
+      "title": {
+        "en": "CBO estimates tariff trade-offs",
+        "zh": "国会预算办公室估算关税的得失"
+      },
+      "detail": {
+        "en": "For tariffs in place by May 13, CBO projected lower deficits alongside higher near-term inflation and lower real output. These were conditional projections, not measured final outcomes or estimates for every later tariff regime.",
+        "zh": "针对截至5月13日的关税，国会预算办公室预测赤字会下降，同时短期通胀更高、实际产出更低。这是有条件的预测，并非最终实测结果，也不适用于之后所有关税安排。"
+      },
+      "sourceIds": [
+        "trump-cbo"
+      ]
+    },
+    {
+      "date": "2026-02-20",
+      "title": {
+        "en": "Supreme Court limits the claimed tariff authority",
+        "zh": "最高法院限制所主张的关税权力"
+      },
+      "detail": {
+        "en": "Learning Resources v. Trump held that IEEPA does not authorize presidential tariffs. It illustrates why an executive action’s legal basis matters; this guide does not establish what replacement duties were subsequently imposed.",
+        "zh": "在Learning Resources诉Trump案中，法院认定IEEPA并未授权总统征收关税。这说明行政行动的法律依据很重要；本篇不据此判断随后是否另征替代关税。"
+      },
+      "sourceIds": [
+        "trump-court"
+      ]
+    },
+    {
+      "date": "2026-10-13",
+      "title": {
+        "en": "Court continues White House press-pass relief",
+        "zh": "法院延续白宫记者通行证救济"
+      },
+      "detail": {
+        "en": "Judge Timothy Kelly granted preliminary relief continuing White House hard-pass access for CNN, MS NOW and Politico plaintiffs while their case proceeds, finding likely Fifth and First Amendment violations. The ruling concerns credentials for designated press areas, not guaranteed interviews or access to every presidential event.",
+        "zh": "蒂莫西·凯利法官给予初步救济，使CNN、MS NOW和Politico一方的原告在诉讼期间继续拥有白宫长期记者通行资格，并认定相关做法很可能违反第五及第一修正案。裁决涉及指定记者区域的通行资格，并不保证采访或参加每场总统活动。"
+      },
+      "sourceIds": [
+        "trump-press-order-2026"
+      ]
+    },
+    {
+      "date": "2026-10-13",
+      "title": {
+        "en": "ICC sanctions ruling gives plaintiff-specific relief",
+        "zh": "国际刑事法院制裁案给予特定原告救济"
+      },
+      "detail": {
+        "en": "Judge Jesse Furman barred defendants other than Trump from enforcing penalties against DAWN, TAAG and two members for specified speech-related ICC work. He denied a universal injunction and left other sanctions powers intact. The case illustrates how constitutional limits can restrict enforcement without striking down an entire policy.",
+        "zh": "杰西·弗曼法官禁止特朗普以外的被告，就DAWN、TAAG及两名成员的特定国际刑事法院相关言论活动实施处罚。他拒绝发布普遍性禁令，并保留其他制裁权限。该案说明，宪法限制可以约束执法，而不必推翻整项政策。"
+      },
+      "sourceIds": [
+        "trump-icc-order-2026"
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": {
+        "en": "Executive order",
+        "zh": "行政令"
+      },
+      "meaning": {
+        "en": "A presidential direction to the executive branch. It must operate within lawful authority; signing it does not make it an act of Congress.",
+        "zh": "总统对行政部门发出的指令，必须在合法权限内运作；签署行政令不等于国会通过法律。"
+      }
+    },
+    {
+      "term": {
+        "en": "Tariff",
+        "zh": "关税"
+      },
+      "meaning": {
+        "en": "A tax on imports. The economic burden can spread through prices, profit margins, and supply chains; revenue and household welfare are different measures.",
+        "zh": "对进口商品征收的税。经济负担可通过价格、利润率和供应链传导；政府收入与家庭福利是不同指标。"
+      }
+    },
+    {
+      "term": {
+        "en": "Fiscal vs monetary policy",
+        "zh": "财政政策与货币政策"
+      },
+      "meaning": {
+        "en": "Fiscal policy concerns government taxes and spending. Monetary policy concerns central-bank tools such as interest rates. Different institutions make these decisions.",
+        "zh": "财政政策涉及政府税收与支出；货币政策涉及央行利率等工具。两类决定由不同机构作出。"
+      }
+    },
+    {
+      "term": {
+        "en": "Injunction / appeal",
+        "zh": "禁令／上诉"
+      },
+      "meaning": {
+        "en": "An injunction directs or restricts conduct. Preliminary relief can preserve rights while a case proceeds and usually assesses likely success, rather than finally deciding the merits. An appeal seeks higher-court review; check who is protected, what conduct is covered and whether enforcement is stayed.",
+        "zh": "禁令指示或限制某种行为。初步救济可在案件进行时保护权利，通常评估胜诉可能性，而非最终裁定实体争议。上诉要求上级法院复核；须看谁受保护、涵盖什么行为，以及执行是否被暂缓。"
+      }
+    }
+  ],
+  "readingLens": [
+    {
+      "en": "Translate “Trump says” into a statement, then look for the signed document, implementing agency, effective date, funding, and any court order.",
+      "zh": "把“特朗普表示”先当作一项表态，再寻找正式文件、执行机构、生效日、资金和相关法院命令。"
+    },
+    {
+      "en": "For tariffs, identify the product, country, rate, exemptions, legal authority, and start date. A headline rate rarely describes every shipment.",
+      "zh": "读关税新闻时，确认商品、国家、税率、豁免、法律依据和起征日。标题税率通常不能概括每一批货物。"
+    },
+    {
+      "en": "For immigration, separate border encounters, asylum claims, detention, removal orders, and completed removals. Compare consistent time periods and definitions.",
+      "zh": "移民报道中的边境查获、庇护申请、拘留、遣返令和已完成遣返是不同指标。比较时须统一时段与定义。"
+    },
+    {
+      "en": "Ask “compared with what?” for economic claims. Forecasts depend on assumptions; observed changes can have several causes beyond the president.",
+      "zh": "看到经济判断时问一句“与什么比较？”预测依赖假设，实际变化也可能由总统政策以外的多种因素造成。"
+    },
+    {
+      "en": "Read White House documents for stated policy, court opinions for holdings, and nonpartisan analysis and reporting for effects and competing explanations.",
+      "zh": "用白宫文件确认官方政策，用法院判决确认裁定内容，再用无党派分析与报道理解影响及不同解释。"
+    },
+    {
+      "en": "For a court order, read the operative relief: which defendants must do what, which plaintiffs benefit, and whether the order is preliminary, stayed or superseded.",
+      "zh": "阅读法院命令时看实际救济内容：哪些被告必须做什么、哪些原告受益，以及命令属于初步、已暂缓，还是已被后续命令取代。"
+    }
+  ],
+  "sources": [
+    {
+      "id": "trump-inauguration",
+      "title": "Inauguration at the U.S. Capitol: dates and nonconsecutive terms",
+      "publisher": "Architect of the Capitol",
+      "url": "https://www.aoc.gov/what-we-do/programs-ceremonies/inauguration",
+      "kind": "historical-record"
+    },
+    {
+      "id": "trump-branches",
+      "title": "Branches of Government",
+      "publisher": "US House of Representatives",
+      "url": "https://www.house.gov/the-house-explained/branches-of-government",
+      "kind": "historical-record"
+    },
+    {
+      "id": "trump-fed",
+      "title": "Who owns the Federal Reserve?",
+      "publisher": "Federal Reserve Board",
+      "url": "https://www.federalreserve.gov/faqs/about_14986.htm",
+      "kind": "institutional-position"
+    },
+    {
+      "id": "trump-immigration",
+      "title": "Protecting the American People Against Invasion: executive order",
+      "publisher": "White House",
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/01/protecting-the-american-people-against-invasion/",
+      "kind": "institutional-position",
+      "publishedAt": "2025-01-20"
+    },
+    {
+      "id": "trump-tariffs",
+      "title": "Reciprocal tariff executive order",
+      "publisher": "White House",
+      "url": "https://www.whitehouse.gov/presidential-actions/2025/04/regulating-imports-with-a-reciprocal-tariff-to-rectify-trade-practices-that-contribute-to-large-and-persistent-annual-united-states-goods-trade-deficits/",
+      "kind": "institutional-position",
+      "publishedAt": "2025-04-02"
+    },
+    {
+      "id": "trump-cbo",
+      "title": "Budgetary and Economic Effects of Tariffs Implemented Between January 6 and May 13, 2025",
+      "publisher": "Congressional Budget Office",
+      "url": "https://www.cbo.gov/publication/61389",
+      "kind": "historical-record",
+      "publishedAt": "2025-06-04"
+    },
+    {
+      "id": "trump-court",
+      "title": "Learning Resources, Inc. v. Trump: Supreme Court opinion",
+      "publisher": "Supreme Court of the United States",
+      "url": "https://www.supremecourt.gov/opinions/25pdf/24-1287_4gcj.pdf",
+      "kind": "historical-record",
+      "publishedAt": "2026-02-20"
+    },
+    {
+      "id": "trump-foreign-policy",
+      "title": "Early Trump foreign policy and the Colombia deportation-flight dispute",
+      "publisher": "Associated Press, republished by The Durango Herald",
+      "url": "https://www.durangoherald.com/articles/associated-press/in-the-early-going-trump-2-0-approach-on-foreign-policy-is-to-talk-loudly-and-carry-a-big-stick/",
+      "kind": "independent-reporting",
+      "publishedAt": "2025-01-27"
+    },
+    {
+      "id": "trump-press-order-2026",
+      "title": "CNN et al. v. Trump, DDC 26-3287: memorandum opinion (document 50)",
+      "publisher": "US District Court, District of Columbia, via Justia",
+      "url": "https://cases.justia.com/federal/district-courts/district-of-columbia/dcdce/1:2026cv03287/296754/50/0.pdf?ts=1791971144",
+      "kind": "historical-record",
+      "publishedAt": "2026-10-13"
+    },
+    {
+      "id": "trump-icc-order-2026",
+      "title": "DAWN et al. v. Trump, SDNY 26-CV-5957: opinion and order (document 40)",
+      "publisher": "US District Court, Southern District of New York, via CourtListener",
+      "url": "https://storage.courtlistener.com/recap/gov.uscourts.nysd.668333/gov.uscourts.nysd.668333.40.0.pdf",
+      "kind": "historical-record",
+      "publishedAt": "2026-10-13"
+    }
+  ]
+}

@@ -9,6 +9,7 @@ export const categories = [
   { id: "industry", en: "Industry insights", zh: "行业洞察" },
 ];
 export function copy(en, zh, language) {
+  // Interface chrome uses one language; "both" is for reporting content.
   return language === "zh" ? zh : en;
 }
 export function categoryName(id, language = "en") {

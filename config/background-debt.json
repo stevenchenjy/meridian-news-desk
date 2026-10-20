@@ -1,0 +1,233 @@
+{
+  "id": "government-debt-bonds",
+  "title": {
+    "en": "Government debt, bonds & Treasury yields",
+    "zh": "政府债务、国债与收益率"
+  },
+  "subtitle": {
+    "en": "How public borrowing works, and why a yield can rise for different reasons.",
+    "zh": "政府如何借钱，以及为什么收益率上涨有不同原因。"
+  },
+  "category": "economy",
+  "keywords": [
+    "Treasury",
+    "Treasuries",
+    "Treasury yield",
+    "bond yield",
+    "government debt",
+    "deficit",
+    "debt ceiling",
+    "TIPS",
+    "国债",
+    "美债",
+    "债务上限",
+    "财政赤字",
+    "收益率"
+  ],
+  "reviewedAt": "2026-10-15",
+  "coverageThrough": "2014-01-29",
+  "overview": {
+    "en": "When US federal spending exceeds revenue, the government runs a deficit. Treasury finances obligations by selling securities. Buyers lend money in exchange for promised payments. The debt is an accumulated stock; the deficit is a flow over a period. This guide covers enduring mechanics and product history through January 2014, not today’s debt total or yield.",
+    "zh": "当美国联邦支出超过收入时，就产生财政赤字。财政部通过发行证券为履行支付义务融资。买方借出资金，换取约定的支付。债务是累积存量，赤字是某段时期的流量。本篇介绍长期适用的机制与截至2014年1月的产品历史，不代表今天的债务总额或收益率。"
+  },
+  "takeaways": [
+    {
+      "en": "A bond’s price and yield generally move in opposite directions. A falling price does not mean the coupon payment was cut.",
+      "zh": "债券价格与收益率通常反向变化。价格下跌不等于票息被削减。"
+    },
+    {
+      "en": "Debt issuance finances legal obligations; raising the debt ceiling does not itself approve new spending.",
+      "zh": "发债为已有法律义务融资；提高债务上限本身不批准新增支出。"
+    },
+    {
+      "en": "A higher yield may reflect rate expectations, inflation, supply, or risk compensation. A headline alone cannot isolate the cause.",
+      "zh": "收益率上涨可能反映利率预期、通胀、供给或风险补偿；单靠标题无法确定原因。"
+    }
+  ],
+  "actors": [
+    {
+      "name": {
+        "en": "Treasury",
+        "zh": "美国财政部"
+      },
+      "role": {
+        "en": "Government debt issuer and cash manager",
+        "zh": "政府债券发行与现金管理机构"
+      },
+      "position": {
+        "en": "It auctions securities to obtain financing and manage maturities. It is distinct from the Federal Reserve, which conducts monetary policy.",
+        "zh": "通过拍卖证券获得资金并管理到期安排。它与负责货币政策的美联储是不同机构。"
+      },
+      "sourceIds": [
+        "debt-auctions",
+        "debt-limit"
+      ]
+    },
+    {
+      "name": {
+        "en": "Congress and the executive",
+        "zh": "国会与行政部门"
+      },
+      "role": {
+        "en": "Tax, spending, and borrowing law",
+        "zh": "制定税收、支出与借款法律"
+      },
+      "position": {
+        "en": "Budget choices create financing needs. The statutory debt limit separately constrains borrowing to meet existing commitments, creating a potential payment dispute even after spending is approved.",
+        "zh": "预算决定形成融资需求。法定债务上限另行限制为已有承诺借款；即使支出已经批准，也可能出现支付僵局。"
+      },
+      "sourceIds": [
+        "debt-stock",
+        "debt-limit"
+      ]
+    },
+    {
+      "name": {
+        "en": "Investors and dealers",
+        "zh": "投资者与交易商"
+      },
+      "role": {
+        "en": "Buyers at auctions and in secondary markets",
+        "zh": "拍卖及二级市场买方"
+      },
+      "position": {
+        "en": "Banks, funds, foreign institutions, and individuals buy for income, liquidity, or collateral. Auctions reveal demand at a price; a single buyer category does not explain the entire market.",
+        "zh": "银行、基金、海外机构与个人因收益、流动性或抵押品需求买入。拍卖反映特定价格下的需求，某一种买方不能代表整个市场。"
+      },
+      "sourceIds": [
+        "debt-auctions"
+      ]
+    }
+  ],
+  "roots": {
+    "en": "Public borrowing lets governments spread financing across time, but interest payments also compete with other uses of revenue. Treasury developed standardized auctions and tradable instruments to reach many investors. The relevant question is not just how large debt is in dollars: maturity, financing cost, economic capacity, and the legal ability to pay also matter.",
+    "zh": "政府借债可以把融资安排分散到不同时期，但利息支出也会与其他公共用途竞争。财政部发展了标准化拍卖与可交易证券，以吸引广泛投资者。判断债务不能只看美元总额，还要看期限、融资成本、经济承受能力及法律上的支付权限。"
+  },
+  "timeline": [
+    {
+      "date": "1993",
+      "title": {
+        "en": "Auction processing becomes automated",
+        "zh": "拍卖处理自动化"
+      },
+      "detail": {
+        "en": "Treasury introduces its first automated auction system, improving processing and publication.",
+        "zh": "财政部推出首个自动拍卖系统，改善处理和发布效率。"
+      },
+      "sourceIds": [
+        "debt-history"
+      ]
+    },
+    {
+      "date": "1997",
+      "title": {
+        "en": "Inflation-protected debt is introduced",
+        "zh": "推出抗通胀国债"
+      },
+      "detail": {
+        "en": "TIPS add securities whose principal adjusts with inflation, separating some inflation exposure from conventional fixed-payment debt.",
+        "zh": "TIPS的本金随通胀调整，与常规固定支付国债的通胀风险有所区别。"
+      },
+      "sourceIds": [
+        "debt-history"
+      ]
+    },
+    {
+      "date": "2014-01-29",
+      "title": {
+        "en": "The first floating-rate note auction",
+        "zh": "首次浮息票据拍卖"
+      },
+      "detail": {
+        "en": "After rules were amended in July 2013, Treasury holds its first FRN auction. Product authorization and an actual auction are separate milestones.",
+        "zh": "2013年7月修订规则后，财政部举行首次FRN拍卖。产品授权与实际拍卖是不同节点。"
+      },
+      "sourceIds": [
+        "debt-frn"
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": {
+        "en": "Yield",
+        "zh": "收益率"
+      },
+      "meaning": {
+        "en": "The return implied by a bond’s price and payments. Specify maturity and whether the figure is nominal or inflation-adjusted.",
+        "zh": "由债券价格与支付决定的回报指标。应说明期限及采用名义还是实际口径。"
+      }
+    },
+    {
+      "term": {
+        "en": "Rollover / refinancing",
+        "zh": "展期／再融资"
+      },
+      "meaning": {
+        "en": "Replacing maturing debt with new borrowing; new market rates affect the cost.",
+        "zh": "通过新借款偿还到期债务；新的市场利率会影响成本。"
+      }
+    },
+    {
+      "term": {
+        "en": "Debt held by the public",
+        "zh": "公众持有债务"
+      },
+      "meaning": {
+        "en": "Federal debt held outside federal government accounts, distinct from the broader gross-debt measure.",
+        "zh": "联邦政府内部账户以外持有的联邦债务，与更广的债务总额口径不同。"
+      }
+    }
+  ],
+  "readingLens": [
+    {
+      "en": "Which maturity moved, and by how much compared with the previous close?",
+      "zh": "变动的是哪一期限，与前收盘相比变动多少？"
+    },
+    {
+      "en": "Does the story concern new borrowing, outstanding debt, interest costs, or a legal ceiling?",
+      "zh": "报道说的是新增借款、债务存量、利息成本，还是法定上限？"
+    },
+    {
+      "en": "Is the claimed cause supported by auction data or investor evidence, or offered as an interpretation?",
+      "zh": "所称原因有拍卖数据或投资者证据，还是一种解释？"
+    }
+  ],
+  "sources": [
+    {
+      "id": "debt-stock",
+      "title": "Understanding the National Debt",
+      "publisher": "US Treasury Fiscal Data",
+      "url": "https://fiscaldata.treasury.gov/americas-finance-guide/national-debt/",
+      "kind": "institutional-position"
+    },
+    {
+      "id": "debt-auctions",
+      "title": "Auctions In Depth",
+      "publisher": "TreasuryDirect",
+      "url": "https://www.treasurydirect.gov/research-center/history-of-marketable-securities/auctions/auctions-indepth/",
+      "kind": "institutional-position"
+    },
+    {
+      "id": "debt-history",
+      "title": "Timeline of Treasury Marketable Securities",
+      "publisher": "TreasuryDirect",
+      "url": "https://www.treasurydirect.gov/research-center/history-of-marketable-securities/marketable-securities-timeline/",
+      "kind": "historical-record"
+    },
+    {
+      "id": "debt-limit",
+      "title": "Debt Limit",
+      "publisher": "US Treasury",
+      "url": "https://home.treasury.gov/policy-issues/financial-markets-financial-institutions-and-fiscal-service/debt-limit",
+      "kind": "institutional-position"
+    },
+    {
+      "id": "debt-frn",
+      "title": "Timeline of US Treasury Floating Rate Notes",
+      "publisher": "TreasuryDirect",
+      "url": "https://treasurydirect.gov/research-center/timeline/frns/",
+      "kind": "historical-record"
+    }
+  ]
+}

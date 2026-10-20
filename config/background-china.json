@@ -1,0 +1,309 @@
+{
+  "id": "china-relations",
+  "title": {
+    "en": "China, Taiwan & Western relations",
+    "zh": "中国、台湾与西方关系"
+  },
+  "subtitle": {
+    "en": "Sovereignty claims, security concerns and trade dependence",
+    "zh": "主权主张、安全关切与贸易依赖"
+  },
+  "category": "politics",
+  "keywords": [
+    "china",
+    "chinese",
+    "beijing",
+    "taiwan",
+    "taipei",
+    "cross-strait",
+    "rare earth",
+    "rare-earth",
+    "xi jinping",
+    "lai ching-te",
+    "中国",
+    "北京",
+    "台湾",
+    "台北",
+    "两岸",
+    "稀土",
+    "习近平",
+    "赖清德"
+  ],
+  "reviewedAt": "2026-10-15",
+  "coverageThrough": "2025-06-24",
+  "overview": {
+    "en": "Historical guide through 24 June 2025. The People’s Republic of China governs mainland China. Taiwan governs itself through separate institutions. Beijing claims Taiwan; Taiwan’s political parties and people hold differing views. Western governments combine economic ties with concerns over security, rights and coercion.",
+    "zh": "历史指南涵盖至2025年6月24日。中华人民共和国治理中国大陆；台湾通过独立运作的机构实行自治。北京主张台湾属于中国；台湾不同政党与民众的观点并不一致。西方政府在发展经济关系的同时，也关注安全、权利及胁迫问题。"
+  },
+  "takeaways": [
+    {
+      "en": "A government’s sovereignty claim, actual control and another country’s diplomatic recognition are different facts.",
+      "zh": "一方的主权主张、实际控制，以及他国的外交承认，是不同层面的事实。"
+    },
+    {
+      "en": "Trade cooperation can coexist with restrictions on sensitive technology and materials.",
+      "zh": "贸易合作可以与敏感技术和材料限制同时存在。"
+    },
+    {
+      "en": "Read each government’s exact wording: similarly named “one China” positions are not identical.",
+      "zh": "须看各国政府的准确措辞：名称相近的“一中”立场并不完全相同。"
+    }
+  ],
+  "actors": [
+    {
+      "name": {
+        "en": "People’s Republic of China / Beijing",
+        "zh": "中华人民共和国／北京"
+      },
+      "role": {
+        "en": "The state established in 1949 after the Communist victory in the Chinese Civil War.",
+        "zh": "1949年中国共产党在内战中胜利后建立的国家。"
+      },
+      "position": {
+        "en": "Its August 2022 white paper claims Taiwan as part of China and advocates reunification under “one country, two systems.” This records Beijing’s position.",
+        "zh": "2022年8月白皮书主张台湾属于中国，并提出以“一国两制”实现统一。这是北京的立场。"
+      },
+      "sourceIds": [
+        "us-history",
+        "prc-position"
+      ]
+    },
+    {
+      "name": {
+        "en": "Taiwan’s elected authorities",
+        "zh": "台湾民选当局"
+      },
+      "role": {
+        "en": "Taiwan has its own government and elections; its official name is Republic of China.",
+        "zh": "台湾拥有自己的政府与选举制度，正式名称为中华民国。"
+      },
+      "position": {
+        "en": "In his May 2024 inauguration speech, Lai Ching-te said the ROC and PRC were not subordinate to each other and called for dialogue. This does not represent every Taiwanese voter’s view.",
+        "zh": "赖清德在2024年5月就职演说中表示中华民国与中华人民共和国互不隶属，并呼吁对话。这不代表每位台湾选民的观点。"
+      },
+      "sourceIds": [
+        "taiwan-position"
+      ]
+    },
+    {
+      "name": {
+        "en": "United States",
+        "zh": "美国"
+      },
+      "role": {
+        "en": "It established diplomatic relations with Beijing in 1979 while maintaining unofficial Taiwan ties.",
+        "zh": "美国于1979年与北京建交，同时维持与台湾的非官方关系。"
+      },
+      "position": {
+        "en": "The Taiwan Relations Act created a domestic legal basis for unofficial ties and defensive arms. Diplomatic recognition and a promise to intervene militarily are different questions.",
+        "zh": "《与台湾关系法》为非官方关系及防御性武器提供美国国内法律依据。外交承认与是否承诺军事介入，是不同问题。"
+      },
+      "sourceIds": [
+        "us-history"
+      ]
+    },
+    {
+      "name": {
+        "en": "United Kingdom",
+        "zh": "英国"
+      },
+      "role": {
+        "en": "A trading partner that also assesses Chinese security and human-rights risks.",
+        "zh": "既与中国开展贸易，也评估相关安全与人权风险的国家。"
+      },
+      "position": {
+        "en": "In its June 2025 China audit statement, the government described cooperation where possible and challenge where necessary. Apply this as a dated policy statement.",
+        "zh": "英国政府在2025年6月中国审计声明中提出，在可合作处合作、在必要时提出挑战。这是特定时间的政策表述。"
+      },
+      "sourceIds": [
+        "uk-audit"
+      ]
+    }
+  ],
+  "roots": {
+    "en": "The civil war left rival governments on opposite sides of the Taiwan Strait. Later diplomatic normalization enabled extensive economic exchange without settling Taiwan’s status. Dependence on manufacturing, technology and mineral processing creates shared interests as well as pressure points. The political dispute cannot be inferred from an individual company’s sales.",
+    "zh": "中国内战后，台湾海峡两岸形成对立的政府。后来的外交正常化推动了广泛经济往来，但未解决台湾地位争议。制造、技术与矿物加工的相互依赖，既创造共同利益，也带来施压空间。不能用一家企业的销售情况来判断政治争议。"
+  },
+  "timeline": [
+    {
+      "date": "1949",
+      "title": {
+        "en": "Separate governments emerge",
+        "zh": "两岸形成分立政府"
+      },
+      "detail": {
+        "en": "The PRC was founded on the mainland; the ROC government continued on Taiwan.",
+        "zh": "中华人民共和国在大陆建立；中华民国政府在台湾继续运作。"
+      },
+      "sourceIds": [
+        "us-history"
+      ]
+    },
+    {
+      "date": "1979-01-01",
+      "title": {
+        "en": "US–PRC diplomatic relations",
+        "zh": "中美建交"
+      },
+      "detail": {
+        "en": "Washington recognized the PRC government and continued unofficial relations with Taiwan.",
+        "zh": "华盛顿承认中华人民共和国政府，并继续与台湾保持非官方关系。"
+      },
+      "sourceIds": [
+        "us-history"
+      ]
+    },
+    {
+      "date": "1979-04-10",
+      "title": {
+        "en": "Taiwan Relations Act",
+        "zh": "《与台湾关系法》"
+      },
+      "detail": {
+        "en": "US legislation provided a framework for ties after the diplomatic switch.",
+        "zh": "美国立法为外交承认转移后的对台关系提供框架。"
+      },
+      "sourceIds": [
+        "us-history"
+      ]
+    },
+    {
+      "date": "2024-05-20",
+      "title": {
+        "en": "Lai’s inauguration",
+        "zh": "赖清德就职"
+      },
+      "detail": {
+        "en": "His address set out his administration’s position on democracy, defence and cross-strait dialogue.",
+        "zh": "其演说阐述了政府对民主、防务及两岸对话的立场。"
+      },
+      "sourceIds": [
+        "taiwan-position"
+      ]
+    },
+    {
+      "date": "2025-04-04",
+      "title": {
+        "en": "Rare-earth export permits",
+        "zh": "稀土出口许可"
+      },
+      "detail": {
+        "en": "China introduced permitting requirements on selected rare-earth items; controls can disrupt manufacturing without being a universal export ban.",
+        "zh": "中国对部分稀土相关物项实施出口许可；管制会影响制造业，但不等于全面禁止所有出口。"
+      },
+      "sourceIds": [
+        "ap-minerals"
+      ]
+    },
+    {
+      "date": "2025-06-24",
+      "title": {
+        "en": "UK China audit statement",
+        "zh": "英国发布中国审计声明"
+      },
+      "detail": {
+        "en": "The foreign secretary described a policy balancing engagement and security concerns.",
+        "zh": "英国外交大臣阐述兼顾交往与安全关切的政策。"
+      },
+      "sourceIds": [
+        "uk-audit"
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": {
+        "en": "One-China principle / policy",
+        "zh": "一个中国原则／一中政策"
+      },
+      "meaning": {
+        "en": "Beijing’s principle and other governments’ policies use different formulations; check the original text.",
+        "zh": "北京的原则与他国政策措辞不同；须核对原文。"
+      }
+    },
+    {
+      "term": {
+        "en": "Export control",
+        "zh": "出口管制"
+      },
+      "meaning": {
+        "en": "A restriction or licence requirement on specified goods, technology, destinations or users.",
+        "zh": "针对特定商品、技术、目的地或使用者的限制或许可要求。"
+      }
+    },
+    {
+      "term": {
+        "en": "Rare earths",
+        "zh": "稀土"
+      },
+      "meaning": {
+        "en": "Elements used in products such as powerful magnets; processing capacity matters alongside mining.",
+        "zh": "用于强力磁体等产品的一组元素；除开采外，加工能力也很重要。"
+      }
+    },
+    {
+      "term": {
+        "en": "Tariff",
+        "zh": "关税"
+      },
+      "meaning": {
+        "en": "A tax on imports, different from an export licence or a prohibition.",
+        "zh": "对进口征收的税，与出口许可或禁令不同。"
+      }
+    }
+  ],
+  "readingLens": [
+    {
+      "en": "Is this a sovereignty statement, a military action or an economic rule?",
+      "zh": "这是主权表态、军事行动，还是经济规则？"
+    },
+    {
+      "en": "Which products and end users are covered, and when does the rule take effect?",
+      "zh": "规则涉及哪些产品及最终用户，何时生效？"
+    },
+    {
+      "en": "Does a meeting produce a binding text, a political statement or only further talks?",
+      "zh": "会晤产生了有约束力文本、政治声明，还是仅同意继续谈判？"
+    }
+  ],
+  "sources": [
+    {
+      "id": "us-history",
+      "title": "China Policy, 1977–1980: recognition and the Taiwan Relations Act",
+      "publisher": "US Department of State, Office of the Historian",
+      "url": "https://history.state.gov/milestones/1977-1980/china-policy",
+      "kind": "historical-record"
+    },
+    {
+      "id": "prc-position",
+      "title": "China releases white paper on Taiwan question and reunification",
+      "publisher": "PRC State Council / Xinhua",
+      "url": "https://english.www.gov.cn/archive/whitepaper/202208/10/content_WS62f34f46c6d02e533532f0ac.html",
+      "kind": "institutional-position",
+      "publishedAt": "2022-08-10"
+    },
+    {
+      "id": "taiwan-position",
+      "title": "Inaugural address of President Lai Ching-te",
+      "publisher": "Office of the President, Republic of China (Taiwan)",
+      "url": "https://english.president.gov.tw/NEWS/6726",
+      "kind": "institutional-position",
+      "publishedAt": "2024-05-20"
+    },
+    {
+      "id": "uk-audit",
+      "title": "China audit: Foreign Secretary’s statement",
+      "publisher": "UK Foreign, Commonwealth and Development Office",
+      "url": "https://www.gov.uk/government/speeches/china-audit-foreign-secretarys-statement",
+      "kind": "institutional-position",
+      "publishedAt": "2025-06-24"
+    },
+    {
+      "id": "ap-minerals",
+      "title": "China grants rare-earth export permits after US trade talks",
+      "publisher": "Associated Press",
+      "url": "https://apnews.com/article/de92222cda02dc85064c697911c6dea7",
+      "kind": "independent-reporting"
+    }
+  ]
+}

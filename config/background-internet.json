@@ -1,0 +1,236 @@
+{
+  "id": "internet-infrastructure",
+  "title": {
+    "en": "Internet infrastructure: cables & satellites",
+    "zh": "互联网基础设施：海缆与卫星"
+  },
+  "subtitle": {
+    "en": "What carries connectivity, who controls access, and how outages should be investigated.",
+    "zh": "连接由什么承载、谁控制接入，以及如何调查中断。"
+  },
+  "category": "industry",
+  "keywords": [
+    "subsea cable",
+    "submarine cable",
+    "internet infrastructure",
+    "Starlink",
+    "Starshield",
+    "SpaceX",
+    "satellite internet",
+    "海底电缆",
+    "海缆",
+    "星链",
+    "星盾",
+    "卫星互联网",
+    "网络韧性"
+  ],
+  "reviewedAt": "2026-10-15",
+  "coverageThrough": "2026-07-10",
+  "overview": {
+    "en": "The internet depends on physical networks: local connections, terrestrial fiber, data centers, undersea cables, and satellites. Submarine cables carry the great majority of international data; satellites can reach places without usable ground networks. These systems complement each other but differ in capacity, terminals, cost, and control. This guide covers mechanisms and documented resilience milestones through July 2026, not the cause of a new outage.",
+    "zh": "互联网依赖实体网络：本地接入、陆地光纤、数据中心、海底电缆与卫星。海缆承载绝大部分国际数据；卫星可以覆盖缺乏可用地面网络的地区。两者相互补充，但容量、终端、成本与控制方式不同。本篇介绍机制与截至2026年7月的韧性建设节点，不判断新中断的原因。"
+  },
+  "takeaways": [
+    {
+      "en": "A broken cable does not automatically mean a country loses the internet; alternative routes determine the effect.",
+      "zh": "海缆断裂不自动意味着一个国家断网；替代路径决定影响。"
+    },
+    {
+      "en": "Fishing, anchors, and natural hazards damage cables too. Suspicion of sabotage needs additional evidence.",
+      "zh": "捕鱼、船锚与自然灾害也会损坏海缆；怀疑破坏活动需要额外证据。"
+    },
+    {
+      "en": "A functioning satellite network does not guarantee a specific user, place, or mission is authorized to connect.",
+      "zh": "卫星网络正常运作，不保证某个用户、地点或任务获准接入。"
+    }
+  ],
+  "actors": [
+    {
+      "name": {
+        "en": "Cable owners and network operators",
+        "zh": "海缆业主与网络运营商"
+      },
+      "role": {
+        "en": "Build, route, and restore connections",
+        "zh": "建设、路由并修复连接"
+      },
+      "position": {
+        "en": "They seek reliable service and investment returns. Resilience depends on genuinely separate routes, landing points, repair vessels, and permits, not simply a count of cables.",
+        "zh": "他们追求可靠服务与投资回报。韧性依赖真正独立的路线、登陆点、维修船与许可，不只是海缆数量。"
+      },
+      "sourceIds": [
+        "internet-itu",
+        "internet-eu"
+      ]
+    },
+    {
+      "name": {
+        "en": "SpaceX: Starlink and Starshield",
+        "zh": "SpaceX：星链与星盾"
+      },
+      "role": {
+        "en": "Satellite connectivity and government systems",
+        "zh": "卫星连接与政府系统"
+      },
+      "position": {
+        "en": "SpaceX describes Starlink as consumer and commercial technology and Starshield as a government offering built on that technology, including communications and sensing. These are the provider’s product descriptions; they do not establish who authorized a particular restriction.",
+        "zh": "SpaceX把星链描述为面向消费者与商业的技术，把星盾描述为基于该技术的政府产品，包括通信与感知。这是供应商产品说明，不能证明某次限制由谁授权。"
+      },
+      "sourceIds": [
+        "internet-spacex"
+      ]
+    },
+    {
+      "name": {
+        "en": "Governments and international bodies",
+        "zh": "政府与国际机构"
+      },
+      "role": {
+        "en": "Licensing, protection, and coordination",
+        "zh": "许可、保护与协调"
+      },
+      "position": {
+        "en": "Governments balance connectivity, security, and jurisdiction. ITU and the cable-protection industry coordinate resilience practices; their guidance is different from an investigator attributing a specific incident.",
+        "zh": "政府权衡连接、安全与司法管辖。国际电联与海缆保护行业协调韧性实践；这些指引与调查人员认定具体事件责任不同。"
+      },
+      "sourceIds": [
+        "internet-advisory",
+        "internet-report"
+      ]
+    }
+  ],
+  "roots": {
+    "en": "Global connectivity grew through shared infrastructure crossing borders and oceans. That cooperation enables scale but leaves services dependent on several owners and legal systems. Repairing a physical break and restoring a customer’s service are separate tasks: traffic may be rerouted before repair, while commercial or government access decisions can interrupt service without damaged hardware.",
+    "zh": "全球连接依靠跨境、跨洋共享设施发展起来。这种合作带来规模，也使服务依赖多个业主与法律体系。修复物理断点与恢复客户服务是两件事：流量可能在修复前已绕行，商业或政府接入决定也可能在硬件完好时中断服务。"
+  },
+  "timeline": [
+    {
+      "date": "2024-11-29",
+      "title": {
+        "en": "International cable resilience body is launched",
+        "zh": "成立国际海缆韧性咨询机构"
+      },
+      "detail": {
+        "en": "ITU and ICPC establish a body to improve protection, deployment, and timely repair.",
+        "zh": "国际电联与国际海缆保护委员会成立机构，推动保护、部署与及时维修。"
+      },
+      "sourceIds": [
+        "internet-advisory"
+      ]
+    },
+    {
+      "date": "2025-02-21",
+      "title": {
+        "en": "The EU presents its cable security action plan",
+        "zh": "欧盟提出海缆安全行动计划"
+      },
+      "detail": {
+        "en": "The Commission and foreign-policy leadership set out prevention, detection, response, repair, and deterrence priorities. An action plan is not evidence about a particular suspect.",
+        "zh": "欧盟委员会与外交事务领导层提出预防、侦测、应对、维修与威慑重点。行动计划不是对某一嫌疑方的证据。"
+      },
+      "sourceIds": [
+        "internet-eu"
+      ]
+    },
+    {
+      "date": "2026-07-10",
+      "title": {
+        "en": "International recommendations are approved",
+        "zh": "批准国际建议"
+      },
+      "detail": {
+        "en": "The advisory body approves a report addressing physical exposure, repair delays, concentrated infrastructure, and dependence on few systems.",
+        "zh": "咨询机构批准报告，讨论物理风险、维修延迟、设施集中及依赖少量系统等问题。"
+      },
+      "sourceIds": [
+        "internet-report"
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": {
+        "en": "Redundancy",
+        "zh": "冗余"
+      },
+      "meaning": {
+        "en": "Additional usable paths or capacity. Two connections sharing one landing station may share the same vulnerability.",
+        "zh": "额外的可用路径或容量。两条连接若共用登陆站，可能仍有同一弱点。"
+      }
+    },
+    {
+      "term": {
+        "en": "Bandwidth / latency",
+        "zh": "带宽／延迟"
+      },
+      "meaning": {
+        "en": "How much data can move versus how long a response takes; more of one does not automatically fix the other.",
+        "zh": "可传输多少数据，与响应需要多久；改善其一不自动改善另一项。"
+      }
+    },
+    {
+      "term": {
+        "en": "Attribution",
+        "zh": "归责"
+      },
+      "meaning": {
+        "en": "Establishing the cause and responsible actor using technical, physical, and investigative evidence.",
+        "zh": "通过技术、物理与调查证据，确定原因及责任主体。"
+      }
+    }
+  ],
+  "readingLens": [
+    {
+      "en": "Is this physical damage, congestion, a cyber incident, or an access-policy decision?",
+      "zh": "这是物理损坏、拥堵、网络攻击，还是接入政策决定？"
+    },
+    {
+      "en": "Which users lost which service, for how long, and what alternative routes worked?",
+      "zh": "哪些用户失去哪种服务、持续多久，有哪些替代路径奏效？"
+    },
+    {
+      "en": "Who owns the equipment, operates the service, pays the contract, and authorizes its use?",
+      "zh": "谁拥有设备、运营服务、支付合同费用并批准使用？"
+    }
+  ],
+  "sources": [
+    {
+      "id": "internet-itu",
+      "title": "Submarine cable resilience: backgrounder",
+      "publisher": "International Telecommunication Union",
+      "url": "https://www.itu.int/en/mediacentre/backgrounders/Pages/submarine-cable-resilience.aspx",
+      "kind": "institutional-position"
+    },
+    {
+      "id": "internet-spacex",
+      "title": "Starshield: secured satellite network for government entities",
+      "publisher": "SpaceX",
+      "url": "https://new.spacex.com/starshield",
+      "kind": "institutional-position"
+    },
+    {
+      "id": "internet-advisory",
+      "title": "Launch of international advisory body for submarine cables",
+      "publisher": "International Telecommunication Union",
+      "url": "https://www.itu.int/en/mediacentre/Pages/PR-2024-11-29-advisory-body-submarine-cable-resilience.aspx",
+      "kind": "historical-record",
+      "publishedAt": "2024-11-29"
+    },
+    {
+      "id": "internet-eu",
+      "title": "Joint Communication on submarine cable security and resilience",
+      "publisher": "European Commission",
+      "url": "https://digital-strategy.ec.europa.eu/en/library/joint-communication-strengthen-security-and-resilience-submarine-cables",
+      "kind": "institutional-position",
+      "publishedAt": "2025-02-21"
+    },
+    {
+      "id": "internet-report",
+      "title": "International Advisory Body approves submarine cable resilience report",
+      "publisher": "International Telecommunication Union",
+      "url": "https://www.itu.int/en/mediacentre/Pages/PR-2026-07-10-Submarine-cable-resilience-report.aspx",
+      "kind": "historical-record",
+      "publishedAt": "2026-07-10"
+    }
+  ]
+}

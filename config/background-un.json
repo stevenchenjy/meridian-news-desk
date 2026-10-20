@@ -1,0 +1,281 @@
+{
+  "id": "un-humanitarian-system",
+  "title": {
+    "en": "UN agencies, aid & development",
+    "zh": "联合国机构、援助与发展"
+  },
+  "subtitle": {
+    "en": "Who does what, where the money comes from and what a target means",
+    "zh": "谁负责什么、钱从哪里来，以及目标代表什么"
+  },
+  "category": "development",
+  "keywords": [
+    "united nations",
+    "un security council",
+    "un general assembly",
+    "un budget",
+    "wfp",
+    "world food programme",
+    "unhcr",
+    "undp",
+    "ocha",
+    "sdgs",
+    "sustainable development goals",
+    "humanitarian funding",
+    "humanitarian appeal",
+    "联合国",
+    "安理会",
+    "粮食计划署",
+    "难民署",
+    "开发计划署",
+    "人道主义事务协调厅",
+    "可持续发展目标",
+    "人道资金"
+  ],
+  "reviewedAt": "2026-10-15",
+  "coverageThrough": "2015-09-25",
+  "overview": {
+    "en": "Institutional background with milestones through September 2015, reviewed on 15 October 2026. “The UN” is a system of member-state bodies and organizations with different mandates and budgets. A Security Council vote, a refugee agency warning and a food-aid delivery are different kinds of action.",
+    "zh": "本篇介绍机构基础，历史节点涵盖至2015年9月，于2026年10月15日审阅。“联合国”是由成员国机构及不同组织组成的体系，各有职权与预算。安理会投票、难民署警告和粮食援助送达，是不同类型的行动。"
+  },
+  "takeaways": [
+    {
+      "en": "Identify the exact institution before interpreting a headline about “the UN.”",
+      "zh": "理解“联合国”新闻之前，先辨明具体机构。"
+    },
+    {
+      "en": "A funding appeal states needs; a pledge, money received and aid delivered are different stages.",
+      "zh": "募资呼吁说明需求；承诺捐资、收到资金与援助送达，是不同阶段。"
+    },
+    {
+      "en": "The SDGs are shared development goals, not proof that any target has already been achieved.",
+      "zh": "可持续发展目标是共同发展方向，不代表任何指标已经实现。"
+    }
+  ],
+  "actors": [
+    {
+      "name": {
+        "en": "General Assembly and Security Council",
+        "zh": "联合国大会与安全理事会"
+      },
+      "role": {
+        "en": "The Assembly represents all member states. The Council has 15 members and primary responsibility for international peace and security.",
+        "zh": "大会由全体成员国组成；安理会有15个成员，主要负责国际和平与安全。"
+      },
+      "position": {
+        "en": "States debate and vote on policy. Five permanent Council members have veto power; an aid agency cannot overrule them or command states.",
+        "zh": "各国讨论并投票决定政策。安理会五个常任理事国拥有否决权；援助机构不能推翻其决定或指挥各国。"
+      },
+      "sourceIds": [
+        "un-bodies"
+      ]
+    },
+    {
+      "name": {
+        "en": "WFP: World Food Programme",
+        "zh": "WFP：世界粮食计划署"
+      },
+      "role": {
+        "en": "Provides food and cash assistance and related logistics in emergencies and recovery.",
+        "zh": "在紧急情况及恢复阶段提供粮食、现金援助和相关物流服务。"
+      },
+      "position": {
+        "en": "Its mandate centers on hunger and nutrition. Operations rely on voluntary contributions, so funding cuts can reduce assistance despite continuing needs.",
+        "zh": "其职责以饥饿和营养为中心。行动依靠自愿捐款，因此即使需求持续，资金削减也会减少援助。"
+      },
+      "sourceIds": [
+        "wfp"
+      ]
+    },
+    {
+      "name": {
+        "en": "UNHCR: UN Refugee Agency",
+        "zh": "UNHCR：联合国难民署"
+      },
+      "role": {
+        "en": "Works on refugee protection and solutions; its work is grounded in its mandate and refugee-law instruments.",
+        "zh": "致力于难民保护和解决方案；其工作以授权及难民法文件为依据。"
+      },
+      "position": {
+        "en": "It advocates protection for people forced to flee. Host governments remain central decision makers; an agency statement does not itself grant someone legal status.",
+        "zh": "它倡导保护被迫逃离者。接收国政府仍是关键决策方；机构声明本身不会直接赋予某人法律身份。"
+      },
+      "sourceIds": [
+        "unhcr"
+      ]
+    },
+    {
+      "name": {
+        "en": "UNDP and OCHA",
+        "zh": "开发计划署与人道主义事务协调厅"
+      },
+      "role": {
+        "en": "UNDP supports development and the SDGs. OCHA coordinates humanitarian response, needs assessment and appeals.",
+        "zh": "开发计划署支持发展及可持续发展目标；人道厅协调人道应对、需求评估与募资呼吁。"
+      },
+      "position": {
+        "en": "Development addresses lasting poverty and institutions; emergency coordination helps organizations respond together. These roles overlap but use different tools.",
+        "zh": "发展工作处理长期贫困与制度问题；紧急协调帮助各组织共同应对。两者职责交织，但工具不同。"
+      },
+      "sourceIds": [
+        "undp",
+        "ocha"
+      ]
+    }
+  ],
+  "roots": {
+    "en": "The UN was founded after the Second World War. Refugee protection, relief operations and development programs expanded as needs changed. Governments determine mandates and supply much of the money; local organizations and affected communities also shape delivery. Political authority, donor funding and operational access are distinct constraints.",
+    "zh": "联合国创立于第二次世界大战之后。随着需求变化，难民保护、救济行动与发展项目逐渐扩展。各国政府决定授权并提供大量资金；地方组织及受影响群体也影响援助实施。政治权力、捐助资金与实际准入，是不同层面的限制。"
+  },
+  "timeline": [
+    {
+      "date": "1945",
+      "title": {
+        "en": "United Nations founded",
+        "zh": "联合国成立"
+      },
+      "detail": {
+        "en": "The Charter established the UN’s principal bodies, including the Assembly and Council.",
+        "zh": "《联合国宪章》设立大会、安理会等主要机构。"
+      },
+      "sourceIds": [
+        "un-bodies"
+      ]
+    },
+    {
+      "date": "1950",
+      "title": {
+        "en": "UNHCR established",
+        "zh": "联合国难民署设立"
+      },
+      "detail": {
+        "en": "A dedicated refugee office was created after wartime displacement.",
+        "zh": "战后流离失所问题推动设立专门难民机构。"
+      },
+      "sourceIds": [
+        "unhcr"
+      ]
+    },
+    {
+      "date": "1951-07",
+      "title": {
+        "en": "Refugee Convention adopted",
+        "zh": "《难民公约》通过"
+      },
+      "detail": {
+        "en": "The convention defined refugee protection standards; its 1967 Protocol later broadened application.",
+        "zh": "公约规定难民保护标准；1967年议定书后来扩大了适用范围。"
+      },
+      "sourceIds": [
+        "unhcr"
+      ]
+    },
+    {
+      "date": "2015-09-25",
+      "title": {
+        "en": "Sustainable Development Goals adopted",
+        "zh": "可持续发展目标通过"
+      },
+      "detail": {
+        "en": "Countries adopted 17 interconnected goals for the 2030 agenda, covering poverty, health, climate and institutions.",
+        "zh": "各国通过相互关联的17项目标，构成2030年议程，涉及贫困、健康、气候和制度等。"
+      },
+      "sourceIds": [
+        "undp"
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": {
+        "en": "Mandate",
+        "zh": "授权／职权"
+      },
+      "meaning": {
+        "en": "The responsibilities an organization has been given; it does not imply unlimited power.",
+        "zh": "组织被赋予的职责；并不意味着权力无限。"
+      }
+    },
+    {
+      "term": {
+        "en": "Assessed / voluntary funding",
+        "zh": "会费分摊／自愿捐款"
+      },
+      "meaning": {
+        "en": "Some UN costs use assessed state contributions; agencies such as WFP depend on voluntary donations.",
+        "zh": "部分联合国费用由各国分摊；粮食计划署等机构依靠自愿捐款。"
+      }
+    },
+    {
+      "term": {
+        "en": "Humanitarian appeal",
+        "zh": "人道募资呼吁"
+      },
+      "meaning": {
+        "en": "An estimate of resources needed for a response plan, not a bank balance.",
+        "zh": "应对计划所需资源的估算，并非已到账资金。"
+      }
+    },
+    {
+      "term": {
+        "en": "SDG indicator",
+        "zh": "可持续发展目标指标"
+      },
+      "meaning": {
+        "en": "A measurable way to track progress; check the baseline, year and population covered.",
+        "zh": "衡量进展的具体指标；须核对基准、年份与覆盖人口。"
+      }
+    }
+  ],
+  "readingLens": [
+    {
+      "en": "Who is speaking: member states, an agency, a field office or an independent investigator?",
+      "zh": "发言者是成员国、专门机构、驻地办公室，还是独立调查员？"
+    },
+    {
+      "en": "Does the dollar figure describe requested, promised, received or spent funds?",
+      "zh": "金额指申请、承诺、到账，还是已经支出？"
+    },
+    {
+      "en": "How many people were reached, compared with need, and what limited access?",
+      "zh": "实际覆盖人数相对需求有多少？什么限制了准入？"
+    }
+  ],
+  "sources": [
+    {
+      "id": "un-bodies",
+      "title": "Main bodies of the United Nations",
+      "publisher": "United Nations",
+      "url": "https://www.un.org/en/about-us/main-bodies",
+      "kind": "historical-record"
+    },
+    {
+      "id": "wfp",
+      "title": "Who we are: mandate, funding and partnerships",
+      "publisher": "World Food Programme",
+      "url": "https://www.wfp.org/who-we-are",
+      "kind": "institutional-position"
+    },
+    {
+      "id": "unhcr",
+      "title": "The 1951 Refugee Convention and UNHCR’s origins",
+      "publisher": "UN Refugee Agency",
+      "url": "https://www.unhcr.org/about-unhcr/overview/1951-refugee-convention",
+      "kind": "historical-record"
+    },
+    {
+      "id": "undp",
+      "title": "Sustainable Development Goals",
+      "publisher": "UN Development Programme",
+      "url": "https://www.undp.org/sustainable-development-goals",
+      "kind": "institutional-position"
+    },
+    {
+      "id": "ocha",
+      "title": "This is OCHA: humanitarian coordination",
+      "publisher": "UN Office for the Coordination of Humanitarian Affairs",
+      "url": "https://www.unocha.org/ocha",
+      "kind": "institutional-position"
+    }
+  ]
+}

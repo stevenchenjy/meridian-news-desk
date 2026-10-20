@@ -92,7 +92,8 @@ class Handler(BaseHTTPRequestHandler):
                 self.json_response(200, {"status": "ok", "service": "meridian-local", "generatedAt": dashboard.get("generatedAt"),
                                          "refreshJob": active, "stats": dashboard["stats"], "analysisReady": dashboard["stats"]["readyAnalysisCount"] > 0,
                                          "briefingUpToDate": bool(briefing and not briefing.get("isStale")), "attentionAvailable": bool(dashboard["attention"]["items"]),
-                                         "briefingAvailable": bool(briefing), "briefingIsStale": briefing.get("isStale") if briefing else None})
+                                         "briefingAvailable": bool(briefing), "briefingIsStale": briefing.get("isStale") if briefing else None,
+                                         "background": {key: value for key, value in dashboard.get("background", {}).items() if key != "guides"}})
             elif path == "/api/dashboard":
                 self.json_response(200, read_dashboard(self.root))
             elif path.startswith("/api/jobs/"):

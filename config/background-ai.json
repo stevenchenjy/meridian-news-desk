@@ -1,0 +1,244 @@
+{
+  "id": "ai-systems",
+  "title": {
+    "en": "AI models, agents & human judgment",
+    "zh": "AI模型、智能体与人的判断"
+  },
+  "subtitle": {
+    "en": "What a system can do, what a test proves, and who remains responsible.",
+    "zh": "系统能做什么、测试证明什么，以及谁仍须负责。"
+  },
+  "category": "industry",
+  "keywords": [
+    "AI",
+    "artificial intelligence",
+    "agent",
+    "agents",
+    "LLM",
+    "large language model",
+    "generative AI",
+    "AI judgment",
+    "人工智能",
+    "智能体",
+    "大模型",
+    "生成式AI",
+    "人类判断"
+  ],
+  "reviewedAt": "2026-10-15",
+  "coverageThrough": "2024-12-19",
+  "overview": {
+    "en": "An AI model generates an output from inputs and learned patterns. An application surrounds it with instructions, information, interfaces, and sometimes tools. An agent can choose steps and use tools toward a goal. Calling something an agent does not establish reliability or independent judgment. This guide explains concepts and documented milestones through December 2024; new capability claims need new evidence.",
+    "zh": "AI模型依据输入与学习到的模式生成输出。应用在模型周围加入指令、资料、界面，有时还加入工具。智能体可以为目标选择步骤并调用工具。“智能体”这个称呼本身不能证明可靠性或独立判断。本篇说明概念与截至2024年12月的记录；新能力主张需要新证据。"
+  },
+  "takeaways": [
+    {
+      "en": "Fluent language is not evidence that an answer is true, complete, or well calibrated.",
+      "zh": "表达流畅不证明答案真实、完整或置信度恰当。"
+    },
+    {
+      "en": "Giving AI tools changes its consequences: drafting a payment and actually sending one are different capabilities.",
+      "zh": "赋予AI工具会改变后果：起草付款信息与实际付款是不同能力。"
+    },
+    {
+      "en": "A benchmark measures specified tasks under specified conditions; real work may differ.",
+      "zh": "基准测试衡量特定条件下的特定任务；真实工作可能不同。"
+    }
+  ],
+  "actors": [
+    {
+      "name": {
+        "en": "Model developers",
+        "zh": "模型开发者"
+      },
+      "role": {
+        "en": "Train and evaluate models",
+        "zh": "训练与评估模型"
+      },
+      "position": {
+        "en": "They choose training methods and release policies, balancing capability, costs, and risk. Their technical papers and demonstrations describe particular systems; commercial incentives make independent checks useful.",
+        "zh": "他们选择训练方法与发布政策，权衡能力、成本和风险。技术论文及演示描述的是特定系统；商业利益使独立检验更有价值。"
+      },
+      "sourceIds": [
+        "ai-transformer",
+        "ai-nist"
+      ]
+    },
+    {
+      "name": {
+        "en": "Application builders and deploying organizations",
+        "zh": "应用开发者与部署机构"
+      },
+      "role": {
+        "en": "Connect models to work and data",
+        "zh": "把模型接入工作与数据"
+      },
+      "position": {
+        "en": "They decide permissions, tool access, logging, and human review. Anthropic’s engineering account distinguishes predefined workflows from agents that select their own process; terminology varies across vendors.",
+        "zh": "他们决定权限、工具访问、日志与人工复核。Anthropic的工程介绍区分预设流程与自行选择执行过程的智能体；不同厂商用词可能不同。"
+      },
+      "sourceIds": [
+        "ai-agents"
+      ]
+    },
+    {
+      "name": {
+        "en": "Users, affected people, and evaluators",
+        "zh": "用户、受影响者与评估人员"
+      },
+      "role": {
+        "en": "Define success and experience consequences",
+        "zh": "定义成功并承担影响"
+      },
+      "position": {
+        "en": "Users may value speed while affected people need fairness, privacy, and a way to challenge errors. NIST’s voluntary framework treats risk management as an ongoing lifecycle responsibility.",
+        "zh": "用户可能重视速度，受影响者则需要公平、隐私与纠错渠道。NIST自愿性框架把风险管理视为贯穿生命周期的持续责任。"
+      },
+      "sourceIds": [
+        "ai-nist",
+        "ai-profile"
+      ]
+    }
+  ],
+  "roots": {
+    "en": "Machine learning moved many tasks from hand-written rules toward patterns learned from examples. Transformer research made attention-based sequence processing influential. Generative systems extended this into producing language and other content; tool-using systems add action. Each step increases possible uses without automatically solving factual accuracy, authorization, or accountability. “AI judgment” should therefore be translated into an observable decision and its consequences.",
+    "zh": "机器学习让许多任务从人工编写规则，转向从例子学习模式。Transformer研究推动了基于注意力机制的序列处理。生成式系统进一步生成语言等内容；工具调用系统又增加行动能力。每一步都扩大用途，却不会自动解决事实准确性、授权或问责。“AI判断”因此应落实到可观察的决定及其后果。"
+  },
+  "timeline": [
+    {
+      "date": "2017-06-12",
+      "title": {
+        "en": "Transformer research is published",
+        "zh": "发表Transformer研究"
+      },
+      "detail": {
+        "en": "Attention Is All You Need proposes an attention-based architecture and evaluates translation tasks, rather than proving general human intelligence.",
+        "zh": "《Attention Is All You Need》提出注意力架构并评估翻译任务，并非证明具备普遍的人类智能。"
+      },
+      "sourceIds": [
+        "ai-transformer"
+      ]
+    },
+    {
+      "date": "2023-01-26",
+      "title": {
+        "en": "NIST releases its AI risk framework",
+        "zh": "NIST发布AI风险管理框架"
+      },
+      "detail": {
+        "en": "The voluntary framework offers a shared approach to identifying and managing risks across AI systems’ lifecycles.",
+        "zh": "自愿性框架为识别和管理AI全生命周期风险提供共同方法。"
+      },
+      "sourceIds": [
+        "ai-nist"
+      ]
+    },
+    {
+      "date": "2024-07-26",
+      "title": {
+        "en": "Generative AI receives a companion risk profile",
+        "zh": "发布生成式AI配套风险文件"
+      },
+      "detail": {
+        "en": "NIST adds guidance for risks specific to generative systems, including confidently presented false content.",
+        "zh": "NIST补充生成式系统特有风险的指引，包括以肯定语气呈现错误内容。"
+      },
+      "sourceIds": [
+        "ai-profile"
+      ]
+    },
+    {
+      "date": "2024-12-19",
+      "title": {
+        "en": "An engineering guide explains agent patterns",
+        "zh": "工程指南解释智能体模式"
+      },
+      "detail": {
+        "en": "Anthropic describes tool use, environmental feedback, and evaluation. It is a developer’s account, not a universal capability certification.",
+        "zh": "Anthropic说明工具调用、环境反馈与评估。这是开发者经验，不是通用能力认证。"
+      },
+      "sourceIds": [
+        "ai-agents"
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": {
+        "en": "Training / inference",
+        "zh": "训练／推理"
+      },
+      "meaning": {
+        "en": "Learning model parameters versus using a trained model to produce an output.",
+        "zh": "学习模型参数，与使用训练好的模型生成输出。"
+      }
+    },
+    {
+      "term": {
+        "en": "Hallucination / confabulation",
+        "zh": "幻觉／编造"
+      },
+      "meaning": {
+        "en": "Plausible but unsupported or false generated content, which may sound confident.",
+        "zh": "听起来合理却缺乏支持或错误的生成内容，语气可能十分肯定。"
+      }
+    },
+    {
+      "term": {
+        "en": "Evaluation",
+        "zh": "评估"
+      },
+      "meaning": {
+        "en": "Testing a defined task, dataset, and success rule; check cost, failures, and human assistance too.",
+        "zh": "按明确任务、数据与成功标准测试；也要看成本、失败情况和人工协助。"
+      }
+    }
+  ],
+  "readingLens": [
+    {
+      "en": "What exact task was completed, with which tools and human help?",
+      "zh": "完成了什么具体任务，使用什么工具和人工帮助？"
+    },
+    {
+      "en": "Does the evidence show a repeatable test, a selected demo, a prediction, or a product claim?",
+      "zh": "证据是可重复测试、精选演示、预测，还是产品宣传？"
+    },
+    {
+      "en": "Who can authorize, inspect, reverse, and take responsibility for the resulting action?",
+      "zh": "谁能授权、检查、撤销行动，并为结果负责？"
+    }
+  ],
+  "sources": [
+    {
+      "id": "ai-transformer",
+      "title": "Attention Is All You Need",
+      "publisher": "Vaswani and coauthors, original research",
+      "url": "https://arxiv.org/abs/1706.03762",
+      "kind": "historical-record",
+      "publishedAt": "2017-06-12"
+    },
+    {
+      "id": "ai-nist",
+      "title": "AI Risk Management Framework",
+      "publisher": "US National Institute of Standards and Technology",
+      "url": "https://www.nist.gov/itl/ai-risk-management-framework",
+      "kind": "institutional-position",
+      "publishedAt": "2023-01-26"
+    },
+    {
+      "id": "ai-profile",
+      "title": "Generative Artificial Intelligence Profile",
+      "publisher": "US National Institute of Standards and Technology",
+      "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+      "kind": "institutional-position",
+      "publishedAt": "2024-07-26"
+    },
+    {
+      "id": "ai-agents",
+      "title": "Building effective agents",
+      "publisher": "Anthropic",
+      "url": "https://www.anthropic.com/engineering/building-effective-agents",
+      "kind": "institutional-position",
+      "publishedAt": "2024-12-19"
+    }
+  ]
+}

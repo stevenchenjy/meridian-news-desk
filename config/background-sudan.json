@@ -1,0 +1,278 @@
+{
+  "id": "sudan-conflict",
+  "title": {
+    "en": "Sudan: rival armies & civilian survival",
+    "zh": "苏丹：两支军队与平民生存"
+  },
+  "subtitle": {
+    "en": "Why a power struggle became a humanitarian catastrophe",
+    "zh": "权力斗争如何演变为人道灾难"
+  },
+  "category": "development",
+  "keywords": [
+    "sudan",
+    "sudanese",
+    "darfur",
+    "khartoum",
+    "rapid support forces",
+    "el fasher",
+    "al fasher",
+    "zamzam",
+    "burhan",
+    "hemedti",
+    "苏丹",
+    "达尔富尔",
+    "喀土穆",
+    "快速支援部队",
+    "法希尔",
+    "扎姆扎姆"
+  ],
+  "reviewedAt": "2026-10-15",
+  "coverageThrough": "2024-08-01",
+  "overview": {
+    "en": "Historical guide through 1 August 2024. Sudan’s war pits the regular armed forces against the paramilitary Rapid Support Forces. Sudan is distinct from South Sudan, which became independent in 2011. Darfur is a region in western Sudan, not a separate country.",
+    "zh": "历史指南涵盖至2024年8月1日。苏丹战争的主要交战方是正规军与准军事组织快速支援部队。苏丹不同于2011年独立的南苏丹。达尔富尔是苏丹西部地区，并非另一个国家。"
+  },
+  "takeaways": [
+    {
+      "en": "SAF and RSF were partners in military rule before becoming enemies.",
+      "zh": "苏丹武装部队与快速支援部队曾共同掌权，后来反目。"
+    },
+    {
+      "en": "Civilian demands for democratic government are separate from either armed faction’s claim to legitimacy.",
+      "zh": "平民要求民主政府的诉求，与两支武装各自宣称的合法性不同。"
+    },
+    {
+      "en": "Hunger results from destroyed livelihoods, displacement and blocked aid as well as food shortages.",
+      "zh": "饥饿既来自食物短缺，也来自生计被毁、流离失所和援助受阻。"
+    }
+  ],
+  "actors": [
+    {
+      "name": {
+        "en": "SAF: Sudanese Armed Forces",
+        "zh": "SAF：苏丹武装部队"
+      },
+      "role": {
+        "en": "Sudan’s regular military; led when war began by Abdel Fattah al-Burhan.",
+        "zh": "苏丹正规军；战争爆发时由布尔汉领导。"
+      },
+      "position": {
+        "en": "It claims the role of national army. Its participation in the 2021 coup is central to the dispute over civilian authority.",
+        "zh": "其以国家军队自居；但它参与2021年政变的历史，是文官治理争议的核心。"
+      },
+      "sourceIds": [
+        "un-background",
+        "ap-coup"
+      ]
+    },
+    {
+      "name": {
+        "en": "RSF: Rapid Support Forces",
+        "zh": "RSF：快速支援部队"
+      },
+      "role": {
+        "en": "A paramilitary force led at the war’s outbreak by Mohamed Hamdan Dagalo, known as Hemedti. It grew from Darfur militia networks.",
+        "zh": "战争爆发时由穆罕默德·哈姆丹·达加洛（赫梅蒂）领导的准军事部队，源自达尔富尔民兵网络。"
+      },
+      "position": {
+        "en": "Its dispute with the army included how to integrate its forces into a single military. Competing claims of reform do not establish democratic legitimacy.",
+        "zh": "其与正规军的争执包括如何将本部队整合进统一军队。各方自称支持改革，不等于已经具有民主合法性。"
+      },
+      "sourceIds": [
+        "unric",
+        "un-background"
+      ]
+    },
+    {
+      "name": {
+        "en": "Civilians and humanitarian agencies",
+        "zh": "平民与人道机构"
+      },
+      "role": {
+        "en": "Local communities, displaced families and aid organizations face the consequences of both sides’ fighting.",
+        "zh": "当地社区、流离失所家庭和援助组织承受双方交战的后果。"
+      },
+      "position": {
+        "en": "Civilian groups sought a transition from military rule. UN agencies demand access based on humanitarian needs.",
+        "zh": "平民团体曾要求结束军人统治、推进政治过渡；联合国机构要求按人道需求提供援助准入。"
+      },
+      "sourceIds": [
+        "un-background",
+        "wfp-famine"
+      ]
+    }
+  ],
+  "roots": {
+    "en": "The Bashir government armed militias during the Darfur conflict that escalated in 2003. After his removal in 2019, a fragile civilian–military power-sharing arrangement emerged. A military coup ended it in 2021. Rival military chains of command and a stalled civilian transition formed the setting for the 2023 war.",
+    "zh": "达尔富尔冲突于2003年升级期间，巴希尔政府武装了民兵。2019年他被推翻后，出现脆弱的军民共治安排。2021年军事政变终结了这一安排。并立的军事指挥体系与受阻的文官过渡，构成2023年战争的背景。"
+  },
+  "timeline": [
+    {
+      "date": "2003",
+      "title": {
+        "en": "Darfur conflict escalates",
+        "zh": "达尔富尔冲突升级"
+      },
+      "detail": {
+        "en": "Rebel attacks and the government’s use of armed forces and local militias intensified violence.",
+        "zh": "叛军袭击，以及政府动用正规军和地方民兵，使暴力升级。"
+      },
+      "sourceIds": [
+        "unmis"
+      ]
+    },
+    {
+      "date": "2019-04",
+      "title": {
+        "en": "Bashir removed",
+        "zh": "巴希尔被推翻"
+      },
+      "detail": {
+        "en": "After mass protests, the longtime ruler was ousted; civilian–military power sharing followed later that year.",
+        "zh": "大规模抗议后，长期统治者巴希尔被推翻；同年稍后建立军民共治。"
+      },
+      "sourceIds": [
+        "un-background"
+      ]
+    },
+    {
+      "date": "2021-10-25",
+      "title": {
+        "en": "Military coup",
+        "zh": "军事政变"
+      },
+      "detail": {
+        "en": "The military dissolved the transitional government, derailing the civilian transition.",
+        "zh": "军方解散过渡政府，打断文官过渡进程。"
+      },
+      "sourceIds": [
+        "ap-coup"
+      ]
+    },
+    {
+      "date": "2023-04-15",
+      "title": {
+        "en": "War erupts",
+        "zh": "战争爆发"
+      },
+      "detail": {
+        "en": "SAF–RSF clashes broke out and spread, forcing civilians from their homes.",
+        "zh": "正规军与快速支援部队爆发冲突并扩大，迫使平民离开家园。"
+      },
+      "sourceIds": [
+        "un-background"
+      ]
+    },
+    {
+      "date": "2024-08-01",
+      "title": {
+        "en": "Famine confirmed in Zamzam",
+        "zh": "扎姆扎姆确认发生饥荒"
+      },
+      "detail": {
+        "en": "The IPC review found famine in the North Darfur displacement camp. This geographically specific finding does not mean identical conditions everywhere in Sudan.",
+        "zh": "IPC审查确认北达尔富尔这处流离失所者营地发生饥荒。这是特定地点的判断，不表示苏丹各地情况完全相同。"
+      },
+      "sourceIds": [
+        "wfp-famine"
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": {
+        "en": "Paramilitary",
+        "zh": "准军事组织"
+      },
+      "meaning": {
+        "en": "An organized armed force outside the regular army’s command structure.",
+        "zh": "在正规军指挥体系之外运作的有组织武装力量。"
+      }
+    },
+    {
+      "term": {
+        "en": "IDP",
+        "zh": "境内流离失所者"
+      },
+      "meaning": {
+        "en": "Someone displaced within their own country; a refugee has crossed an international border.",
+        "zh": "在本国境内被迫迁离的人；难民则已跨越国界。"
+      }
+    },
+    {
+      "term": {
+        "en": "IPC / famine",
+        "zh": "IPC／饥荒"
+      },
+      "meaning": {
+        "en": "A food-security classification; area-level famine uses evidence on food deprivation, malnutrition and deaths.",
+        "zh": "粮食安全分类体系；地区饥荒判断综合食物匮乏、营养不良与死亡证据。"
+      }
+    },
+    {
+      "term": {
+        "en": "Humanitarian access",
+        "zh": "人道准入"
+      },
+      "meaning": {
+        "en": "The ability to reach people safely with assistance, including permissions, roads and security.",
+        "zh": "安全向有需要者提供援助的条件，包括许可、道路与安全。"
+      }
+    }
+  ],
+  "readingLens": [
+    {
+      "en": "Does “Sudan” mean this country or neighboring South Sudan?",
+      "zh": "新闻说的是苏丹，还是邻国南苏丹？"
+    },
+    {
+      "en": "Is the hunger finding observed, projected or a warning, and for which area?",
+      "zh": "饥饿判断是已观察到、预测，还是风险警告？针对哪个地区？"
+    },
+    {
+      "en": "Who controls the route, and what prevents food from reaching families?",
+      "zh": "谁控制通道？什么因素阻止食物到达家庭手中？"
+    }
+  ],
+  "sources": [
+    {
+      "id": "un-background",
+      "title": "Background to a crisis: in Sudan, the stakes are high for the whole of Africa",
+      "publisher": "United Nations in Sudan",
+      "url": "https://sudan.un.org/en/229663-background-crisis-sudan-stakes-are-high-whole-africa",
+      "kind": "historical-record",
+      "publishedAt": "2023-05-01"
+    },
+    {
+      "id": "unric",
+      "title": "Background: Sudan crisis",
+      "publisher": "United Nations Regional Information Centre",
+      "url": "https://unric.org/en/background-sudan-crisis/",
+      "kind": "historical-record"
+    },
+    {
+      "id": "unmis",
+      "title": "UNMIS background: conflict in Darfur",
+      "publisher": "UN Peacekeeping",
+      "url": "https://peacekeeping.un.org/sites/default/files/past/unmis/background.shtml",
+      "kind": "historical-record"
+    },
+    {
+      "id": "ap-coup",
+      "title": "AP explainer: how months of tensions led to Sudan’s coup",
+      "publisher": "Associated Press via PBS",
+      "url": "https://www.pbs.org/newshour/world/ap-explainer-how-months-of-tensions-led-to-sudans-coup",
+      "kind": "independent-reporting",
+      "publishedAt": "2021-10-25"
+    },
+    {
+      "id": "wfp-famine",
+      "title": "Famine confirmed in Sudan’s North Darfur",
+      "publisher": "WFP, FAO and UNICEF",
+      "url": "https://www.wfp.org/news/famine-confirmed-sudans-north-darfur-confirming-un-agencies-worst-fears",
+      "kind": "historical-record",
+      "publishedAt": "2024-08-01"
+    }
+  ]
+}

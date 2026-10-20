@@ -1,0 +1,273 @@
+{
+  "id": "russia-ukraine",
+  "title": {
+    "en": "Russia, Ukraine & the war",
+    "zh": "俄罗斯、乌克兰与战争"
+  },
+  "subtitle": {
+    "en": "Sovereignty, security, energy attacks and ceasefire claims",
+    "zh": "主权、安全、能源袭击与停火声明"
+  },
+  "category": "politics",
+  "keywords": [
+    "ukraine",
+    "ukrainian",
+    "russia",
+    "russian",
+    "kyiv",
+    "zelenskyy",
+    "zelensky",
+    "putin",
+    "crimea",
+    "donbas",
+    "donetsk",
+    "luhansk",
+    "乌克兰",
+    "俄罗斯",
+    "基辅",
+    "泽连斯基",
+    "普京",
+    "克里米亚",
+    "顿巴斯"
+  ],
+  "reviewedAt": "2026-10-15",
+  "coverageThrough": "2024-03-22",
+  "overview": {
+    "en": "Historical guide through 22 March 2024. Ukraine and Russia are separate sovereign states, formerly Soviet republics. Russia’s full-scale invasion began in 2022, following its 2014 seizure of Crimea and fighting in eastern Ukraine. Check daily reports for later front lines and negotiations.",
+    "zh": "历史指南涵盖至2024年3月22日。乌克兰与俄罗斯是两个独立的主权国家，过去都曾是苏联加盟共和国。俄罗斯于2014年夺取克里米亚，乌克兰东部随后发生战事；2022年俄罗斯发动全面入侵。此后的战线和谈判进展请结合每日新闻。"
+  },
+  "takeaways": [
+    {
+      "en": "The war concerns Ukraine’s territory and freedom to choose its political and security relationships.",
+      "zh": "战争涉及乌克兰的领土，以及自主选择政治与安全关系的权利。"
+    },
+    {
+      "en": "A proposed energy truce covers particular targets; it does not necessarily stop the whole war.",
+      "zh": "针对能源设施的停火提议只涉及特定目标，不一定意味着全面停战。"
+    },
+    {
+      "en": "Military aid, sanctions and negotiations are different tools with different decision makers.",
+      "zh": "军事援助、制裁与谈判是不同工具，决策者也各不相同。"
+    }
+  ],
+  "actors": [
+    {
+      "name": {
+        "en": "Ukraine",
+        "zh": "乌克兰"
+      },
+      "role": {
+        "en": "The country defending its territory; Kyiv is its capital.",
+        "zh": "保卫本国领土的国家；首都是基辅。"
+      },
+      "position": {
+        "en": "At the UN in September 2023, President Zelenskyy called for restoring sovereignty and territorial integrity through his peace formula.",
+        "zh": "泽连斯基总统在2023年9月的联合国会议上提出，以其和平方案恢复主权和领土完整。"
+      },
+      "sourceIds": [
+        "un-debate"
+      ]
+    },
+    {
+      "name": {
+        "en": "Russia",
+        "zh": "俄罗斯"
+      },
+      "role": {
+        "en": "The invading state, led at the start of the full-scale war by Vladimir Putin.",
+        "zh": "发动入侵的国家；全面战争开始时由普京领导。"
+      },
+      "position": {
+        "en": "Russia has framed the conflict around threats from NATO and the West. These are its stated justifications; the UN General Assembly condemned its aggression and demanded withdrawal.",
+        "zh": "俄罗斯将冲突描述为应对北约与西方威胁。这是其提出的理由；联合国大会谴责其侵略并要求撤军。"
+      },
+      "sourceIds": [
+        "un-debate",
+        "un-2022"
+      ]
+    },
+    {
+      "name": {
+        "en": "NATO and Ukraine’s partners",
+        "zh": "北约与乌克兰的伙伴"
+      },
+      "role": {
+        "en": "NATO is a collective-defence alliance; member governments supply assistance.",
+        "zh": "北约是集体防御联盟；成员国政府向乌克兰提供援助。"
+      },
+      "position": {
+        "en": "NATO supports Ukraine’s self-defence and independent security choices. Partnership and promised future membership are different from actual membership and its treaty guarantees.",
+        "zh": "北约支持乌克兰自卫及自主选择安全安排。伙伴关系与未来入约承诺，不等于正式成员资格及条约保障。"
+      },
+      "sourceIds": [
+        "nato"
+      ]
+    }
+  ],
+  "roots": {
+    "en": "Ukraine became independent as the Soviet Union broke up in 1991. Disputes over its alignment with Europe and Russia intensified over time. Russia’s takeover of Crimea and intervention in eastern Ukraine in 2014 preceded the full-scale invasion. Shared history does not erase Ukraine’s sovereignty.",
+    "zh": "乌克兰在1991年苏联解体过程中独立。乌克兰与欧洲或俄罗斯的关系走向逐渐成为争议焦点。2014年俄罗斯夺取克里米亚并介入乌东冲突，先于2022年的全面入侵。共同历史并不取消乌克兰的主权。"
+  },
+  "timeline": [
+    {
+      "date": "1991-08-24",
+      "title": {
+        "en": "Ukraine declares independence",
+        "zh": "乌克兰宣布独立"
+      },
+      "detail": {
+        "en": "Ukraine adopted its declaration of independence from the Soviet Union.",
+        "zh": "乌克兰通过脱离苏联的独立宣言。"
+      },
+      "sourceIds": [
+        "nato"
+      ]
+    },
+    {
+      "date": "2014",
+      "title": {
+        "en": "Crimea and eastern Ukraine",
+        "zh": "克里米亚与乌克兰东部"
+      },
+      "detail": {
+        "en": "Russia seized and annexed Crimea; conflict developed in the Donbas. NATO rejected the annexation.",
+        "zh": "俄罗斯夺取并吞并克里米亚；顿巴斯出现武装冲突。北约拒绝承认吞并。"
+      },
+      "sourceIds": [
+        "nato"
+      ]
+    },
+    {
+      "date": "2022-02-24",
+      "title": {
+        "en": "Full-scale invasion",
+        "zh": "全面入侵"
+      },
+      "detail": {
+        "en": "Russia launched its full-scale attack. On 2 March, the UN General Assembly demanded an end to the invasion and withdrawal.",
+        "zh": "俄罗斯发动全面进攻。3月2日，联合国大会要求停止入侵并撤军。"
+      },
+      "sourceIds": [
+        "nato",
+        "un-2022"
+      ]
+    },
+    {
+      "date": "2023-09-20",
+      "title": {
+        "en": "Competing accounts at the UN",
+        "zh": "联合国会议上的不同叙述"
+      },
+      "detail": {
+        "en": "Ukraine promoted its peace formula; Russia blamed Western policy. A speech records a position, rather than proving it.",
+        "zh": "乌克兰推介和平方案；俄罗斯指责西方政策。演讲记录一方立场，并不自动证明其说法。"
+      },
+      "sourceIds": [
+        "un-debate"
+      ]
+    },
+    {
+      "date": "2024-03-22",
+      "title": {
+        "en": "Power infrastructure attacked",
+        "zh": "电力基础设施遭袭"
+      },
+      "detail": {
+        "en": "AP reported major Russian strikes on Ukraine’s energy sector. Damage to electricity affects civilian heating, water and services as well as the economy.",
+        "zh": "美联社报道俄罗斯大规模袭击乌克兰能源部门。电力损毁影响平民供暖、供水、公共服务及经济。"
+      },
+      "sourceIds": [
+        "ap-energy"
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": {
+        "en": "Annexation",
+        "zh": "吞并"
+      },
+      "meaning": {
+        "en": "A state’s claim to incorporate territory; claiming it does not establish lawful ownership.",
+        "zh": "一国声称将某领土并入本国；宣布吞并不等于取得合法主权。"
+      }
+    },
+    {
+      "term": {
+        "en": "Donbas",
+        "zh": "顿巴斯"
+      },
+      "meaning": {
+        "en": "An eastern Ukrainian region associated with Donetsk and Luhansk.",
+        "zh": "乌克兰东部地区，通常指顿涅茨克和卢甘斯克一带。"
+      }
+    },
+    {
+      "term": {
+        "en": "Security guarantee",
+        "zh": "安全保障"
+      },
+      "meaning": {
+        "en": "A promised response to future threats; read who commits to what and whether it is binding.",
+        "zh": "针对未来威胁承诺作出的回应；须看谁承诺什么、是否有约束力。"
+      }
+    },
+    {
+      "term": {
+        "en": "Energy ceasefire",
+        "zh": "能源设施停火"
+      },
+      "meaning": {
+        "en": "A limited arrangement about energy targets; scope, dates and verification matter.",
+        "zh": "针对能源目标的有限安排；范围、日期和核查方式都很重要。"
+      }
+    }
+  ],
+  "readingLens": [
+    {
+      "en": "Who accepted the proposal, and is there a shared written text?",
+      "zh": "谁接受了方案？各方是否认可同一份书面文本？"
+    },
+    {
+      "en": "Which place and date does a territorial claim describe?",
+      "zh": "领土控制的说法具体指什么地点、什么日期？"
+    },
+    {
+      "en": "Are reported strikes independently verified, and which civilians lose essential services?",
+      "zh": "袭击是否经过独立核实？哪些平民失去基本服务？"
+    }
+  ],
+  "sources": [
+    {
+      "id": "nato",
+      "title": "Relations with Ukraine: historical timeline and alliance position",
+      "publisher": "NATO",
+      "url": "https://www.nato.int/en/what-we-do/partnerships-and-cooperation/relations-with-ukraine",
+      "kind": "institutional-position"
+    },
+    {
+      "id": "un-2022",
+      "title": "General Assembly demands Russian withdrawal, 2 March 2022",
+      "publisher": "United Nations",
+      "url": "https://press.un.org/en/2022/ga12407.doc.htm",
+      "kind": "historical-record",
+      "publishedAt": "2022-03-02"
+    },
+    {
+      "id": "un-debate",
+      "title": "Security Council debate on Ukraine, 20 September 2023",
+      "publisher": "United Nations",
+      "url": "https://press.un.org/en/2023/sc15416.doc.htm",
+      "kind": "historical-record",
+      "publishedAt": "2023-09-20"
+    },
+    {
+      "id": "ap-energy",
+      "title": "Russia launches sweeping attack on Ukraine’s power sector",
+      "publisher": "Associated Press",
+      "url": "https://apnews.com/article/90218fcbed4fbf196aa8148a4aae6239",
+      "kind": "independent-reporting",
+      "publishedAt": "2024-03-22"
+    }
+  ]
+}

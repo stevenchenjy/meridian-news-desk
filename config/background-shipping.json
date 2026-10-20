@@ -1,0 +1,222 @@
+{
+  "id": "trade-shipping",
+  "title": {
+    "en": "Trade routes, shipping & chokepoints",
+    "zh": "贸易航线、航运与咽喉要道"
+  },
+  "subtitle": {
+    "en": "Why distant attacks and detours can affect fuel, food, and delivery costs.",
+    "zh": "为什么远方的袭击与绕航会影响能源、食品和交付成本。"
+  },
+  "category": "economy",
+  "keywords": [
+    "shipping",
+    "Hormuz",
+    "Black Sea",
+    "Red Sea",
+    "Suez",
+    "Panama Canal",
+    "freight",
+    "tanker",
+    "航运",
+    "霍尔木兹",
+    "黑海",
+    "红海",
+    "苏伊士",
+    "运费",
+    "油轮"
+  ],
+  "reviewedAt": "2026-10-15",
+  "coverageThrough": "2024-02-22",
+  "overview": {
+    "en": "Ships connect producers and buyers through a small number of commercially important routes. The Strait of Hormuz is an outlet from the Persian Gulf; the Red Sea and Suez connect Asian and European trade; the Black Sea serves major grain and energy exporters. Their geography and conflicts differ. This guide uses historical evidence through February 2024; current passage conditions need current reporting.",
+    "zh": "船舶通过少数商业上重要的航线连接生产者与买家。霍尔木兹海峡是波斯湾的出口；红海与苏伊士连接亚欧贸易；黑海服务于主要粮食和能源出口国。这些区域的地理与冲突各不相同。本篇依据截至2024年2月的历史资料；当前通航情况应查看最新报道。"
+  },
+  "takeaways": [
+    {
+      "en": "A threatened chokepoint, a damaged ship, and a closed waterway are different levels of disruption.",
+      "zh": "要道受威胁、船舶受损与水道关闭，是不同程度的中断。"
+    },
+    {
+      "en": "Ship ownership, flag, cargo origin, and destination may involve different countries.",
+      "zh": "船东国、船旗国、货物来源和目的地可能分别属于不同国家。"
+    },
+    {
+      "en": "An attack’s location or beneficiary does not prove who ordered it. Attribution needs evidence.",
+      "zh": "袭击地点或谁从中获益，都不能证明谁下令；归责需要证据。"
+    }
+  ],
+  "actors": [
+    {
+      "name": {
+        "en": "Shipowners, operators, and crews",
+        "zh": "船东、运营商与船员"
+      },
+      "role": {
+        "en": "Move cargo and choose routes",
+        "zh": "运输货物并选择航线"
+      },
+      "position": {
+        "en": "They weigh crew safety, schedules, fuel, and insurance. A detour can preserve delivery while using more vessels and time, increasing effective transport costs.",
+        "zh": "他们权衡船员安全、时刻表、燃料和保险。绕航可以维持交付，却会占用更多船舶与时间，提高实际运输成本。"
+      },
+      "sourceIds": [
+        "shipping-unctad"
+      ]
+    },
+    {
+      "name": {
+        "en": "Coastal states, navies, and armed groups",
+        "zh": "沿岸国家、海军与武装组织"
+      },
+      "role": {
+        "en": "Control, protect, or threaten access",
+        "zh": "控制、保护或威胁通行"
+      },
+      "position": {
+        "en": "States assert security interests and navies protect traffic; armed groups may use attacks for political pressure. Their statements establish claims, not verified responsibility for every incident.",
+        "zh": "国家主张安全利益，海军保护航运；武装组织可能以袭击施加政治压力。各方声明说明其主张，不代表每起事件的责任已经核实。"
+      },
+      "sourceIds": [
+        "shipping-unctad",
+        "shipping-hormuz"
+      ]
+    },
+    {
+      "name": {
+        "en": "Exporters, importers, and food buyers",
+        "zh": "出口商、进口商与食品买家"
+      },
+      "role": {
+        "en": "Depend on reliable access",
+        "zh": "依赖稳定通道"
+      },
+      "position": {
+        "en": "Ukraine sought grain exports and importing countries needed supply. The UN and Türkiye helped broker a limited maritime arrangement; its existence did not settle the wider war.",
+        "zh": "乌克兰需要出口粮食，进口国需要供应。联合国与土耳其协助促成有限海运安排，但它并未解决更广泛的战争。"
+      },
+      "sourceIds": [
+        "shipping-grain"
+      ]
+    }
+  ],
+  "roots": {
+    "en": "Maritime trade is efficient because ships share canals, ports, and narrow passages. The same concentration creates vulnerabilities. War, accidents, and drought can produce similar delays through different mechanisms. Markets may add a risk premium before any physical shortage appears, while inventories and alternative routes can soften the eventual effect on consumers.",
+    "zh": "海运效率来自共同使用运河、港口和狭窄航道，同样的集中也带来脆弱性。战争、事故与干旱可能通过不同机制造成类似延误。实际短缺出现前，市场就可能计入风险溢价；库存与替代航线则可能减轻最终消费者所受影响。"
+  },
+  "timeline": [
+    {
+      "date": "2022-07-22",
+      "title": {
+        "en": "Black Sea grain arrangement begins",
+        "zh": "黑海粮食安排启动"
+      },
+      "detail": {
+        "en": "Russia, Ukraine, Türkiye, and the UN launch an initiative enabling specified Ukrainian port exports.",
+        "zh": "俄罗斯、乌克兰、土耳其与联合国启动安排，允许指定乌克兰港口出口。"
+      },
+      "sourceIds": [
+        "shipping-grain"
+      ]
+    },
+    {
+      "date": "2023-07-17",
+      "title": {
+        "en": "The grain initiative ends",
+        "zh": "粮食倡议终止"
+      },
+      "detail": {
+        "en": "The arrangement expires after renewals. Later shipping activity must not be confused with continued operation of that agreement.",
+        "zh": "该安排在多次续期后到期。后来的航运活动不能与原协议继续运作混为一谈。"
+      },
+      "sourceIds": [
+        "shipping-grain"
+      ]
+    },
+    {
+      "date": "2024-02-22",
+      "title": {
+        "en": "UNCTAD assesses overlapping disruptions",
+        "zh": "贸发会议评估多重中断"
+      },
+      "detail": {
+        "en": "Its report examines the Red Sea, Black Sea, and Panama Canal together, showing how security and climate shocks can compound transport pressure.",
+        "zh": "报告同时分析红海、黑海与巴拿马运河，说明安全与气候冲击如何叠加运输压力。"
+      },
+      "sourceIds": [
+        "shipping-unctad"
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": {
+        "en": "Chokepoint",
+        "zh": "咽喉要道"
+      },
+      "meaning": {
+        "en": "A narrow route with limited practical alternatives; the amount and type of cargo exposed matter.",
+        "zh": "实际替代方案有限的狭窄通道；受影响货物的数量与类别都重要。"
+      }
+    },
+    {
+      "term": {
+        "en": "Freight rate",
+        "zh": "运价"
+      },
+      "meaning": {
+        "en": "The price for moving cargo. A spot quote and a long-term contract need not move together.",
+        "zh": "运输货物的价格。即期报价与长期合同价格未必同步变化。"
+      }
+    },
+    {
+      "term": {
+        "en": "War-risk premium",
+        "zh": "战争风险保费"
+      },
+      "meaning": {
+        "en": "Additional insurance cost reflecting perceived conflict exposure; a price signal, not proof an attack will occur.",
+        "zh": "反映冲突风险的额外保险成本，是价格信号，不是必然遭袭的证明。"
+      }
+    }
+  ],
+  "readingLens": [
+    {
+      "en": "What physically changed: passage, port access, vessel damage, or only a warning?",
+      "zh": "实际改变了什么：通行、港口准入、船舶损坏，还是仅有警告？"
+    },
+    {
+      "en": "Who attributes the incident, using what evidence, and has that account been independently checked?",
+      "zh": "谁在归责，凭什么证据，是否有独立核实？"
+    },
+    {
+      "en": "What cargo is exposed, for how long, and what inventories or alternative routes exist?",
+      "zh": "哪些货物受影响、持续多久，有什么库存或替代航线？"
+    }
+  ],
+  "sources": [
+    {
+      "id": "shipping-unctad",
+      "title": "Navigating troubled waters",
+      "publisher": "UN Trade and Development (UNCTAD)",
+      "url": "https://unctad.org/publication/navigating-troubled-waters-impact-global-trade-disruption-shipping-routes-red-sea-black",
+      "kind": "historical-record",
+      "publishedAt": "2024-02-22"
+    },
+    {
+      "id": "shipping-grain",
+      "title": "Black Sea Grain Initiative: FAQ",
+      "publisher": "United Nations",
+      "url": "https://www.un.org/en/black-sea-grain-initiative/faq",
+      "kind": "historical-record"
+    },
+    {
+      "id": "shipping-hormuz",
+      "title": "The Strait of Hormuz is the world’s most important oil transit chokepoint",
+      "publisher": "US Energy Information Administration",
+      "url": "https://www.eia.gov/todayinEnergy/detail.php?id=61002",
+      "kind": "historical-record",
+      "publishedAt": "2023-11-21"
+    }
+  ]
+}

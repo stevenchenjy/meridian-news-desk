@@ -1,0 +1,416 @@
+{
+  "id": "us-iran",
+  "title": {
+    "en": "US & Iran: why the relationship is hostile",
+    "zh": "美国与伊朗：矛盾从哪里来"
+  },
+  "subtitle": {
+    "en": "History, nuclear disputes, sanctions, and the difference between a government and its people.",
+    "zh": "从历史、核争议和制裁入门，分清政府、民众与地区武装。"
+  },
+  "category": "politics",
+  "keywords": [
+    "Iran",
+    "Iranian",
+    "Tehran",
+    "US-Iran",
+    "JCPOA",
+    "IRGC",
+    "Hormuz",
+    "伊朗",
+    "美伊",
+    "伊朗核协议",
+    "伊朗制裁"
+  ],
+  "reviewedAt": "2026-10-15",
+  "coverageThrough": "2026-10-14",
+  "overview": {
+    "en": "The dispute combines mistrust with nuclear activity, armed groups, sanctions and regional security. It escalated into direct warfare in 2026: on 6 October the UN Secretary-General called for an end to the US–Iran war. This guide includes selected verified developments through 14 October 2026. A confirmed ship loss in Hormuz does not, by itself, establish who attacked it or the legal responsibility for the incident.",
+    "zh": "这场矛盾既有长期不信任，也涉及核活动、地区武装、制裁与地区安全。2026年冲突升级为直接战争：10月6日，联合国秘书长呼吁结束美伊战争。本篇收录经核实的部分进展，涵盖至2026年10月14日。霍尔木兹海峡确认发生沉船，并不能单独证明谁发动袭击或承担相关法律责任。"
+  },
+  "takeaways": [
+    {
+      "en": "Iran is a country, not an armed group. Iranian is not synonymous with Arab, and the Islamic Republic does not represent every Iranian person’s views.",
+      "zh": "伊朗是一个国家，不是一个武装组织。“伊朗人”不等于“阿拉伯人”，伊斯兰共和国政府的立场也不等于所有伊朗人的想法。"
+    },
+    {
+      "en": "Enriching uranium, having material usable for a weapon, and possessing a working nuclear weapon are different claims requiring different evidence.",
+      "zh": "浓缩铀、拥有可用于核武器的材料，以及拥有可运作的核武器，是三个需要不同证据支持的判断。"
+    },
+    {
+      "en": "A nuclear agreement can restrict a specific danger without resolving missiles, armed partners, human rights, or the wider rivalry.",
+      "zh": "核协议可以约束一种特定风险，却不一定解决导弹、地区武装、人权或更广泛的对抗。"
+    }
+  ],
+  "actors": [
+    {
+      "name": {
+        "en": "Iranian authorities",
+        "zh": "伊朗当局"
+      },
+      "role": {
+        "en": "State leadership and institutions",
+        "zh": "国家领导层与机构"
+      },
+      "position": {
+        "en": "In the system described by CRS in May 2025, the Supreme Leader held ultimate authority; the elected president had more limited power. Iran’s delegation argues that peaceful nuclear technology, including a domestic fuel cycle, is a sovereign right. This is an official position, not independent proof of all activities.",
+        "zh": "按美国国会研究处2025年5月的介绍，最高领袖掌握最终决定权，民选总统的权限更有限。伊朗代表团主张，和平核技术及本国核燃料循环属于主权权利。这是官方立场，并非所有核活动性质的独立证明。"
+      },
+      "sourceIds": [
+        "iran-crs",
+        "iran-position"
+      ]
+    },
+    {
+      "name": {
+        "en": "US government",
+        "zh": "美国政府"
+      },
+      "role": {
+        "en": "President, Congress, sanctions agencies, and military",
+        "zh": "总统、国会、制裁机构与军方"
+      },
+      "position": {
+        "en": "Trump’s 2018 withdrawal statement said the nuclear deal was inadequate. In 2025 his administration renewed economic pressure, citing nuclear, missile, and armed-group threats. Congress also shapes sanctions; a presidential statement is not the opinion of all Americans.",
+        "zh": "特朗普在2018年退出核协议时称协议不足以应对威胁。2025年，其政府重新加强经济施压，理由包括核、导弹及地区武装威胁。国会也参与制定制裁；总统的讲话不等于全体美国人的意见。"
+      },
+      "sourceIds": [
+        "iran-us-exit",
+        "iran-crs"
+      ]
+    },
+    {
+      "name": {
+        "en": "IAEA",
+        "zh": "国际原子能机构（IAEA）"
+      },
+      "role": {
+        "en": "Nuclear verification agency",
+        "zh": "核查核材料与活动的机构"
+      },
+      "position": {
+        "en": "Its May 2025 report raised serious concerns about 60% enrichment and unresolved undeclared material. It reported no credible indication of an ongoing undeclared structured program of the historical type it examined, while saying it could not assure that the entire program was exclusively peaceful.",
+        "zh": "其2025年5月报告对60%浓缩铀及未解决的未申报核材料问题表示严重关切。报告称，没有可信迹象显示其调查的那类历史性未申报、有组织核计划仍在继续，同时也无法保证整个核计划完全用于和平目的。"
+      },
+      "sourceIds": [
+        "iran-iaea"
+      ]
+    },
+    {
+      "name": {
+        "en": "Iran-backed regional groups",
+        "zh": "伊朗支持的地区组织"
+      },
+      "role": {
+        "en": "Including Hezbollah, the Houthis, and some Iraqi militias",
+        "zh": "包括真主党、胡塞武装及部分伊拉克民兵"
+      },
+      "position": {
+        "en": "These groups have distinct local interests and varying relationships with Tehran. Funding, weapons, and coordination can be substantial; support alone does not prove Iran ordered a particular attack.",
+        "zh": "这些组织各有本地利益，与德黑兰的关系也不同。资金、武器和协调支持可能很深入，但仅有支持关系，不能证明某次袭击由伊朗下令。"
+      },
+      "sourceIds": [
+        "iran-crs"
+      ]
+    }
+  ],
+  "roots": {
+    "en": "A useful interpretation is that each government reads the other’s actions through earlier betrayals. The 1953 overthrow of Prime Minister Mohammad Mosaddegh matters to Iranian arguments about foreign intervention. The 1979 embassy seizure and hostage crisis matter to American distrust. Later nuclear diplomacy tried to make limited cooperation verifiable despite this history. Understanding these memories explains political language; it does not justify attacks on civilians or settle who is responsible for a new incident.",
+    "zh": "一种有助理解的分析是：两国政府常透过过去遭背叛的记忆，解读对方的行动。1953年摩萨台首相被推翻，是伊朗反对外部干涉论述的重要背景；1979年美国使馆被占领及人质危机，则是美国不信任的重要来源。后来的核外交试图在这种历史下，通过核查建立有限合作。理解这些记忆有助读懂政治语言，但不能为袭击平民辩护，也不能直接判断新事件的责任。"
+  },
+  "timeline": [
+    {
+      "date": "1953-08-19",
+      "title": {
+        "en": "Mosaddegh’s government is overthrown",
+        "zh": "摩萨台政府被推翻"
+      },
+      "detail": {
+        "en": "US historical records document CIA covert action culminating in the overthrow, against the background of an oil-nationalization dispute and the Cold War.",
+        "zh": "美国历史档案记录了中央情报局参与的秘密行动，最终导致政府被推翻；背景包括石油国有化争端与冷战。"
+      },
+      "sourceIds": [
+        "iran-coup"
+      ]
+    },
+    {
+      "date": "1979",
+      "title": {
+        "en": "Revolution and the embassy hostage crisis",
+        "zh": "革命与使馆人质危机"
+      },
+      "detail": {
+        "en": "The revolution overthrew the US-allied Shah and established the Islamic Republic. Militants seized the US embassy on November 4; Washington severed diplomatic relations in April 1980.",
+        "zh": "革命推翻了与美国结盟的国王，建立伊斯兰共和国。11月4日，武装学生占领美国使馆；美国于1980年4月断绝外交关系。"
+      },
+      "sourceIds": [
+        "iran-crs",
+        "iran-hostages"
+      ]
+    },
+    {
+      "date": "2015-07-14",
+      "title": {
+        "en": "The JCPOA nuclear agreement",
+        "zh": "达成伊朗核协议（JCPOA）"
+      },
+      "detail": {
+        "en": "Iran and six world powers, with the EU, agreed to nuclear restrictions and monitoring in exchange for specified sanctions relief. It was a nuclear bargain, not a peace settlement covering every dispute.",
+        "zh": "伊朗与六个大国及欧盟就核限制与核查达成安排，以换取特定制裁的解除。这是核领域的交换安排，并非解决所有争端的和平协议。"
+      },
+      "sourceIds": [
+        "iran-jcpoa"
+      ]
+    },
+    {
+      "date": "2018-05-08",
+      "title": {
+        "en": "The US withdraws",
+        "zh": "美国退出协议"
+      },
+      "detail": {
+        "en": "Trump ended US participation and ordered sanctions restored, arguing the deal failed to address wider threats and long-term nuclear risks. That stated rationale should be distinguished from whether the policy achieved its goals.",
+        "zh": "特朗普宣布美国退出，并恢复制裁，理由是协议未充分处理更广泛的威胁和长期核风险。应把这一官方理由，与政策是否达到目的分开判断。"
+      },
+      "sourceIds": [
+        "iran-us-exit"
+      ]
+    },
+    {
+      "date": "2025",
+      "title": {
+        "en": "Pressure and negotiations overlap",
+        "zh": "施压与谈判同时进行"
+      },
+      "detail": {
+        "en": "CRS’s May review recorded renewed US maximum pressure and nuclear talks beginning in April. Diplomacy and coercion can occur together; a meeting does not mean the underlying rivalry has ended.",
+        "zh": "国会研究处5月的报告记录了美国重新实施“极限施压”，同时核谈判于4月启动。外交与强制手段可能并行；举行会谈不代表根本矛盾已经结束。"
+      },
+      "sourceIds": [
+        "iran-crs"
+      ]
+    },
+    {
+      "date": "2025-06-24",
+      "title": {
+        "en": "A ceasefire follows direct warfare",
+        "zh": "直接交战后出现停火"
+      },
+      "detail": {
+        "en": "AP reported a fragile Israel–Iran ceasefire after Israeli attacks and US strikes on Iranian nuclear sites. This was a dated pause, rather than proof of a lasting settlement; direct conflict followed in 2026.",
+        "zh": "美联社报道，在以色列发动袭击、美国打击伊朗核设施后，以伊之间出现脆弱停火。这是特定时期的暂停，并非持久解决的证明；2026年又发生直接冲突。"
+      },
+      "sourceIds": [
+        "iran-ceasefire",
+        "iran-war-2026"
+      ]
+    },
+    {
+      "date": "2026-02-28",
+      "title": {
+        "en": "US–Israeli attacks begin a new war",
+        "zh": "美以袭击开启新一轮战争"
+      },
+      "detail": {
+        "en": "AP’s 7 May account dates US and Israeli attacks on Iran to 28 February and describes the subsequent Hormuz confrontation. On 6 October, the UN Secretary-General was still calling for an end to the US–Iran war. Do not read the June 2025 ceasefire as the present situation.",
+        "zh": "美联社5月7日的报道将美以袭击伊朗的日期追溯至2月28日，并介绍随后发生的霍尔木兹对峙。10月6日，联合国秘书长仍在呼吁结束美伊战争。不能把2025年6月的停火视为当前状态。"
+      },
+      "sourceIds": [
+        "iran-war-2026",
+        "iran-un-october"
+      ]
+    },
+    {
+      "date": "2026-10-14",
+      "title": {
+        "en": "Singapore confirms a ship loss in Hormuz",
+        "zh": "新加坡确认霍尔木兹沉船"
+      },
+      "detail": {
+        "en": "Singapore’s maritime authority said GFS PRIDE had sunk after a reported unknown-projectile strike on 13 October, Singapore time; all 21 crew were safely evacuated. GFS GISELLE was struck on 14 October and reached safe anchorage. The statement did not identify an attacker.",
+        "zh": "新加坡海事部门称，GFS PRIDE号在新加坡时间10月13日据报遭不明投射物击中后沉没，21名船员全部安全撤离。GFS GISELLE号于14日遭击中，后抵达安全锚地。声明未认定袭击方。"
+      },
+      "sourceIds": [
+        "iran-hormuz-mpa"
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": {
+        "en": "Enrichment",
+        "zh": "铀浓缩"
+      },
+      "meaning": {
+        "en": "Increasing the share of uranium-235. The percentage and quantity matter. Enriched material is not by itself a completed bomb.",
+        "zh": "提高铀-235的比例。浓缩比例和材料数量都重要；浓缩材料本身不等于一枚成品核弹。"
+      }
+    },
+    {
+      "term": {
+        "en": "Breakout time",
+        "zh": "核突破时间"
+      },
+      "meaning": {
+        "en": "An estimate of time to produce enough weapons-grade material for one weapon, not the time to field a tested, deliverable weapon. Check the assumptions.",
+        "zh": "估算生产足够制造一枚核武器的武器级材料所需的时间，不等于部署经过测试、可投送核武器的时间。要看估算假设。"
+      }
+    },
+    {
+      "term": {
+        "en": "Safeguards",
+        "zh": "保障监督"
+      },
+      "meaning": {
+        "en": "Declarations, accounting, and inspections intended to verify that nuclear material is not diverted. A verification gap means uncertainty, not automatic proof of a bomb.",
+        "zh": "通过申报、核材料核算与检查，核实材料未被转用于核武器。核查空白意味着不确定性，不自动证明已有核弹。"
+      }
+    },
+    {
+      "term": {
+        "en": "Sanctions",
+        "zh": "制裁"
+      },
+      "meaning": {
+        "en": "Restrictions on assets, transactions, trade, or specified actors. Ask which government imposed them, which activities they cover, and what exemptions apply.",
+        "zh": "针对资产、交易、贸易或特定主体的限制。应问清由谁实施、限制什么活动，以及有哪些豁免。"
+      }
+    },
+    {
+      "term": {
+        "en": "Proxy / partner",
+        "zh": "代理力量／合作伙伴"
+      },
+      "meaning": {
+        "en": "A shorthand for a supported actor. The label can hide differences in command, dependence, ideology, and local goals; identify the evidence of control.",
+        "zh": "指受到支持的行动方的简称。这种标签可能掩盖指挥关系、依赖程度、意识形态和本地目标的差异；需要核实控制关系的证据。"
+      }
+    },
+    {
+      "term": {
+        "en": "Strait of Hormuz",
+        "zh": "霍尔木兹海峡"
+      },
+      "meaning": {
+        "en": "A passage between Iran and Oman linking the Persian Gulf to the Gulf of Oman. Shipping incidents can affect civilian trade; a vessel’s flag identifies its registry, not who attacked it.",
+        "zh": "位于伊朗与阿曼之间，连接波斯湾与阿曼湾的水道。航运事件可能影响民用贸易；船旗说明船籍，并不能说明袭击者是谁。"
+      }
+    }
+  ],
+  "readingLens": [
+    {
+      "en": "Separate the claim: enrichment level, stockpile size, inspector access, political intent, or an actual weapon? Headlines often compress several into one.",
+      "zh": "先分清报道在说什么：浓缩比例、库存量、核查人员准入、政治意图，还是实际核武器？标题常把这些混在一起。"
+    },
+    {
+      "en": "For an attack, identify the launcher, target, civilian harm, and attribution evidence. “Iran-backed” is evidence of a relationship, not a complete chain of command.",
+      "zh": "报道袭击时，找出发动者、目标、平民伤害及归责证据。“伊朗支持”说明一种关系，不等于完整的指挥链。"
+    },
+    {
+      "en": "For a deal, look for the exchange: what nuclear limits, what inspections, what sanctions relief, and what happens after a breach?",
+      "zh": "报道协议时，看双方交换了什么：核限制、核查、制裁解除，以及违约后如何处理。"
+    },
+    {
+      "en": "Use these sources as dated evidence. Official documents establish what institutions said or did; independent reporting helps test their competing accounts.",
+      "zh": "把这些来源当作有日期的证据。官方文件说明机构说了什么、采取了什么行动；独立报道可帮助检验彼此冲突的说法。"
+    },
+    {
+      "en": "For Hormuz claims, distinguish a navigation restriction, a port blockade, an announced plan and a verified attack. Check the ship, incident date, crew status and attribution separately.",
+      "zh": "阅读霍尔木兹新闻时，区分航行限制、港口封锁、宣布的计划与已核实袭击。分别核对船只、事件日期、船员状况和责任归属。"
+    }
+  ],
+  "sources": [
+    {
+      "id": "iran-coup",
+      "title": "FRUS Iran, 1951–1954: Preface and documentary scope",
+      "publisher": "US Department of State, Office of the Historian",
+      "url": "https://history.state.gov/historicaldocuments/frus1951-54Iran/preface",
+      "kind": "historical-record"
+    },
+    {
+      "id": "iran-hostages",
+      "title": "Iran: diplomatic relations and the 1979–1981 hostage crisis",
+      "publisher": "US Department of State, Office of the Historian",
+      "url": "https://history.state.gov/countries/iran",
+      "kind": "historical-record"
+    },
+    {
+      "id": "iran-jcpoa",
+      "title": "JCPOA archive and July 14, 2015 announcement",
+      "publisher": "US Treasury, OFAC",
+      "url": "https://ofac.treasury.gov/sanctions-programs-and-country-information/iran-sanctions/joint-plan-of-action-jpoa-archive-and-joint-comprehensive-plan-of-action-jcpoa-archive",
+      "kind": "historical-record"
+    },
+    {
+      "id": "iran-us-exit",
+      "title": "US decision to end participation in the Iran deal",
+      "publisher": "White House, archived first Trump administration",
+      "url": "https://trumpwhitehouse.archives.gov/briefings-statements/president-donald-j-trump-ending-united-states-participation-unacceptable-iran-deal/",
+      "kind": "institutional-position",
+      "publishedAt": "2018-05-08"
+    },
+    {
+      "id": "iran-crs",
+      "title": "Iran: Background and U.S. Policy, May 22, 2025 version",
+      "publisher": "Congressional Research Service; hosted by EveryCRSReport",
+      "url": "https://www.everycrsreport.com/reports/R47321.html",
+      "kind": "historical-record",
+      "publishedAt": "2025-05-22"
+    },
+    {
+      "id": "iran-position",
+      "title": "Iran delegation: peaceful nuclear energy and the fuel cycle",
+      "publisher": "Iran delegation to the NPT Preparatory Committee, hosted by UNODA",
+      "url": "https://docs-library.unoda.org/Treaty_on_the_Non-Proliferation_of_Nuclear_Weapons_-Preparatory_Committee_for_the_Eleventh_Review_ConferenceFirst_session_(2023)/Iran_Cluster_3__on_Peaceful_Uses_of_Nuclear_Energy-NPT_PrepCom_2023.pdf",
+      "kind": "institutional-position",
+      "publishedAt": "2023-08-08"
+    },
+    {
+      "id": "iran-iaea",
+      "title": "NPT Safeguards Agreement with Iran, GOV/2025/25",
+      "publisher": "International Atomic Energy Agency",
+      "url": "https://www.iaea.org/sites/default/files/25/06/gov2025-25.pdf",
+      "kind": "institutional-position",
+      "publishedAt": "2025-05-31"
+    },
+    {
+      "id": "iran-ceasefire",
+      "title": "Fragile ceasefire appears to hold between Iran and Israel",
+      "publisher": "Associated Press",
+      "url": "https://apnews.com/article/israel-iran-trump-ceasefire-attacks-continue-f1e60190722cc3410b69f21717872ffa",
+      "kind": "independent-reporting",
+      "publishedAt": "2025-06-24"
+    },
+    {
+      "id": "iran-war-2026",
+      "title": "These numbers show the global impact of Iran’s grip on the Strait of Hormuz",
+      "publisher": "Associated Press",
+      "url": "https://apnews.com/article/408faf6d6fb1c0aa104d059257204f52",
+      "kind": "independent-reporting",
+      "publishedAt": "2026-05-07"
+    },
+    {
+      "id": "iran-un-october",
+      "title": "In Islamabad, Guterres calls for end to US–Iran conflict",
+      "publisher": "United Nations",
+      "url": "https://www.un.org/en/islamabad-guterres-calls-end-us-iran-conflict",
+      "kind": "institutional-position",
+      "publishedAt": "2026-10-06"
+    },
+    {
+      "id": "iran-hormuz-mpa",
+      "title": "Two Singapore-registered vessels struck in Strait of Hormuz",
+      "publisher": "Maritime and Port Authority of Singapore",
+      "url": "https://www.mpa.gov.sg/media-centre/details/two-singapore-registered-vessels-struck-in-strait-of-hormuz",
+      "kind": "institutional-position",
+      "publishedAt": "2026-10-14"
+    },
+    {
+      "id": "iran-hormuz-geography",
+      "title": "The Strait of Hormuz is the world’s most important oil transit chokepoint",
+      "publisher": "US Energy Information Administration",
+      "url": "https://www.eia.gov/todayinenergy/detail.php?id=39932",
+      "kind": "historical-record"
+    }
+  ]
+}

@@ -16,22 +16,20 @@ export default function SourceLedger({ data, language }) {
           {copy("responding", "正常", language)}
         </span>
       </div>
-      <p className="ledger-intro">
-        {copy(
-          "A transparent view of what was collected. Failed feeds keep their last successful reporting. Community posts and official statements carry different evidence limits.",
-          "透明查看已收集的内容。新闻源失效时会保留最近一次成功获取的报道。社区帖子与官方声明各有不同的证据局限。",
-          language,
-        )}
-      </p>
       <div className="ledger-table">
         <div className="ledger-head">
-          <span>{copy("Source / coverage", "来源 / 领域", language)}</span>
-          <span>{copy("Collection status", "收集状态", language)}</span>
+          <span>{copy("Source", "来源", language)}</span>
+          <span>{copy("Status", "状态", language)}</span>
           <span>{copy("Last success", "最近成功", language)}</span>
         </div>
         {data.sources.map((s) => {
           const good = s.status === "ok";
           const disabled = !s.enabled;
+          const detail = disabled
+            ? s.note || s.description
+            : good
+              ? s.note
+              : s.error || s.note || copy("Feed unavailable", "新闻源不可用", language);
           const Icon = disabled
             ? PauseCircle
             : good
@@ -47,9 +45,6 @@ export default function SourceLedger({ data, language }) {
                 <small>
                   {categoryName(s.category, language)} · {s.type}
                 </small>
-                {s.enabled && s.note ? (
-                  <small className="source-note">{s.note}</small>
-                ) : null}
               </div>
               <div
                 className={`source-state ${disabled ? "disabled" : good ? "healthy" : "failed"}`}
@@ -61,31 +56,23 @@ export default function SourceLedger({ data, language }) {
                     : good
                       ? s.stale
                         ? copy(
-                            "Collected · older content",
-                            "已收集 · 内容较旧",
+                            "Older reporting",
+                            "内容较旧",
                             language,
                           )
                         : copy("Collected", "已收集", language)
-                      : copy("Collection failed", "收集失败", language)}
+                      : copy("Failed", "收集失败", language)}
                 </span>
-                <small>
-                  {disabled
-                    ? s.note ||
-                      s.description ||
-                      copy(
-                        "Optional source adapter",
-                        "可选来源适配器",
-                        language,
-                      )
-                    : good
-                      ? `${s.itemCount || 0} ${copy("cached items", "条缓存内容", language)}`
-                      : s.error || "Feed unavailable"}
-                </small>
+                {good && !disabled ? <small>{s.itemCount || 0} {copy("reports", "篇报道", language)}</small> : null}
+                {detail ? <details className="source-details">
+                  <summary>{copy("Details", "详情", language)}</summary>
+                  <p>{detail}</p>
+                </details> : null}
               </div>
               <div>
                 <span>{dateTime(s.lastSuccess)}</span>
                 <small>
-                  {copy("Newest article: ", "最新报道：", language)}
+                  {copy("Latest: ", "最新：", language)}
                   {dateTime(s.latestItemAt)}
                 </small>
                 {s.url ? (
@@ -95,12 +82,12 @@ export default function SourceLedger({ data, language }) {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    {copy("Feed URL", "新闻源地址", language)}
+                    {copy("Feed", "新闻源", language)}
                     <ArrowUpRight size={12} />
                   </a>
                 ) : (
                   <small>
-                    {copy("No feed configured", "尚未配置新闻源", language)}
+                    {copy("No feed", "未配置新闻源", language)}
                   </small>
                 )}
               </div>
@@ -108,23 +95,23 @@ export default function SourceLedger({ data, language }) {
           );
         })}
       </div>
-      <div className="methodology">
-        <h3>{copy("How to read this desk", "如何阅读此工作台", language)}</h3>
+      <details className="methodology">
+        <summary>{copy("About sources", "关于来源", language)}</summary>
         <p>
           {copy(
-            "RSS supplies reporting excerpts. Codex prepares the daily English + Chinese analysis with source links. “Official” identifies the institution that issued a statement; it does not guarantee independent confirmation. News volume and source counts do not measure truth. Industry coverage uses public publications and community feeds; personalized LinkedIn content is not connected.",
-            "RSS 提供报道摘要。Codex 生成附带来源链接的中英双语每日分析。“官方”表示声明的发布机构，并不代表已获得独立证实。新闻数量与来源数不能衡量真实性。行业内容来自公开出版物与社区新闻源；尚未连接个性化 LinkedIn 内容。",
+            "Feed excerpts and reviewed analysis are labelled separately. Statements and discussions retain their attribution; source type alone does not verify a claim.",
+            "来源摘要与已核查分析分别标注。声明与讨论保留归属；来源类型不能独立证实内容。",
             language,
           )}
         </p>
         <p>
           {copy(
-            "Edit config/sources.json to add or adjust feeds. Collection attempts and successful timestamps are separate. Daily automation needs your Mac and Codex available.",
-            "可编辑 config/sources.json 添加或调整新闻源。收集尝试时间与成功时间分别记录。每日自动更新需要 Mac 和 Codex 可用。",
+            "Failed feeds retain their last successful collection. A responding feed may contain older reporting.",
+            "收集失败时保留上次成功内容。来源响应正常，也可能只有较旧报道。",
             language,
           )}
         </p>
-      </div>
+      </details>
     </section>
   );
 }

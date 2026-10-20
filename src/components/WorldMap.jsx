@@ -25,10 +25,6 @@ export default function WorldMap() {
           <path d="m278 88 6-5 4 11-7 5Z" />
         </g>
       </svg>
-      <p>
-        Different perspectives.
-        <br />A clearer tomorrow.
-      </p>
     </div>
   );
 }

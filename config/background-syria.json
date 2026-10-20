@@ -1,0 +1,317 @@
+{
+  "id": "syria-transition",
+  "title": {
+    "en": "Syria: war, transition & outside powers",
+    "zh": "叙利亚：战争、过渡与外部力量"
+  },
+  "subtitle": {
+    "en": "Who seeks authority after Assad, and why the borders matter",
+    "zh": "阿萨德倒台后的权力安排，以及边境为何重要"
+  },
+  "category": "politics",
+  "keywords": [
+    "syria",
+    "syrian",
+    "assad",
+    "al-sharaa",
+    "sharaa",
+    "damascus",
+    "syrian democratic forces",
+    "hayat tahrir al-sham",
+    "golan",
+    "quneitra",
+    "suwayda",
+    "叙利亚",
+    "阿萨德",
+    "沙拉",
+    "大马士革",
+    "叙利亚民主力量",
+    "戈兰",
+    "库奈特拉",
+    "苏韦达"
+  ],
+  "reviewedAt": "2026-10-15",
+  "coverageThrough": "2025-03-13",
+  "overview": {
+    "en": "Historical guide through 13 March 2025. Syria’s Assad government fell in December 2024 after years of civil war. Its collapse opened a contested transition. A change of national leadership does not by itself unify armed groups, protect minorities or restore public services.",
+    "zh": "历史指南涵盖至2025年3月13日。历经多年内战后，叙利亚阿萨德政府于2024年12月倒台，开启充满争议的过渡。国家领导人更替本身，并不会自动统一各支武装、保障少数群体或恢复公共服务。"
+  },
+  "takeaways": [
+    {
+      "en": "Syria has overlapping struggles over state authority, community rights and foreign military involvement.",
+      "zh": "叙利亚同时面临国家权威、群体权利和外国军事介入等相互交织的问题。"
+    },
+    {
+      "en": "An integration agreement states an intention; implementation requires changes in command and administration.",
+      "zh": "整合协议表达了意向；落实需要改变指挥与行政安排。"
+    },
+    {
+      "en": "Protection of civilians and accountability remain important regardless of the faction involved.",
+      "zh": "无论涉及哪个派别，保护平民和追究责任都很重要。"
+    }
+  ],
+  "actors": [
+    {
+      "name": {
+        "en": "Transitional authorities",
+        "zh": "过渡当局"
+      },
+      "role": {
+        "en": "After Assad fell, former HTS leader Ahmad al-Sharaa became interim president in January 2025.",
+        "zh": "阿萨德倒台后，前“沙姆解放组织”领导人艾哈迈德·沙拉于2025年1月成为临时总统。"
+      },
+      "position": {
+        "en": "The March 2025 declaration proposed a five-year transition and promised rights protections. These promises require assessment through governing practice.",
+        "zh": "2025年3月的声明规定五年过渡并承诺保障权利；仍须根据实际治理评价这些承诺。"
+      },
+      "sourceIds": [
+        "ap-constitution"
+      ]
+    },
+    {
+      "name": {
+        "en": "SDF and northeastern institutions",
+        "zh": "叙利亚民主力量与东北部机构"
+      },
+      "role": {
+        "en": "The Kurdish-led Syrian Democratic Forces were a US partner against Islamic State.",
+        "zh": "以库尔德力量为主的叙利亚民主力量（SDF），曾是美国打击“伊斯兰国”的伙伴。"
+      },
+      "position": {
+        "en": "The 10 March 2025 agreement endorsed integration into state institutions and Kurdish constitutional rights; signing did not prove completion.",
+        "zh": "2025年3月10日协议认可整合进国家机构并保障库尔德人的宪法权利；签字不代表整合完成。"
+      },
+      "sourceIds": [
+        "ap-transition",
+        "sana-agreement"
+      ]
+    },
+    {
+      "name": {
+        "en": "Israel and UN border monitors",
+        "zh": "以色列与联合国边境观察方"
+      },
+      "role": {
+        "en": "Israel’s actions in southern Syria intersect with the Golan dispute and a UN-monitored separation zone.",
+        "zh": "以色列在叙利亚南部的行动，涉及戈兰争端及联合国监督的隔离区。"
+      },
+      "position": {
+        "en": "Israel cited border security after Assad’s fall. UN officials called for respect for the 1974 disengagement agreement and Syrian sovereignty.",
+        "zh": "阿萨德倒台后，以色列以边境安全解释其行动；联合国官员要求尊重1974年脱离接触协议及叙利亚主权。"
+      },
+      "sourceIds": [
+        "ap-transition",
+        "undof"
+      ]
+    },
+    {
+      "name": {
+        "en": "Syrian communities",
+        "zh": "叙利亚各群体"
+      },
+      "role": {
+        "en": "Arabs, Kurds and diverse religious communities experienced displacement, repression and war.",
+        "zh": "阿拉伯人、库尔德人及不同宗教群体经历了流离失所、镇压与战争。"
+      },
+      "position": {
+        "en": "Communities’ security and political rights cannot be reduced to the armed group claiming to represent them. The UN seeks an inclusive transition.",
+        "zh": "各群体的安全与政治权利，不能等同于声称代表他们的武装组织；联合国推动包容性过渡。"
+      },
+      "sourceIds": [
+        "un-transition",
+        "sana-agreement"
+      ]
+    }
+  ],
+  "roots": {
+    "en": "In 2011, peaceful demands for change met government repression and developed into civil war. Multiple armed movements and foreign powers became involved. Assad’s removal ended his rule but left disputes over institutions, weapons, minority safety, sanctions and reconstruction. Syria’s people include many political views within each ethnic or religious community.",
+    "zh": "2011年，和平要求变革的运动遭到政府镇压，随后演变为内战。多支武装及外国力量卷入其中。阿萨德倒台终结其统治，但机构、武器、少数群体安全、制裁和重建的争议仍待解决。同一族群或宗教社群内部也存在多种政治观点。"
+  },
+  "timeline": [
+    {
+      "date": "2011",
+      "title": {
+        "en": "Uprising and war",
+        "zh": "起义与战争"
+      },
+      "detail": {
+        "en": "The crackdown on anti-government protests developed into a protracted conflict.",
+        "zh": "对反政府抗议的镇压演变为长期冲突。"
+      },
+      "sourceIds": [
+        "ap-transition",
+        "un-transition"
+      ]
+    },
+    {
+      "date": "2015",
+      "title": {
+        "en": "UN transition framework",
+        "zh": "联合国过渡框架"
+      },
+      "detail": {
+        "en": "Security Council resolution 2254 became a reference for a Syrian-led political process.",
+        "zh": "安理会第2254号决议成为叙利亚主导政治进程的依据。"
+      },
+      "sourceIds": [
+        "un-transition"
+      ]
+    },
+    {
+      "date": "2024-12-08",
+      "title": {
+        "en": "Assad government falls",
+        "zh": "阿萨德政府倒台"
+      },
+      "detail": {
+        "en": "Opposition forces captured Damascus; a new governing transition began.",
+        "zh": "反对派力量夺取大马士革，新的治理过渡开始。"
+      },
+      "sourceIds": [
+        "un-transition",
+        "ap-transition"
+      ]
+    },
+    {
+      "date": "2025-01-27",
+      "title": {
+        "en": "UN explains border mission",
+        "zh": "联合国解释边境任务"
+      },
+      "detail": {
+        "en": "UNDOF described its role monitoring the 1974 separation agreement amid renewed tension.",
+        "zh": "面对新一轮紧张局势，联合国脱离接触观察员部队说明监督1974年隔离安排的职责。"
+      },
+      "sourceIds": [
+        "undof"
+      ]
+    },
+    {
+      "date": "2025-03-10",
+      "title": {
+        "en": "SDF integration agreement",
+        "zh": "SDF整合协议"
+      },
+      "detail": {
+        "en": "Damascus and SDF leaders agreed on integration, a ceasefire and rights principles; practical details remained to be settled.",
+        "zh": "大马士革当局与SDF领导人同意整合、停火及权利原则；实际细节仍待解决。"
+      },
+      "sourceIds": [
+        "sana-agreement",
+        "ap-transition"
+      ]
+    },
+    {
+      "date": "2025-03-13",
+      "title": {
+        "en": "Temporary constitutional declaration",
+        "zh": "临时宪法声明"
+      },
+      "detail": {
+        "en": "Al-Sharaa signed a declaration providing for a five-year transitional phase.",
+        "zh": "沙拉签署声明，规定五年过渡阶段。"
+      },
+      "sourceIds": [
+        "ap-constitution"
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": {
+        "en": "HTS",
+        "zh": "沙姆解放组织"
+      },
+      "meaning": {
+        "en": "Hayat Tahrir al-Sham, the Islamist group that led the offensive toppling Assad.",
+        "zh": "领导推翻阿萨德攻势的伊斯兰主义组织。"
+      }
+    },
+    {
+      "term": {
+        "en": "SDF",
+        "zh": "叙利亚民主力量"
+      },
+      "meaning": {
+        "en": "A Kurdish-led military coalition; it is distinct from Syria’s entire Kurdish population.",
+        "zh": "以库尔德力量为主的军事联盟；不等于全体叙利亚库尔德人。"
+      }
+    },
+    {
+      "term": {
+        "en": "UNDOF",
+        "zh": "联合国脱离接触观察员部队"
+      },
+      "meaning": {
+        "en": "The UN mission monitoring the Israel–Syria disengagement arrangements established in 1974.",
+        "zh": "监督1974年确立的以叙脱离接触安排的联合国任务。"
+      }
+    },
+    {
+      "term": {
+        "en": "Transition",
+        "zh": "政治过渡"
+      },
+      "meaning": {
+        "en": "A process of establishing new institutions and authority; it does not itself mean elected government.",
+        "zh": "建立新机构与权力安排的过程；“过渡”本身不等于民选政府。"
+      }
+    }
+  ],
+  "readingLens": [
+    {
+      "en": "Which authority and armed unit acted, and on what date?",
+      "zh": "哪个当局、哪支武装在什么日期采取了行动？"
+    },
+    {
+      "en": "Does an agreement change actual command, border control or service delivery?",
+      "zh": "协议是否改变实际指挥、边境管理或公共服务？"
+    },
+    {
+      "en": "Whose account supports a security claim, and what happened to civilians?",
+      "zh": "安全主张来自谁的说法？平民遭遇了什么？"
+    }
+  ],
+  "sources": [
+    {
+      "id": "un-transition",
+      "title": "Secretary-General’s press encounter on Syria",
+      "publisher": "United Nations",
+      "url": "https://www.un.org/sg/en/content/sg/press-events/2024-12-19/secretary-generals-press-encounter-syria",
+      "kind": "institutional-position",
+      "publishedAt": "2024-12-19"
+    },
+    {
+      "id": "undof",
+      "title": "What’s UNDOF? Why UN peacekeepers patrol the Israel–Syria border",
+      "publisher": "UN Peacekeeping",
+      "url": "https://peacekeeping.un.org/en/node/128358",
+      "kind": "historical-record",
+      "publishedAt": "2025-01-27"
+    },
+    {
+      "id": "sana-agreement",
+      "title": "Text of agreement to integrate SDF into Syrian state institutions",
+      "publisher": "Syrian Arab News Agency, publishing the Syrian Presidency’s text",
+      "url": "https://sana.sy/en/syria/349228/",
+      "kind": "institutional-position",
+      "publishedAt": "2025-03-10"
+    },
+    {
+      "id": "ap-transition",
+      "title": "Syria flashes signs of peril and promise in a week of violence and diplomacy",
+      "publisher": "Associated Press",
+      "url": "https://www.ap.org/news-highlights/spotlights/2025/syria-flashes-signs-of-peril-and-promise-in-a-week-of-violence-and-diplomacy/",
+      "kind": "independent-reporting",
+      "publishedAt": "2025-03-14"
+    },
+    {
+      "id": "ap-constitution",
+      "title": "Syrian leader signs temporary constitution for five-year transition",
+      "publisher": "Associated Press",
+      "url": "https://apnews.com/article/4caa2074f20155c2399451d9669e435b",
+      "kind": "independent-reporting",
+      "publishedAt": "2025-03-13"
+    }
+  ]
+}

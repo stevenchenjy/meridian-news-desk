@@ -38,7 +38,7 @@ The inputs are ordinary application contracts:
 - [demo-briefing.json](demo-briefing.json) supplies full bilingual sample analysis and attention assessments, including stable event and material-update keys.
 
 The briefing also includes short bilingual `sectionNotes`: two notes for the
-global view, one for Crisis and one for Industry. Each note names its supporting
+global view, one for People & planet and one for Industry & technology. Each note names its supporting
 article IDs and separates background from the latest development. The background
 defines the relief corridor or forum theme before explaining what changed. It
 does not invent a cause for the fictional corridor closure. The other topic keys

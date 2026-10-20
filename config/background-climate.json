@@ -1,0 +1,224 @@
+{
+  "id": "climate-disaster-risk",
+  "title": {
+    "en": "Climate, disasters & housing risk",
+    "zh": "气候、灾害与住房风险"
+  },
+  "subtitle": {
+    "en": "Why a hazard becomes a disaster, and what loss estimates mean.",
+    "zh": "为何自然危险会酿成灾害？如何读懂损失估算？"
+  },
+  "category": "development",
+  "keywords": [
+    "climate",
+    "disaster",
+    "disasters",
+    "flood",
+    "floods",
+    "flooding",
+    "drought",
+    "housing losses",
+    "UNDRR",
+    "Sendai",
+    "Paris Agreement",
+    "hurricane",
+    "气候",
+    "灾害",
+    "洪水",
+    "洪灾",
+    "干旱",
+    "减灾",
+    "住房损失",
+    "飓风"
+  ],
+  "reviewedAt": "2026-10-15",
+  "coverageThrough": "2016-11-04",
+  "overview": {
+    "en": "A storm or earthquake is a hazard. How many people and buildings are exposed, how vulnerable they are, and what protection exists help determine the resulting disaster. Climate policy addresses long-term warming; disaster policy also addresses buildings, land use, warnings and recovery. A modelled annual loss is not necessarily damage observed this year.",
+    "zh": "风暴或地震属于危险事件。多少人口与建筑暴露其中、它们有多脆弱、具备什么防护，会共同影响灾害结果。气候政策处理长期变暖，减灾政策也涉及建筑、土地使用、预警和恢复。模型估计的年均损失，不一定是今年实测的损失。"
+  },
+  "takeaways": [
+    {
+      "en": "Hazard, exposure and vulnerability are different parts of risk.",
+      "zh": "危险性、暴露度和脆弱性，是风险的不同组成部分。"
+    },
+    {
+      "en": "Reducing emissions and adapting buildings address different mechanisms; both can matter.",
+      "zh": "减排与改造建筑处理不同机制，两者都可能重要。"
+    },
+    {
+      "en": "A global average is not a forecast of what a particular household will lose.",
+      "zh": "全球平均值，不是某个家庭将损失多少的预测。"
+    }
+  ],
+  "actors": [
+    {
+      "name": {
+        "en": "Governments and local planners",
+        "zh": "政府与地方规划者"
+      },
+      "role": {
+        "en": "Set land-use, infrastructure and preparedness policies",
+        "zh": "制定土地、基础设施和防灾政策"
+      },
+      "position": {
+        "en": "The Sendai Framework assigns states a primary role in reducing risk while sharing responsibilities across society. Check actual budgets and protections, not only commitments.",
+        "zh": "《仙台框架》把减灾的主要责任赋予国家，同时要求社会各方共同参与。应核对实际预算与防护，而不只看承诺。"
+      },
+      "sourceIds": [
+        "sendai"
+      ]
+    },
+    {
+      "name": {
+        "en": "UNDRR",
+        "zh": "联合国减少灾害风险办公室"
+      },
+      "role": {
+        "en": "Supports disaster-risk reduction",
+        "zh": "支持减少灾害风险"
+      },
+      "position": {
+        "en": "Its risk framework links hazards with exposure, vulnerability and capacity. It helps explain why similar physical events can produce different losses.",
+        "zh": "其风险框架将危险事件与暴露度、脆弱性及应对能力联系起来，有助解释为何相似事件会造成不同损失。"
+      },
+      "sourceIds": [
+        "risk"
+      ]
+    },
+    {
+      "name": {
+        "en": "Countries in climate negotiations",
+        "zh": "参与气候谈判的国家"
+      },
+      "role": {
+        "en": "Set national plans within the Paris framework",
+        "zh": "在《巴黎协定》框架下制定国家计划"
+      },
+      "position": {
+        "en": "The Paris Agreement combines a shared temperature goal with nationally determined plans. A summit pledge and implementation are different stages.",
+        "zh": "《巴黎协定》把共同温控目标与各国自主计划结合起来，峰会承诺和落实是不同阶段。"
+      },
+      "sourceIds": [
+        "paris"
+      ]
+    }
+  ],
+  "roots": {
+    "en": "Disaster losses depend on social choices as well as physical events. Building in exposed areas and unequal protective capacity can magnify harm. The climate and disaster frameworks overlap but are not interchangeable: not every disaster is caused by climate change, and a specific event’s attribution needs its own evidence.",
+    "zh": "灾害损失既取决于自然事件，也取决于社会选择。在高暴露地区建设、防护能力不平等，都可能加重伤害。气候与减灾框架有交集，但不能互相替代：并非所有灾害由气候变化造成，具体事件归因需要专门证据。"
+  },
+  "timeline": [
+    {
+      "date": "2015-03-18",
+      "title": {
+        "en": "Sendai Framework adopted",
+        "zh": "通过《仙台框架》"
+      },
+      "detail": {
+        "en": "The 2015–2030 framework sets shared disaster-risk priorities and targets.",
+        "zh": "2015至2030年框架设定共同减灾重点与目标。"
+      },
+      "sourceIds": [
+        "sendai"
+      ]
+    },
+    {
+      "date": "2015-12-12",
+      "title": {
+        "en": "Paris Agreement adopted",
+        "zh": "通过《巴黎协定》"
+      },
+      "detail": {
+        "en": "Countries adopted a climate treaty pursuing warming well below 2°C and efforts toward 1.5°C.",
+        "zh": "各国通过气候协定，目标是将升温控制在远低于2°C，并努力限制在1.5°C。"
+      },
+      "sourceIds": [
+        "paris"
+      ]
+    },
+    {
+      "date": "2016-11-04",
+      "title": {
+        "en": "Paris Agreement enters into force",
+        "zh": "《巴黎协定》生效"
+      },
+      "detail": {
+        "en": "Adoption and entry into force were separate milestones; later membership and national plans require current records.",
+        "zh": "通过与生效属于不同节点，此后的缔约状态及国家计划须另查当期记录。"
+      },
+      "sourceIds": [
+        "paris"
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": {
+        "en": "Exposure",
+        "zh": "暴露度"
+      },
+      "meaning": {
+        "en": "People and assets located where a hazard can affect them.",
+        "zh": "处于危险事件可能影响范围内的人口与资产。"
+      }
+    },
+    {
+      "term": {
+        "en": "Vulnerability",
+        "zh": "脆弱性"
+      },
+      "meaning": {
+        "en": "Conditions that make exposed people or assets more susceptible to harm.",
+        "zh": "使暴露人口或资产更容易受损的条件。"
+      }
+    },
+    {
+      "term": {
+        "en": "Expected annual loss",
+        "zh": "预期年均损失"
+      },
+      "meaning": {
+        "en": "A risk-model average across possible events, not a claim that the same amount is lost every year.",
+        "zh": "对多种可能事件的模型平均估计，并不表示每年实际损失都相同。"
+      }
+    }
+  ],
+  "readingLens": [
+    {
+      "en": "Is the number observed damage, insured loss, economic loss or a modelled annual average?",
+      "zh": "数字是实测损失、保险损失、经济损失，还是模型年均值？"
+    },
+    {
+      "en": "What locations, assets, hazards and assumptions does the estimate include?",
+      "zh": "估算涵盖哪些地点、资产和危险事件，采用什么假设？"
+    },
+    {
+      "en": "Does the evidence establish this event’s climate contribution, or only a broader risk trend?",
+      "zh": "证据解释了本次事件的气候影响，还是只说明更广泛的风险趋势？"
+    }
+  ],
+  "sources": [
+    {
+      "id": "risk",
+      "title": "Disaster risk terminology",
+      "publisher": "UNDRR",
+      "url": "https://www.undrr.org/terminology/disaster-risk",
+      "kind": "historical-record"
+    },
+    {
+      "id": "sendai",
+      "title": "What is the Sendai Framework?",
+      "publisher": "UNDRR",
+      "url": "https://www.undrr.org/implementing-sendai-framework/what-sendai-framework",
+      "kind": "historical-record"
+    },
+    {
+      "id": "paris",
+      "title": "The Paris Agreement explained",
+      "publisher": "UNFCCC",
+      "url": "https://unfccc.int/process-and-meetings/the-paris-agreement",
+      "kind": "historical-record"
+    }
+  ]
+}

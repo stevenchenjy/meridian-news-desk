@@ -1,0 +1,287 @@
+{
+  "id": "yemen-houthis",
+  "title": {
+    "en": "Yemen, the Houthis & aid access",
+    "zh": "也门、胡塞武装与援助准入"
+  },
+  "subtitle": {
+    "en": "A civil war, a regional conflict and a health emergency",
+    "zh": "内战、地区冲突与公共卫生危机"
+  },
+  "category": "development",
+  "keywords": [
+    "yemen",
+    "yemeni",
+    "houthi",
+    "houthis",
+    "ansar allah",
+    "sanaa",
+    "sana’a",
+    "aden",
+    "taiz",
+    "hudaydah",
+    "hodeidah",
+    "bab el-mandeb",
+    "也门",
+    "胡塞",
+    "萨那",
+    "亚丁",
+    "塔伊兹",
+    "荷台达",
+    "曼德海峡"
+  ],
+  "reviewedAt": "2026-10-15",
+  "coverageThrough": "2024-12-23",
+  "overview": {
+    "en": "Historical guide through 23 December 2024. Yemen sits beside the Red Sea’s southern shipping route. Its civil war and Houthi attacks on shipping overlap but have different origins. Yemen’s population, the Houthis and its internationally recognized government are not interchangeable.",
+    "zh": "历史指南涵盖至2024年12月23日。也门毗邻红海南端航道。也门内战与胡塞武装袭击航运相互交织，但起因不同。也门民众、胡塞武装和国际承认的政府不是同一概念。"
+  },
+  "takeaways": [
+    {
+      "en": "The Houthis are one Yemeni armed and political movement, not the whole country.",
+      "zh": "胡塞武装是也门的一支武装政治运动，不代表整个国家。"
+    },
+    {
+      "en": "A reduction in fighting does not automatically restore salaries, safe roads or health care.",
+      "zh": "战斗减少不代表工资、安全道路或医疗服务自动恢复。"
+    },
+    {
+      "en": "Check separately for domestic peace talks, shipping attacks and civilian health conditions.",
+      "zh": "分别核对国内和谈、航运袭击与平民健康状况。"
+    }
+  ],
+  "actors": [
+    {
+      "name": {
+        "en": "Houthis / Ansar Allah",
+        "zh": "胡塞武装／安萨尔真主"
+      },
+      "role": {
+        "en": "A movement rooted in northern Yemen that took the capital, Sanaa, in 2014; it has received Iranian support.",
+        "zh": "起源于也门北部的运动，于2014年夺取首都萨那，并获得伊朗支持。"
+      },
+      "position": {
+        "en": "During the Gaza war it linked attacks on shipping to the Palestinian cause. This stated rationale does not establish that every targeted vessel was linked to Israel.",
+        "zh": "加沙战争期间，它将航运袭击与支持巴勒斯坦联系起来。这一宣称并不能证明每艘遭袭船只都与以色列有关。"
+      },
+      "sourceIds": [
+        "ap-houthis"
+      ]
+    },
+    {
+      "name": {
+        "en": "Internationally recognized government",
+        "zh": "国际承认的也门政府"
+      },
+      "role": {
+        "en": "The government opposed by the Houthis; a Saudi-led coalition intervened in its support in 2015.",
+        "zh": "与胡塞武装对立的政府；沙特领导的联军于2015年介入支持它。"
+      },
+      "position": {
+        "en": "It has pursued restoration of state authority. UN talks seek an inclusive Yemeni political process; international recognition does not itself mean control of all territory.",
+        "zh": "其寻求恢复国家权威。联合国谈判推动包容性的也门政治进程；获得国际承认不等于控制全国领土。"
+      },
+      "sourceIds": [
+        "dppa",
+        "roadmap"
+      ]
+    },
+    {
+      "name": {
+        "en": "UN mediators and humanitarian agencies",
+        "zh": "联合国斡旋方与人道机构"
+      },
+      "role": {
+        "en": "Mediators support talks; health and aid agencies work across a fragmented country.",
+        "zh": "斡旋方支持谈判；卫生与援助机构在分裂的国家中开展工作。"
+      },
+      "position": {
+        "en": "They seek a nationwide ceasefire, improved living conditions and access to people in need. WHO’s cholera response prioritizes treatment, vaccination and safe water.",
+        "zh": "它们推动全国停火、改善生活及接触有需要的民众。世卫组织的霍乱应对着重治疗、疫苗和安全用水。"
+      },
+      "sourceIds": [
+        "roadmap",
+        "who-cholera"
+      ]
+    }
+  ],
+  "roots": {
+    "en": "A political transition followed the 2011 uprising but failed to settle rival claims to power. The Houthis’ expansion and the Saudi-led intervention turned the crisis into a prolonged war with regional involvement. Damage to water systems, health care and livelihoods helps explain why disease and hunger remain central news themes.",
+    "zh": "2011年起义后启动政治过渡，但未能解决各方的权力争夺。胡塞武装扩张及沙特领导的军事介入，使危机演变为有地区力量参与的长期战争。供水、医疗和生计遭到破坏，解释了疾病与饥饿为何持续成为新闻焦点。"
+  },
+  "timeline": [
+    {
+      "date": "2011-11-23",
+      "title": {
+        "en": "Transition agreement",
+        "zh": "政治过渡协议"
+      },
+      "detail": {
+        "en": "A Gulf Cooperation Council initiative set out a negotiated political transition after the uprising.",
+        "zh": "海湾合作委员会倡议为起义后的协商政治过渡作出安排。"
+      },
+      "sourceIds": [
+        "dppa"
+      ]
+    },
+    {
+      "date": "2014",
+      "title": {
+        "en": "Houthis seize Sanaa",
+        "zh": "胡塞武装夺取萨那"
+      },
+      "detail": {
+        "en": "The movement’s capture of the capital deepened the struggle over national authority.",
+        "zh": "该运动夺取首都，使国家权力争夺进一步加剧。"
+      },
+      "sourceIds": [
+        "ap-houthis"
+      ]
+    },
+    {
+      "date": "2015-03-26",
+      "title": {
+        "en": "Saudi-led intervention",
+        "zh": "沙特领导的军事介入"
+      },
+      "detail": {
+        "en": "A coalition intervened at President Hadi’s request in support of his government.",
+        "zh": "联军应哈迪总统请求，介入支持其政府。"
+      },
+      "sourceIds": [
+        "dppa"
+      ]
+    },
+    {
+      "date": "2022-04-02",
+      "title": {
+        "en": "UN-brokered truce",
+        "zh": "联合国斡旋的休战"
+      },
+      "detail": {
+        "en": "The parties agreed to a renewable truce that reduced violence; a truce is a step toward a settlement.",
+        "zh": "各方同意可续期的休战，暴力有所减少；休战是走向政治解决的一步。"
+      },
+      "sourceIds": [
+        "dppa"
+      ]
+    },
+    {
+      "date": "2023-12-23",
+      "title": {
+        "en": "Roadmap commitments",
+        "zh": "路线图承诺"
+      },
+      "detail": {
+        "en": "The UN envoy announced commitments toward a ceasefire, salary payments, reopened roads and a political process. Implementation still required agreement.",
+        "zh": "联合国特使宣布各方承诺推进停火、支付工资、开放道路和政治进程；实施细节仍须商定。"
+      },
+      "sourceIds": [
+        "roadmap"
+      ]
+    },
+    {
+      "date": "2024-12-23",
+      "title": {
+        "en": "WHO highlights cholera burden",
+        "zh": "世卫组织关注霍乱负担"
+      },
+      "detail": {
+        "en": "WHO reported a major outbreak and a response funding gap, illustrating the link between essential services and disease.",
+        "zh": "世卫组织报告严重疫情及应对资金缺口，说明基本服务与疾病传播的关联。"
+      },
+      "sourceIds": [
+        "who-cholera"
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": {
+        "en": "Bab el-Mandeb",
+        "zh": "曼德海峡"
+      },
+      "meaning": {
+        "en": "The narrow passage connecting the Red Sea to the Gulf of Aden.",
+        "zh": "连接红海与亚丁湾的狭窄水道。"
+      }
+    },
+    {
+      "term": {
+        "en": "Truce / political settlement",
+        "zh": "休战／政治解决"
+      },
+      "meaning": {
+        "en": "A truce pauses fighting; a settlement addresses how the country will be governed.",
+        "zh": "休战暂停战斗；政治解决处理国家如何治理的问题。"
+      }
+    },
+    {
+      "term": {
+        "en": "Cholera",
+        "zh": "霍乱"
+      },
+      "meaning": {
+        "en": "A dangerous diarrhoeal infection linked to contaminated water or food; safe water and treatment matter.",
+        "zh": "与受污染水或食物有关的危险腹泻感染；安全用水与及时治疗很重要。"
+      }
+    },
+    {
+      "term": {
+        "en": "Humanitarian access",
+        "zh": "人道准入"
+      },
+      "meaning": {
+        "en": "Aid requires permissions, secure routes, staff and supplies, beyond a funding pledge.",
+        "zh": "援助除资金承诺外，还需要许可、安全通道、人员及物资。"
+      }
+    }
+  ],
+  "readingLens": [
+    {
+      "en": "Does the headline concern Yemen’s internal war or a Red Sea operation?",
+      "zh": "标题涉及也门内战，还是红海行动？"
+    },
+    {
+      "en": "Is a ceasefire promised, signed or actually being observed?",
+      "zh": "停火是口头承诺、已经签署，还是确实得到遵守？"
+    },
+    {
+      "en": "Are disease figures suspected cases, laboratory confirmations or projections?",
+      "zh": "疾病数字是疑似病例、实验室确诊，还是预测？"
+    }
+  ],
+  "sources": [
+    {
+      "id": "dppa",
+      "title": "Special Envoy Yemen: background and peace process",
+      "publisher": "UN Department of Political and Peacebuilding Affairs",
+      "url": "https://dppa.un.org/en/factsheet/special-envoy-yemen",
+      "kind": "historical-record"
+    },
+    {
+      "id": "roadmap",
+      "title": "Update on efforts to secure a UN roadmap to end the war in Yemen",
+      "publisher": "Office of the UN Special Envoy for Yemen",
+      "url": "https://osesgy.unmissions.org/en/news/update-efforts-secure-un-roadmap-end-war-yemen",
+      "kind": "institutional-position",
+      "publishedAt": "2023-12-23"
+    },
+    {
+      "id": "who-cholera",
+      "title": "Yemen reports the highest burden of cholera globally",
+      "publisher": "World Health Organization",
+      "url": "https://www.emro.who.int/media/news/yemen-reports-the-highest-burden-of-cholera-globally.html",
+      "kind": "historical-record",
+      "publishedAt": "2024-12-23"
+    },
+    {
+      "id": "ap-houthis",
+      "title": "Who are the Houthis and why did the US and UK retaliate for Red Sea attacks?",
+      "publisher": "Associated Press",
+      "url": "https://apnews.com/article/d770a3fb0fab4c4b72e2459771833e11",
+      "kind": "independent-reporting",
+      "publishedAt": "2024-01-12"
+    }
+  ]
+}

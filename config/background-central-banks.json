@@ -1,0 +1,232 @@
+{
+  "id": "central-banks-inflation",
+  "title": {
+    "en": "Central banks, inflation & interest rates",
+    "zh": "央行、通胀与利率"
+  },
+  "subtitle": {
+    "en": "Who sets rates, why prices matter, and what Fed independence means.",
+    "zh": "谁决定利率，为什么要控制物价，以及美联储独立性是什么。"
+  },
+  "category": "economy",
+  "keywords": [
+    "Federal Reserve",
+    "FOMC",
+    "inflation",
+    "interest rates",
+    "rate cut",
+    "rate hike",
+    "central bank",
+    "Powell",
+    "美联储",
+    "央行",
+    "通胀",
+    "降息",
+    "加息",
+    "利率",
+    "the Fed",
+    "Fed policy",
+    "Fed chair",
+    "Fed rate"
+  ],
+  "reviewedAt": "2026-10-15",
+  "coverageThrough": "2023-01-10",
+  "overview": {
+    "en": "A central bank influences the price of short-term money. Higher rates can discourage borrowing and spending; lower rates can support them. These effects take time and cannot directly produce oil, housing, or semiconductors. This guide explains the US framework and historical milestones through January 2023; use dated news for the latest decision, officials, and forecasts.",
+    "zh": "央行影响短期资金的价格。加息可以抑制借贷和支出，降息则可以支持它们。政策传导需要时间，也无法直接生产石油、住房或芯片。本篇说明美国的制度框架与截至2023年1月的历史节点；最新决定、官员与预测应以有日期的新闻为准。"
+  },
+  "takeaways": [
+    {
+      "en": "Inflation slowing means prices rise more slowly; it does not necessarily mean prices fall.",
+      "zh": "通胀放缓是物价涨得更慢，不一定是物价下降。"
+    },
+    {
+      "en": "The Fed chair communicates a committee decision; the chair does not personally set every interest rate.",
+      "zh": "美联储主席代表委员会传达决定，并非个人决定所有利率。"
+    },
+    {
+      "en": "Operational independence comes with a mandate from Congress and public accountability.",
+      "zh": "操作独立性以国会授予的职责和公开问责为前提。"
+    }
+  ],
+  "actors": [
+    {
+      "name": {
+        "en": "FOMC",
+        "zh": "联邦公开市场委员会（FOMC）"
+      },
+      "role": {
+        "en": "US monetary policy committee",
+        "zh": "美国货币政策决策机构"
+      },
+      "position": {
+        "en": "Seven governors and five Reserve Bank presidents hold voting seats. The committee balances maximum employment and stable prices; all regional presidents contribute to discussion.",
+        "zh": "七位理事与五位地区联储行长拥有投票席位。委员会兼顾充分就业与物价稳定；所有地区联储行长都参与讨论。"
+      },
+      "sourceIds": [
+        "fed-structure",
+        "fed-law"
+      ]
+    },
+    {
+      "name": {
+        "en": "Congress and the president",
+        "zh": "国会与总统"
+      },
+      "role": {
+        "en": "Law, oversight, and appointments",
+        "zh": "立法、监督与任命"
+      },
+      "position": {
+        "en": "Congress sets the legal goals and oversees the Fed. Presidential appointments and Senate confirmation influence Board membership; political demands for cheaper credit are distinct from a committee vote.",
+        "zh": "国会规定法律目标并监督美联储。总统提名及参议院确认影响理事会人员；政治人物要求降低借贷成本，与委员会投票决定是两回事。"
+      },
+      "sourceIds": [
+        "fed-law",
+        "fed-independence"
+      ]
+    },
+    {
+      "name": {
+        "en": "Borrowers, savers, and markets",
+        "zh": "借款人、储户与金融市场"
+      },
+      "role": {
+        "en": "Transmission into everyday financing",
+        "zh": "把政策传到日常融资"
+      },
+      "position": {
+        "en": "Their different interests explain disagreement: cheaper borrowing can help debtors, while higher rates can reward savers. Markets also respond to expected future decisions, not only today’s announcement.",
+        "zh": "各方利益不同，因此意见常有分歧：低借贷成本可能帮助负债者，高利率可能有利储户。市场也会回应未来政策预期，而不只是当天公告。"
+      },
+      "sourceIds": [
+        "fed-independence"
+      ]
+    }
+  ],
+  "roots": {
+    "en": "The recurring tension is between supporting activity now and preserving confidence in money over time. Congress assigns goals; the Fed chooses instruments within the law. Independence is intended to reduce pressure from election cycles, not remove democratic oversight. Other central banks have different mandates, so a Fed explanation should not automatically be applied everywhere.",
+    "zh": "长期矛盾在于：既要支持眼前经济活动，也要维护人们对货币的长期信任。国会制定目标，美联储在法律范围内选择工具。独立性旨在减少选举周期的压力，不是取消民主监督。其他央行的法定职责可能不同，不能直接套用美国框架。"
+  },
+  "timeline": [
+    {
+      "date": "1977",
+      "title": {
+        "en": "Employment and prices become explicit legal goals",
+        "zh": "就业与物价成为明确法定目标"
+      },
+      "detail": {
+        "en": "The dual mandate enters law, establishing the goals against which policy should be assessed.",
+        "zh": "双重使命写入法律，为评估货币政策提供目标。"
+      },
+      "sourceIds": [
+        "fed-independence"
+      ]
+    },
+    {
+      "date": "2012-01-25",
+      "title": {
+        "en": "A numerical inflation goal is published",
+        "zh": "公布数值化通胀目标"
+      },
+      "detail": {
+        "en": "The FOMC first publishes its longer-run strategy statement, identifying 2% PCE inflation as consistent with its mandate.",
+        "zh": "FOMC首次公布长期策略声明，认为2%的个人消费支出物价指数通胀率符合其职责。"
+      },
+      "sourceIds": [
+        "fed-target"
+      ]
+    },
+    {
+      "date": "2023-01-10",
+      "title": {
+        "en": "Powell explains the case for independence",
+        "zh": "鲍威尔解释独立性的理由"
+      },
+      "detail": {
+        "en": "The then chair links freedom from short-term political pressure to transparency and staying within statutory authority. This is the institution’s stated rationale.",
+        "zh": "时任主席把免受短期政治压力，与透明度及遵守法定权限联系起来。这是机构对自身制度的解释。"
+      },
+      "sourceIds": [
+        "fed-independence"
+      ]
+    }
+  ],
+  "terms": [
+    {
+      "term": {
+        "en": "Policy rate",
+        "zh": "政策利率"
+      },
+      "meaning": {
+        "en": "The central bank’s short-term rate setting; mortgage and bond rates also reflect market expectations and risk.",
+        "zh": "央行设定的短期利率；房贷与债券利率还受市场预期和风险影响。"
+      }
+    },
+    {
+      "term": {
+        "en": "PCE / CPI",
+        "zh": "PCE／CPI"
+      },
+      "meaning": {
+        "en": "Two price indexes with different coverage and weights. The Fed’s stated inflation goal uses PCE.",
+        "zh": "范围与权重不同的两种物价指数。美联储公布的通胀目标采用PCE。"
+      }
+    },
+    {
+      "term": {
+        "en": "Hawkish / dovish",
+        "zh": "鹰派／鸽派"
+      },
+      "meaning": {
+        "en": "Shorthand for greater emphasis on restraining inflation or supporting activity; neither is a permanent party identity.",
+        "zh": "分别偏重抑制通胀或支持经济活动的简称，不是固定党派身份。"
+      }
+    }
+  ],
+  "readingLens": [
+    {
+      "en": "Is this an actual vote, a forecast, a speech, or political pressure?",
+      "zh": "这是正式投票、预测、讲话，还是政治施压？"
+    },
+    {
+      "en": "Which inflation measure and time period are being compared, and what is happening to employment?",
+      "zh": "比较的是哪种通胀指标、哪个时段，就业又怎样？"
+    },
+    {
+      "en": "Did market prices move because policy changed, or because the outcome differed from expectations?",
+      "zh": "市场变动是因为政策改变，还是结果偏离预期？"
+    }
+  ],
+  "sources": [
+    {
+      "id": "fed-law",
+      "title": "Legal framework for monetary policy",
+      "publisher": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/faqs/basic-framework-determines-conduct-monetary-policy.htm",
+      "kind": "institutional-position"
+    },
+    {
+      "id": "fed-structure",
+      "title": "How is the Federal Reserve System structured?",
+      "publisher": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/faqs/about_12593.htm",
+      "kind": "institutional-position"
+    },
+    {
+      "id": "fed-target",
+      "title": "Timeline: longer-run monetary policy goals",
+      "publisher": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/monetarypolicy/timeline-statement-on-longer-run-goals-and-monetary-policy-strategy.htm",
+      "kind": "historical-record"
+    },
+    {
+      "id": "fed-independence",
+      "title": "Central Bank Independence and the Mandate",
+      "publisher": "Federal Reserve",
+      "url": "https://www.federalreserve.gov/newsevents/speech/powell20230110a.htm",
+      "kind": "institutional-position",
+      "publishedAt": "2023-01-10"
+    }
+  ]
+}
